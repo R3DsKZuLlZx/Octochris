@@ -41,19 +41,13 @@ jobs:
       - name: Display Version
         run: |
           echo "SemVer: ${{ steps.gitversion.outputs.semVer }}"
-          echo "NuGetVersionV2: ${{ steps.gitversion.outputs.nuGetVersionV2 }}"
           echo "InformationalVersion: ${{ steps.gitversion.outputs.informationalVersion }}"
 
       - name: Restore dependencies
         run: dotnet restore
 
       - name: Build
-        run: >
-          dotnet build src/Octochris/Octochris.csproj
-          -c Release
-          --no-restore
-          /p:Version=${{ steps.gitversion.outputs.nuGetVersionV2 }}
-          /p:InformationalVersion=${{ steps.gitversion.outputs.informationalVersion }}
+        run: dotnet build src/Octochris/Octochris.csproj -c Release --no-restore
 
       - name: Pack
         run: >
@@ -62,7 +56,7 @@ jobs:
           -o ./nupkg
           --nologo
           --no-build
-          /p:PackageVersion=${{ steps.gitversion.outputs.nuGetVersionV2 }}
+          /p:Version=${{ steps.gitversion.outputs.semVer }}
           /p:InformationalVersion=${{ steps.gitversion.outputs.informationalVersion }}
 
       - name: Create source archive
