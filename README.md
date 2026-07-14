@@ -1,19 +1,54 @@
-# API Description Updates
+# Octochris
 
-This repository now pulls GitHub REST API definitions directly from:
+Octochris is a Kiota-generated .NET client package for the GitHub REST APIs.
 
-- `https://github.com/github/rest-api-description/tree/main/descriptions/ghec`
+This package includes clients for:
 
-## Manual update
+- GitHub.com REST API (`GitHub.Api` namespace)
+- GitHub Enterprise Cloud REST API (`GitHub.EnterpriseCloud` namespace)
 
-Run from the repository root:
+## Installing
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\update-from-upstream.ps1
+dotnet add package Octochris
 ```
 
-## Automated update
+## Getting started
 
-- Workflow: `.github/workflows/update-github-rest-api.yml`
-- Schedule: every Monday at 06:00 UTC
-- Behavior: regenerates the clients with `kiota update` and opens/updates a PR when files change.
+```csharp
+using GitHub.Api;
+using GitHub.EnterpriseCloud;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+using Octochris;
+
+var tokenProvider = new PersonalAccessTokenProvider("<your-token>");
+var authProvider = new PersonalAccessTokenAuthenticationProvider(tokenProvider);
+var requestAdapter = new HttpClientRequestAdapter(authProvider);
+
+// GitHub.com client
+var githubApi = new GitHubApiClient(requestAdapter);
+var root = await githubApi.GetAsync();
+
+// GitHub Enterprise Cloud client
+var ghecApi = new GitHubEnterpriseCloudClient(requestAdapter);
+var ghecRoot = await ghecApi.GetAsync();
+```
+
+## Authentication
+
+The package includes helpers for Personal Access Token (PAT) authentication:
+
+- `Octochris.PersonalAccessTokenProvider`
+- `Octochris.PersonalAccessTokenAuthenticationProvider`
+
+Use a token with the minimum scopes required by the endpoints you call.
+
+## Notes
+
+- The SDK is generated from the official GitHub REST API descriptions.
+- Generated surface area can change when GitHub updates its API description.
+- Strongly typed request builders are available under both namespaces.
+
+## Source and updates
+
+The API clients in this package are regenerated from upstream API descriptions as part of this repository's automation workflow.
