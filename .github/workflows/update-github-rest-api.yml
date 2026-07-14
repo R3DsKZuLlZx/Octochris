@@ -2,7 +2,7 @@ name: Update GitHub REST API clients
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "41 22 * * *"
   workflow_dispatch:
 
 permissions:
