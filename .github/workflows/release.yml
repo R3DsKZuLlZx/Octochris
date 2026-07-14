@@ -3,6 +3,8 @@ name: Generate Release
 on:
   push:
     branches: [ main ]
+    paths:
+      - "src/**"
     tags-ignore:
       - "v*.*.*"
 
