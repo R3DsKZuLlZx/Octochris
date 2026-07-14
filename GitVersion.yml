@@ -1,0 +1,8 @@
+mode: ContinuousDeployment
+branches:
+  main:
+    increment: Patch
+    regex: ^main$
+    source-branches: []
+    versions:
+      - { major: 0, minor: 0, patch: 1 }
