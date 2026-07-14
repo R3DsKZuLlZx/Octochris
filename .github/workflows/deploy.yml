@@ -20,11 +20,16 @@ jobs:
         with:
           dotnet-version: '10.0.x'
 
+      - name: NuGet login (OIDC → temp API key)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
       - name: Download and deploy NuGet package
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Download the latest release's .nupkg file
           gh release download --repo "${{ github.repository }}" --pattern "*.nupkg" --dir .
@@ -39,9 +44,10 @@ jobs:
           
           echo "Package downloaded: $NUPKG"
           
-          # Push to NuGet.org (using OIDC via NUGET_AUTH_TOKEN)
+          # Push to NuGet.org using temporary OIDC-generated API key
           echo "Pushing to NuGet.org..."
           dotnet nuget push "$NUPKG" \
+            --api-key ${{ steps.login.outputs.NUGET_API_KEY }} \
             --source https://api.nuget.org/v3/index.json \
             --skip-duplicate
           
