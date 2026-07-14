@@ -10,6 +10,7 @@
         <Description>A generated client for the GitHub API using Kiota.</Description>
         <PackageTags>github;api;kiota;rest;client</PackageTags>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Version>1.0.0-rc1</Version>
     </PropertyGroup>
