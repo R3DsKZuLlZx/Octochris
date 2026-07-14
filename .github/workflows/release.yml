@@ -46,12 +46,16 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
 
-      - name: Build and Pack
+      - name: Build
+        run: dotnet build src/Octochris/Octochris.csproj -c Release --no-restore
+
+      - name: Pack
         run: >
           dotnet pack src/Octochris/Octochris.csproj
           -c Release
           -o ./nupkg
           --nologo
+          --no-build
           /p:Version=${{ steps.gitversion.outputs.semVer }}
           /p:InformationalVersion=${{ steps.gitversion.outputs.informationalVersion }}
 
