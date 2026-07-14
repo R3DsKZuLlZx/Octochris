@@ -153,6 +153,18 @@ DocProject/Help/html
 # Click-Once directory
 publish/
 
+# Allow Kiota-generated Packages folders in GitHub client directories
+!src/Octochris/GitHubApi/**/Publish/
+!src/Octochris/GitHubApi/**/Publish/**
+!src/Octochris/GitHubEnterpriseCloud/**/Publish/
+!src/Octochris/GitHubEnterpriseCloud/**/Publish/**
+
+# Allow Kiota-generated Packages folders in GitHub client directories
+!src/Octochris/GitHubApi/**/Releases/
+!src/Octochris/GitHubApi/**/Releases/**
+!src/Octochris/GitHubEnterpriseCloud/**/Releases/
+!src/Octochris/GitHubEnterpriseCloud/**/Releases/**
+
 # Publish Web Output
 *.[Pp]ublish.xml
 *.azurePubxml
