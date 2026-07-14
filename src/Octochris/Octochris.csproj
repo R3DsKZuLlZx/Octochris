@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <PackageId>Octochris</PackageId>
+        <Authors>R3DsKZuLlZx</Authors>
+        <Description>A generated client for the GitHub API using Kiota.</Description>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Version>1.0.0-rc1</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Kiota.Abstractions" Version="2.0.0" />
+        <PackageReference Include="Microsoft.Kiota.Bundle" Version="2.0.0" />
+        <PackageReference Include="Microsoft.Kiota.Serialization.Form" Version="2.0.0" />
+        <PackageReference Include="Microsoft.Kiota.Serialization.Json" Version="2.0.0" />
+        <PackageReference Include="Microsoft.Kiota.Serialization.Multipart" Version="2.0.0" />
+        <PackageReference Include="Microsoft.Kiota.Serialization.Text" Version="2.0.0" />
+    </ItemGroup>
+    
+</Project>
