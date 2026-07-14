@@ -46,14 +46,27 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
 
-      - name: Publish
+      - name: Build and Pack
         run: >
-          dotnet publish src/Octochris/Octochris.csproj
+          dotnet pack src/Octochris/Octochris.csproj
           -c Release
-          -o release
+          -o ./nupkg
           --nologo
           /p:Version=${{ steps.gitversion.outputs.semVer }}
           /p:InformationalVersion=${{ steps.gitversion.outputs.informationalVersion }}
+
+      - name: Create source archive
+        run: |
+          git archive --format=zip --output=Octochris-v${{ steps.gitversion.outputs.semVer }}-source.zip HEAD
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-artifacts
+          path: |
+            ./nupkg/*.nupkg
+            Octochris-v${{ steps.gitversion.outputs.semVer }}-source.zip
+          retention-days: 1
 
   tag:
     runs-on: ubuntu-latest
@@ -61,6 +74,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: release-artifacts
 
       - name: Create and push tag
         env:
@@ -80,4 +98,6 @@ jobs:
           gh release create "$TAG" \
             --repo "$GITHUB_REPOSITORY" \
             --title "$TAG" \
-            --generate-notes
+            --generate-notes \
+            nupkg/*.nupkg \
+            Octochris-v${{ needs.build.outputs.semVer }}-source.zip

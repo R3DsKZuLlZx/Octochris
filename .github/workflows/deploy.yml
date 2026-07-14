@@ -1,0 +1,65 @@
+name: Deploy to NuGet.org
+
+on:
+  workflow_run:
+    workflows: [ "Generate Release" ]
+    types: [ completed ]
+    branches: [ main ]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Download and deploy NuGet package
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Get the latest release with assets
+          RELEASE_INFO=$(gh release list --repo "${{ github.repository }}" --limit 1 --json tagName,assets -q '.[0]')
+          
+          # Extract tag name
+          TAG=$(echo "$RELEASE_INFO" | jq -r '.tagName')
+          echo "Latest release tag: $TAG"
+          
+          # Find and download the .nupkg file
+          NUPKG_URL=$(gh release view "$TAG" --repo "${{ github.repository }}" --json assets -q '.assets[] | select(.name | endswith(".nupkg")) | .url' | head -1)
+          
+          if [ -z "$NUPKG_URL" ]; then
+            echo "Error: No .nupkg file found in the release"
+            exit 1
+          fi
+          
+          echo "Found package URL: $NUPKG_URL"
+          
+          # Download the package
+          gh release download "$TAG" --repo "${{ github.repository }}" --pattern "*.nupkg"
+          
+          # Find the downloaded .nupkg file
+          NUPKG=$(find . -maxdepth 1 -name "*.nupkg" -type f | head -1)
+          
+          if [ -z "$NUPKG" ]; then
+            echo "Error: Failed to download .nupkg file"
+            exit 1
+          fi
+          
+          echo "Package downloaded: $NUPKG"
+          
+          # Push to NuGet.org (using OIDC via NUGET_AUTH_TOKEN)
+          echo "Pushing to NuGet.org..."
+          dotnet nuget push "$NUPKG" \
+            --source https://api.nuget.org/v3/index.json \
+            --skip-duplicate
+          
+          echo "Successfully deployed to NuGet.org"
