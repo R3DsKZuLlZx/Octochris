@@ -52,7 +52,13 @@ dlldata.c
 # DNX
 project.lock.json
 project.fragment.lock.json
-#artifacts/
+artifacts/
+
+# Allow Kiota-generated Packages folders in GitHub client directories
+!src/Octochris/GitHubApi/**/Artifacts/
+!src/Octochris/GitHubApi/**/Artifacts/**
+!src/Octochris/GitHubEnterpriseCloud/**/Artifacts/
+!src/Octochris/GitHubEnterpriseCloud/**/Artifacts/**
 
 *_i.c
 *_p.c
@@ -166,6 +172,11 @@ PublishScripts/
 **/packages/*
 # except build/, which is used as an MSBuild target.
 !**/packages/build/
+# Allow Kiota-generated Packages folders in GitHub client directories
+!src/Octochris/GitHubApi/**/Packages/
+!src/Octochris/GitHubApi/**/Packages/**
+!src/Octochris/GitHubEnterpriseCloud/**/Packages/
+!src/Octochris/GitHubEnterpriseCloud/**/Packages/**
 # Uncomment if necessary however generally it will be regenerated when needed
 #!**/packages/repositories.config
 # NuGet v3's project.json files produces more ignoreable files
