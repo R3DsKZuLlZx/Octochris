@@ -34,12 +34,13 @@ namespace GitHub.EnterpriseCloud.Assignments.Item.Accepted_assignments
         {
         }
         /// <summary>
-        /// Lists any assignment repositories that have been created by students accepting a GitHub Classroom assignment. Accepted assignments will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
-        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/classroom/classroom#list-accepted-assignments-for-an-assignment" />
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Lists any assignment repositories that have been created by students accepting a GitHub Classroom assignment. Accepted assignments will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
+        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/classroom/classroom#closing-down---list-accepted-assignments-for-an-assignment" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.EnterpriseCloud.Models.ClassroomAcceptedAssignment&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::GitHub.EnterpriseCloud.Models.ClassroomAcceptedAssignment>?> GetAsync(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Assignments.Item.Accepted_assignments.Accepted_assignmentsRequestBuilder.Accepted_assignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,10 +55,11 @@ namespace GitHub.EnterpriseCloud.Assignments.Item.Accepted_assignments
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Lists any assignment repositories that have been created by students accepting a GitHub Classroom assignment. Accepted assignments will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Lists any assignment repositories that have been created by students accepting a GitHub Classroom assignment. Accepted assignments will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Assignments.Item.Accepted_assignments.Accepted_assignmentsRequestBuilder.Accepted_assignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -77,12 +79,13 @@ namespace GitHub.EnterpriseCloud.Assignments.Item.Accepted_assignments
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Assignments.Item.Accepted_assignments.Accepted_assignmentsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Assignments.Item.Accepted_assignments.Accepted_assignmentsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.EnterpriseCloud.Assignments.Item.Accepted_assignments.Accepted_assignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists any assignment repositories that have been created by students accepting a GitHub Classroom assignment. Accepted assignments will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Lists any assignment repositories that have been created by students accepting a GitHub Classroom assignment. Accepted assignments will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Accepted_assignmentsRequestBuilderGetQueryParameters 

@@ -21,6 +21,7 @@ namespace GitHub.Api.Classrooms
         /// <summary>Gets an item from the GitHub.Api.classrooms.item collection</summary>
         /// <param name="position">The unique identifier of the classroom.</param>
         /// <returns>A <see cref="global::GitHub.Api.Classrooms.Item.WithClassroom_ItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::GitHub.Api.Classrooms.Item.WithClassroom_ItemRequestBuilder this[int position]
         {
             get
@@ -60,12 +61,13 @@ namespace GitHub.Api.Classrooms
         {
         }
         /// <summary>
-        /// Lists GitHub Classroom classrooms for the current user. Classrooms will only be returned if the current user is an administrator of one or more GitHub Classrooms.
-        /// API method documentation <see href="https://docs.github.com/rest/classroom/classroom#list-classrooms" />
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Lists GitHub Classroom classrooms for the current user. Classrooms will only be returned if the current user is an administrator of one or more GitHub Classrooms.
+        /// API method documentation <see href="https://docs.github.com/rest/classroom/classroom#closing-down---list-classrooms" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.Api.Models.SimpleClassroom&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::GitHub.Api.Models.SimpleClassroom>?> GetAsync(Action<RequestConfiguration<global::GitHub.Api.Classrooms.ClassroomsRequestBuilder.ClassroomsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -80,10 +82,11 @@ namespace GitHub.Api.Classrooms
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Lists GitHub Classroom classrooms for the current user. Classrooms will only be returned if the current user is an administrator of one or more GitHub Classrooms.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Lists GitHub Classroom classrooms for the current user. Classrooms will only be returned if the current user is an administrator of one or more GitHub Classrooms.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.Api.Classrooms.ClassroomsRequestBuilder.ClassroomsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -103,12 +106,13 @@ namespace GitHub.Api.Classrooms
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Classrooms.ClassroomsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.Api.Classrooms.ClassroomsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.Api.Classrooms.ClassroomsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists GitHub Classroom classrooms for the current user. Classrooms will only be returned if the current user is an administrator of one or more GitHub Classrooms.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Lists GitHub Classroom classrooms for the current user. Classrooms will only be returned if the current user is an administrator of one or more GitHub Classrooms.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ClassroomsRequestBuilderGetQueryParameters 

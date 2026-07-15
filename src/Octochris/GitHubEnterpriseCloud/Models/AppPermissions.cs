@@ -8,7 +8,7 @@ using System;
 namespace GitHub.EnterpriseCloud.Models
 {
     /// <summary>
-    /// The permissions granted to the user access token.
+    /// The permissions granted to the fine-grained access token.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AppPermissions : IAdditionalDataHolder, IParsable

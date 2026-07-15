@@ -34,12 +34,13 @@ namespace GitHub.EnterpriseCloud.Classrooms.Item.Assignments
         {
         }
         /// <summary>
-        /// Lists GitHub Classroom assignments for a classroom. Assignments will only be returned if the current user is an administrator of the GitHub Classroom.
-        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/classroom/classroom#list-assignments-for-a-classroom" />
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Lists GitHub Classroom assignments for a classroom. Assignments will only be returned if the current user is an administrator of the GitHub Classroom.
+        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/classroom/classroom#closing-down---list-assignments-for-a-classroom" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.EnterpriseCloud.Models.SimpleClassroomAssignment&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::GitHub.EnterpriseCloud.Models.SimpleClassroomAssignment>?> GetAsync(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Classrooms.Item.Assignments.AssignmentsRequestBuilder.AssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,10 +55,11 @@ namespace GitHub.EnterpriseCloud.Classrooms.Item.Assignments
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Lists GitHub Classroom assignments for a classroom. Assignments will only be returned if the current user is an administrator of the GitHub Classroom.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Lists GitHub Classroom assignments for a classroom. Assignments will only be returned if the current user is an administrator of the GitHub Classroom.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Classrooms.Item.Assignments.AssignmentsRequestBuilder.AssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -77,12 +79,13 @@ namespace GitHub.EnterpriseCloud.Classrooms.Item.Assignments
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Classrooms.Item.Assignments.AssignmentsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Classrooms.Item.Assignments.AssignmentsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.EnterpriseCloud.Classrooms.Item.Assignments.AssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists GitHub Classroom assignments for a classroom. Assignments will only be returned if the current user is an administrator of the GitHub Classroom.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Lists GitHub Classroom assignments for a classroom. Assignments will only be returned if the current user is an administrator of the GitHub Classroom.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AssignmentsRequestBuilderGetQueryParameters 

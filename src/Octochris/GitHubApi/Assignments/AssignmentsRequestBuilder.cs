@@ -18,6 +18,7 @@ namespace GitHub.Api.Assignments
         /// <summary>Gets an item from the GitHub.Api.assignments.item collection</summary>
         /// <param name="position">The unique identifier of the classroom assignment.</param>
         /// <returns>A <see cref="global::GitHub.Api.Assignments.Item.WithAssignment_ItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::GitHub.Api.Assignments.Item.WithAssignment_ItemRequestBuilder this[int position]
         {
             get

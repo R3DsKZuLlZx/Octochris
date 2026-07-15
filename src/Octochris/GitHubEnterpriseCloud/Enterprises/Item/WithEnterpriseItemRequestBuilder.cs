@@ -28,6 +28,7 @@ using GitHub.EnterpriseCloud.Enterprises.Item.Rulesets;
 using GitHub.EnterpriseCloud.Enterprises.Item.SecretScanning;
 using GitHub.EnterpriseCloud.Enterprises.Item.Settings;
 using GitHub.EnterpriseCloud.Enterprises.Item.Teams;
+using GitHub.EnterpriseCloud.Enterprises.Item.VisualStudioSubscriptions;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -176,6 +177,11 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Teams.TeamsRequestBuilder Teams
         {
             get => new global::GitHub.EnterpriseCloud.Enterprises.Item.Teams.TeamsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The visualStudioSubscriptions property</summary>
+        public global::GitHub.EnterpriseCloud.Enterprises.Item.VisualStudioSubscriptions.VisualStudioSubscriptionsRequestBuilder VisualStudioSubscriptions
+        {
+            get => new global::GitHub.EnterpriseCloud.Enterprises.Item.VisualStudioSubscriptions.VisualStudioSubscriptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the GitHub.EnterpriseCloud.enterprises.item.item collection</summary>
         /// <param name="position">The security feature to enable or disable.</param>
