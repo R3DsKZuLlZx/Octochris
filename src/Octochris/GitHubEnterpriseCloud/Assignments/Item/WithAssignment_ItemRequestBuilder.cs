@@ -20,11 +20,13 @@ namespace GitHub.EnterpriseCloud.Assignments.Item
     public partial class WithAssignment_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The accepted_assignments property</summary>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Assignments.Item.Accepted_assignments.Accepted_assignmentsRequestBuilder Accepted_assignments
         {
             get => new global::GitHub.EnterpriseCloud.Assignments.Item.Accepted_assignments.Accepted_assignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The grades property</summary>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Assignments.Item.Grades.GradesRequestBuilder Grades
         {
             get => new global::GitHub.EnterpriseCloud.Assignments.Item.Grades.GradesRequestBuilder(PathParameters, RequestAdapter);
@@ -46,13 +48,14 @@ namespace GitHub.EnterpriseCloud.Assignments.Item
         {
         }
         /// <summary>
-        /// Gets a GitHub Classroom assignment. Assignment will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
-        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/classroom/classroom#get-an-assignment" />
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Gets a GitHub Classroom assignment. Assignment will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
+        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/classroom/classroom#closing-down---get-an-assignment" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.ClassroomAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 404 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::GitHub.EnterpriseCloud.Models.ClassroomAssignment?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -70,10 +73,11 @@ namespace GitHub.EnterpriseCloud.Assignments.Item
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.ClassroomAssignment>(requestInfo, global::GitHub.EnterpriseCloud.Models.ClassroomAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a GitHub Classroom assignment. Assignment will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Gets a GitHub Classroom assignment. Assignment will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -93,6 +97,7 @@ namespace GitHub.EnterpriseCloud.Assignments.Item
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Assignments.Item.WithAssignment_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Assignments.Item.WithAssignment_ItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.EnterpriseCloud.Assignments.Item.WithAssignment_ItemRequestBuilder(rawUrl, RequestAdapter);

@@ -18,6 +18,7 @@ namespace GitHub.EnterpriseCloud.Assignments
         /// <summary>Gets an item from the GitHub.EnterpriseCloud.assignments.item collection</summary>
         /// <param name="position">The unique identifier of the classroom assignment.</param>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Assignments.Item.WithAssignment_ItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Assignments.Item.WithAssignment_ItemRequestBuilder this[int position]
         {
             get

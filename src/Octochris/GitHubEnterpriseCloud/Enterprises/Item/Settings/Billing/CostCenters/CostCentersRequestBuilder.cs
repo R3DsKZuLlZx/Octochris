@@ -84,6 +84,9 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 400 status code</exception>
+        /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 409 status code</exception>
+        /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.CostCentersPostResponse?> PostAsCostCentersPostResponseAsync(global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.CostCentersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -95,7 +98,13 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.CostCentersPostResponse>(requestInfo, global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.CostCentersPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
+                { "409", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
+                { "500", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.CostCentersPostResponse>(requestInfo, global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.CostCentersPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new cost center for an enterprise. The authenticated user must be an enterprise admin.
@@ -105,6 +114,9 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 400 status code</exception>
+        /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 409 status code</exception>
+        /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 500 status code</exception>
         [Obsolete("This method is obsolete. Use PostAsCostCentersPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,7 +129,13 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.CostCentersResponse>(requestInfo, global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.CostCentersResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
+                { "409", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
+                { "500", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.CostCentersResponse>(requestInfo, global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.CostCentersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a list of all the cost centers for an enterprise.

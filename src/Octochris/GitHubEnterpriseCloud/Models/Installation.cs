@@ -79,7 +79,7 @@ namespace GitHub.EnterpriseCloud.Models
 #endif
         /// <summary>The ID of the installation.</summary>
         public int? Id { get; set; }
-        /// <summary>The permissions granted to the user access token.</summary>
+        /// <summary>The permissions granted to the fine-grained access token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::GitHub.EnterpriseCloud.Models.AppPermissions? Permissions { get; set; }

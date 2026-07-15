@@ -34,13 +34,14 @@ namespace GitHub.Api.Assignments.Item.Grades
         {
         }
         /// <summary>
-        /// Gets grades for a GitHub Classroom assignment. Grades will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
-        /// API method documentation <see href="https://docs.github.com/rest/classroom/classroom#get-assignment-grades" />
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Gets grades for a GitHub Classroom assignment. Grades will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
+        /// API method documentation <see href="https://docs.github.com/rest/classroom/classroom#closing-down---get-assignment-grades" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.Api.Models.ClassroomAssignmentGrade&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 404 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::GitHub.Api.Models.ClassroomAssignmentGrade>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,10 +60,11 @@ namespace GitHub.Api.Assignments.Item.Grades
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Gets grades for a GitHub Classroom assignment. Grades will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Gets grades for a GitHub Classroom assignment. Grades will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -82,6 +84,7 @@ namespace GitHub.Api.Assignments.Item.Grades
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Assignments.Item.Grades.GradesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.Api.Assignments.Item.Grades.GradesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.Api.Assignments.Item.Grades.GradesRequestBuilder(rawUrl, RequestAdapter);
