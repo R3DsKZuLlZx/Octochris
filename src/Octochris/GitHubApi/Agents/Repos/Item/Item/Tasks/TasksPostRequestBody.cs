@@ -24,6 +24,14 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Tasks
 #endif
         /// <summary>Whether to create a PR.</summary>
         public bool? CreatePullRequest { get; set; }
+        /// <summary>Optional identifier for a custom agent to use for this task. Use the custom agent&apos;s filename without the extension - for example, for a `.github/agents/performance-optimizer.agent.md` custom agent, use `performance-optimizer`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomAgent { get; set; }
+#nullable restore
+#else
+        public string CustomAgent { get; set; }
+#endif
         /// <summary>Head ref for existing branch/PR. If provided with `base_ref`, the agent looks up open PR context for `head_ref` targeting `base_ref` and commits to `head_ref` instead of creating a new branch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +84,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Tasks
             {
                 { "base_ref", n => { BaseRef = n.GetStringValue(); } },
                 { "create_pull_request", n => { CreatePullRequest = n.GetBoolValue(); } },
+                { "custom_agent", n => { CustomAgent = n.GetStringValue(); } },
                 { "head_ref", n => { HeadRef = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
@@ -90,6 +99,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Tasks
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("base_ref", BaseRef);
             writer.WriteBoolValue("create_pull_request", CreatePullRequest);
+            writer.WriteStringValue("custom_agent", CustomAgent);
             writer.WriteStringValue("head_ref", HeadRef);
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("prompt", Prompt);

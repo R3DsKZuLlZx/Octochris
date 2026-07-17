@@ -30,6 +30,8 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Artifacts.Metadata.DeploymentRecord.C
 #else
         public string LogicalEnvironment { get; set; }
 #endif
+        /// <summary>When enabled, deployments associated with repositories the actor can write to are processedwhile deployments associated with repositories that cannot be resolved or written to by the actorare skipped and reported in the `errors` array. When false (the default), the endpoint returnsan error if any targeted repository cannot be resolved, the actor lacks write access, or no matching attestation can be found.</summary>
+        public bool? PartialSuccess { get; set; }
         /// <summary>The physical region of the deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +48,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Artifacts.Metadata.DeploymentRecord.C
         public WithClusterPostRequestBody()
         {
             AdditionalData = new Dictionary<string, object>();
+            PartialSuccess = false;
             ReturnRecords = true;
         }
         /// <summary>
@@ -68,6 +71,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Artifacts.Metadata.DeploymentRecord.C
             {
                 { "deployments", n => { Deployments = n.GetCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Orgs.Item.Artifacts.Metadata.DeploymentRecord.Cluster.Item.WithClusterPostRequestBody_deployments>(global::GitHub.EnterpriseCloud.Orgs.Item.Artifacts.Metadata.DeploymentRecord.Cluster.Item.WithClusterPostRequestBody_deployments.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "logical_environment", n => { LogicalEnvironment = n.GetStringValue(); } },
+                { "partial_success", n => { PartialSuccess = n.GetBoolValue(); } },
                 { "physical_environment", n => { PhysicalEnvironment = n.GetStringValue(); } },
                 { "return_records", n => { ReturnRecords = n.GetBoolValue(); } },
             };
@@ -81,6 +85,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Artifacts.Metadata.DeploymentRecord.C
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Orgs.Item.Artifacts.Metadata.DeploymentRecord.Cluster.Item.WithClusterPostRequestBody_deployments>("deployments", Deployments);
             writer.WriteStringValue("logical_environment", LogicalEnvironment);
+            writer.WriteBoolValue("partial_success", PartialSuccess);
             writer.WriteStringValue("physical_environment", PhysicalEnvironment);
             writer.WriteBoolValue("return_records", ReturnRecords);
             writer.WriteAdditionalData(AdditionalData);

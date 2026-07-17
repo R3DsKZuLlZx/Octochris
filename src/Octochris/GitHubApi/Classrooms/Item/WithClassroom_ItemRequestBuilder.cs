@@ -48,6 +48,7 @@ namespace GitHub.Api.Classrooms.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 410 status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +63,7 @@ namespace GitHub.Api.Classrooms.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
+                { "410", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::GitHub.Api.Models.Classroom>(requestInfo, global::GitHub.Api.Models.Classroom.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

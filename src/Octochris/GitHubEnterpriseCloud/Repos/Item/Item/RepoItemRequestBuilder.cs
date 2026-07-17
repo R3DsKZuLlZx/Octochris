@@ -13,6 +13,7 @@ using GitHub.EnterpriseCloud.Repos.Item.Item.BypassRequests;
 using GitHub.EnterpriseCloud.Repos.Item.Item.BypassResponses;
 using GitHub.EnterpriseCloud.Repos.Item.Item.CheckRuns;
 using GitHub.EnterpriseCloud.Repos.Item.Item.CheckSuites;
+using GitHub.EnterpriseCloud.Repos.Item.Item.CodeQuality;
 using GitHub.EnterpriseCloud.Repos.Item.Item.CodeScanning;
 using GitHub.EnterpriseCloud.Repos.Item.Item.CodeSecurityConfiguration;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Codeowners;
@@ -156,6 +157,11 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.Codeowners.CodeownersRequestBuilder Codeowners
         {
             get => new global::GitHub.EnterpriseCloud.Repos.Item.Item.Codeowners.CodeownersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The codeQuality property</summary>
+        public global::GitHub.EnterpriseCloud.Repos.Item.Item.CodeQuality.CodeQualityRequestBuilder CodeQuality
+        {
+            get => new global::GitHub.EnterpriseCloud.Repos.Item.Item.CodeQuality.CodeQualityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The codeScanning property</summary>
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.CodeScanning.CodeScanningRequestBuilder CodeScanning

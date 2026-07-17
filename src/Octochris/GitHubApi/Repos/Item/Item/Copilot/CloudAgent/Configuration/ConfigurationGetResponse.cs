@@ -30,6 +30,8 @@ namespace GitHub.Api.Repos.Item.Item.Copilot.CloudAgent.Configuration
 #else
         public global::GitHub.Api.Repos.Item.Item.Copilot.CloudAgent.Configuration.ConfigurationGetResponse_enabled_tools EnabledTools { get; set; }
 #endif
+        /// <summary>Whether automations are enabled in this repository. When true, users can create automations that automatically run agents on a schedule or in response to events like new issues or updated pull requests.</summary>
+        public bool? IsAutomationsEnabled { get; set; }
         /// <summary>Whether the firewall is enabled.</summary>
         public bool? IsFirewallEnabled { get; set; }
         /// <summary>Whether the firewall recommended allowlist is enabled.</summary>
@@ -44,6 +46,8 @@ namespace GitHub.Api.Repos.Item.Item.Copilot.CloudAgent.Configuration
 #endif
         /// <summary>Whether Actions workflow approval is required for Copilot cloud agent pull requests.</summary>
         public bool? RequireActionsWorkflowApproval { get; set; }
+        /// <summary>Whether write access is required for automation triggers. When true, automations will only run if the user triggering the event has write access to the repository. When false, users can create automations that listen for events triggered by users without write access.</summary>
+        public bool? RequireWriteAccessForAutomationTriggers { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Api.Repos.Item.Item.Copilot.CloudAgent.Configuration.ConfigurationGetResponse"/> and sets the default values.
         /// </summary>
@@ -71,10 +75,12 @@ namespace GitHub.Api.Repos.Item.Item.Copilot.CloudAgent.Configuration
             {
                 { "custom_allowlist", n => { CustomAllowlist = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "enabled_tools", n => { EnabledTools = n.GetObjectValue<global::GitHub.Api.Repos.Item.Item.Copilot.CloudAgent.Configuration.ConfigurationGetResponse_enabled_tools>(global::GitHub.Api.Repos.Item.Item.Copilot.CloudAgent.Configuration.ConfigurationGetResponse_enabled_tools.CreateFromDiscriminatorValue); } },
+                { "is_automations_enabled", n => { IsAutomationsEnabled = n.GetBoolValue(); } },
                 { "is_firewall_enabled", n => { IsFirewallEnabled = n.GetBoolValue(); } },
                 { "is_firewall_recommended_allowlist_enabled", n => { IsFirewallRecommendedAllowlistEnabled = n.GetBoolValue(); } },
                 { "mcp_configuration", n => { McpConfiguration = n.GetObjectValue<global::GitHub.Api.Repos.Item.Item.Copilot.CloudAgent.Configuration.ConfigurationGetResponse_mcp_configuration>(global::GitHub.Api.Repos.Item.Item.Copilot.CloudAgent.Configuration.ConfigurationGetResponse_mcp_configuration.CreateFromDiscriminatorValue); } },
                 { "require_actions_workflow_approval", n => { RequireActionsWorkflowApproval = n.GetBoolValue(); } },
+                { "require_write_access_for_automation_triggers", n => { RequireWriteAccessForAutomationTriggers = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -86,10 +92,12 @@ namespace GitHub.Api.Repos.Item.Item.Copilot.CloudAgent.Configuration
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("custom_allowlist", CustomAllowlist);
             writer.WriteObjectValue<global::GitHub.Api.Repos.Item.Item.Copilot.CloudAgent.Configuration.ConfigurationGetResponse_enabled_tools>("enabled_tools", EnabledTools);
+            writer.WriteBoolValue("is_automations_enabled", IsAutomationsEnabled);
             writer.WriteBoolValue("is_firewall_enabled", IsFirewallEnabled);
             writer.WriteBoolValue("is_firewall_recommended_allowlist_enabled", IsFirewallRecommendedAllowlistEnabled);
             writer.WriteObjectValue<global::GitHub.Api.Repos.Item.Item.Copilot.CloudAgent.Configuration.ConfigurationGetResponse_mcp_configuration>("mcp_configuration", McpConfiguration);
             writer.WriteBoolValue("require_actions_workflow_approval", RequireActionsWorkflowApproval);
+            writer.WriteBoolValue("require_write_access_for_automation_triggers", RequireWriteAccessForAutomationTriggers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

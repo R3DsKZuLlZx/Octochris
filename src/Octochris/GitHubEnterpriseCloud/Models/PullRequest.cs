@@ -243,6 +243,14 @@ namespace GitHub.EnterpriseCloud.Models
 #else
         public string ReviewCommentUrl { get; set; }
 #endif
+        /// <summary>The stack information associated with a pull request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.EnterpriseCloud.Models.PullRequestStack? Stack { get; set; }
+#nullable restore
+#else
+        public global::GitHub.EnterpriseCloud.Models.PullRequestStack Stack { get; set; }
+#endif
         /// <summary>State of this Pull Request. Either `open` or `closed`.</summary>
         public global::GitHub.EnterpriseCloud.Models.PullRequest_state? State { get; set; }
         /// <summary>The statuses_url property</summary>
@@ -346,6 +354,7 @@ namespace GitHub.EnterpriseCloud.Models
                 { "review_comment_url", n => { ReviewCommentUrl = n.GetStringValue(); } },
                 { "review_comments", n => { ReviewComments = n.GetIntValue(); } },
                 { "review_comments_url", n => { ReviewCommentsUrl = n.GetStringValue(); } },
+                { "stack", n => { Stack = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.PullRequestStack>(global::GitHub.EnterpriseCloud.Models.PullRequestStack.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.PullRequest_state>(); } },
                 { "statuses_url", n => { StatusesUrl = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -403,6 +412,7 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteIntValue("review_comments", ReviewComments);
             writer.WriteStringValue("review_comments_url", ReviewCommentsUrl);
             writer.WriteStringValue("review_comment_url", ReviewCommentUrl);
+            writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.PullRequestStack>("stack", Stack);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.PullRequest_state>("state", State);
             writer.WriteStringValue("statuses_url", StatusesUrl);
             writer.WriteStringValue("title", Title);

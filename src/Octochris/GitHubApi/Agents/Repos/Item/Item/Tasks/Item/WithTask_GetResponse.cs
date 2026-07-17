@@ -36,6 +36,14 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Tasks.Item
 #endif
         /// <summary>Type of the task creator</summary>
         public global::GitHub.Api.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_creator_type? CreatorType { get; set; }
+        /// <summary>Custom agent metadata associated with this task</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_custom_agent? CustomAgent { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_custom_agent CustomAgent { get; set; }
+#endif
         /// <summary>Web URL for this task</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,6 +145,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Tasks.Item
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creator", n => { Creator = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_creator>(global::GitHub.Api.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_creator.CreateFromDiscriminatorValue); } },
                 { "creator_type", n => { CreatorType = n.GetEnumValue<global::GitHub.Api.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_creator_type>(); } },
+                { "custom_agent", n => { CustomAgent = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_custom_agent>(global::GitHub.Api.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_custom_agent.CreateFromDiscriminatorValue); } },
                 { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -162,6 +171,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Tasks.Item
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_creator>("creator", Creator);
             writer.WriteEnumValue<global::GitHub.Api.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_creator_type>("creator_type", CreatorType);
+            writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_custom_agent>("custom_agent", CustomAgent);
             writer.WriteStringValue("html_url", HtmlUrl);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);

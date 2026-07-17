@@ -40,6 +40,7 @@ namespace GitHub.Api.Assignments.Item.Accepted_assignments
         /// <returns>A List&lt;global::GitHub.Api.Models.ClassroomAcceptedAssignment&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 410 status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,7 +52,11 @@ namespace GitHub.Api.Assignments.Item.Accepted_assignments
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::GitHub.Api.Models.ClassroomAcceptedAssignment>(requestInfo, global::GitHub.Api.Models.ClassroomAcceptedAssignment.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "410", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
+            };
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::GitHub.Api.Models.ClassroomAcceptedAssignment>(requestInfo, global::GitHub.Api.Models.ClassroomAcceptedAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
