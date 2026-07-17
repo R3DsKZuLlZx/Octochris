@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Metrics.Reports.Enterprise1Day;
 using GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Metrics.Reports.Enterprise28Day;
+using GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Metrics.Reports.Repos1Day;
 using GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Metrics.Reports.UserTeams1Day;
 using GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Metrics.Reports.Users1Day;
 using GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Metrics.Reports.Users28Day;
@@ -28,6 +29,11 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Metrics.Reports
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Metrics.Reports.Enterprise28Day.Enterprise28DayRequestBuilder Enterprise28Day
         {
             get => new global::GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Metrics.Reports.Enterprise28Day.Enterprise28DayRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The repos1Day property</summary>
+        public global::GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Metrics.Reports.Repos1Day.Repos1DayRequestBuilder Repos1Day
+        {
+            get => new global::GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Metrics.Reports.Repos1Day.Repos1DayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The users1Day property</summary>
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Metrics.Reports.Users1Day.Users1DayRequestBuilder Users1Day

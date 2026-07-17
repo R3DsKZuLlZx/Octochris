@@ -103,6 +103,14 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Tasks.Item
 #endif
         /// <summary>Last update timestamp</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>Structured information about billing units consumed by the session.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_sessions_usage? Usage { get; set; }
+#nullable restore
+#else
+        public global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_sessions_usage Usage { get; set; }
+#endif
         /// <summary>The user who created this session</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,6 +158,7 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Tasks.Item
                 { "state", n => { State = n.GetEnumValue<global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_sessions_state>(); } },
                 { "task_id", n => { TaskId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "usage", n => { Usage = n.GetObjectValue<global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_sessions_usage>(global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_sessions_usage.CreateFromDiscriminatorValue); } },
                 { "user", n => { User = n.GetObjectValue<global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_sessions_user>(global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_sessions_user.CreateFromDiscriminatorValue); } },
             };
         }
@@ -174,6 +183,7 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Tasks.Item
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_sessions_state>("state", State);
             writer.WriteStringValue("task_id", TaskId);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_sessions_usage>("usage", Usage);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Tasks.Item.WithTask_GetResponse_sessions_user>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
