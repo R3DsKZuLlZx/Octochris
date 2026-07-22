@@ -13,6 +13,8 @@ namespace GitHub.EnterpriseCloud.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CodeQualitySetupUpdate : IParsable
     {
+        /// <summary>Whether AI findings run for Code Quality on this repository.</summary>
+        public global::GitHub.EnterpriseCloud.Models.CodeQualitySetupUpdate_ai_findings_option? AiFindingsOption { get; set; }
         /// <summary>Languages to be analyzed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,6 +53,7 @@ namespace GitHub.EnterpriseCloud.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ai_findings_option", n => { AiFindingsOption = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeQualitySetupUpdate_ai_findings_option>(); } },
                 { "languages", n => { Languages = n.GetCollectionOfEnumValues<global::GitHub.EnterpriseCloud.Models.CodeQualitySetupUpdate_languages>()?.AsList(); } },
                 { "runner_label", n => { RunnerLabel = n.GetStringValue(); } },
                 { "runner_type", n => { RunnerType = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeQualitySetupUpdate_runner_type>(); } },
@@ -64,6 +67,7 @@ namespace GitHub.EnterpriseCloud.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeQualitySetupUpdate_ai_findings_option>("ai_findings_option", AiFindingsOption);
             writer.WriteCollectionOfEnumValues<global::GitHub.EnterpriseCloud.Models.CodeQualitySetupUpdate_languages>("languages", Languages);
             writer.WriteStringValue("runner_label", RunnerLabel);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeQualitySetupUpdate_runner_type>("runner_type", RunnerType);

@@ -5,36 +5,42 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace GitHub.EnterpriseCloud.Models
+namespace GitHub.Api.Models
 {
     /// <summary>
-    /// Read-only cap-budget projection for the cost center. Only present when the cost center draws from the AI credit pool.
+    /// The intent behind an agent&apos;s action on an issue, including the rationale and confidence. Present (and `null` when the event carried no agent intent) on supported event types while the issue suggestions feature is enabled for the repository; the property is omitted entirely when the feature is disabled or the event type does not support intent.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetAllCostCenters_costCenters_ai_credit_pool_state : IAdditionalDataHolder, IParsable
+    public partial class NullableIssueEventIntent : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The current-month applied amount against the AI credit pool cap, in AI Credits. Null when the cap budget has not been materialized yet.</summary>
-        public double? CurrentAmount { get; set; }
-        /// <summary>The AI credit pool cap target amount, in AI Credits. Null when the cap budget has not been materialized yet.</summary>
-        public double? TargetAmount { get; set; }
+        /// <summary>The confidence level the agent had when performing this action.</summary>
+        public global::GitHub.Api.Models.NullableIssueEventIntent_confidence? Confidence { get; set; }
+        /// <summary>The reasoning the agent provided for the change.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Rationale { get; set; }
+#nullable restore
+#else
+        public string Rationale { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Models.GetAllCostCenters_costCenters_ai_credit_pool_state"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Api.Models.NullableIssueEventIntent"/> and sets the default values.
         /// </summary>
-        public GetAllCostCenters_costCenters_ai_credit_pool_state()
+        public NullableIssueEventIntent()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.GetAllCostCenters_costCenters_ai_credit_pool_state"/></returns>
+        /// <returns>A <see cref="global::GitHub.Api.Models.NullableIssueEventIntent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::GitHub.EnterpriseCloud.Models.GetAllCostCenters_costCenters_ai_credit_pool_state CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::GitHub.Api.Models.NullableIssueEventIntent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::GitHub.EnterpriseCloud.Models.GetAllCostCenters_costCenters_ai_credit_pool_state();
+            return new global::GitHub.Api.Models.NullableIssueEventIntent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,8 +50,8 @@ namespace GitHub.EnterpriseCloud.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "current_amount", n => { CurrentAmount = n.GetDoubleValue(); } },
-                { "target_amount", n => { TargetAmount = n.GetDoubleValue(); } },
+                { "confidence", n => { Confidence = n.GetEnumValue<global::GitHub.Api.Models.NullableIssueEventIntent_confidence>(); } },
+                { "rationale", n => { Rationale = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,8 +61,8 @@ namespace GitHub.EnterpriseCloud.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("current_amount", CurrentAmount);
-            writer.WriteDoubleValue("target_amount", TargetAmount);
+            writer.WriteEnumValue<global::GitHub.Api.Models.NullableIssueEventIntent_confidence>("confidence", Confidence);
+            writer.WriteStringValue("rationale", Rationale);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

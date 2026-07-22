@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.Item;
 using GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.RevokeAll;
+using GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.RevokeCredentialType;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -20,6 +21,11 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations
         public global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.RevokeAll.RevokeAllRequestBuilder RevokeAll
         {
             get => new global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.RevokeAll.RevokeAllRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The revokeCredentialType property</summary>
+        public global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.RevokeCredentialType.RevokeCredentialTypeRequestBuilder RevokeCredentialType
+        {
+            get => new global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.RevokeCredentialType.RevokeCredentialTypeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the GitHub.EnterpriseCloud.enterprises.item.credentialAuthorizations.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

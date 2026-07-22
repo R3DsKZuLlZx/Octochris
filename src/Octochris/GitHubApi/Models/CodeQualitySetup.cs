@@ -15,6 +15,8 @@ namespace GitHub.Api.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The AI findings configuration for the repository.</summary>
+        public global::GitHub.Api.Models.CodeQualitySetup_ai_findings_option? AiFindingsOption { get; set; }
         /// <summary>Languages to be analyzed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +66,7 @@ namespace GitHub.Api.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ai_findings_option", n => { AiFindingsOption = n.GetEnumValue<global::GitHub.Api.Models.CodeQualitySetup_ai_findings_option>(); } },
                 { "languages", n => { Languages = n.GetCollectionOfEnumValues<global::GitHub.Api.Models.CodeQualitySetup_languages>()?.AsList(); } },
                 { "runner_label", n => { RunnerLabel = n.GetStringValue(); } },
                 { "runner_type", n => { RunnerType = n.GetEnumValue<global::GitHub.Api.Models.CodeQualitySetup_runner_type>(); } },
@@ -79,6 +82,7 @@ namespace GitHub.Api.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::GitHub.Api.Models.CodeQualitySetup_ai_findings_option>("ai_findings_option", AiFindingsOption);
             writer.WriteCollectionOfEnumValues<global::GitHub.Api.Models.CodeQualitySetup_languages>("languages", Languages);
             writer.WriteStringValue("runner_label", RunnerLabel);
             writer.WriteEnumValue<global::GitHub.Api.Models.CodeQualitySetup_runner_type>("runner_type", RunnerType);

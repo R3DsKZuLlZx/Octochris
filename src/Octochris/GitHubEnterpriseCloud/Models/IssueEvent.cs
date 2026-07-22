@@ -93,6 +93,14 @@ namespace GitHub.EnterpriseCloud.Models
 #endif
         /// <summary>The id property</summary>
         public long? Id { get; set; }
+        /// <summary>The intent behind an agent&apos;s action on an issue, including the rationale and confidence. Present (and `null` when the event carried no agent intent) on supported event types while the issue suggestions feature is enabled for the repository; the property is omitted entirely when the feature is disabled or the event type does not support intent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.EnterpriseCloud.Models.NullableIssueEventIntent? Intent { get; set; }
+#nullable restore
+#else
+        public global::GitHub.EnterpriseCloud.Models.NullableIssueEventIntent Intent { get; set; }
+#endif
         /// <summary>Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -258,6 +266,7 @@ namespace GitHub.EnterpriseCloud.Models
                 { "dismissed_review", n => { DismissedReview = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.IssueEventDismissedReview>(global::GitHub.EnterpriseCloud.Models.IssueEventDismissedReview.CreateFromDiscriminatorValue); } },
                 { "event", n => { Event = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetLongValue(); } },
+                { "intent", n => { Intent = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.NullableIssueEventIntent>(global::GitHub.EnterpriseCloud.Models.NullableIssueEventIntent.CreateFromDiscriminatorValue); } },
                 { "issue", n => { Issue = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.NullableIssue>(global::GitHub.EnterpriseCloud.Models.NullableIssue.CreateFromDiscriminatorValue); } },
                 { "issue_type", n => { IssueType = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.IssueTypeWebhook>(global::GitHub.EnterpriseCloud.Models.IssueTypeWebhook.CreateFromDiscriminatorValue); } },
                 { "label", n => { Label = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.IssueEventLabel>(global::GitHub.EnterpriseCloud.Models.IssueEventLabel.CreateFromDiscriminatorValue); } },
@@ -295,6 +304,7 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.IssueEventDismissedReview>("dismissed_review", DismissedReview);
             writer.WriteStringValue("event", Event);
             writer.WriteLongValue("id", Id);
+            writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.NullableIssueEventIntent>("intent", Intent);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.NullableIssue>("issue", Issue);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.IssueTypeWebhook>("issue_type", IssueType);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.IssueEventLabel>("label", Label);
