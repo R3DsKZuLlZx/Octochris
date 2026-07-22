@@ -47,6 +47,14 @@ namespace GitHub.Api.Models
 #else
         public List<string> Codespaces { get; set; }
 #endif
+        /// <summary>The commit_signing_keys property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CommitSigningKeys { get; set; }
+#nullable restore
+#else
+        public List<string> CommitSigningKeys { get; set; }
+#endif
         /// <summary>The copilot property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,6 +182,7 @@ namespace GitHub.Api.Models
                 { "actions_macos", n => { ActionsMacos = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "api", n => { Api = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "codespaces", n => { Codespaces = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "commit_signing_keys", n => { CommitSigningKeys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "copilot", n => { Copilot = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "dependabot", n => { Dependabot = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "domains", n => { Domains = n.GetObjectValue<global::GitHub.Api.Models.ApiOverview_domains>(global::GitHub.Api.Models.ApiOverview_domains.CreateFromDiscriminatorValue); } },
@@ -200,6 +209,7 @@ namespace GitHub.Api.Models
             writer.WriteCollectionOfPrimitiveValues<string>("actions_macos", ActionsMacos);
             writer.WriteCollectionOfPrimitiveValues<string>("api", Api);
             writer.WriteCollectionOfPrimitiveValues<string>("codespaces", Codespaces);
+            writer.WriteCollectionOfPrimitiveValues<string>("commit_signing_keys", CommitSigningKeys);
             writer.WriteCollectionOfPrimitiveValues<string>("copilot", Copilot);
             writer.WriteCollectionOfPrimitiveValues<string>("dependabot", Dependabot);
             writer.WriteObjectValue<global::GitHub.Api.Models.ApiOverview_domains>("domains", Domains);

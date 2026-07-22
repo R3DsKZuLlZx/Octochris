@@ -57,6 +57,14 @@ namespace GitHub.Api.Models
 #endif
         /// <summary>The id property</summary>
         public int? Id { get; set; }
+        /// <summary>The intent behind an agent&apos;s action on an issue, including the rationale and confidence. Present (and `null` when the event carried no agent intent) on supported event types while the issue suggestions feature is enabled for the repository; the property is omitted entirely when the feature is disabled or the event type does not support intent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Models.NullableIssueEventIntent? Intent { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Models.NullableIssueEventIntent Intent { get; set; }
+#endif
         /// <summary>The type of issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,6 +128,7 @@ namespace GitHub.Api.Models
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "event", n => { Event = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
+                { "intent", n => { Intent = n.GetObjectValue<global::GitHub.Api.Models.NullableIssueEventIntent>(global::GitHub.Api.Models.NullableIssueEventIntent.CreateFromDiscriminatorValue); } },
                 { "issue_type", n => { IssueType = n.GetObjectValue<global::GitHub.Api.Models.IssueTypeWebhook>(global::GitHub.Api.Models.IssueTypeWebhook.CreateFromDiscriminatorValue); } },
                 { "node_id", n => { NodeId = n.GetStringValue(); } },
                 { "performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<global::GitHub.Api.Models.NullableIntegration>(global::GitHub.Api.Models.NullableIntegration.CreateFromDiscriminatorValue); } },
@@ -139,6 +148,7 @@ namespace GitHub.Api.Models
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("event", Event);
             writer.WriteIntValue("id", Id);
+            writer.WriteObjectValue<global::GitHub.Api.Models.NullableIssueEventIntent>("intent", Intent);
             writer.WriteObjectValue<global::GitHub.Api.Models.IssueTypeWebhook>("issue_type", IssueType);
             writer.WriteStringValue("node_id", NodeId);
             writer.WriteObjectValue<global::GitHub.Api.Models.NullableIntegration>("performed_via_github_app", PerformedViaGithubApp);

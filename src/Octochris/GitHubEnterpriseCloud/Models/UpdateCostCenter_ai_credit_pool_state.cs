@@ -15,9 +15,9 @@ namespace GitHub.EnterpriseCloud.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The current-month applied amount against the AI credit pool cap, in dollars. Null when the cap budget has not been materialized yet.</summary>
+        /// <summary>The current-month applied amount against the AI credit pool cap, in AI Credits. Null when the cap budget has not been materialized yet.</summary>
         public double? CurrentAmount { get; set; }
-        /// <summary>The AI credit pool cap target amount, in dollars. Null when the cap budget has not been materialized yet.</summary>
+        /// <summary>The AI credit pool cap target amount, in AI Credits. Null when the cap budget has not been materialized yet.</summary>
         public double? TargetAmount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Models.UpdateCostCenter_ai_credit_pool_state"/> and sets the default values.
