@@ -76,13 +76,13 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item
 #else
         public global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_title Title { get; set; }
 #endif
-        /// <summary>The name of the issue type to associate with this issue or use `null` to remove the current issue type. Only users with push access can set the type for issues. Without push access to the repository, type changes are silently dropped.</summary>
+        /// <summary>The issue type to associate with this issue. Only users with push access can set the type for issues. Without push access to the repository, type changes are silently dropped.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_type? Type { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_type Type { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody"/> and sets the default values.
@@ -119,7 +119,7 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item
                 { "state", n => { State = n.GetEnumValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_state>(); } },
                 { "state_reason", n => { StateReason = n.GetEnumValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_state_reason>(); } },
                 { "title", n => { Title = n.GetObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_title>(global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_title.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_type>(global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_type.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -139,7 +139,7 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item
             writer.WriteEnumValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_state>("state", State);
             writer.WriteEnumValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_state_reason>("state_reason", StateReason);
             writer.WriteObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_title>("title", Title);
-            writer.WriteStringValue("type", Type);
+            writer.WriteObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
@@ -257,6 +257,73 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item
                 if(Integer != null)
                 {
                     writer.WriteIntValue(null, Integer);
+                }
+                else if(String != null)
+                {
+                    writer.WriteStringValue(null, String);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_typeMember1"/>, <see cref="string"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithIssue_numberPatchRequestBody_type : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_typeMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_typeMember1? WithIssueNumberPatchRequestBodyTypeMember1 { get; set; }
+#nullable restore
+#else
+            public global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_typeMember1 WithIssueNumberPatchRequestBodyTypeMember1 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_type"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_type CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_type();
+                if(parseNode.GetStringValue() is string stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(WithIssueNumberPatchRequestBodyTypeMember1 != null)
+                {
+                    return WithIssueNumberPatchRequestBodyTypeMember1.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(WithIssueNumberPatchRequestBodyTypeMember1 != null)
+                {
+                    writer.WriteObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_typeMember1>(null, WithIssueNumberPatchRequestBodyTypeMember1);
                 }
                 else if(String != null)
                 {

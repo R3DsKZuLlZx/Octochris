@@ -12,8 +12,20 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item
     public partial class WithIssue_numberPatchRequestBody_issue_field_values : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The confidence level for this field value choice.</summary>
+        public global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_issue_field_values_confidence? Confidence { get; set; }
         /// <summary>The ID of the issue field to set</summary>
         public int? FieldId { get; set; }
+        /// <summary>Optional reasoning for setting this field value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Rationale { get; set; }
+#nullable restore
+#else
+        public string Rationale { get; set; }
+#endif
+        /// <summary>If `true`, the change is stored as a pending suggestion for human review rather than applied directly.</summary>
+        public bool? Suggest { get; set; }
         /// <summary>The value to set for the field. For multi-select fields, provide an array of option names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +52,10 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "confidence", n => { Confidence = n.GetEnumValue<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_issue_field_values_confidence>(); } },
                 { "field_id", n => { FieldId = n.GetIntValue(); } },
+                { "rationale", n => { Rationale = n.GetStringValue(); } },
+                { "suggest", n => { Suggest = n.GetBoolValue(); } },
                 { "value", n => { Value = n.GetObjectValue<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_issue_field_values.WithIssue_numberPatchRequestBody_issue_field_values_value>(global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_issue_field_values.WithIssue_numberPatchRequestBody_issue_field_values_value.CreateFromDiscriminatorValue); } },
             };
         }
@@ -51,7 +66,10 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_issue_field_values_confidence>("confidence", Confidence);
             writer.WriteIntValue("field_id", FieldId);
+            writer.WriteStringValue("rationale", Rationale);
+            writer.WriteBoolValue("suggest", Suggest);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_issue_field_values.WithIssue_numberPatchRequestBody_issue_field_values_value>("value", Value);
         }
         /// <summary>

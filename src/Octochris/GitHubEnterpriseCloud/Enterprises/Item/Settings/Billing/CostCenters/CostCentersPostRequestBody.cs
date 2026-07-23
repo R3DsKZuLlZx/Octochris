@@ -14,7 +14,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether the cost center draws from the AI credit pool.- `false` — no cap; the cost center draws from the shared enterprise pool.- `true` — the cost center is capped at an amount derived from its members&apos; license entitlements. Only User and Team resources are allowed.</summary>
+        /// <summary>Whether the cost center draws from the AI credit pool.This can only be enabled for cost centers that contain only user or team resources.- `false` — no cap; the cost center draws from the shared enterprise pool.- `true` — the cost center is capped at an amount derived from its members&apos; license entitlements.</summary>
         public bool? AiCreditPoolEnabled { get; set; }
         /// <summary>The name of the cost center (max length 255 characters)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -22,7 +22,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Timeline
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimelineRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/issues/{issue_number}/timeline{?page*,per_page*}", pathParameters)
+        public TimelineRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/issues/{issue_number}/timeline{?exclude*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Timeline
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimelineRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/issues/{issue_number}/timeline{?page*,per_page*}", rawUrl)
+        public TimelineRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/issues/{issue_number}/timeline{?exclude*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
@@ -96,6 +96,16 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Timeline
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TimelineRequestBuilderGetQueryParameters 
         {
+            /// <summary>A comma-separated list of timeline event names to exclude from the response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("exclude")]
+            public string? Exclude { get; set; }
+#nullable restore
+#else
+            [QueryParameter("exclude")]
+            public string Exclude { get; set; }
+#endif
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }

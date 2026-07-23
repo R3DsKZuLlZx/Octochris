@@ -14,7 +14,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Labels
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The names of the labels to add to the issue&apos;s existing labels. You can also pass an `array` of labels directly, but GitHub recommends passing an object with the `labels` key. To replace all of the labels for an issue, use &quot;[Set labels for an issue](https://docs.github.com/enterprise-cloud@latest/rest/issues/labels#set-labels-for-an-issue).&quot;</summary>
+        /// <summary>The labels to add to the issue&apos;s existing labels. You can also pass an `array` of labels directly, but GitHub recommends passing an object with the `labels` key. To replace all of the labels for an issue, use &quot;[Set labels for an issue](https://docs.github.com/enterprise-cloud@latest/rest/issues/labels#set-labels-for-an-issue).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Labels { get; set; }
