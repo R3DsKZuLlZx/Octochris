@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Insights.Api.TimeStats.Users.Item
         {
         }
         /// <summary>
-        /// Get the number of API requests and rate-limited requests made within an organization by a specific user over a specified time period.
+        /// Get the number of API requests and rate-limited requests made within an organization by a specific user over a specified time period.Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/orgs/api-insights#get-time-stats-by-user" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.EnterpriseCloud.Models.ApiInsightsTimeStats&gt;</returns>
@@ -54,7 +54,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Insights.Api.TimeStats.Users.Item
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Get the number of API requests and rate-limited requests made within an organization by a specific user over a specified time period.
+        /// Get the number of API requests and rate-limited requests made within an organization by a specific user over a specified time period.Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Insights.Api.TimeStats.Users.Item
             return new global::GitHub.EnterpriseCloud.Orgs.Item.Insights.Api.TimeStats.Users.Item.WithUser_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the number of API requests and rate-limited requests made within an organization by a specific user over a specified time period.
+        /// Get the number of API requests and rate-limited requests made within an organization by a specific user over a specified time period.Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithUser_ItemRequestBuilderGetQueryParameters 

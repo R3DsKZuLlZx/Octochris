@@ -5,42 +5,41 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item
+namespace GitHub.Api.Orgs.Item.Artifacts.Metadata.DeploymentRecord.Cluster.Item.Jobs
 {
-    /// <summary>
-    /// At least one of `name` or `ai_credit_pool_enabled` must be provided.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithCost_center_PatchRequestBody : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class JobsPostResponse : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether the cost center draws from the AI credit pool.This can only be enabled for cost centers that contain only user or team resources.- `false` — no cap; the cost center draws from the shared enterprise pool.- `true` — the cost center is capped at an amount derived from its members&apos; license entitlements.</summary>
-        public bool? AiCreditPoolEnabled { get; set; }
-        /// <summary>The new name for the cost center</summary>
+        /// <summary>Deployments that were rejected during authorization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public List<global::GitHub.Api.Orgs.Item.Artifacts.Metadata.DeploymentRecord.Cluster.Item.Jobs.JobsPostResponse_errors>? Errors { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public List<global::GitHub.Api.Orgs.Item.Artifacts.Metadata.DeploymentRecord.Cluster.Item.Jobs.JobsPostResponse_errors> Errors { get; set; }
 #endif
+        /// <summary>The ID of the created job.</summary>
+        public int? JobId { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.WithCost_center_PatchRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Api.Orgs.Item.Artifacts.Metadata.DeploymentRecord.Cluster.Item.Jobs.JobsPostResponse"/> and sets the default values.
         /// </summary>
-        public WithCost_center_PatchRequestBody()
+        public JobsPostResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.WithCost_center_PatchRequestBody"/></returns>
+        /// <returns>A <see cref="global::GitHub.Api.Orgs.Item.Artifacts.Metadata.DeploymentRecord.Cluster.Item.Jobs.JobsPostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.WithCost_center_PatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::GitHub.Api.Orgs.Item.Artifacts.Metadata.DeploymentRecord.Cluster.Item.Jobs.JobsPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.WithCost_center_PatchRequestBody();
+            return new global::GitHub.Api.Orgs.Item.Artifacts.Metadata.DeploymentRecord.Cluster.Item.Jobs.JobsPostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,8 +49,8 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ai_credit_pool_enabled", n => { AiCreditPoolEnabled = n.GetBoolValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::GitHub.Api.Orgs.Item.Artifacts.Metadata.DeploymentRecord.Cluster.Item.Jobs.JobsPostResponse_errors>(global::GitHub.Api.Orgs.Item.Artifacts.Metadata.DeploymentRecord.Cluster.Item.Jobs.JobsPostResponse_errors.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "job_id", n => { JobId = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -61,8 +60,8 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("ai_credit_pool_enabled", AiCreditPoolEnabled);
-            writer.WriteStringValue("name", Name);
+            writer.WriteCollectionOfObjectValues<global::GitHub.Api.Orgs.Item.Artifacts.Metadata.DeploymentRecord.Cluster.Item.Jobs.JobsPostResponse_errors>("errors", Errors);
+            writer.WriteIntValue("job_id", JobId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

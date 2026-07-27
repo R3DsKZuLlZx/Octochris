@@ -34,7 +34,7 @@ namespace GitHub.Api.Orgs.Item.Insights.Api.SummaryStats.Users.Item
         {
         }
         /// <summary>
-        /// Get overall statistics of API requests within the organization for a user.
+        /// Get overall statistics of API requests within the organization for a user.Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/api-insights#get-summary-stats-by-user" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Models.ApiInsightsSummaryStats"/></returns>
@@ -53,7 +53,7 @@ namespace GitHub.Api.Orgs.Item.Insights.Api.SummaryStats.Users.Item
             return await RequestAdapter.SendAsync<global::GitHub.Api.Models.ApiInsightsSummaryStats>(requestInfo, global::GitHub.Api.Models.ApiInsightsSummaryStats.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get overall statistics of API requests within the organization for a user.
+        /// Get overall statistics of API requests within the organization for a user.Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace GitHub.Api.Orgs.Item.Insights.Api.SummaryStats.Users.Item
             return new global::GitHub.Api.Orgs.Item.Insights.Api.SummaryStats.Users.Item.WithUser_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get overall statistics of API requests within the organization for a user.
+        /// Get overall statistics of API requests within the organization for a user.Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithUser_ItemRequestBuilderGetQueryParameters 

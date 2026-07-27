@@ -27,5 +27,9 @@ namespace GitHub.EnterpriseCloud.Models
         #pragma warning disable CS1591
         Replaced,
         #pragma warning restore CS1591
+        [EnumMember(Value = "invalidated")]
+        #pragma warning disable CS1591
+        Invalidated,
+        #pragma warning restore CS1591
     }
 }

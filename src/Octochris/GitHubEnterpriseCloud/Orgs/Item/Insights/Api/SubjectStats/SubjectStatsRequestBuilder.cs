@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Insights.Api.SubjectStats
         {
         }
         /// <summary>
-        /// Get API request statistics for all subjects within an organization within a specified time frame. Subjects can be users or GitHub Apps.
+        /// Get API request statistics for all subjects within an organization within a specified time frame. Subjects can be users or GitHub Apps.Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/orgs/api-insights#get-subject-stats" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.EnterpriseCloud.Models.ApiInsightsSubjectStats&gt;</returns>
@@ -54,7 +54,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Insights.Api.SubjectStats
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Get API request statistics for all subjects within an organization within a specified time frame. Subjects can be users or GitHub Apps.
+        /// Get API request statistics for all subjects within an organization within a specified time frame. Subjects can be users or GitHub Apps.Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Insights.Api.SubjectStats
             return new global::GitHub.EnterpriseCloud.Orgs.Item.Insights.Api.SubjectStats.SubjectStatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get API request statistics for all subjects within an organization within a specified time frame. Subjects can be users or GitHub Apps.
+        /// Get API request statistics for all subjects within an organization within a specified time frame. Subjects can be users or GitHub Apps.Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SubjectStatsRequestBuilderGetQueryParameters 

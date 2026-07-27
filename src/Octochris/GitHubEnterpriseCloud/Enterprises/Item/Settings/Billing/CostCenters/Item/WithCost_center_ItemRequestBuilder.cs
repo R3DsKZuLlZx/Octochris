@@ -102,17 +102,18 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.GetCostCenter>(requestInfo, global::GitHub.EnterpriseCloud.Models.GetCostCenter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an existing cost center name.
-        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/cost-centers#update-a-cost-center-name" />
+        /// Updates an existing cost center.
+        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/cost-centers#update-a-cost-center" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.UpdateCostCenter"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">At least one of `name` or `ai_credit_pool_enabled` must be provided.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 400 status code</exception>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 404 status code</exception>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 409 status code</exception>
+        /// <exception cref="global::GitHub.EnterpriseCloud.Models.ValidationError">When receiving a 422 status code</exception>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 500 status code</exception>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.UpdateCostCenter503Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,6 +133,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
                 { "403", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
                 { "404", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
                 { "409", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
+                { "422", global::GitHub.EnterpriseCloud.Models.ValidationError.CreateFromDiscriminatorValue },
                 { "500", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
                 { "503", global::GitHub.EnterpriseCloud.Models.UpdateCostCenter503Error.CreateFromDiscriminatorValue },
             };
@@ -176,10 +178,10 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return requestInfo;
         }
         /// <summary>
-        /// Updates an existing cost center name.
+        /// Updates an existing cost center.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">At least one of `name` or `ai_credit_pool_enabled` must be provided.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
