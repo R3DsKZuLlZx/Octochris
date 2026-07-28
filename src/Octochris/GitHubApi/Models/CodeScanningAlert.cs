@@ -70,6 +70,14 @@ namespace GitHub.Api.Models
 #else
         public string InstancesUrl { get; private set; }
 #endif
+        /// <summary>Pull requests linked to this alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::GitHub.Api.Models.PullRequestSimple>? LinkedPullRequests { get; set; }
+#nullable restore
+#else
+        public List<global::GitHub.Api.Models.PullRequestSimple> LinkedPullRequests { get; set; }
+#endif
         /// <summary>The most_recent_instance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,6 +151,7 @@ namespace GitHub.Api.Models
                 { "fixed_at", n => { FixedAt = n.GetDateTimeOffsetValue(); } },
                 { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
                 { "instances_url", n => { InstancesUrl = n.GetStringValue(); } },
+                { "linked_pull_requests", n => { LinkedPullRequests = n.GetCollectionOfObjectValues<global::GitHub.Api.Models.PullRequestSimple>(global::GitHub.Api.Models.PullRequestSimple.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "most_recent_instance", n => { MostRecentInstance = n.GetObjectValue<global::GitHub.Api.Models.CodeScanningAlertInstance>(global::GitHub.Api.Models.CodeScanningAlertInstance.CreateFromDiscriminatorValue); } },
                 { "number", n => { Number = n.GetIntValue(); } },
                 { "rule", n => { Rule = n.GetObjectValue<global::GitHub.Api.Models.CodeScanningAlertRule>(global::GitHub.Api.Models.CodeScanningAlertRule.CreateFromDiscriminatorValue); } },
@@ -164,6 +173,7 @@ namespace GitHub.Api.Models
             writer.WriteObjectValue<global::GitHub.Api.Models.NullableSimpleUser>("dismissed_by", DismissedBy);
             writer.WriteStringValue("dismissed_comment", DismissedComment);
             writer.WriteEnumValue<global::GitHub.Api.Models.CodeScanningAlertDismissedReason>("dismissed_reason", DismissedReason);
+            writer.WriteCollectionOfObjectValues<global::GitHub.Api.Models.PullRequestSimple>("linked_pull_requests", LinkedPullRequests);
             writer.WriteObjectValue<global::GitHub.Api.Models.CodeScanningAlertInstance>("most_recent_instance", MostRecentInstance);
             writer.WriteObjectValue<global::GitHub.Api.Models.CodeScanningAlertRule>("rule", Rule);
             writer.WriteEnumValue<global::GitHub.Api.Models.CodeScanningAlertState>("state", State);
