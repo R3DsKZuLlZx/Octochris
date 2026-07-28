@@ -60,6 +60,7 @@ using GitHub.Api.Repos.Item.Item.Rules;
 using GitHub.Api.Repos.Item.Item.Rulesets;
 using GitHub.Api.Repos.Item.Item.SecretScanning;
 using GitHub.Api.Repos.Item.Item.SecurityAdvisories;
+using GitHub.Api.Repos.Item.Item.Stacks;
 using GitHub.Api.Repos.Item.Item.Stargazers;
 using GitHub.Api.Repos.Item.Item.Stats;
 using GitHub.Api.Repos.Item.Item.Statuses;
@@ -383,6 +384,11 @@ namespace GitHub.Api.Repos.Item.Item
         public global::GitHub.Api.Repos.Item.Item.SecurityAdvisories.SecurityAdvisoriesRequestBuilder SecurityAdvisories
         {
             get => new global::GitHub.Api.Repos.Item.Item.SecurityAdvisories.SecurityAdvisoriesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The stacks property</summary>
+        public global::GitHub.Api.Repos.Item.Item.Stacks.StacksRequestBuilder Stacks
+        {
+            get => new global::GitHub.Api.Repos.Item.Item.Stacks.StacksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stargazers property</summary>
         public global::GitHub.Api.Repos.Item.Item.Stargazers.StargazersRequestBuilder Stargazers

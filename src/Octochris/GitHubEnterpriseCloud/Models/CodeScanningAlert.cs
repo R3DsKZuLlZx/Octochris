@@ -70,6 +70,14 @@ namespace GitHub.EnterpriseCloud.Models
 #else
         public string InstancesUrl { get; private set; }
 #endif
+        /// <summary>Pull requests linked to this alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::GitHub.EnterpriseCloud.Models.PullRequestSimple>? LinkedPullRequests { get; set; }
+#nullable restore
+#else
+        public List<global::GitHub.EnterpriseCloud.Models.PullRequestSimple> LinkedPullRequests { get; set; }
+#endif
         /// <summary>The most_recent_instance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,6 +151,7 @@ namespace GitHub.EnterpriseCloud.Models
                 { "fixed_at", n => { FixedAt = n.GetDateTimeOffsetValue(); } },
                 { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
                 { "instances_url", n => { InstancesUrl = n.GetStringValue(); } },
+                { "linked_pull_requests", n => { LinkedPullRequests = n.GetCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Models.PullRequestSimple>(global::GitHub.EnterpriseCloud.Models.PullRequestSimple.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "most_recent_instance", n => { MostRecentInstance = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.CodeScanningAlertInstance>(global::GitHub.EnterpriseCloud.Models.CodeScanningAlertInstance.CreateFromDiscriminatorValue); } },
                 { "number", n => { Number = n.GetIntValue(); } },
                 { "rule", n => { Rule = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.CodeScanningAlertRule>(global::GitHub.EnterpriseCloud.Models.CodeScanningAlertRule.CreateFromDiscriminatorValue); } },
@@ -164,6 +173,7 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.NullableSimpleUser>("dismissed_by", DismissedBy);
             writer.WriteStringValue("dismissed_comment", DismissedComment);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeScanningAlertDismissedReason>("dismissed_reason", DismissedReason);
+            writer.WriteCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Models.PullRequestSimple>("linked_pull_requests", LinkedPullRequests);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.CodeScanningAlertInstance>("most_recent_instance", MostRecentInstance);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.CodeScanningAlertRule>("rule", Rule);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeScanningAlertState>("state", State);

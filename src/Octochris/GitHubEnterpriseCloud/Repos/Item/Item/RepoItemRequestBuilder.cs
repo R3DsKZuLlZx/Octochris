@@ -64,6 +64,7 @@ using GitHub.EnterpriseCloud.Repos.Item.Item.Rules;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Rulesets;
 using GitHub.EnterpriseCloud.Repos.Item.Item.SecretScanning;
 using GitHub.EnterpriseCloud.Repos.Item.Item.SecurityAdvisories;
+using GitHub.EnterpriseCloud.Repos.Item.Item.Stacks;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Stargazers;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Stats;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Statuses;
@@ -407,6 +408,11 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.SecurityAdvisories.SecurityAdvisoriesRequestBuilder SecurityAdvisories
         {
             get => new global::GitHub.EnterpriseCloud.Repos.Item.Item.SecurityAdvisories.SecurityAdvisoriesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The stacks property</summary>
+        public global::GitHub.EnterpriseCloud.Repos.Item.Item.Stacks.StacksRequestBuilder Stacks
+        {
+            get => new global::GitHub.EnterpriseCloud.Repos.Item.Item.Stacks.StacksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stargazers property</summary>
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.Stargazers.StargazersRequestBuilder Stargazers
