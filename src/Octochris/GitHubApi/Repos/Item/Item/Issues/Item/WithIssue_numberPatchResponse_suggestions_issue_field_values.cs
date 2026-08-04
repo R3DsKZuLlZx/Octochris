@@ -14,12 +14,14 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The already_applied property</summary>
-        public bool? AlreadyApplied { get; set; }
         /// <summary>The confidence property</summary>
         public global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchResponse_suggestions_issue_field_values_confidence? Confidence { get; set; }
         /// <summary>The field_id property</summary>
         public int? FieldId { get; set; }
+        /// <summary>The ignored property</summary>
+        public bool? Ignored { get; set; }
+        /// <summary>The ignored_reason property</summary>
+        public global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchResponse_suggestions_issue_field_values_ignored_reason? IgnoredReason { get; set; }
         /// <summary>The rationale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,9 +65,10 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "already_applied", n => { AlreadyApplied = n.GetBoolValue(); } },
                 { "confidence", n => { Confidence = n.GetEnumValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchResponse_suggestions_issue_field_values_confidence>(); } },
                 { "field_id", n => { FieldId = n.GetIntValue(); } },
+                { "ignored", n => { Ignored = n.GetBoolValue(); } },
+                { "ignored_reason", n => { IgnoredReason = n.GetEnumValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchResponse_suggestions_issue_field_values_ignored_reason>(); } },
                 { "rationale", n => { Rationale = n.GetStringValue(); } },
                 { "suggest", n => { Suggest = n.GetBoolValue(); } },
                 { "value", n => { Value = n.GetObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchResponse_suggestions_issue_field_values.WithIssue_numberPatchResponse_suggestions_issue_field_values_value>(global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchResponse_suggestions_issue_field_values.WithIssue_numberPatchResponse_suggestions_issue_field_values_value.CreateFromDiscriminatorValue); } },
@@ -78,9 +81,10 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("already_applied", AlreadyApplied);
             writer.WriteEnumValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchResponse_suggestions_issue_field_values_confidence>("confidence", Confidence);
             writer.WriteIntValue("field_id", FieldId);
+            writer.WriteBoolValue("ignored", Ignored);
+            writer.WriteEnumValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchResponse_suggestions_issue_field_values_ignored_reason>("ignored_reason", IgnoredReason);
             writer.WriteStringValue("rationale", Rationale);
             writer.WriteBoolValue("suggest", Suggest);
             writer.WriteObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchResponse_suggestions_issue_field_values.WithIssue_numberPatchResponse_suggestions_issue_field_values_value>("value", Value);

@@ -47,7 +47,7 @@ namespace GitHub.Api.Orgs.Item.Teams.Item.Repos
         {
         }
         /// <summary>
-        /// Lists a team&apos;s repositories visible to the authenticated user.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
+        /// Lists a team&apos;s repositories visible to the authenticated user.OAuth app tokens and personal access tokens (classic) need the `read:org` or `repo` scope to use this endpoint.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
         /// API method documentation <see href="https://docs.github.com/rest/teams/teams#list-team-repositories" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.Api.Models.MinimalRepository&gt;</returns>
@@ -67,7 +67,7 @@ namespace GitHub.Api.Orgs.Item.Teams.Item.Repos
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Lists a team&apos;s repositories visible to the authenticated user.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
+        /// Lists a team&apos;s repositories visible to the authenticated user.OAuth app tokens and personal access tokens (classic) need the `read:org` or `repo` scope to use this endpoint.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,7 +95,7 @@ namespace GitHub.Api.Orgs.Item.Teams.Item.Repos
             return new global::GitHub.Api.Orgs.Item.Teams.Item.Repos.ReposRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists a team&apos;s repositories visible to the authenticated user.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
+        /// Lists a team&apos;s repositories visible to the authenticated user.OAuth app tokens and personal access tokens (classic) need the `read:org` or `repo` scope to use this endpoint.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReposRequestBuilderGetQueryParameters 

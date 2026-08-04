@@ -34,6 +34,14 @@ namespace GitHub.Api.Orgs.Item.Teams.Item
         public global::GitHub.Api.Orgs.Item.Teams.Item.WithTeam_slugPatchRequestBody_notification_setting? NotificationSetting { get; set; }
         /// <summary>The ID of a team to set as the parent team.</summary>
         public int? ParentTeamId { get; set; }
+        /// <summary>The slug of a team to set as the parent team. Ignored when `parent_team_id` is also provided.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ParentTeamSlug { get; set; }
+#nullable restore
+#else
+        public string ParentTeamSlug { get; set; }
+#endif
         /// <summary>**Closing down notice**. The permission that new repositories will be added to the team with when none is specified.</summary>
         public global::GitHub.Api.Orgs.Item.Teams.Item.WithTeam_slugPatchRequestBody_permission? Permission { get; set; }
         /// <summary>The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. When a team is nested, the `privacy` for parent teams cannot be `secret`. The options are:  **For a non-nested team:**   * `secret` - only visible to organization owners and members of this team.   * `closed` - visible to all members of this organization.  **For a parent or child team:**   * `closed` - visible to all members of this organization.</summary>
@@ -68,6 +76,7 @@ namespace GitHub.Api.Orgs.Item.Teams.Item
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "notification_setting", n => { NotificationSetting = n.GetEnumValue<global::GitHub.Api.Orgs.Item.Teams.Item.WithTeam_slugPatchRequestBody_notification_setting>(); } },
                 { "parent_team_id", n => { ParentTeamId = n.GetIntValue(); } },
+                { "parent_team_slug", n => { ParentTeamSlug = n.GetStringValue(); } },
                 { "permission", n => { Permission = n.GetEnumValue<global::GitHub.Api.Orgs.Item.Teams.Item.WithTeam_slugPatchRequestBody_permission>(); } },
                 { "privacy", n => { Privacy = n.GetEnumValue<global::GitHub.Api.Orgs.Item.Teams.Item.WithTeam_slugPatchRequestBody_privacy>(); } },
             };
@@ -83,6 +92,7 @@ namespace GitHub.Api.Orgs.Item.Teams.Item
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::GitHub.Api.Orgs.Item.Teams.Item.WithTeam_slugPatchRequestBody_notification_setting>("notification_setting", NotificationSetting);
             writer.WriteIntValue("parent_team_id", ParentTeamId);
+            writer.WriteStringValue("parent_team_slug", ParentTeamSlug);
             writer.WriteEnumValue<global::GitHub.Api.Orgs.Item.Teams.Item.WithTeam_slugPatchRequestBody_permission>("permission", Permission);
             writer.WriteEnumValue<global::GitHub.Api.Orgs.Item.Teams.Item.WithTeam_slugPatchRequestBody_privacy>("privacy", Privacy);
             writer.WriteAdditionalData(AdditionalData);

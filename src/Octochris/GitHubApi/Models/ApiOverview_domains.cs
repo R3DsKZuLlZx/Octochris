@@ -62,6 +62,14 @@ namespace GitHub.Api.Models
 #else
         public List<string> Packages { get; set; }
 #endif
+        /// <summary>The storage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Storage { get; set; }
+#nullable restore
+#else
+        public List<string> Storage { get; set; }
+#endif
         /// <summary>The website property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,6 +109,7 @@ namespace GitHub.Api.Models
                 { "codespaces", n => { Codespaces = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "copilot", n => { Copilot = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "packages", n => { Packages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "storage", n => { Storage = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "website", n => { Website = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -117,6 +126,7 @@ namespace GitHub.Api.Models
             writer.WriteCollectionOfPrimitiveValues<string>("codespaces", Codespaces);
             writer.WriteCollectionOfPrimitiveValues<string>("copilot", Copilot);
             writer.WriteCollectionOfPrimitiveValues<string>("packages", Packages);
+            writer.WriteCollectionOfPrimitiveValues<string>("storage", Storage);
             writer.WriteCollectionOfPrimitiveValues<string>("website", Website);
             writer.WriteAdditionalData(AdditionalData);
         }
