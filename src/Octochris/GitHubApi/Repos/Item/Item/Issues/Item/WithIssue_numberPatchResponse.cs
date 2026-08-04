@@ -13,7 +13,7 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item
     public partial class WithIssue_numberPatchResponse : global::GitHub.Api.Models.Issue, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Pending suggestions for each suggestible field (`type`,`issue_field_values`, `labels`, `assignees`, `state`) therequest touched. Omitted for fields not in the request orwith no pending suggestions. Items tagged `already_applied`are echoes of the current request&apos;s inputs whose target isalready applied to the issue; they are not persisted aspending suggestions.</summary>
+        /// <summary>Pending suggestions for each suggestible field (`type`,`issue_field_values`, `labels`, `assignees`, `state`) therequest touched. Omitted for fields not in the request orwith no pending or ignored suggestions. Items tagged`ignored` are echoes of the current request&apos;s inputs thatwere not persisted as pending suggestions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchResponse_suggestions? Suggestions { get; set; }

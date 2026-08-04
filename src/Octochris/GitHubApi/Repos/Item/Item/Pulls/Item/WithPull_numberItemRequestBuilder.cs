@@ -6,6 +6,7 @@ using GitHub.Api.Repos.Item.Item.Pulls.Item.Comments;
 using GitHub.Api.Repos.Item.Item.Pulls.Item.Commits;
 using GitHub.Api.Repos.Item.Item.Pulls.Item.Files;
 using GitHub.Api.Repos.Item.Item.Pulls.Item.Merge;
+using GitHub.Api.Repos.Item.Item.Pulls.Item.MergeAsync;
 using GitHub.Api.Repos.Item.Item.Pulls.Item.Requested_reviewers;
 using GitHub.Api.Repos.Item.Item.Pulls.Item.Reviews;
 using GitHub.Api.Repos.Item.Item.Pulls.Item.UpdateBranch;
@@ -49,6 +50,11 @@ namespace GitHub.Api.Repos.Item.Item.Pulls.Item
         public global::GitHub.Api.Repos.Item.Item.Pulls.Item.Merge.MergeRequestBuilder Merge
         {
             get => new global::GitHub.Api.Repos.Item.Item.Pulls.Item.Merge.MergeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The mergeAsync property</summary>
+        public global::GitHub.Api.Repos.Item.Item.Pulls.Item.MergeAsync.MergeAsyncRequestBuilder MergeAsync
+        {
+            get => new global::GitHub.Api.Repos.Item.Item.Pulls.Item.MergeAsync.MergeAsyncRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The requested_reviewers property</summary>
         public global::GitHub.Api.Repos.Item.Item.Pulls.Item.Requested_reviewers.Requested_reviewersRequestBuilder Requested_reviewers

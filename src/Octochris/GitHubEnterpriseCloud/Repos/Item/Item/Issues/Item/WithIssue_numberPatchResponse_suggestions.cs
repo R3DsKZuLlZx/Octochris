@@ -8,7 +8,7 @@ using System;
 namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item
 {
     /// <summary>
-    /// Pending suggestions for each suggestible field (`type`,`issue_field_values`, `labels`, `assignees`, `state`) therequest touched. Omitted for fields not in the request orwith no pending suggestions. Items tagged `already_applied`are echoes of the current request&apos;s inputs whose target isalready applied to the issue; they are not persisted aspending suggestions.
+    /// Pending suggestions for each suggestible field (`type`,`issue_field_values`, `labels`, `assignees`, `state`) therequest touched. Omitted for fields not in the request orwith no pending or ignored suggestions. Items tagged`ignored` are echoes of the current request&apos;s inputs thatwere not persisted as pending suggestions.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithIssue_numberPatchResponse_suggestions : IAdditionalDataHolder, IParsable

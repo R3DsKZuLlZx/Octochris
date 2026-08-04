@@ -14,12 +14,14 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The already_applied property</summary>
-        public bool? AlreadyApplied { get; set; }
         /// <summary>The confidence property</summary>
         public global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchResponse_suggestions_state_confidence? Confidence { get; set; }
         /// <summary>The duplicate_issue_id property</summary>
         public int? DuplicateIssueId { get; set; }
+        /// <summary>The ignored property</summary>
+        public bool? Ignored { get; set; }
+        /// <summary>The ignored_reason property</summary>
+        public global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchResponse_suggestions_state_ignored_reason? IgnoredReason { get; set; }
         /// <summary>The rationale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,9 +73,10 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "already_applied", n => { AlreadyApplied = n.GetBoolValue(); } },
                 { "confidence", n => { Confidence = n.GetEnumValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchResponse_suggestions_state_confidence>(); } },
                 { "duplicate_issue_id", n => { DuplicateIssueId = n.GetIntValue(); } },
+                { "ignored", n => { Ignored = n.GetBoolValue(); } },
+                { "ignored_reason", n => { IgnoredReason = n.GetEnumValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchResponse_suggestions_state_ignored_reason>(); } },
                 { "rationale", n => { Rationale = n.GetStringValue(); } },
                 { "state_reason", n => { StateReason = n.GetStringValue(); } },
                 { "suggest", n => { Suggest = n.GetBoolValue(); } },
@@ -87,9 +90,10 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("already_applied", AlreadyApplied);
             writer.WriteEnumValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchResponse_suggestions_state_confidence>("confidence", Confidence);
             writer.WriteIntValue("duplicate_issue_id", DuplicateIssueId);
+            writer.WriteBoolValue("ignored", Ignored);
+            writer.WriteEnumValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchResponse_suggestions_state_ignored_reason>("ignored_reason", IgnoredReason);
             writer.WriteStringValue("rationale", Rationale);
             writer.WriteStringValue("state_reason", StateReason);
             writer.WriteBoolValue("suggest", Suggest);
