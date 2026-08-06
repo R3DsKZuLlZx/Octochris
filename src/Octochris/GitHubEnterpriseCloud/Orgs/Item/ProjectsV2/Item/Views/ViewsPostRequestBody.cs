@@ -20,6 +20,14 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.ProjectsV2.Item.Views
 #else
         public string Filter { get; set; }
 #endif
+        /// <summary>The field IDs to group items by (horizontal grouping). Supports a single field. The field must support grouping; fields such as `Title`, `Reviewers`, `Linked pull requests`, `Sub-issues progress`, `Tracked by`, and `Tracks` cannot be grouped on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<int?>? GroupBy { get; set; }
+#nullable restore
+#else
+        public List<int?> GroupBy { get; set; }
+#endif
         /// <summary>The layout of the view.</summary>
         public global::GitHub.EnterpriseCloud.Orgs.Item.ProjectsV2.Item.Views.ViewsPostRequestBody_layout? Layout { get; set; }
         /// <summary>The name of the view.</summary>
@@ -29,6 +37,22 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.ProjectsV2.Item.Views
 #nullable restore
 #else
         public string Name { get; set; }
+#endif
+        /// <summary>Sorting configuration for the view. Each element is a two-element array of `[field_id, direction]` where `direction` is `&quot;asc&quot;` or `&quot;desc&quot;`. Supports multiple sort criteria applied in order.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SortBy { get; set; }
+#nullable restore
+#else
+        public UntypedNode SortBy { get; set; }
+#endif
+        /// <summary>The field IDs to use as columns in `board` layout (vertical grouping). Supports a single field. The field must support grouping; fields such as `Title`, `Reviewers`, `Linked pull requests`, `Sub-issues progress`, `Tracked by`, and `Tracks` cannot be grouped on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<int?>? VerticalGroupBy { get; set; }
+#nullable restore
+#else
+        public List<int?> VerticalGroupBy { get; set; }
 #endif
         /// <summary>`visible_fields` is not applicable to `roadmap` layout views.For `table` and `board` layouts, this represents the field IDs that should be visible in the view. If not provided, the default visible fields will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,8 +81,11 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.ProjectsV2.Item.Views
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "filter", n => { Filter = n.GetStringValue(); } },
+                { "group_by", n => { GroupBy = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "layout", n => { Layout = n.GetEnumValue<global::GitHub.EnterpriseCloud.Orgs.Item.ProjectsV2.Item.Views.ViewsPostRequestBody_layout>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "sort_by", n => { SortBy = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "vertical_group_by", n => { VerticalGroupBy = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "visible_fields", n => { VisibleFields = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
             };
         }
@@ -70,8 +97,11 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.ProjectsV2.Item.Views
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("filter", Filter);
+            writer.WriteCollectionOfPrimitiveValues<int?>("group_by", GroupBy);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Orgs.Item.ProjectsV2.Item.Views.ViewsPostRequestBody_layout>("layout", Layout);
             writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<UntypedNode>("sort_by", SortBy);
+            writer.WriteCollectionOfPrimitiveValues<int?>("vertical_group_by", VerticalGroupBy);
             writer.WriteCollectionOfPrimitiveValues<int?>("visible_fields", VisibleFields);
         }
     }

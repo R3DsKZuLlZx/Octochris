@@ -50,6 +50,8 @@ namespace GitHub.EnterpriseCloud.Models
 #else
         public global::GitHub.EnterpriseCloud.Models.Budget.Budget_budget_type BudgetType { get; set; }
 #endif
+        /// <summary>The amount consumed for a user-scoped budget, or for a multi-user budget when filtering by user.</summary>
+        public double? ConsumedAmount { get; set; }
         /// <summary>The unique identifier for the budget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,6 +101,7 @@ namespace GitHub.EnterpriseCloud.Models
                 { "budget_product_sku", n => { BudgetProductSku = n.GetStringValue(); } },
                 { "budget_scope", n => { BudgetScope = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.Budget_budget_scope>(); } },
                 { "budget_type", n => { BudgetType = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.Budget.Budget_budget_type>(global::GitHub.EnterpriseCloud.Models.Budget.Budget_budget_type.CreateFromDiscriminatorValue); } },
+                { "consumed_amount", n => { ConsumedAmount = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "prevent_further_usage", n => { PreventFurtherUsage = n.GetBoolValue(); } },
                 { "user", n => { User = n.GetStringValue(); } },
@@ -117,6 +120,7 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteStringValue("budget_product_sku", BudgetProductSku);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.Budget_budget_scope>("budget_scope", BudgetScope);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.Budget.Budget_budget_type>("budget_type", BudgetType);
+            writer.WriteDoubleValue("consumed_amount", ConsumedAmount);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("prevent_further_usage", PreventFurtherUsage);
             writer.WriteStringValue("user", User);

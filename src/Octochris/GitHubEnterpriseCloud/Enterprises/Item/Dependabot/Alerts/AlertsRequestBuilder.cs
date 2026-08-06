@@ -22,7 +22,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Dependabot.Alerts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/dependabot/alerts{?after*,assignee*,before*,classification*,direction*,ecosystem*,epss_percentage*,has*,package*,per_page*,scope*,severity*,sort*,state*}", pathParameters)
+        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/dependabot/alerts{?after*,assignee*,before*,classification*,direction*,ecosystem*,epss_percentage*,has*,package*,per_page*,relationship*,scope*,severity*,sort*,state*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Dependabot.Alerts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/dependabot/alerts{?after*,assignee*,before*,classification*,direction*,ecosystem*,epss_percentage*,has*,package*,per_page*,scope*,severity*,sort*,state*}", rawUrl)
+        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/dependabot/alerts{?after*,assignee*,before*,classification*,direction*,ecosystem*,epss_percentage*,has*,package*,per_page*,relationship*,scope*,severity*,sort*,state*}", rawUrl)
         {
         }
         /// <summary>
@@ -193,6 +193,16 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Dependabot.Alerts
             /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            /// <summary>A comma-separated list of relationships of the vulnerable dependency to your project. If specified, only alerts with these relationships will be returned.&gt; [!NOTE]&gt; We are rolling out support for dependency relationship across ecosystems. This value will be &quot;unknown&quot; for all dependencies in unsupported ecosystems.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("relationship")]
+            public string? Relationship { get; set; }
+#nullable restore
+#else
+            [QueryParameter("relationship")]
+            public string Relationship { get; set; }
+#endif
             /// <summary>The scope of the vulnerable dependency. If specified, only alerts with this scope will be returned.</summary>
             [Obsolete("This property is deprecated, use ScopeAsGetScopeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
