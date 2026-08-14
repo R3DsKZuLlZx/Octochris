@@ -40,7 +40,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
         {
         }
         /// <summary>
-        /// Archieves a cost center by ID. The authenticated user must be an enterprise admin.
+        /// Archives a cost center by ID. Enterprise owners and billing managers can archive any cost center. Organization owners can archive cost centers associated with resources they administer.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/cost-centers#delete-a-cost-center" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.DeleteCostCenter"/></returns>
@@ -72,7 +72,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.DeleteCostCenter>(requestInfo, global::GitHub.EnterpriseCloud.Models.DeleteCostCenter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a cost center by ID. The authenticated user must be an enterprise admin.
+        /// Gets a cost center by ID. Enterprise owners and billing managers can view any cost center. Organization owners can view cost centers associated with resources they administer.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/cost-centers#get-a-cost-center-by-id" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.GetCostCenter"/></returns>
@@ -102,7 +102,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.GetCostCenter>(requestInfo, global::GitHub.EnterpriseCloud.Models.GetCostCenter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an existing cost center.
+        /// Updates an existing cost center. Enterprise owners and billing managers can update any cost center. Organization owners can update cost centers associated with resources they administer.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/cost-centers#update-a-cost-center" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.UpdateCostCenter"/></returns>
@@ -140,7 +140,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.UpdateCostCenter>(requestInfo, global::GitHub.EnterpriseCloud.Models.UpdateCostCenter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archieves a cost center by ID. The authenticated user must be an enterprise admin.
+        /// Archives a cost center by ID. Enterprise owners and billing managers can archive any cost center. Organization owners can archive cost centers associated with resources they administer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return requestInfo;
         }
         /// <summary>
-        /// Gets a cost center by ID. The authenticated user must be an enterprise admin.
+        /// Gets a cost center by ID. Enterprise owners and billing managers can view any cost center. Organization owners can view cost centers associated with resources they administer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +178,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return requestInfo;
         }
         /// <summary>
-        /// Updates an existing cost center.
+        /// Updates an existing cost center. Enterprise owners and billing managers can update any cost center. Organization owners can update cost centers associated with resources they administer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">At least one of `name` or `ai_credit_pool_enabled` must be provided.</param>
@@ -217,7 +217,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
         {
         }
         /// <summary>
-        /// Gets a cost center by ID. The authenticated user must be an enterprise admin.
+        /// Gets a cost center by ID. Enterprise owners and billing managers can view any cost center. Organization owners can view cost centers associated with resources they administer.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithCost_center_ItemRequestBuilderGetQueryParameters 

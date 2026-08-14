@@ -127,7 +127,7 @@ namespace GitHub.Api.Repos.Item.Item.Actions.Workflows.Item.Runs
 #endif
             /// <summary>Returns workflow runs with the `check_suite_id` that you specify.</summary>
             [QueryParameter("check_suite_id")]
-            public int? CheckSuiteId { get; set; }
+            public long? CheckSuiteId { get; set; }
             /// <summary>Returns workflow runs created within the given date-time range. For more information on the syntax, see &quot;[Understanding the search syntax](https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates).&quot;</summary>
             [QueryParameter("created")]
             public DateTimeOffset? Created { get; set; }

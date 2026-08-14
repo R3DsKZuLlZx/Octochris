@@ -40,7 +40,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item
         {
         }
         /// <summary>
-        /// Deletes a budget by ID. The authenticated user must be an enterprise admin.
+        /// Deletes a budget by ID. Enterprise owners and billing managers can delete any budget in the enterprise. Organization administrators can delete budgets scoped to organizations they administer, and repository administrators can delete budgets scoped to repositories they administer.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/budgets#delete-a-budget" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.DeleteBudget"/></returns>
@@ -72,7 +72,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.DeleteBudget>(requestInfo, global::GitHub.EnterpriseCloud.Models.DeleteBudget.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a budget by ID. The authenticated user must be an enterprise admin or billing manager.
+        /// Gets a budget by ID. Enterprise owners and billing managers can view any budget in the enterprise. Organization administrators can view budgets scoped to organizations and repositories they administer.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/budgets#get-a-budget-by-id" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.GetBudget"/></returns>
@@ -142,7 +142,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.UpdateBudget>(requestInfo, global::GitHub.EnterpriseCloud.Models.UpdateBudget.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a budget by ID. The authenticated user must be an enterprise admin.
+        /// Deletes a budget by ID. Enterprise owners and billing managers can delete any budget in the enterprise. Organization administrators can delete budgets scoped to organizations they administer, and repository administrators can delete budgets scoped to repositories they administer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +161,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Gets a budget by ID. The authenticated user must be an enterprise admin or billing manager.
+        /// Gets a budget by ID. Enterprise owners and billing managers can view any budget in the enterprise. Organization administrators can view budgets scoped to organizations and repositories they administer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

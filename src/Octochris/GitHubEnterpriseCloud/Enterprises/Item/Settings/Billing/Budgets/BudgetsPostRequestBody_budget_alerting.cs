@@ -14,7 +14,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Array of user login names who will receive alerts</summary>
+        /// <summary>Array of user login names who will receive alerts. Rejected for user-scope as alerting is always disabled for them.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AlertRecipients { get; set; }
@@ -22,7 +22,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets
 #else
         public List<string> AlertRecipients { get; set; }
 #endif
-        /// <summary>Whether alerts are enabled for this budget</summary>
+        /// <summary>Whether alerts are enabled for this budget. Rejected for user-scope as alerting is always disabled for them.</summary>
         public bool? WillAlert { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.BudgetsPostRequestBody_budget_alerting"/> and sets the default values.

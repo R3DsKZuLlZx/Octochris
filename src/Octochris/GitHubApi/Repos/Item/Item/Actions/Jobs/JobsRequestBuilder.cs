@@ -18,7 +18,7 @@ namespace GitHub.Api.Repos.Item.Item.Actions.Jobs
         /// <summary>Gets an item from the GitHub.Api.repos.item.item.actions.jobs.item collection</summary>
         /// <param name="position">The unique identifier of the job.</param>
         /// <returns>A <see cref="global::GitHub.Api.Repos.Item.Item.Actions.Jobs.Item.WithJob_ItemRequestBuilder"/></returns>
-        public global::GitHub.Api.Repos.Item.Item.Actions.Jobs.Item.WithJob_ItemRequestBuilder this[int position]
+        public global::GitHub.Api.Repos.Item.Item.Actions.Jobs.Item.WithJob_ItemRequestBuilder this[long position]
         {
             get
             {

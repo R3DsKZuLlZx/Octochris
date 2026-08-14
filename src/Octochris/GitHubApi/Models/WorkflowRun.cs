@@ -40,7 +40,7 @@ namespace GitHub.Api.Models
         public string CancelUrl { get; set; }
 #endif
         /// <summary>The ID of the associated check suite.</summary>
-        public int? CheckSuiteId { get; set; }
+        public long? CheckSuiteId { get; set; }
         /// <summary>The node ID of the associated check suite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,7 +126,7 @@ namespace GitHub.Api.Models
         public string HtmlUrl { get; set; }
 #endif
         /// <summary>The ID of the workflow run.</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The URL to the jobs for the workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -277,7 +277,7 @@ namespace GitHub.Api.Models
                 { "actor", n => { Actor = n.GetObjectValue<global::GitHub.Api.Models.SimpleUser>(global::GitHub.Api.Models.SimpleUser.CreateFromDiscriminatorValue); } },
                 { "artifacts_url", n => { ArtifactsUrl = n.GetStringValue(); } },
                 { "cancel_url", n => { CancelUrl = n.GetStringValue(); } },
-                { "check_suite_id", n => { CheckSuiteId = n.GetIntValue(); } },
+                { "check_suite_id", n => { CheckSuiteId = n.GetLongValue(); } },
                 { "check_suite_node_id", n => { CheckSuiteNodeId = n.GetStringValue(); } },
                 { "check_suite_url", n => { CheckSuiteUrl = n.GetStringValue(); } },
                 { "conclusion", n => { Conclusion = n.GetStringValue(); } },
@@ -290,7 +290,7 @@ namespace GitHub.Api.Models
                 { "head_repository_id", n => { HeadRepositoryId = n.GetIntValue(); } },
                 { "head_sha", n => { HeadSha = n.GetStringValue(); } },
                 { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "jobs_url", n => { JobsUrl = n.GetStringValue(); } },
                 { "logs_url", n => { LogsUrl = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -322,7 +322,7 @@ namespace GitHub.Api.Models
             writer.WriteObjectValue<global::GitHub.Api.Models.SimpleUser>("actor", Actor);
             writer.WriteStringValue("artifacts_url", ArtifactsUrl);
             writer.WriteStringValue("cancel_url", CancelUrl);
-            writer.WriteIntValue("check_suite_id", CheckSuiteId);
+            writer.WriteLongValue("check_suite_id", CheckSuiteId);
             writer.WriteStringValue("check_suite_node_id", CheckSuiteNodeId);
             writer.WriteStringValue("check_suite_url", CheckSuiteUrl);
             writer.WriteStringValue("conclusion", Conclusion);
@@ -335,7 +335,7 @@ namespace GitHub.Api.Models
             writer.WriteIntValue("head_repository_id", HeadRepositoryId);
             writer.WriteStringValue("head_sha", HeadSha);
             writer.WriteStringValue("html_url", HtmlUrl);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("jobs_url", JobsUrl);
             writer.WriteStringValue("logs_url", LogsUrl);
             writer.WriteStringValue("name", Name);

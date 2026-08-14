@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item.
         {
         }
         /// <summary>
-        /// Lists per-user budget state for a multi-user customer scoped budget. The authenticated user must be an enterprise admin or billing manager.
+        /// Lists per-user budget state for a multi-user customer scoped budget. Enterprise owners and billing managers can view state across the enterprise. Organization administrators can view state for budgets scoped to organizations they administer.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/budgets#get-user-states-for-a-multi-user-budget" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.GetBudgetUserStates"/></returns>
@@ -64,7 +64,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item.
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.GetBudgetUserStates>(requestInfo, global::GitHub.EnterpriseCloud.Models.GetBudgetUserStates.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists per-user budget state for a multi-user customer scoped budget. The authenticated user must be an enterprise admin or billing manager.
+        /// Lists per-user budget state for a multi-user customer scoped budget. Enterprise owners and billing managers can view state across the enterprise. Organization administrators can view state for budgets scoped to organizations they administer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -92,7 +92,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item.
             return new global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item.UserStates.UserStatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists per-user budget state for a multi-user customer scoped budget. The authenticated user must be an enterprise admin or billing manager.
+        /// Lists per-user budget state for a multi-user customer scoped budget. Enterprise owners and billing managers can view state across the enterprise. Organization administrators can view state for budgets scoped to organizations they administer.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserStatesRequestBuilderGetQueryParameters 

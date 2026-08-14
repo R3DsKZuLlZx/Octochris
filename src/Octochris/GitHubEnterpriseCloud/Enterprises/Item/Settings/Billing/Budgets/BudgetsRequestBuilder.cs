@@ -47,7 +47,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets
         {
         }
         /// <summary>
-        /// Gets all budgets for an enterprise. The authenticated actor must have permission to view enterprise billing.Each page returns up to 100 budgets.
+        /// Gets budgets for an enterprise. Enterprise owners and billing managers can view all budgets. Organization administrators can view budgets scoped to organizations and repositories they administer.Each page returns up to 100 budgets.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/budgets#get-all-budgets" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.Get_all_budgets"/></returns>
@@ -109,7 +109,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.CreateBudget>(requestInfo, global::GitHub.EnterpriseCloud.Models.CreateBudget.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets all budgets for an enterprise. The authenticated actor must have permission to view enterprise billing.Each page returns up to 100 budgets.
+        /// Gets budgets for an enterprise. Enterprise owners and billing managers can view all budgets. Organization administrators can view budgets scoped to organizations and repositories they administer.Each page returns up to 100 budgets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets
             return new global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.BudgetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Gets all budgets for an enterprise. The authenticated actor must have permission to view enterprise billing.Each page returns up to 100 budgets.
+        /// Gets budgets for an enterprise. Enterprise owners and billing managers can view all budgets. Organization administrators can view budgets scoped to organizations and repositories they administer.Each page returns up to 100 budgets.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BudgetsRequestBuilderGetQueryParameters 
