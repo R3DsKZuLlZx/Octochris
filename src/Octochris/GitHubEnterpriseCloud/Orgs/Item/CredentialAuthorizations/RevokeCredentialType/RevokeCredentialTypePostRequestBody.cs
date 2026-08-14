@@ -5,41 +5,33 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item
+namespace GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.RevokeCredentialType
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithBudget_PatchRequestBody_budget_alerting : IAdditionalDataHolder, IParsable
+    public partial class RevokeCredentialTypePostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Array of user login names who will receive alerts. Ignored for user-scope as alerting is always disabled for them.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? AlertRecipients { get; set; }
-#nullable restore
-#else
-        public List<string> AlertRecipients { get; set; }
-#endif
-        /// <summary>Whether alerts are enabled for this budget. Ignored for user-scope as alerting is always disabled for them.</summary>
-        public bool? WillAlert { get; set; }
+        /// <summary>The type of credential to revoke across the organization.</summary>
+        public global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.RevokeCredentialType.RevokeCredentialTypePostRequestBody_credential_type? CredentialType { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item.WithBudget_PatchRequestBody_budget_alerting"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.RevokeCredentialType.RevokeCredentialTypePostRequestBody"/> and sets the default values.
         /// </summary>
-        public WithBudget_PatchRequestBody_budget_alerting()
+        public RevokeCredentialTypePostRequestBody()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item.WithBudget_PatchRequestBody_budget_alerting"/></returns>
+        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.RevokeCredentialType.RevokeCredentialTypePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item.WithBudget_PatchRequestBody_budget_alerting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.RevokeCredentialType.RevokeCredentialTypePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item.WithBudget_PatchRequestBody_budget_alerting();
+            return new global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.RevokeCredentialType.RevokeCredentialTypePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,8 +41,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alert_recipients", n => { AlertRecipients = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "will_alert", n => { WillAlert = n.GetBoolValue(); } },
+                { "credential_type", n => { CredentialType = n.GetEnumValue<global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.RevokeCredentialType.RevokeCredentialTypePostRequestBody_credential_type>(); } },
             };
         }
         /// <summary>
@@ -60,8 +51,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("alert_recipients", AlertRecipients);
-            writer.WriteBoolValue("will_alert", WillAlert);
+            writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.RevokeCredentialType.RevokeCredentialTypePostRequestBody_credential_type>("credential_type", CredentialType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

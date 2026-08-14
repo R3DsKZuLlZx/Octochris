@@ -21,7 +21,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.CheckRuns
         /// <summary>Gets an item from the GitHub.EnterpriseCloud.repos.item.item.checkRuns.item collection</summary>
         /// <param name="position">The unique identifier of the check run.</param>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Repos.Item.Item.CheckRuns.Item.WithCheck_run_ItemRequestBuilder"/></returns>
-        public global::GitHub.EnterpriseCloud.Repos.Item.Item.CheckRuns.Item.WithCheck_run_ItemRequestBuilder this[int position]
+        public global::GitHub.EnterpriseCloud.Repos.Item.Item.CheckRuns.Item.WithCheck_run_ItemRequestBuilder this[long position]
         {
             get
             {

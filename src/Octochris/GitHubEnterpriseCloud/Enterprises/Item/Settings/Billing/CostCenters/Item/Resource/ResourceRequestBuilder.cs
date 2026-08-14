@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
         {
         }
         /// <summary>
-        /// Remove resources from a cost center.The usage for the resources will no longer be charged to the cost center&apos;s budget. The authenticated user must be an enterprise admin in order to use this endpoint.
+        /// Remove resources from a cost center.The usage for the resources will no longer be charged to the cost center&apos;s budget. Enterprise owners and billing managers can remove any resource. Organization owners can remove non-team resources from cost centers associated with resources they administer.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/cost-centers#remove-resources-from-a-cost-center" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceDeleteResponse"/></returns>
@@ -66,7 +66,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceDeleteResponse>(requestInfo, global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove resources from a cost center.The usage for the resources will no longer be charged to the cost center&apos;s budget. The authenticated user must be an enterprise admin in order to use this endpoint.
+        /// Remove resources from a cost center.The usage for the resources will no longer be charged to the cost center&apos;s budget. Enterprise owners and billing managers can remove any resource. Organization owners can remove non-team resources from cost centers associated with resources they administer.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/cost-centers#remove-resources-from-a-cost-center" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceResponse"/></returns>
@@ -99,7 +99,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceResponse>(requestInfo, global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds resources to a cost center.The usage for the resources will be charged to the cost center&apos;s budget. The authenticated user must be an enterprise admin in order to use this endpoint.
+        /// Adds resources to a cost center.The usage for the resources will be charged to the cost center&apos;s budget. Enterprise owners and billing managers can add any resource. Organization owners can add non-team resources to cost centers associated with resources they administer.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/cost-centers#add-resources-to-a-cost-center" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourcePostResponse"/></returns>
@@ -133,7 +133,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourcePostResponse>(requestInfo, global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourcePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds resources to a cost center.The usage for the resources will be charged to the cost center&apos;s budget. The authenticated user must be an enterprise admin in order to use this endpoint.
+        /// Adds resources to a cost center.The usage for the resources will be charged to the cost center&apos;s budget. Enterprise owners and billing managers can add any resource. Organization owners can add non-team resources to cost centers associated with resources they administer.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/cost-centers#add-resources-to-a-cost-center" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceResponse"/></returns>
@@ -168,7 +168,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceResponse>(requestInfo, global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove resources from a cost center.The usage for the resources will no longer be charged to the cost center&apos;s budget. The authenticated user must be an enterprise admin in order to use this endpoint.
+        /// Remove resources from a cost center.The usage for the resources will no longer be charged to the cost center&apos;s budget. Enterprise owners and billing managers can remove any resource. Organization owners can remove non-team resources from cost centers associated with resources they administer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -190,7 +190,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return requestInfo;
         }
         /// <summary>
-        /// Adds resources to a cost center.The usage for the resources will be charged to the cost center&apos;s budget. The authenticated user must be an enterprise admin in order to use this endpoint.
+        /// Adds resources to a cost center.The usage for the resources will be charged to the cost center&apos;s budget. Enterprise owners and billing managers can add any resource. Organization owners can add non-team resources to cost centers associated with resources they administer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

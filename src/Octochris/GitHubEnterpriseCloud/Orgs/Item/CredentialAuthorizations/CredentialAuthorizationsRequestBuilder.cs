@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using GitHub.EnterpriseCloud.Models;
 using GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.Item;
+using GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.RevokeAll;
+using GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.RevokeCredentialType;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -18,29 +20,39 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CredentialAuthorizationsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The revokeAll property</summary>
+        public global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.RevokeAll.RevokeAllRequestBuilder RevokeAll
+        {
+            get => new global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.RevokeAll.RevokeAllRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The revokeCredentialType property</summary>
+        public global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.RevokeCredentialType.RevokeCredentialTypeRequestBuilder RevokeCredentialType
+        {
+            get => new global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.RevokeCredentialType.RevokeCredentialTypeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the GitHub.EnterpriseCloud.orgs.item.credentialAuthorizations.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.Item.WithCredential_ItemRequestBuilder"/></returns>
-        public global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.Item.WithCredential_ItemRequestBuilder this[int position]
+        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.Item.Credential_ItemRequestBuilder"/></returns>
+        public global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.Item.Credential_ItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("credential_id", position);
-                return new global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.Item.WithCredential_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("credential_%2Did", position);
+                return new global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.Item.Credential_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>Gets an item from the GitHub.EnterpriseCloud.orgs.item.credentialAuthorizations.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.Item.WithCredential_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.Item.Credential_ItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.Item.WithCredential_ItemRequestBuilder this[string position]
+        public global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.Item.Credential_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("credential_id", position);
-                return new global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.Item.WithCredential_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("credential_%2Did", position);
+                return new global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.Item.Credential_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
