@@ -48,7 +48,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.SecretScanning.CustomPatterns
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomPatternsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/secret-scanning/custom-patterns{?direction*,page*,per_page*,push_protection*,sort*,state*}", pathParameters)
+        public CustomPatternsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/secret-scanning/custom-patterns{?after*,before*,direction*,page*,per_page*,push_protection*,sort*,state*}", pathParameters)
         {
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.SecretScanning.CustomPatterns
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomPatternsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/secret-scanning/custom-patterns{?direction*,page*,per_page*,push_protection*,sort*,state*}", rawUrl)
+        public CustomPatternsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/secret-scanning/custom-patterns{?after*,before*,direction*,page*,per_page*,push_protection*,sort*,state*}", rawUrl)
         {
         }
         /// <summary>
@@ -268,6 +268,26 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.SecretScanning.CustomPatterns
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomPatternsRequestBuilderGetQueryParameters 
         {
+            /// <summary>A cursor, as given in the [Link header](https://docs.github.com/enterprise-cloud@latest/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("after")]
+            public string? After { get; set; }
+#nullable restore
+#else
+            [QueryParameter("after")]
+            public string After { get; set; }
+#endif
+            /// <summary>A cursor, as given in the [Link header](https://docs.github.com/enterprise-cloud@latest/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("before")]
+            public string? Before { get; set; }
+#nullable restore
+#else
+            [QueryParameter("before")]
+            public string Before { get; set; }
+#endif
             /// <summary>The direction to sort the results by.</summary>
             [Obsolete("This property is deprecated, use DirectionAsGetDirectionQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

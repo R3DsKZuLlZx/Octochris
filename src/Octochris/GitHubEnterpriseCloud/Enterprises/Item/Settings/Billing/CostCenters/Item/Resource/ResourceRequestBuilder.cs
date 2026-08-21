@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
         {
         }
         /// <summary>
-        /// Remove resources from a cost center.The usage for the resources will no longer be charged to the cost center&apos;s budget. Enterprise owners and billing managers can remove any resource. Organization owners can remove non-team resources from cost centers associated with resources they administer.
+        /// Remove resources from a cost center.The usage for the resources will no longer be charged to the cost center&apos;s budget. Enterprise owners and billing managers can remove any resource, and organization owners can remove non-team resources from cost centers associated with resources they administer. A custom role holder with fine-grained write access to enterprise billing can also remove resources. An installation access token for a GitHub App installed on the enterprise with write access to enterprise billing can remove resources from any cost center in the enterprise.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/cost-centers#remove-resources-from-a-cost-center" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceDeleteResponse"/></returns>
@@ -66,7 +66,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceDeleteResponse>(requestInfo, global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove resources from a cost center.The usage for the resources will no longer be charged to the cost center&apos;s budget. Enterprise owners and billing managers can remove any resource. Organization owners can remove non-team resources from cost centers associated with resources they administer.
+        /// Remove resources from a cost center.The usage for the resources will no longer be charged to the cost center&apos;s budget. Enterprise owners and billing managers can remove any resource, and organization owners can remove non-team resources from cost centers associated with resources they administer. A custom role holder with fine-grained write access to enterprise billing can also remove resources. An installation access token for a GitHub App installed on the enterprise with write access to enterprise billing can remove resources from any cost center in the enterprise.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/cost-centers#remove-resources-from-a-cost-center" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceResponse"/></returns>
@@ -99,7 +99,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceResponse>(requestInfo, global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds resources to a cost center.The usage for the resources will be charged to the cost center&apos;s budget. Enterprise owners and billing managers can add any resource. Organization owners can add non-team resources to cost centers associated with resources they administer.
+        /// Adds resources to a cost center.The usage for the resources will be charged to the cost center&apos;s budget. Enterprise owners and billing managers can add any resource, and organization owners can add non-team resources to cost centers associated with resources they administer. A custom role holder with fine-grained write access to enterprise billing can also add resources. An installation access token for a GitHub App installed on the enterprise with write access to enterprise billing can add resources to any cost center in the enterprise.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/cost-centers#add-resources-to-a-cost-center" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourcePostResponse"/></returns>
@@ -133,7 +133,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourcePostResponse>(requestInfo, global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourcePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds resources to a cost center.The usage for the resources will be charged to the cost center&apos;s budget. Enterprise owners and billing managers can add any resource. Organization owners can add non-team resources to cost centers associated with resources they administer.
+        /// Adds resources to a cost center.The usage for the resources will be charged to the cost center&apos;s budget. Enterprise owners and billing managers can add any resource, and organization owners can add non-team resources to cost centers associated with resources they administer. A custom role holder with fine-grained write access to enterprise billing can also add resources. An installation access token for a GitHub App installed on the enterprise with write access to enterprise billing can add resources to any cost center in the enterprise.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/cost-centers#add-resources-to-a-cost-center" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceResponse"/></returns>
@@ -168,7 +168,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceResponse>(requestInfo, global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.Item.Resource.ResourceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove resources from a cost center.The usage for the resources will no longer be charged to the cost center&apos;s budget. Enterprise owners and billing managers can remove any resource. Organization owners can remove non-team resources from cost centers associated with resources they administer.
+        /// Remove resources from a cost center.The usage for the resources will no longer be charged to the cost center&apos;s budget. Enterprise owners and billing managers can remove any resource, and organization owners can remove non-team resources from cost centers associated with resources they administer. A custom role holder with fine-grained write access to enterprise billing can also remove resources. An installation access token for a GitHub App installed on the enterprise with write access to enterprise billing can remove resources from any cost center in the enterprise.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -190,7 +190,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.CostCenters.I
             return requestInfo;
         }
         /// <summary>
-        /// Adds resources to a cost center.The usage for the resources will be charged to the cost center&apos;s budget. Enterprise owners and billing managers can add any resource. Organization owners can add non-team resources to cost centers associated with resources they administer.
+        /// Adds resources to a cost center.The usage for the resources will be charged to the cost center&apos;s budget. Enterprise owners and billing managers can add any resource, and organization owners can add non-team resources to cost centers associated with resources they administer. A custom role holder with fine-grained write access to enterprise billing can also add resources. An installation access token for a GitHub App installed on the enterprise with write access to enterprise billing can add resources to any cost center in the enterprise.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

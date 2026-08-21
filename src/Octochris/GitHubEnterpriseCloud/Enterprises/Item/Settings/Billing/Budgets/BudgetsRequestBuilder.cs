@@ -47,7 +47,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets
         {
         }
         /// <summary>
-        /// Gets budgets for an enterprise. Enterprise owners and billing managers can view all budgets. Organization administrators can view budgets scoped to organizations and repositories they administer.Each page returns up to 100 budgets.
+        /// Gets budgets for an enterprise. Enterprise owners and billing managers can view all budgets, and organization administrators can view budgets scoped to organizations and repositories they administer. A custom role holder with fine-grained read access to enterprise billing can also view budgets. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can list all budgets in the enterprise.Each page returns up to 100 budgets.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/budgets#get-all-budgets" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.Get_all_budgets"/></returns>
@@ -73,7 +73,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.Get_all_budgets>(requestInfo, global::GitHub.EnterpriseCloud.Models.Get_all_budgets.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new budget for an enterprise. The authenticated user must be an enterprise admin, organization admin, or billing manager of the enterprise.
+        /// Creates a new budget for an enterprise. Enterprise owners and billing managers can create budgets scoped to the enterprise, all users in the enterprise, or any organization in it. Organization administrators can create budgets for their organizations, and repository-scoped budgets require administration of the repository&apos;s owning organization. A custom role holder with fine-grained write access to enterprise billing can create budgets scoped to a single user or a cost center, including all users in a cost center, without an additional administrator role; the role requirements above still apply to the other scopes. An installation access token for a GitHub App installed on the enterprise with write access to enterprise billing can create budgets for any target in the enterprise.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/budgets#create-a-budget" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.CreateBudget"/></returns>
@@ -109,7 +109,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.CreateBudget>(requestInfo, global::GitHub.EnterpriseCloud.Models.CreateBudget.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets budgets for an enterprise. Enterprise owners and billing managers can view all budgets. Organization administrators can view budgets scoped to organizations and repositories they administer.Each page returns up to 100 budgets.
+        /// Gets budgets for an enterprise. Enterprise owners and billing managers can view all budgets, and organization administrators can view budgets scoped to organizations and repositories they administer. A custom role holder with fine-grained read access to enterprise billing can also view budgets. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can list all budgets in the enterprise.Each page returns up to 100 budgets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new budget for an enterprise. The authenticated user must be an enterprise admin, organization admin, or billing manager of the enterprise.
+        /// Creates a new budget for an enterprise. Enterprise owners and billing managers can create budgets scoped to the enterprise, all users in the enterprise, or any organization in it. Organization administrators can create budgets for their organizations, and repository-scoped budgets require administration of the repository&apos;s owning organization. A custom role holder with fine-grained write access to enterprise billing can create budgets scoped to a single user or a cost center, including all users in a cost center, without an additional administrator role; the role requirements above still apply to the other scopes. An installation access token for a GitHub App installed on the enterprise with write access to enterprise billing can create budgets for any target in the enterprise.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -159,7 +159,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets
             return new global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.BudgetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Gets budgets for an enterprise. Enterprise owners and billing managers can view all budgets. Organization administrators can view budgets scoped to organizations and repositories they administer.Each page returns up to 100 budgets.
+        /// Gets budgets for an enterprise. Enterprise owners and billing managers can view all budgets, and organization administrators can view budgets scoped to organizations and repositories they administer. A custom role holder with fine-grained read access to enterprise billing can also view budgets. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can list all budgets in the enterprise.Each page returns up to 100 budgets.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BudgetsRequestBuilderGetQueryParameters 

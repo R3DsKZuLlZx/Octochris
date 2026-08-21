@@ -60,7 +60,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Reports
         {
         }
         /// <summary>
-        /// Lists all usage report exports for an enterprise. The authenticated user must be an enterprise admin or billing manager.
+        /// Lists all usage report exports for an enterprise. The authenticated user must be an enterprise admin or billing manager, or a custom role holder with fine-grained read access to enterprise billing. An installation access token for a GitHub App installed on the enterprise with write access to enterprise administration, or with read access to enterprise billing, can also list usage report exports.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/usage-reports#list-usage-report-exports" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.UsageReportExportList"/></returns>
@@ -92,7 +92,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Reports
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.UsageReportExportList>(requestInfo, global::GitHub.EnterpriseCloud.Models.UsageReportExportList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Initiates the generation of a usage report export for an enterprise. The report will be processed asynchronouslyand can be downloaded once completed. The authenticated user must be an enterprise admin or billing manager.
+        /// Initiates the generation of a usage report export for an enterprise. The report will be processed asynchronouslyand can be downloaded once completed. The authenticated user must be an enterprise admin or billing manager, or a custom role holder with fine-grained read access to enterprise billing. An installation access token for a GitHub App installed on the enterprise with write access to enterprise administration, or with read access to enterprise billing, can also initiate a usage report export.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/usage-reports#create-a-usage-report-export" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.UsageReportExport"/></returns>
@@ -128,7 +128,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Reports
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.UsageReportExport>(requestInfo, global::GitHub.EnterpriseCloud.Models.UsageReportExport.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists all usage report exports for an enterprise. The authenticated user must be an enterprise admin or billing manager.
+        /// Lists all usage report exports for an enterprise. The authenticated user must be an enterprise admin or billing manager, or a custom role holder with fine-grained read access to enterprise billing. An installation access token for a GitHub App installed on the enterprise with write access to enterprise administration, or with read access to enterprise billing, can also list usage report exports.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Reports
             return requestInfo;
         }
         /// <summary>
-        /// Initiates the generation of a usage report export for an enterprise. The report will be processed asynchronouslyand can be downloaded once completed. The authenticated user must be an enterprise admin or billing manager.
+        /// Initiates the generation of a usage report export for an enterprise. The report will be processed asynchronouslyand can be downloaded once completed. The authenticated user must be an enterprise admin or billing manager, or a custom role holder with fine-grained read access to enterprise billing. An installation access token for a GitHub App installed on the enterprise with write access to enterprise administration, or with read access to enterprise billing, can also initiate a usage report export.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

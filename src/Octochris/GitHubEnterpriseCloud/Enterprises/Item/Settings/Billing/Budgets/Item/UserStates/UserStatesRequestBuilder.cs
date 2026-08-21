@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item.
         {
         }
         /// <summary>
-        /// Lists per-user budget state for a multi-user customer scoped budget. Enterprise owners and billing managers can view state across the enterprise. Organization administrators can view state for budgets scoped to organizations they administer.
+        /// Lists per-user budget state for a multi-user customer scoped budget. Enterprise owners and billing managers can view state across the enterprise, and organization administrators can view state for budgets scoped to organizations they administer. A custom role holder with fine-grained read access to enterprise billing can also view budget user states. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can list user states for any multi-user budget in the enterprise.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/budgets#get-user-states-for-a-multi-user-budget" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.GetBudgetUserStates"/></returns>
@@ -64,7 +64,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item.
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.GetBudgetUserStates>(requestInfo, global::GitHub.EnterpriseCloud.Models.GetBudgetUserStates.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists per-user budget state for a multi-user customer scoped budget. Enterprise owners and billing managers can view state across the enterprise. Organization administrators can view state for budgets scoped to organizations they administer.
+        /// Lists per-user budget state for a multi-user customer scoped budget. Enterprise owners and billing managers can view state across the enterprise, and organization administrators can view state for budgets scoped to organizations they administer. A custom role holder with fine-grained read access to enterprise billing can also view budget user states. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can list user states for any multi-user budget in the enterprise.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -92,7 +92,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item.
             return new global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item.UserStates.UserStatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists per-user budget state for a multi-user customer scoped budget. Enterprise owners and billing managers can view state across the enterprise. Organization administrators can view state for budgets scoped to organizations they administer.
+        /// Lists per-user budget state for a multi-user customer scoped budget. Enterprise owners and billing managers can view state across the enterprise, and organization administrators can view state for budgets scoped to organizations they administer. A custom role holder with fine-grained read access to enterprise billing can also view budget user states. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can list user states for any multi-user budget in the enterprise.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserStatesRequestBuilderGetQueryParameters 
