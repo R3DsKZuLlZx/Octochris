@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Reports.Item
         {
         }
         /// <summary>
-        /// Gets the status and details of a usage report export by ID. The authenticated user must be an enterprise admin or billing manager.
+        /// Gets the status and details of a usage report export by ID. The authenticated user must be an enterprise admin or billing manager, or a custom role holder with fine-grained read access to enterprise billing. An installation access token for a GitHub App installed on the enterprise with write access to enterprise administration, or with read access to enterprise billing, can also get a usage report export.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/usage-reports#get-a-usage-report-export" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.UsageReportExport"/></returns>
@@ -66,7 +66,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Reports.Item
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.UsageReportExport>(requestInfo, global::GitHub.EnterpriseCloud.Models.UsageReportExport.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets the status and details of a usage report export by ID. The authenticated user must be an enterprise admin or billing manager.
+        /// Gets the status and details of a usage report export by ID. The authenticated user must be an enterprise admin or billing manager, or a custom role holder with fine-grained read access to enterprise billing. An installation access token for a GitHub App installed on the enterprise with write access to enterprise administration, or with read access to enterprise billing, can also get a usage report export.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

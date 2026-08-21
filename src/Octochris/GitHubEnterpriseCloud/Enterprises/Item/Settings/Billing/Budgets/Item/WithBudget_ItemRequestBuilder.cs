@@ -40,7 +40,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item
         {
         }
         /// <summary>
-        /// Deletes a budget by ID. Enterprise owners and billing managers can delete any budget in the enterprise. Organization administrators can delete budgets scoped to organizations they administer, and repository administrators can delete budgets scoped to repositories they administer.
+        /// Deletes a budget by ID. Enterprise owners and billing managers can delete any budget in the enterprise, organization administrators can delete budgets scoped to organizations they administer, and repository administrators can delete budgets scoped to repositories they administer in those organizations. A custom role holder with fine-grained write access to enterprise billing does not by itself get permission to delete a budget for a target they do not administer. An installation access token for a GitHub App installed on the enterprise with write access to enterprise billing can delete any budget in the enterprise.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/budgets#delete-a-budget" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.DeleteBudget"/></returns>
@@ -72,7 +72,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.DeleteBudget>(requestInfo, global::GitHub.EnterpriseCloud.Models.DeleteBudget.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a budget by ID. Enterprise owners and billing managers can view any budget in the enterprise. Organization administrators can view budgets scoped to organizations and repositories they administer.
+        /// Gets a budget by ID. Enterprise owners and billing managers can view any budget in the enterprise, and organization administrators can view budgets scoped to organizations and repositories they administer. A custom role holder with fine-grained read access to enterprise billing can also view the budget. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get any budget in the enterprise.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/budgets#get-a-budget-by-id" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.GetBudget"/></returns>
@@ -104,7 +104,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.GetBudget>(requestInfo, global::GitHub.EnterpriseCloud.Models.GetBudget.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an existing budget for an enterprise. The authenticated user must be an enterprise admin, organization admin, or billing manager of the enterprise.
+        /// Updates an existing budget for an enterprise. Enterprise owners and billing managers can update budgets scoped to the enterprise, all users in the enterprise, or any organization in it. Organization administrators can update budgets for their organizations, and repository-scoped budgets require administration of the repository&apos;s owning organization. A custom role holder with fine-grained write access to enterprise billing can update budgets scoped to a single user or a cost center, including all users in a cost center, without an additional administrator role; the role requirements above still apply to the other scopes. An installation access token for a GitHub App installed on the enterprise with write access to enterprise billing can update any budget in the enterprise.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/budgets#update-a-budget" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.UpdateBudget"/></returns>
@@ -142,7 +142,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.UpdateBudget>(requestInfo, global::GitHub.EnterpriseCloud.Models.UpdateBudget.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a budget by ID. Enterprise owners and billing managers can delete any budget in the enterprise. Organization administrators can delete budgets scoped to organizations they administer, and repository administrators can delete budgets scoped to repositories they administer.
+        /// Deletes a budget by ID. Enterprise owners and billing managers can delete any budget in the enterprise, organization administrators can delete budgets scoped to organizations they administer, and repository administrators can delete budgets scoped to repositories they administer in those organizations. A custom role holder with fine-grained write access to enterprise billing does not by itself get permission to delete a budget for a target they do not administer. An installation access token for a GitHub App installed on the enterprise with write access to enterprise billing can delete any budget in the enterprise.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +161,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Gets a budget by ID. Enterprise owners and billing managers can view any budget in the enterprise. Organization administrators can view budgets scoped to organizations and repositories they administer.
+        /// Gets a budget by ID. Enterprise owners and billing managers can view any budget in the enterprise, and organization administrators can view budgets scoped to organizations and repositories they administer. A custom role holder with fine-grained read access to enterprise billing can also view the budget. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get any budget in the enterprise.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +180,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates an existing budget for an enterprise. The authenticated user must be an enterprise admin, organization admin, or billing manager of the enterprise.
+        /// Updates an existing budget for an enterprise. Enterprise owners and billing managers can update budgets scoped to the enterprise, all users in the enterprise, or any organization in it. Organization administrators can update budgets for their organizations, and repository-scoped budgets require administration of the repository&apos;s owning organization. A custom role holder with fine-grained write access to enterprise billing can update budgets scoped to a single user or a cost center, including all users in a cost center, without an additional administrator role; the role requirements above still apply to the other scopes. An installation access token for a GitHub App installed on the enterprise with write access to enterprise billing can update any budget in the enterprise.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
