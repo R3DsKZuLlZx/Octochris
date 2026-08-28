@@ -48,7 +48,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.SecretScanning.CustomPatterns
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomPatternsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/secret-scanning/custom-patterns{?after*,before*,direction*,page*,per_page*,push_protection*,sort*,state*}", pathParameters)
+        public CustomPatternsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/secret-scanning/custom-patterns{?after*,before*,direction*,push_protection*,sort*,state*}", pathParameters)
         {
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.SecretScanning.CustomPatterns
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomPatternsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/secret-scanning/custom-patterns{?after*,before*,direction*,page*,per_page*,push_protection*,sort*,state*}", rawUrl)
+        public CustomPatternsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/secret-scanning/custom-patterns{?after*,before*,direction*,push_protection*,sort*,state*}", rawUrl)
         {
         }
         /// <summary>
@@ -302,12 +302,6 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.SecretScanning.CustomPatterns
             /// <summary>The direction to sort the results by.</summary>
             [QueryParameter("direction")]
             public global::GitHub.EnterpriseCloud.Enterprises.Item.SecretScanning.CustomPatterns.GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
-            /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
-            [QueryParameter("page")]
-            public int? Page { get; set; }
-            /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
-            [QueryParameter("per_page")]
-            public int? PerPage { get; set; }
             /// <summary>Filter custom patterns by whether push protection is enabled. When absent, returns patterns regardless of push protection status.</summary>
             [Obsolete("This property is deprecated, use PushProtectionAsGetPushProtectionQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

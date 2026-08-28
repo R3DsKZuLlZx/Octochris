@@ -14,6 +14,8 @@ namespace GitHub.Api.Repos.Item.Item.Labels.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether to archive or unarchive the label. Archived labels cannot be added to issues or pull requests. For more information, see &quot;[Archiving labels](https://docs.github.com/issues/organizing-your-work-with-labels/managing-labels).&quot;</summary>
+        public bool? Archived { get; set; }
         /// <summary>The [hexadecimal color code](http://www.color-hex.com/) for the label, without the leading `#`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +65,7 @@ namespace GitHub.Api.Repos.Item.Item.Labels.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "new_name", n => { NewName = n.GetStringValue(); } },
@@ -75,6 +78,7 @@ namespace GitHub.Api.Repos.Item.Item.Labels.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("archived", Archived);
             writer.WriteStringValue("color", Color);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("new_name", NewName);

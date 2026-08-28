@@ -72,7 +72,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.DeleteBudget>(requestInfo, global::GitHub.EnterpriseCloud.Models.DeleteBudget.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a budget by ID. Enterprise owners and billing managers can view any budget in the enterprise, and organization administrators can view budgets scoped to organizations and repositories they administer. A custom role holder with fine-grained read access to enterprise billing can also view the budget. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get any budget in the enterprise.
+        /// Gets a budget by ID. Enterprise owners and billing managers can view any budget in the enterprise, and organization administrators can view budgets scoped to organizations and repositories they administer. A custom role holder with fine-grained read access to enterprise billing can view the budget unless it is scoped to a repository; repository-scoped budgets require the organization administrator permissions described above. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get any budget in the enterprise.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/budgets#get-a-budget-by-id" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.GetBudget"/></returns>
@@ -161,7 +161,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Gets a budget by ID. Enterprise owners and billing managers can view any budget in the enterprise, and organization administrators can view budgets scoped to organizations and repositories they administer. A custom role holder with fine-grained read access to enterprise billing can also view the budget. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get any budget in the enterprise.
+        /// Gets a budget by ID. Enterprise owners and billing managers can view any budget in the enterprise, and organization administrators can view budgets scoped to organizations and repositories they administer. A custom role holder with fine-grained read access to enterprise billing can view the budget unless it is scoped to a repository; repository-scoped budgets require the organization administrator permissions described above. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get any budget in the enterprise.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

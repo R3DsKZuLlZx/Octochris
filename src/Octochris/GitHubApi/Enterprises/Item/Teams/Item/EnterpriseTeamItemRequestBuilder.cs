@@ -72,17 +72,17 @@ namespace GitHub.Api.Enterprises.Item.Teams.Item
         /// Gets a team using the team&apos;s slug. To create the slug, GitHub replaces special characters in the name string, changes all words to lowercase, and replaces spaces with a `-` separator and adds the &quot;ent:&quot; prefix. For example, &quot;My TEam Näme&quot; would become `ent:my-team-name`.
         /// API method documentation <see href="https://docs.github.com/rest/enterprise-teams/enterprise-teams#get-an-enterprise-team" />
         /// </summary>
-        /// <returns>A <see cref="global::GitHub.Api.Models.EnterpriseTeam"/></returns>
+        /// <returns>A <see cref="global::GitHub.Api.Models.EnterpriseTeamWithMemberCount"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::GitHub.Api.Models.EnterpriseTeam?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Api.Models.EnterpriseTeamWithMemberCount?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::GitHub.Api.Models.EnterpriseTeam> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Api.Models.EnterpriseTeamWithMemberCount> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -90,7 +90,7 @@ namespace GitHub.Api.Enterprises.Item.Teams.Item
             {
                 { "403", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::GitHub.Api.Models.EnterpriseTeam>(requestInfo, global::GitHub.Api.Models.EnterpriseTeam.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Api.Models.EnterpriseTeamWithMemberCount>(requestInfo, global::GitHub.Api.Models.EnterpriseTeamWithMemberCount.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To edit a team, the authenticated user must be an enterprise owner.

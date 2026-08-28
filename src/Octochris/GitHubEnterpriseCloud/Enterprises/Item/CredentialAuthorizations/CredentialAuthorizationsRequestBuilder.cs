@@ -3,11 +3,14 @@
 using GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.Item;
 using GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.RevokeAll;
 using GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.RevokeCredentialType;
+using GitHub.EnterpriseCloud.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
+using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using System.Threading;
 using System;
 namespace GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations
 {
@@ -44,7 +47,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CredentialAuthorizationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/credential-authorizations", pathParameters)
+        public CredentialAuthorizationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/credential-authorizations{?integration_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -52,7 +55,106 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CredentialAuthorizationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/credential-authorizations", rawUrl)
+        public CredentialAuthorizationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/credential-authorizations{?integration_id*}", rawUrl)
+        {
+        }
+        /// <summary>
+        /// Queues revocation of every active organization credential authorization created through enterprisedelegation for the enterprise. Credential authorizations created through SAML or other flows are not affected.The authenticated GitHub App must be owned by the enterprise or one of its organizations,installed on the enterprise, and have the `enterprise_credentials:write` permission.
+        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/credential-authorizations#revoke-enterprise-delegated-credential-authorizations" />
+        /// </summary>
+        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsDeleteResponse"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 404 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsDeleteResponse?> DeleteAsCredentialAuthorizationsDeleteResponseAsync(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsDeleteResponse> DeleteAsCredentialAuthorizationsDeleteResponseAsync(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "403", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
+                { "404", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsDeleteResponse>(requestInfo, global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Queues revocation of every active organization credential authorization created through enterprisedelegation for the enterprise. Credential authorizations created through SAML or other flows are not affected.The authenticated GitHub App must be owned by the enterprise or one of its organizations,installed on the enterprise, and have the `enterprise_credentials:write` permission.
+        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/credential-authorizations#revoke-enterprise-delegated-credential-authorizations" />
+        /// </summary>
+        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsResponse"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 404 status code</exception>
+        [Obsolete("This method is obsolete. Use DeleteAsCredentialAuthorizationsDeleteResponseAsync instead.")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsResponse?> DeleteAsync(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsResponse> DeleteAsync(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "403", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
+                { "404", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsResponse>(requestInfo, global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Queues revocation of every active organization credential authorization created through enterprisedelegation for the enterprise. Credential authorizations created through SAML or other flows are not affected.The authenticated GitHub App must be owned by the enterprise or one of its organizations,installed on the enterprise, and have the `enterprise_credentials:write` permission.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder"/></returns>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder WithUrl(string rawUrl)
+        {
+            return new global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Queues revocation of every active organization credential authorization created through enterprisedelegation for the enterprise. Credential authorizations created through SAML or other flows are not affected.The authenticated GitHub App must be owned by the enterprise or one of its organizations,installed on the enterprise, and have the `enterprise_credentials:write` permission.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class CredentialAuthorizationsRequestBuilderDeleteQueryParameters 
+        {
+            /// <summary>The database ID of a GitHub App currently owned by the enterprise or one of its organizations,or a formerly owned GitHub App with delegation history for the enterprise.When provided, only credential authorizations delegated by that App are revoked. When omitted,all enterprise-delegated credential authorizations for the enterprise are revoked.</summary>
+            [QueryParameter("integration_id")]
+            public int? IntegrationId { get; set; }
+        }
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class CredentialAuthorizationsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsRequestBuilderDeleteQueryParameters>
         {
         }
     }

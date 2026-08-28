@@ -62,6 +62,8 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues
 #else
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.IssuesPostRequestBody.IssuesPostRequestBody_milestone Milestone { get; set; }
 #endif
+        /// <summary>The id of the parent issue to add this issue to as a sub-issue. _NOTE: Only users with triage access to both the parent issue&apos;s repository and this repository can set the parent issue._</summary>
+        public int? ParentIssueId { get; set; }
         /// <summary>The title of the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +111,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues
                 { "issue_field_values", n => { IssueFieldValues = n.GetCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.IssuesPostRequestBody_issue_field_values>(global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.IssuesPostRequestBody_issue_field_values.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "milestone", n => { Milestone = n.GetObjectValue<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.IssuesPostRequestBody.IssuesPostRequestBody_milestone>(global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.IssuesPostRequestBody.IssuesPostRequestBody_milestone.CreateFromDiscriminatorValue); } },
+                { "parent_issue_id", n => { ParentIssueId = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetObjectValue<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.IssuesPostRequestBody.IssuesPostRequestBody_title>(global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.IssuesPostRequestBody.IssuesPostRequestBody_title.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -126,6 +129,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues
             writer.WriteCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.IssuesPostRequestBody_issue_field_values>("issue_field_values", IssueFieldValues);
             writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.IssuesPostRequestBody.IssuesPostRequestBody_milestone>("milestone", Milestone);
+            writer.WriteIntValue("parent_issue_id", ParentIssueId);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.IssuesPostRequestBody.IssuesPostRequestBody_title>("title", Title);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

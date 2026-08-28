@@ -20,11 +20,13 @@ namespace GitHub.Api.Repos.Item.Item.DependencyGraph.Sbom
     public partial class SbomRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The fetchReport property</summary>
+        [Obsolete("")]
         public global::GitHub.Api.Repos.Item.Item.DependencyGraph.Sbom.FetchReport.FetchReportRequestBuilder FetchReport
         {
             get => new global::GitHub.Api.Repos.Item.Item.DependencyGraph.Sbom.FetchReport.FetchReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The generateReport property</summary>
+        [Obsolete("")]
         public global::GitHub.Api.Repos.Item.Item.DependencyGraph.Sbom.GenerateReport.GenerateReportRequestBuilder GenerateReport
         {
             get => new global::GitHub.Api.Repos.Item.Item.DependencyGraph.Sbom.GenerateReport.GenerateReportRequestBuilder(PathParameters, RequestAdapter);
@@ -46,7 +48,7 @@ namespace GitHub.Api.Repos.Item.Item.DependencyGraph.Sbom
         {
         }
         /// <summary>
-        /// Exports the software bill of materials (SBOM) for a repository in SPDX JSON format.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will not be accessible after November 13, 2026. Please migrate to the asynchronous flow. Use &quot;[Request generation of a software bill of materials (SBOM) for a repository](https://docs.github.com/rest/dependency-graph/sboms#request-generation-of-a-software-bill-of-materials-sbom-for-a-repository)&quot; to trigger the report, then &quot;[Fetch a software bill of materials (SBOM) for a repository](https://docs.github.com/rest/dependency-graph/sboms#fetch-a-software-bill-of-materials-sbom-for-a-repository)&quot; to retrieve it. For more information, see the [changelog](https://github.blog/changelog/2026-05-12-synchronous-sbom-api-deprecated/).Exports the software bill of materials (SBOM) for a repository in SPDX JSON format.
         /// API method documentation <see href="https://docs.github.com/rest/dependency-graph/sboms#export-a-software-bill-of-materials-sbom-for-a-repository" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Models.DependencyGraphSpdxSbom"/></returns>
@@ -54,6 +56,7 @@ namespace GitHub.Api.Repos.Item.Item.DependencyGraph.Sbom
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 404 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::GitHub.Api.Models.DependencyGraphSpdxSbom?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -72,10 +75,11 @@ namespace GitHub.Api.Repos.Item.Item.DependencyGraph.Sbom
             return await RequestAdapter.SendAsync<global::GitHub.Api.Models.DependencyGraphSpdxSbom>(requestInfo, global::GitHub.Api.Models.DependencyGraphSpdxSbom.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Exports the software bill of materials (SBOM) for a repository in SPDX JSON format.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will not be accessible after November 13, 2026. Please migrate to the asynchronous flow. Use &quot;[Request generation of a software bill of materials (SBOM) for a repository](https://docs.github.com/rest/dependency-graph/sboms#request-generation-of-a-software-bill-of-materials-sbom-for-a-repository)&quot; to trigger the report, then &quot;[Fetch a software bill of materials (SBOM) for a repository](https://docs.github.com/rest/dependency-graph/sboms#fetch-a-software-bill-of-materials-sbom-for-a-repository)&quot; to retrieve it. For more information, see the [changelog](https://github.blog/changelog/2026-05-12-synchronous-sbom-api-deprecated/).Exports the software bill of materials (SBOM) for a repository in SPDX JSON format.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -95,6 +99,7 @@ namespace GitHub.Api.Repos.Item.Item.DependencyGraph.Sbom
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Repos.Item.Item.DependencyGraph.Sbom.SbomRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.Api.Repos.Item.Item.DependencyGraph.Sbom.SbomRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.Api.Repos.Item.Item.DependencyGraph.Sbom.SbomRequestBuilder(rawUrl, RequestAdapter);

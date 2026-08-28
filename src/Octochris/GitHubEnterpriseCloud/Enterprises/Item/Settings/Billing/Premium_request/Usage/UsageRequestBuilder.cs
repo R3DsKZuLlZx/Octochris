@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Premium_reque
         {
         }
         /// <summary>
-        /// Gets a report of premium request usage for an enterprise. To use this endpoint, you must be an administrator or billing manager of the enterprise, or a custom role holder with fine-grained read access to enterprise billing. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get this usage report.**Note:** Only data from the past 24 months is accessible via this endpoint.
+        /// Gets a report of premium request usage for an enterprise. To use this endpoint, you must be an administrator or billing manager of the enterprise, an organization owner in the enterprise, or a custom role holder with fine-grained read access to enterprise billing. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get this usage report.**Note:** Only data from the past 24 months is accessible via this endpoint.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/usage#get-billing-premium-request-usage-report-for-an-enterprise" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.BillingPremiumRequestUsageReportGhe"/></returns>
@@ -66,7 +66,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Premium_reque
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.BillingPremiumRequestUsageReportGhe>(requestInfo, global::GitHub.EnterpriseCloud.Models.BillingPremiumRequestUsageReportGhe.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a report of premium request usage for an enterprise. To use this endpoint, you must be an administrator or billing manager of the enterprise, or a custom role holder with fine-grained read access to enterprise billing. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get this usage report.**Note:** Only data from the past 24 months is accessible via this endpoint.
+        /// Gets a report of premium request usage for an enterprise. To use this endpoint, you must be an administrator or billing manager of the enterprise, an organization owner in the enterprise, or a custom role holder with fine-grained read access to enterprise billing. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get this usage report.**Note:** Only data from the past 24 months is accessible via this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -94,7 +94,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Premium_reque
             return new global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Premium_request.Usage.UsageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Gets a report of premium request usage for an enterprise. To use this endpoint, you must be an administrator or billing manager of the enterprise, or a custom role holder with fine-grained read access to enterprise billing. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get this usage report.**Note:** Only data from the past 24 months is accessible via this endpoint.
+        /// Gets a report of premium request usage for an enterprise. To use this endpoint, you must be an administrator or billing manager of the enterprise, an organization owner in the enterprise, or a custom role holder with fine-grained read access to enterprise billing. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get this usage report.**Note:** Only data from the past 24 months is accessible via this endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsageRequestBuilderGetQueryParameters 

@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Usage.Summary
         {
         }
         /// <summary>
-        /// Gets a summary report of usage for an enterprise. To use this endpoint, you must be an administrator or billing manager of the enterprise, or a custom role holder with fine-grained read access to enterprise billing. By default, this endpoint will return usage across all cost centers in the enterprise. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get this usage summary report.**Note:** Only data from the past 24 months is accessible via this endpoint.
+        /// Gets a summary report of usage for an enterprise. To use this endpoint, you must be an administrator or billing manager of the enterprise, an organization owner in the enterprise, or a custom role holder with fine-grained read access to enterprise billing. By default, this endpoint will return usage across all cost centers in the enterprise. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get this usage summary report.**Note:** Only data from the past 24 months is accessible via this endpoint.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/usage#get-billing-usage-summary-for-an-enterprise" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.BillingUsageSummaryReportGhe"/></returns>
@@ -64,7 +64,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Usage.Summary
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.BillingUsageSummaryReportGhe>(requestInfo, global::GitHub.EnterpriseCloud.Models.BillingUsageSummaryReportGhe.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a summary report of usage for an enterprise. To use this endpoint, you must be an administrator or billing manager of the enterprise, or a custom role holder with fine-grained read access to enterprise billing. By default, this endpoint will return usage across all cost centers in the enterprise. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get this usage summary report.**Note:** Only data from the past 24 months is accessible via this endpoint.
+        /// Gets a summary report of usage for an enterprise. To use this endpoint, you must be an administrator or billing manager of the enterprise, an organization owner in the enterprise, or a custom role holder with fine-grained read access to enterprise billing. By default, this endpoint will return usage across all cost centers in the enterprise. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get this usage summary report.**Note:** Only data from the past 24 months is accessible via this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -92,7 +92,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Usage.Summary
             return new global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Usage.Summary.SummaryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Gets a summary report of usage for an enterprise. To use this endpoint, you must be an administrator or billing manager of the enterprise, or a custom role holder with fine-grained read access to enterprise billing. By default, this endpoint will return usage across all cost centers in the enterprise. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get this usage summary report.**Note:** Only data from the past 24 months is accessible via this endpoint.
+        /// Gets a summary report of usage for an enterprise. To use this endpoint, you must be an administrator or billing manager of the enterprise, an organization owner in the enterprise, or a custom role holder with fine-grained read access to enterprise billing. By default, this endpoint will return usage across all cost centers in the enterprise. An installation access token for a GitHub App installed on the enterprise with read access to enterprise billing can get this usage summary report.**Note:** Only data from the past 24 months is accessible via this endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SummaryRequestBuilderGetQueryParameters 
