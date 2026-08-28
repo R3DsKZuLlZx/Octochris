@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -50,6 +51,8 @@ namespace GitHub.EnterpriseCloud.Models
 #else
         public global::GitHub.EnterpriseCloud.Models.CreateBudget_budget.CreateBudget_budget_budget_type BudgetType { get; set; }
 #endif
+        /// <summary>The date the budget will expire in `YYYY-MM-DD` format. Only dates in the future are accepted.If not provided, the budget will not expire.Only supported for budgets with `budget_scope` of `user`</summary>
+        public Date? ExpiresAt { get; set; }
         /// <summary>ID of the budget.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +94,7 @@ namespace GitHub.EnterpriseCloud.Models
                 { "budget_product_sku", n => { BudgetProductSku = n.GetStringValue(); } },
                 { "budget_scope", n => { BudgetScope = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CreateBudget_budget_budget_scope>(); } },
                 { "budget_type", n => { BudgetType = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.CreateBudget_budget.CreateBudget_budget_budget_type>(global::GitHub.EnterpriseCloud.Models.CreateBudget_budget.CreateBudget_budget_budget_type.CreateFromDiscriminatorValue); } },
+                { "expires_at", n => { ExpiresAt = n.GetDateValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "prevent_further_usage", n => { PreventFurtherUsage = n.GetBoolValue(); } },
             };
@@ -108,6 +112,7 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteStringValue("budget_product_sku", BudgetProductSku);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CreateBudget_budget_budget_scope>("budget_scope", BudgetScope);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.CreateBudget_budget.CreateBudget_budget_budget_type>("budget_type", BudgetType);
+            writer.WriteDateValue("expires_at", ExpiresAt);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("prevent_further_usage", PreventFurtherUsage);
             writer.WriteAdditionalData(AdditionalData);

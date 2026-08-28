@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Teams.Item.Members
         {
         }
         /// <summary>
-        /// Team members will include the members of child teams.Each member includes their `role` on the team (`member` or `maintainer`) and an `inherited` flag indicating whether the membership is inherited from a child team (`true`) or is a direct membership (`false`). These fields let you read a member&apos;s role and direct/inherited status without additional requests.To list members in a team, the team must be visible to the authenticated user.
+        /// Team members will include the members of child teams.Each member includes their `role` on the team (`member` or `maintainer`) and an `inherited` flag indicating whether the membership is inherited from a child team (`true`) or is a direct membership (`false`). These fields let you read a member&apos;s role and direct/inherited status without additional requests.To list members in a team, the team must be visible to the authenticated user.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/members`.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/teams/members#list-team-members" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.EnterpriseCloud.Models.TeamMember&gt;</returns>
@@ -54,7 +54,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Teams.Item.Members
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Team members will include the members of child teams.Each member includes their `role` on the team (`member` or `maintainer`) and an `inherited` flag indicating whether the membership is inherited from a child team (`true`) or is a direct membership (`false`). These fields let you read a member&apos;s role and direct/inherited status without additional requests.To list members in a team, the team must be visible to the authenticated user.
+        /// Team members will include the members of child teams.Each member includes their `role` on the team (`member` or `maintainer`) and an `inherited` flag indicating whether the membership is inherited from a child team (`true`) or is a direct membership (`false`). These fields let you read a member&apos;s role and direct/inherited status without additional requests.To list members in a team, the team must be visible to the authenticated user.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/members`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Teams.Item.Members
             return new global::GitHub.EnterpriseCloud.Orgs.Item.Teams.Item.Members.MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Team members will include the members of child teams.Each member includes their `role` on the team (`member` or `maintainer`) and an `inherited` flag indicating whether the membership is inherited from a child team (`true`) or is a direct membership (`false`). These fields let you read a member&apos;s role and direct/inherited status without additional requests.To list members in a team, the team must be visible to the authenticated user.
+        /// Team members will include the members of child teams.Each member includes their `role` on the team (`member` or `maintainer`) and an `inherited` flag indicating whether the membership is inherited from a child team (`true`) or is a direct membership (`false`). These fields let you read a member&apos;s role and direct/inherited status without additional requests.To list members in a team, the team must be visible to the authenticated user.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/members`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MembersRequestBuilderGetQueryParameters 

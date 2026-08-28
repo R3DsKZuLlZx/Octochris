@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -50,6 +51,8 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets
 #else
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.BudgetsPostRequestBody.BudgetsPostRequestBody_budget_type BudgetType { get; set; }
 #endif
+        /// <summary>The date the budget will expire in `YYYY-MM-DD` format. Only dates in the future are accepted.If not provided, the budget will not expire.Only supported for budgets with `budget_scope` of `user`</summary>
+        public Date? ExpiresAt { get; set; }
         /// <summary>Whether to prevent additional spending once the budget is exceeded. For `user` and `multi_user_customer` scopes, this must be `true`.</summary>
         public bool? PreventFurtherUsage { get; set; }
         /// <summary>The username of the user for `user` scope budgets. This field is required when `budget_scope` is `user`.</summary>
@@ -91,6 +94,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets
                 { "budget_product_sku", n => { BudgetProductSku = n.GetStringValue(); } },
                 { "budget_scope", n => { BudgetScope = n.GetEnumValue<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.BudgetsPostRequestBody_budget_scope>(); } },
                 { "budget_type", n => { BudgetType = n.GetObjectValue<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.BudgetsPostRequestBody.BudgetsPostRequestBody_budget_type>(global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.BudgetsPostRequestBody.BudgetsPostRequestBody_budget_type.CreateFromDiscriminatorValue); } },
+                { "expires_at", n => { ExpiresAt = n.GetDateValue(); } },
                 { "prevent_further_usage", n => { PreventFurtherUsage = n.GetBoolValue(); } },
                 { "user", n => { User = n.GetStringValue(); } },
             };
@@ -108,6 +112,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets
             writer.WriteStringValue("budget_product_sku", BudgetProductSku);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.BudgetsPostRequestBody_budget_scope>("budget_scope", BudgetScope);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.BudgetsPostRequestBody.BudgetsPostRequestBody_budget_type>("budget_type", BudgetType);
+            writer.WriteDateValue("expires_at", ExpiresAt);
             writer.WriteBoolValue("prevent_further_usage", PreventFurtherUsage);
             writer.WriteStringValue("user", User);
             writer.WriteAdditionalData(AdditionalData);

@@ -4,6 +4,7 @@ using GitHub.Api.Enterprises.Item.Actions;
 using GitHub.Api.Enterprises.Item.CodeSecurity;
 using GitHub.Api.Enterprises.Item.Copilot;
 using GitHub.Api.Enterprises.Item.Dependabot;
+using GitHub.Api.Enterprises.Item.Members;
 using GitHub.Api.Enterprises.Item.Teams;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
@@ -38,6 +39,11 @@ namespace GitHub.Api.Enterprises.Item
         public global::GitHub.Api.Enterprises.Item.Dependabot.DependabotRequestBuilder Dependabot
         {
             get => new global::GitHub.Api.Enterprises.Item.Dependabot.DependabotRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The members property</summary>
+        public global::GitHub.Api.Enterprises.Item.Members.MembersRequestBuilder Members
+        {
+            get => new global::GitHub.Api.Enterprises.Item.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The teams property</summary>
         public global::GitHub.Api.Enterprises.Item.Teams.TeamsRequestBuilder Teams
