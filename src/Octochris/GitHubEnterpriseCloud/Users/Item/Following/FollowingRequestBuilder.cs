@@ -47,7 +47,7 @@ namespace GitHub.EnterpriseCloud.Users.Item.Following
         {
         }
         /// <summary>
-        /// Lists the people who the specified user follows.
+        /// Lists the people who the specified user follows.If the specified user has a [private profile](https://docs.github.com/enterprise-cloud@latest/account-and-profile/concepts/personal-profile#private-profiles), this endpoint returns an empty list unless the request is authenticated as that user. A request authenticated as the specified user returns the list even if the token has no OAuth scopes.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/users/followers#list-the-people-a-user-follows" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.EnterpriseCloud.Models.SimpleUser&gt;</returns>
@@ -67,7 +67,7 @@ namespace GitHub.EnterpriseCloud.Users.Item.Following
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Lists the people who the specified user follows.
+        /// Lists the people who the specified user follows.If the specified user has a [private profile](https://docs.github.com/enterprise-cloud@latest/account-and-profile/concepts/personal-profile#private-profiles), this endpoint returns an empty list unless the request is authenticated as that user. A request authenticated as the specified user returns the list even if the token has no OAuth scopes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,7 +95,7 @@ namespace GitHub.EnterpriseCloud.Users.Item.Following
             return new global::GitHub.EnterpriseCloud.Users.Item.Following.FollowingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists the people who the specified user follows.
+        /// Lists the people who the specified user follows.If the specified user has a [private profile](https://docs.github.com/enterprise-cloud@latest/account-and-profile/concepts/personal-profile#private-profiles), this endpoint returns an empty list unless the request is authenticated as that user. A request authenticated as the specified user returns the list even if the token has no OAuth scopes.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FollowingRequestBuilderGetQueryParameters 

@@ -139,15 +139,21 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Pulls.Comments
             [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("sort")]
             public string? Sort { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("sort")]
             public string Sort { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("sort")]
             public global::GitHub.EnterpriseCloud.Repos.Item.Item.Pulls.Comments.GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

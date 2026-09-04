@@ -49,7 +49,7 @@ namespace GitHub.EnterpriseCloud.Classrooms
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClassroomsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/classrooms{?page*,per_page*}", pathParameters)
+        public ClassroomsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/classrooms", pathParameters)
         {
         }
         /// <summary>
@@ -57,25 +57,25 @@ namespace GitHub.EnterpriseCloud.Classrooms
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClassroomsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/classrooms{?page*,per_page*}", rawUrl)
+        public ClassroomsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/classrooms", rawUrl)
         {
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Lists GitHub Classroom classrooms for the current user. Classrooms will only be returned if the current user is an administrator of one or more GitHub Classrooms.
-        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/classroom/classroom#closing-down---list-classrooms" />
+        /// &gt; [!WARNING]&gt; **Closed notice:** This operation is no longer available as of August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).
+        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/classroom/classroom#closed---list-classrooms" />
         /// </summary>
-        /// <returns>A List&lt;global::GitHub.EnterpriseCloud.Models.SimpleClassroom&gt;</returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 410 status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::GitHub.EnterpriseCloud.Models.SimpleClassroom>?> GetAsync(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Classrooms.ClassroomsRequestBuilder.ClassroomsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::GitHub.EnterpriseCloud.Models.SimpleClassroom>> GetAsync(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Classrooms.ClassroomsRequestBuilder.ClassroomsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -83,22 +83,21 @@ namespace GitHub.EnterpriseCloud.Classrooms
             {
                 { "410", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::GitHub.EnterpriseCloud.Models.SimpleClassroom>(requestInfo, global::GitHub.EnterpriseCloud.Models.SimpleClassroom.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.AsList();
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Lists GitHub Classroom classrooms for the current user. Classrooms will only be returned if the current user is an administrator of one or more GitHub Classrooms.
+        /// &gt; [!WARNING]&gt; **Closed notice:** This operation is no longer available as of August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Classrooms.ClassroomsRequestBuilder.ClassroomsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Classrooms.ClassroomsRequestBuilder.ClassroomsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -117,24 +116,11 @@ namespace GitHub.EnterpriseCloud.Classrooms
             return new global::GitHub.EnterpriseCloud.Classrooms.ClassroomsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Lists GitHub Classroom classrooms for the current user. Classrooms will only be returned if the current user is an administrator of one or more GitHub Classrooms.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ClassroomsRequestBuilderGetQueryParameters 
-        {
-            /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
-            [QueryParameter("page")]
-            public int? Page { get; set; }
-            /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
-            [QueryParameter("per_page")]
-            public int? PerPage { get; set; }
-        }
-        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ClassroomsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::GitHub.EnterpriseCloud.Classrooms.ClassroomsRequestBuilder.ClassroomsRequestBuilderGetQueryParameters>
+        public partial class ClassroomsRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

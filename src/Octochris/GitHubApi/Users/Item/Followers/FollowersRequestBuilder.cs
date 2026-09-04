@@ -34,7 +34,7 @@ namespace GitHub.Api.Users.Item.Followers
         {
         }
         /// <summary>
-        /// Lists the people following the specified user.
+        /// Lists the people following the specified user.If the specified user has a [private profile](https://docs.github.com/account-and-profile/concepts/personal-profile#private-profiles), this endpoint returns an empty list unless the request is authenticated as that user. A request authenticated as the specified user returns the list even if the token has no OAuth scopes.
         /// API method documentation <see href="https://docs.github.com/rest/users/followers#list-followers-of-a-user" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.Api.Models.SimpleUser&gt;</returns>
@@ -54,7 +54,7 @@ namespace GitHub.Api.Users.Item.Followers
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Lists the people following the specified user.
+        /// Lists the people following the specified user.If the specified user has a [private profile](https://docs.github.com/account-and-profile/concepts/personal-profile#private-profiles), this endpoint returns an empty list unless the request is authenticated as that user. A request authenticated as the specified user returns the list even if the token has no OAuth scopes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace GitHub.Api.Users.Item.Followers
             return new global::GitHub.Api.Users.Item.Followers.FollowersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists the people following the specified user.
+        /// Lists the people following the specified user.If the specified user has a [private profile](https://docs.github.com/account-and-profile/concepts/personal-profile#private-profiles), this endpoint returns an empty list unless the request is authenticated as that user. A request authenticated as the specified user returns the list even if the token has no OAuth scopes.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FollowersRequestBuilderGetQueryParameters 

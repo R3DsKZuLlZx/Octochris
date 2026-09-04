@@ -115,12 +115,16 @@ namespace GitHub.EnterpriseCloud.App.Installations
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("outdated")]
             public string? Outdated { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("outdated")]
             public string Outdated { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]

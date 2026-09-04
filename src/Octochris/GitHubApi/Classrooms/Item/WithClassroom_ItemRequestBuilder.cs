@@ -41,34 +41,32 @@ namespace GitHub.Api.Classrooms.Item
         {
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Gets a GitHub Classroom classroom for the current user. Classroom will only be returned if the current user is an administrator of the GitHub Classroom.
-        /// API method documentation <see href="https://docs.github.com/rest/classroom/classroom#closing-down---get-a-classroom" />
+        /// &gt; [!WARNING]&gt; **Closed notice:** This operation is no longer available as of August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).
+        /// API method documentation <see href="https://docs.github.com/rest/classroom/classroom#closed---get-a-classroom" />
         /// </summary>
-        /// <returns>A <see cref="global::GitHub.Api.Models.Classroom"/></returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 404 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 410 status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::GitHub.Api.Models.Classroom?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::GitHub.Api.Models.Classroom> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "410", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::GitHub.Api.Models.Classroom>(requestInfo, global::GitHub.Api.Models.Classroom.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Gets a GitHub Classroom classroom for the current user. Classroom will only be returned if the current user is an administrator of the GitHub Classroom.
+        /// &gt; [!WARNING]&gt; **Closed notice:** This operation is no longer available as of August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

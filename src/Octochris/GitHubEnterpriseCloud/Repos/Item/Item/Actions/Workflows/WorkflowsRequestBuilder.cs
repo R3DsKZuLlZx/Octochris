@@ -20,25 +20,12 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Workflows
         /// <summary>Gets an item from the GitHub.EnterpriseCloud.repos.item.item.actions.workflows.item collection</summary>
         /// <param name="position">The ID of the workflow. You can also pass the workflow file name as a string.</param>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Workflows.Item.WithWorkflow_ItemRequestBuilder"/></returns>
-        public global::GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Workflows.Item.WithWorkflow_ItemRequestBuilder this[int position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("workflow_id", position);
-                return new global::GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Workflows.Item.WithWorkflow_ItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
-        /// <summary>Gets an item from the GitHub.EnterpriseCloud.repos.item.item.actions.workflows.item collection</summary>
-        /// <param name="position">The ID of the workflow. You can also pass the workflow file name as a string.</param>
-        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Workflows.Item.WithWorkflow_ItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Workflows.Item.WithWorkflow_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("workflow_id", position);
+                urlTplParams.Add("workflow_id", position);
                 return new global::GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Workflows.Item.WithWorkflow_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }

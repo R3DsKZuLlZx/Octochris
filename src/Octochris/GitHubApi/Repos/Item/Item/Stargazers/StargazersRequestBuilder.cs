@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using GitHub.Api.Models;
 using GitHub.Api.Repos.Item.Item.Stargazers.Count;
+using GitHub.Api.Repos.Item.Item.Stargazers.History;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -22,6 +23,11 @@ namespace GitHub.Api.Repos.Item.Item.Stargazers
         public global::GitHub.Api.Repos.Item.Item.Stargazers.Count.CountRequestBuilder Count
         {
             get => new global::GitHub.Api.Repos.Item.Item.Stargazers.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The history property</summary>
+        public global::GitHub.Api.Repos.Item.Item.Stargazers.History.HistoryRequestBuilder History
+        {
+            get => new global::GitHub.Api.Repos.Item.Item.Stargazers.History.HistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Api.Repos.Item.Item.Stargazers.StargazersRequestBuilder"/> and sets the default values.

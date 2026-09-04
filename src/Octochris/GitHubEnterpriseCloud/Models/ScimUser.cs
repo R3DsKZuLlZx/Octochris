@@ -83,6 +83,14 @@ namespace GitHub.EnterpriseCloud.Models
 #endif
         /// <summary>The ID of the organization.</summary>
         public int? OrganizationId { get; set; }
+        /// <summary>The URL of the linked GitHub user&apos;s profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProfileUrl { get; set; }
+#nullable restore
+#else
+        public string ProfileUrl { get; set; }
+#endif
         /// <summary>The roles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,6 +150,7 @@ namespace GitHub.EnterpriseCloud.Models
                 { "name", n => { Name = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.ScimUser_name>(global::GitHub.EnterpriseCloud.Models.ScimUser_name.CreateFromDiscriminatorValue); } },
                 { "operations", n => { Operations = n.GetCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Models.ScimUser_operations>(global::GitHub.EnterpriseCloud.Models.ScimUser_operations.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "organization_id", n => { OrganizationId = n.GetIntValue(); } },
+                { "profileUrl", n => { ProfileUrl = n.GetStringValue(); } },
                 { "roles", n => { Roles = n.GetCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Models.ScimUser_roles>(global::GitHub.EnterpriseCloud.Models.ScimUser_roles.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "schemas", n => { Schemas = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "userName", n => { UserName = n.GetStringValue(); } },
@@ -164,6 +173,7 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.ScimUser_name>("name", Name);
             writer.WriteCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Models.ScimUser_operations>("operations", Operations);
             writer.WriteIntValue("organization_id", OrganizationId);
+            writer.WriteStringValue("profileUrl", ProfileUrl);
             writer.WriteCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Models.ScimUser_roles>("roles", Roles);
             writer.WriteCollectionOfPrimitiveValues<string>("schemas", Schemas);
             writer.WriteStringValue("userName", UserName);

@@ -62,10 +62,10 @@ namespace GitHub.Api.Models
         /// <summary>The payload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Payload { get; set; }
+        public global::GitHub.Api.Models.Deployment.Deployment_payload? Payload { get; set; }
 #nullable restore
 #else
-        public string Payload { get; set; }
+        public global::GitHub.Api.Models.Deployment.Deployment_payload Payload { get; set; }
 #endif
         /// <summary>GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -161,7 +161,7 @@ namespace GitHub.Api.Models
                 { "id", n => { Id = n.GetLongValue(); } },
                 { "node_id", n => { NodeId = n.GetStringValue(); } },
                 { "original_environment", n => { OriginalEnvironment = n.GetStringValue(); } },
-                { "payload", n => { Payload = n.GetStringValue(); } },
+                { "payload", n => { Payload = n.GetObjectValue<global::GitHub.Api.Models.Deployment.Deployment_payload>(global::GitHub.Api.Models.Deployment.Deployment_payload.CreateFromDiscriminatorValue); } },
                 { "performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<global::GitHub.Api.Models.NullableIntegration>(global::GitHub.Api.Models.NullableIntegration.CreateFromDiscriminatorValue); } },
                 { "production_environment", n => { ProductionEnvironment = n.GetBoolValue(); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
@@ -188,7 +188,7 @@ namespace GitHub.Api.Models
             writer.WriteLongValue("id", Id);
             writer.WriteStringValue("node_id", NodeId);
             writer.WriteStringValue("original_environment", OriginalEnvironment);
-            writer.WriteStringValue("payload", Payload);
+            writer.WriteObjectValue<global::GitHub.Api.Models.Deployment.Deployment_payload>("payload", Payload);
             writer.WriteObjectValue<global::GitHub.Api.Models.NullableIntegration>("performed_via_github_app", PerformedViaGithubApp);
             writer.WriteBoolValue("production_environment", ProductionEnvironment);
             writer.WriteStringValue("ref", Ref);
@@ -200,6 +200,57 @@ namespace GitHub.Api.Models
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="string"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Deployment_payload : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::GitHub.Api.Models.Deployment.Deployment_payload"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::GitHub.Api.Models.Deployment.Deployment_payload CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::GitHub.Api.Models.Deployment.Deployment_payload();
+                if(parseNode.GetStringValue() is string stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(String != null)
+                {
+                    writer.WriteStringValue(null, String);
+                }
+            }
         }
     }
 }
