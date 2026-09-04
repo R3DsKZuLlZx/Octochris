@@ -8,49 +8,41 @@ using System;
 namespace GitHub.EnterpriseCloud.Models
 {
     /// <summary>
-    /// A GitHub Classroom classroom
+    /// Stargazer History
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SimpleClassroom : IAdditionalDataHolder, IParsable
+    public partial class StargazerHistory : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Returns whether classroom is archived or not.</summary>
-        public bool? Archived { get; set; }
-        /// <summary>Unique identifier of the classroom.</summary>
-        public int? Id { get; set; }
-        /// <summary>The name of the classroom.</summary>
+        /// <summary>The number of stars created on each day of the week, starting on Sunday.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public List<int?>? Days { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public List<int?> Days { get; set; }
 #endif
-        /// <summary>The url of the classroom on GitHub Classroom.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Url { get; set; }
-#nullable restore
-#else
-        public string Url { get; set; }
-#endif
+        /// <summary>The number of stars created during the week.</summary>
+        public int? Total { get; set; }
+        /// <summary>The start of the week, given as a Unix timestamp.</summary>
+        public int? Week { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Models.SimpleClassroom"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Models.StargazerHistory"/> and sets the default values.
         /// </summary>
-        public SimpleClassroom()
+        public StargazerHistory()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.SimpleClassroom"/></returns>
+        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.StargazerHistory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::GitHub.EnterpriseCloud.Models.SimpleClassroom CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::GitHub.EnterpriseCloud.Models.StargazerHistory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::GitHub.EnterpriseCloud.Models.SimpleClassroom();
+            return new global::GitHub.EnterpriseCloud.Models.StargazerHistory();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,10 +52,9 @@ namespace GitHub.EnterpriseCloud.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "archived", n => { Archived = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                { "days", n => { Days = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "total", n => { Total = n.GetIntValue(); } },
+                { "week", n => { Week = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -73,10 +64,9 @@ namespace GitHub.EnterpriseCloud.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("archived", Archived);
-            writer.WriteIntValue("id", Id);
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("url", Url);
+            writer.WriteCollectionOfPrimitiveValues<int?>("days", Days);
+            writer.WriteIntValue("total", Total);
+            writer.WriteIntValue("week", Week);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

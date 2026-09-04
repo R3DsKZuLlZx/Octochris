@@ -21,25 +21,12 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Pages.Deployments
         /// <summary>Gets an item from the GitHub.EnterpriseCloud.repos.item.item.pages.deployments.item collection</summary>
         /// <param name="position">The ID of the Pages deployment. You can also give the commit SHA of the deployment.</param>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Repos.Item.Item.Pages.Deployments.Item.WithPages_deployment_ItemRequestBuilder"/></returns>
-        public global::GitHub.EnterpriseCloud.Repos.Item.Item.Pages.Deployments.Item.WithPages_deployment_ItemRequestBuilder this[int position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("pages_deployment_id", position);
-                return new global::GitHub.EnterpriseCloud.Repos.Item.Item.Pages.Deployments.Item.WithPages_deployment_ItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
-        /// <summary>Gets an item from the GitHub.EnterpriseCloud.repos.item.item.pages.deployments.item collection</summary>
-        /// <param name="position">The ID of the Pages deployment. You can also give the commit SHA of the deployment.</param>
-        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Repos.Item.Item.Pages.Deployments.Item.WithPages_deployment_ItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.Pages.Deployments.Item.WithPages_deployment_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("pages_deployment_id", position);
+                urlTplParams.Add("pages_deployment_id", position);
                 return new global::GitHub.EnterpriseCloud.Repos.Item.Item.Pages.Deployments.Item.WithPages_deployment_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }

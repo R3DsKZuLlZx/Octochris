@@ -135,6 +135,7 @@ namespace GitHub.Api.Models
             public static global::GitHub.Api.Models.IssueFieldValue.IssueFieldValue_value CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::GitHub.Api.Models.IssueFieldValue.IssueFieldValue_value();
                 if(parseNode.GetDoubleValue() is double doubleValue)
                 {

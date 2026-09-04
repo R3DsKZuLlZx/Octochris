@@ -94,8 +94,10 @@ namespace GitHub.EnterpriseCloud.Issues
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IssuesRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("collab")]
             public bool? Collab { get; set; }
+            #pragma warning restore CS1591
             /// <summary>The direction to sort the results by.</summary>
             [Obsolete("This property is deprecated, use DirectionAsGetDirectionQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,18 +136,24 @@ namespace GitHub.EnterpriseCloud.Issues
             [QueryParameter("labels")]
             public string Labels { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("orgs")]
             public bool? Orgs { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("owned")]
             public bool? Owned { get; set; }
+            #pragma warning restore CS1591
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
             /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            #pragma warning disable CS1591
             [QueryParameter("pulls")]
             public bool? Pulls { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.</summary>
             [QueryParameter("since")]
             public DateTimeOffset? Since { get; set; }

@@ -22,7 +22,7 @@ namespace GitHub.Api.Assignments.Item.Accepted_assignments
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Accepted_assignmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/assignments/{assignment_id}/accepted_assignments{?page*,per_page*}", pathParameters)
+        public Accepted_assignmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/assignments/{assignment_id}/accepted_assignments", pathParameters)
         {
         }
         /// <summary>
@@ -30,25 +30,25 @@ namespace GitHub.Api.Assignments.Item.Accepted_assignments
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Accepted_assignmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/assignments/{assignment_id}/accepted_assignments{?page*,per_page*}", rawUrl)
+        public Accepted_assignmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/assignments/{assignment_id}/accepted_assignments", rawUrl)
         {
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Lists any assignment repositories that have been created by students accepting a GitHub Classroom assignment. Accepted assignments will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
-        /// API method documentation <see href="https://docs.github.com/rest/classroom/classroom#closing-down---list-accepted-assignments-for-an-assignment" />
+        /// &gt; [!WARNING]&gt; **Closed notice:** This operation is no longer available as of August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).
+        /// API method documentation <see href="https://docs.github.com/rest/classroom/classroom#closed---list-accepted-assignments-for-an-assignment" />
         /// </summary>
-        /// <returns>A List&lt;global::GitHub.Api.Models.ClassroomAcceptedAssignment&gt;</returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 410 status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::GitHub.Api.Models.ClassroomAcceptedAssignment>?> GetAsync(Action<RequestConfiguration<global::GitHub.Api.Assignments.Item.Accepted_assignments.Accepted_assignmentsRequestBuilder.Accepted_assignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::GitHub.Api.Models.ClassroomAcceptedAssignment>> GetAsync(Action<RequestConfiguration<global::GitHub.Api.Assignments.Item.Accepted_assignments.Accepted_assignmentsRequestBuilder.Accepted_assignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -56,22 +56,21 @@ namespace GitHub.Api.Assignments.Item.Accepted_assignments
             {
                 { "410", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::GitHub.Api.Models.ClassroomAcceptedAssignment>(requestInfo, global::GitHub.Api.Models.ClassroomAcceptedAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.AsList();
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Lists any assignment repositories that have been created by students accepting a GitHub Classroom assignment. Accepted assignments will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
+        /// &gt; [!WARNING]&gt; **Closed notice:** This operation is no longer available as of August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.Api.Assignments.Item.Accepted_assignments.Accepted_assignmentsRequestBuilder.Accepted_assignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.Api.Assignments.Item.Accepted_assignments.Accepted_assignmentsRequestBuilder.Accepted_assignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -90,24 +89,11 @@ namespace GitHub.Api.Assignments.Item.Accepted_assignments
             return new global::GitHub.Api.Assignments.Item.Accepted_assignments.Accepted_assignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Lists any assignment repositories that have been created by students accepting a GitHub Classroom assignment. Accepted assignments will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Accepted_assignmentsRequestBuilderGetQueryParameters 
-        {
-            /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
-            [QueryParameter("page")]
-            public int? Page { get; set; }
-            /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
-            [QueryParameter("per_page")]
-            public int? PerPage { get; set; }
-        }
-        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Accepted_assignmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::GitHub.Api.Assignments.Item.Accepted_assignments.Accepted_assignmentsRequestBuilder.Accepted_assignmentsRequestBuilderGetQueryParameters>
+        public partial class Accepted_assignmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

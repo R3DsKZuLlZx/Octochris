@@ -210,7 +210,7 @@ namespace GitHub.EnterpriseCloud.User
         {
         }
         /// <summary>
-        /// OAuth app tokens and personal access tokens (classic) need the `user` scope in order for the response to include private profile information.
+        /// OAuth app tokens and personal access tokens (classic) need the `read:user` scope, or the broader `user` scope, for this endpoint to return the private user response. The private user response includes additional fields such as `private_gists`, `total_private_repos`, `owned_private_repos`, `disk_usage`, `collaborators`, and `two_factor_authentication`. Tokens without these scopes receive the public user response.The private and public user response types are unrelated to the [private profile](https://docs.github.com/enterprise-cloud@latest/account-and-profile/concepts/personal-profile#private-profiles) setting. A token without scopes still authenticates as the token&apos;s owner, so values subject to private profile visibility, such as `followers` and `following`, may differ from an unauthenticated response.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/users/users#get-the-authenticated-user" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.User.UserRequestBuilder.UserGetResponse"/></returns>
@@ -236,7 +236,7 @@ namespace GitHub.EnterpriseCloud.User
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.User.UserRequestBuilder.UserGetResponse>(requestInfo, global::GitHub.EnterpriseCloud.User.UserRequestBuilder.UserGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// OAuth app tokens and personal access tokens (classic) need the `user` scope in order for the response to include private profile information.
+        /// OAuth app tokens and personal access tokens (classic) need the `read:user` scope, or the broader `user` scope, for this endpoint to return the private user response. The private user response includes additional fields such as `private_gists`, `total_private_repos`, `owned_private_repos`, `disk_usage`, `collaborators`, and `two_factor_authentication`. Tokens without these scopes receive the public user response.The private and public user response types are unrelated to the [private profile](https://docs.github.com/enterprise-cloud@latest/account-and-profile/concepts/personal-profile#private-profiles) setting. A token without scopes still authenticates as the token&apos;s owner, so values subject to private profile visibility, such as `followers` and `following`, may differ from an unauthenticated response.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/users/users#get-the-authenticated-user" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.User.UserRequestBuilder.UserResponse"/></returns>
@@ -295,7 +295,7 @@ namespace GitHub.EnterpriseCloud.User
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.PrivateUser>(requestInfo, global::GitHub.EnterpriseCloud.Models.PrivateUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// OAuth app tokens and personal access tokens (classic) need the `user` scope in order for the response to include private profile information.
+        /// OAuth app tokens and personal access tokens (classic) need the `read:user` scope, or the broader `user` scope, for this endpoint to return the private user response. The private user response includes additional fields such as `private_gists`, `total_private_repos`, `owned_private_repos`, `disk_usage`, `collaborators`, and `two_factor_authentication`. Tokens without these scopes receive the public user response.The private and public user response types are unrelated to the [private profile](https://docs.github.com/enterprise-cloud@latest/account-and-profile/concepts/personal-profile#private-profiles) setting. A token without scopes still authenticates as the token&apos;s owner, so values subject to private profile visibility, such as `followers` and `following`, may differ from an unauthenticated response.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

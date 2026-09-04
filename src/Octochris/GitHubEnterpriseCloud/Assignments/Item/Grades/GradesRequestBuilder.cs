@@ -34,35 +34,32 @@ namespace GitHub.EnterpriseCloud.Assignments.Item.Grades
         {
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Gets grades for a GitHub Classroom assignment. Grades will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
-        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/classroom/classroom#closing-down---get-assignment-grades" />
+        /// &gt; [!WARNING]&gt; **Closed notice:** This operation is no longer available as of August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).
+        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/classroom/classroom#closed---get-assignment-grades" />
         /// </summary>
-        /// <returns>A List&lt;global::GitHub.EnterpriseCloud.Models.ClassroomAssignmentGrade&gt;</returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 404 status code</exception>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 410 status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::GitHub.EnterpriseCloud.Models.ClassroomAssignmentGrade>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::GitHub.EnterpriseCloud.Models.ClassroomAssignmentGrade>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
                 { "410", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::GitHub.EnterpriseCloud.Models.ClassroomAssignmentGrade>(requestInfo, global::GitHub.EnterpriseCloud.Models.ClassroomAssignmentGrade.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.AsList();
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).Gets grades for a GitHub Classroom assignment. Grades will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
+        /// &gt; [!WARNING]&gt; **Closed notice:** This operation is no longer available as of August 28, 2026.&gt; For more information, see the [GitHub Classroom sunset notice](https://gh.io/classroom-sunset).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
