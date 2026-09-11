@@ -13,7 +13,7 @@ namespace GitHub.EnterpriseCloud.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CodeScanningAiScanOrgEnablementUpdate : IParsable
     {
-        /// <summary>Whether AI Scan is enabled for the organization. Organization respects enterprise policy. Disabled organizations prevent repositories from enabling AI Scna. Enabled organizations enable AI Scan for their repositories, but individual repositories can opt out.</summary>
+        /// <summary>Whether AI Scan is enabled for the organization. Organization respects enterprise policy. Disabled organizations prevent repositories from enabling AI Scan. Enabled organizations enable AI Scan for their repositories, but individual repositories can opt out.</summary>
         public global::GitHub.EnterpriseCloud.Models.CodeScanningAiScanOrgEnablementUpdate_pr_scan? PrScan { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

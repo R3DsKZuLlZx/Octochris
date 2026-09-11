@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Api.Models
 {
-    /// <summary>Whether AI Scan is enabled for the organization. Organization respects enterprise policy. Disabled organizations prevent repositories from enabling AI Scna. Enabled organizations enable AI Scan for their repositories, but individual repositories can opt out.</summary>
+    /// <summary>Whether AI Scan is enabled for the organization. Organization respects enterprise policy. Disabled organizations prevent repositories from enabling AI Scan. Enabled organizations enable AI Scan for their repositories, but individual repositories can opt out.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CodeScanningAiScanOrgEnablementUpdate_pr_scan
     {
