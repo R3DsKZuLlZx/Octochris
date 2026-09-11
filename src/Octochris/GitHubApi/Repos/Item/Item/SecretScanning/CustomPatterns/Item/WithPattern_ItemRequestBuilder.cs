@@ -34,7 +34,7 @@ namespace GitHub.Api.Repos.Item.Item.SecretScanning.CustomPatterns.Item
         {
         }
         /// <summary>
-        /// Updates a secret scanning custom pattern for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+        /// Updates a secret scanning custom pattern for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.Fine-grained access tokens require the `administration:write` repository permission.
         /// API method documentation <see href="https://docs.github.com/rest/secret-scanning/custom-patterns#update-a-repository-custom-pattern" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Models.SecretScanningCustomPattern"/></returns>
@@ -68,7 +68,7 @@ namespace GitHub.Api.Repos.Item.Item.SecretScanning.CustomPatterns.Item
             return await RequestAdapter.SendAsync<global::GitHub.Api.Models.SecretScanningCustomPattern>(requestInfo, global::GitHub.Api.Models.SecretScanningCustomPattern.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a secret scanning custom pattern for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+        /// Updates a secret scanning custom pattern for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.Fine-grained access tokens require the `administration:write` repository permission.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Fields to update on a custom pattern. At least one updatable field (`pattern`, `start_delimiter`, `end_delimiter`, `must_match`, or `must_not_match`) must also be provided. Only provided fields will be updated.</param>

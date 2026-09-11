@@ -35,7 +35,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.CodeScanning.AiScan
         }
         /// <summary>
         /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Gets the AI Scan setting stored on an organization.The response reports the value stored on the organization. Organization respects enterprise policy.The authenticated user must be an owner or security manager for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `admin:org`, `repo`, or `write:org` scope to use this endpoint. Organization owners can use `admin:org` or `repo`; security managers need `write:org`.
-        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/code-scanning/ai-scan#get-the-ai-scan-setting-for-an-organization" />
+        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/code-scanning/code-scanning#get-the-ai-scan-setting-for-an-organization" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.CodeScanningAiScanOrgSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.CodeScanning.AiScan
         }
         /// <summary>
         /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Updates the AI Scan setting stored on an organization.The organization respects the enterprise policy, so enabling is rejected when the enterprise disallows AI Scan.OAuth app tokens and personal access tokens (classic) need the `admin:org`, `repo`, or `write:org` scope to use this endpoint. Organization owners can use `admin:org` or `repo`; security managers need `write:org`.
-        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/code-scanning/ai-scan#update-the-ai-scan-setting-for-an-organization" />
+        /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/code-scanning/code-scanning#update-the-ai-scan-setting-for-an-organization" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.CodeScanningAiScanOrgSettings"/></returns>
         /// <param name="body">The AI Scan organization setting to apply</param>

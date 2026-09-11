@@ -60,7 +60,7 @@ namespace GitHub.Api.Repos.Item.Item.SecretScanning.CustomPatterns
         {
         }
         /// <summary>
-        /// Bulk deletes secret scanning custom patterns for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+        /// Bulk deletes secret scanning custom patterns for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.Fine-grained access tokens require the `administration:write` repository permission.
         /// API method documentation <see href="https://docs.github.com/rest/secret-scanning/custom-patterns#bulk-delete-repository-custom-patterns" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace GitHub.Api.Repos.Item.Item.SecretScanning.CustomPatterns
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists secret scanning custom patterns for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+        /// Lists secret scanning custom patterns for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.Fine-grained access tokens require the `administration:write` repository permission.
         /// API method documentation <see href="https://docs.github.com/rest/secret-scanning/custom-patterns#list-repository-custom-patterns" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.Api.Models.SecretScanningCustomPattern&gt;</returns>
@@ -118,7 +118,7 @@ namespace GitHub.Api.Repos.Item.Item.SecretScanning.CustomPatterns
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Bulk creates secret scanning custom patterns for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+        /// Bulk creates secret scanning custom patterns for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.Fine-grained access tokens require the `administration:write` repository permission.
         /// API method documentation <see href="https://docs.github.com/rest/secret-scanning/custom-patterns#bulk-create-repository-custom-patterns" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Repos.Item.Item.SecretScanning.CustomPatterns.CustomPatternsPostResponse"/></returns>
@@ -150,7 +150,7 @@ namespace GitHub.Api.Repos.Item.Item.SecretScanning.CustomPatterns
             return await RequestAdapter.SendAsync<global::GitHub.Api.Repos.Item.Item.SecretScanning.CustomPatterns.CustomPatternsPostResponse>(requestInfo, global::GitHub.Api.Repos.Item.Item.SecretScanning.CustomPatterns.CustomPatternsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Bulk creates secret scanning custom patterns for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+        /// Bulk creates secret scanning custom patterns for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.Fine-grained access tokens require the `administration:write` repository permission.
         /// API method documentation <see href="https://docs.github.com/rest/secret-scanning/custom-patterns#bulk-create-repository-custom-patterns" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Repos.Item.Item.SecretScanning.CustomPatterns.CustomPatternsResponse"/></returns>
@@ -183,7 +183,7 @@ namespace GitHub.Api.Repos.Item.Item.SecretScanning.CustomPatterns
             return await RequestAdapter.SendAsync<global::GitHub.Api.Repos.Item.Item.SecretScanning.CustomPatterns.CustomPatternsResponse>(requestInfo, global::GitHub.Api.Repos.Item.Item.SecretScanning.CustomPatterns.CustomPatternsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Bulk deletes secret scanning custom patterns for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+        /// Bulk deletes secret scanning custom patterns for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.Fine-grained access tokens require the `administration:write` repository permission.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -205,7 +205,7 @@ namespace GitHub.Api.Repos.Item.Item.SecretScanning.CustomPatterns
             return requestInfo;
         }
         /// <summary>
-        /// Lists secret scanning custom patterns for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+        /// Lists secret scanning custom patterns for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.Fine-grained access tokens require the `administration:write` repository permission.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -224,7 +224,7 @@ namespace GitHub.Api.Repos.Item.Item.SecretScanning.CustomPatterns
             return requestInfo;
         }
         /// <summary>
-        /// Bulk creates secret scanning custom patterns for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+        /// Bulk creates secret scanning custom patterns for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.Fine-grained access tokens require the `administration:write` repository permission.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -263,7 +263,7 @@ namespace GitHub.Api.Repos.Item.Item.SecretScanning.CustomPatterns
         {
         }
         /// <summary>
-        /// Lists secret scanning custom patterns for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+        /// Lists secret scanning custom patterns for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.Fine-grained access tokens require the `administration:write` repository permission.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomPatternsRequestBuilderGetQueryParameters 
