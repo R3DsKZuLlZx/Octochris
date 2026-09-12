@@ -14,6 +14,14 @@ namespace GitHub.Api.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The user who archived the label, or `null` if it has not been archived.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Models.SimpleUser? ArchivedBy { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Models.SimpleUser ArchivedBy { get; set; }
+#endif
         /// <summary>The color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,6 +91,7 @@ namespace GitHub.Api.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "archived_by", n => { ArchivedBy = n.GetObjectValue<global::GitHub.Api.Models.SimpleUser>(global::GitHub.Api.Models.SimpleUser.CreateFromDiscriminatorValue); } },
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "default", n => { Default = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -99,6 +108,7 @@ namespace GitHub.Api.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::GitHub.Api.Models.SimpleUser>("archived_by", ArchivedBy);
             writer.WriteStringValue("color", Color);
             writer.WriteBoolValue("default", Default);
             writer.WriteStringValue("description", Description);

@@ -15,6 +15,16 @@ namespace GitHub.EnterpriseCloud.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Timestamp indicating when the label was archived, or `null` if it has not been archived.</summary>
+        public DateTimeOffset? ArchivedAt { get; set; }
+        /// <summary>The user who archived the label, or `null` if it has not been archived.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.EnterpriseCloud.Models.SimpleUser? ArchivedBy { get; set; }
+#nullable restore
+#else
+        public global::GitHub.EnterpriseCloud.Models.SimpleUser ArchivedBy { get; set; }
+#endif
         /// <summary>The color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +104,8 @@ namespace GitHub.EnterpriseCloud.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "archived_at", n => { ArchivedAt = n.GetDateTimeOffsetValue(); } },
+                { "archived_by", n => { ArchivedBy = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.SimpleUser>(global::GitHub.EnterpriseCloud.Models.SimpleUser.CreateFromDiscriminatorValue); } },
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "default", n => { Default = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -112,6 +124,8 @@ namespace GitHub.EnterpriseCloud.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("archived_at", ArchivedAt);
+            writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.SimpleUser>("archived_by", ArchivedBy);
             writer.WriteStringValue("color", Color);
             writer.WriteBoolValue("default", Default);
             writer.WriteStringValue("description", Description);
