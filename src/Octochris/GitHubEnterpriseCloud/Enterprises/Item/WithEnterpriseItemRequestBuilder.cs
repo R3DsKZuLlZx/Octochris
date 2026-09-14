@@ -12,6 +12,7 @@ using GitHub.EnterpriseCloud.Enterprises.Item.Code_security_and_analysis;
 using GitHub.EnterpriseCloud.Enterprises.Item.ConsumedLicenses;
 using GitHub.EnterpriseCloud.Enterprises.Item.Copilot;
 using GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations;
+using GitHub.EnterpriseCloud.Enterprises.Item.Credentials;
 using GitHub.EnterpriseCloud.Enterprises.Item.Dependabot;
 using GitHub.EnterpriseCloud.Enterprises.Item.DismissalRequests;
 using GitHub.EnterpriseCloud.Enterprises.Item.EnterpriseRoles;
@@ -102,6 +103,11 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item
         public global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder CredentialAuthorizations
         {
             get => new global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The credentials property</summary>
+        public global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.CredentialsRequestBuilder Credentials
+        {
+            get => new global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.CredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dependabot property</summary>
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Dependabot.DependabotRequestBuilder Dependabot
