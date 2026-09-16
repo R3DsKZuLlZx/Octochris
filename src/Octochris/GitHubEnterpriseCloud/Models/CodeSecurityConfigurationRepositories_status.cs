@@ -39,5 +39,9 @@ namespace GitHub.EnterpriseCloud.Models
         #pragma warning disable CS1591
         Removed_by_enterprise,
         #pragma warning restore CS1591
+        [EnumMember(Value = "enterprise_enforced")]
+        #pragma warning disable CS1591
+        Enterprise_enforced,
+        #pragma warning restore CS1591
     }
 }

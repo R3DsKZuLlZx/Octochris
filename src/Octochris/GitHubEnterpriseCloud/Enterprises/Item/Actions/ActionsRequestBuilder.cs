@@ -4,6 +4,7 @@ using GitHub.EnterpriseCloud.Enterprises.Item.Actions.Cache;
 using GitHub.EnterpriseCloud.Enterprises.Item.Actions.HostedRunners;
 using GitHub.EnterpriseCloud.Enterprises.Item.Actions.Oidc;
 using GitHub.EnterpriseCloud.Enterprises.Item.Actions.Permissions;
+using GitHub.EnterpriseCloud.Enterprises.Item.Actions.Policies;
 using GitHub.EnterpriseCloud.Enterprises.Item.Actions.RunnerGroups;
 using GitHub.EnterpriseCloud.Enterprises.Item.Actions.Runners;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -39,6 +40,11 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Actions
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Actions.Permissions.PermissionsRequestBuilder Permissions
         {
             get => new global::GitHub.EnterpriseCloud.Enterprises.Item.Actions.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The policies property</summary>
+        public global::GitHub.EnterpriseCloud.Enterprises.Item.Actions.Policies.PoliciesRequestBuilder Policies
+        {
+            get => new global::GitHub.EnterpriseCloud.Enterprises.Item.Actions.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The runnerGroups property</summary>
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Actions.RunnerGroups.RunnerGroupsRequestBuilder RunnerGroups

@@ -15,5 +15,9 @@ namespace GitHub.Api.Enterprises.Item.CodeSecurity.Configurations
         #pragma warning disable CS1591
         Unenforced,
         #pragma warning restore CS1591
+        [EnumMember(Value = "enterprise_enforced")]
+        #pragma warning disable CS1591
+        Enterprise_enforced,
+        #pragma warning restore CS1591
     }
 }

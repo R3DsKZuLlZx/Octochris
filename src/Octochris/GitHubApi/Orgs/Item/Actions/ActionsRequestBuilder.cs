@@ -4,6 +4,7 @@ using GitHub.Api.Orgs.Item.Actions.Cache;
 using GitHub.Api.Orgs.Item.Actions.HostedRunners;
 using GitHub.Api.Orgs.Item.Actions.Oidc;
 using GitHub.Api.Orgs.Item.Actions.Permissions;
+using GitHub.Api.Orgs.Item.Actions.Policies;
 using GitHub.Api.Orgs.Item.Actions.RunnerGroups;
 using GitHub.Api.Orgs.Item.Actions.Runners;
 using GitHub.Api.Orgs.Item.Actions.Secrets;
@@ -41,6 +42,11 @@ namespace GitHub.Api.Orgs.Item.Actions
         public global::GitHub.Api.Orgs.Item.Actions.Permissions.PermissionsRequestBuilder Permissions
         {
             get => new global::GitHub.Api.Orgs.Item.Actions.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The policies property</summary>
+        public global::GitHub.Api.Orgs.Item.Actions.Policies.PoliciesRequestBuilder Policies
+        {
+            get => new global::GitHub.Api.Orgs.Item.Actions.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The runnerGroups property</summary>
         public global::GitHub.Api.Orgs.Item.Actions.RunnerGroups.RunnerGroupsRequestBuilder RunnerGroups
