@@ -9,6 +9,7 @@ using GitHub.Api.Repos.Item.Item.Actions.Oidc;
 using GitHub.Api.Repos.Item.Item.Actions.OrganizationSecrets;
 using GitHub.Api.Repos.Item.Item.Actions.OrganizationVariables;
 using GitHub.Api.Repos.Item.Item.Actions.Permissions;
+using GitHub.Api.Repos.Item.Item.Actions.Policies;
 using GitHub.Api.Repos.Item.Item.Actions.Runners;
 using GitHub.Api.Repos.Item.Item.Actions.Runs;
 using GitHub.Api.Repos.Item.Item.Actions.Secrets;
@@ -72,6 +73,11 @@ namespace GitHub.Api.Repos.Item.Item.Actions
         public global::GitHub.Api.Repos.Item.Item.Actions.Permissions.PermissionsRequestBuilder Permissions
         {
             get => new global::GitHub.Api.Repos.Item.Item.Actions.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The policies property</summary>
+        public global::GitHub.Api.Repos.Item.Item.Actions.Policies.PoliciesRequestBuilder Policies
+        {
+            get => new global::GitHub.Api.Repos.Item.Item.Actions.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The runners property</summary>
         public global::GitHub.Api.Repos.Item.Item.Actions.Runners.RunnersRequestBuilder Runners

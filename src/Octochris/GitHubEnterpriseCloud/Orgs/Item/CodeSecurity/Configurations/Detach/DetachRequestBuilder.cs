@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.CodeSecurity.Configurations.Detach
         {
         }
         /// <summary>
-        /// Detach code security configuration(s) from a set of repositories.Repositories will retain their settings but will no longer be associated with the configuration.The authenticated user must be an administrator or security manager for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
+        /// Detach code security configuration(s) from a set of repositories.Repositories will retain their settings but will no longer be associated with the configuration.The authenticated user must be an administrator or security manager for the organization to use this endpoint.Repositories with active enterprise-enforced attachments are skipped unless the authenticated user can manage the enterprise&apos;s code security settings; the rest are detached. Inactive enterprise-enforced attachments, such as failed attachments, are detached. The request still returns `204` if every repository is skipped.OAuth app tokens and classic PATs require the `write:org` scope. Managing enterprise-enforced configurations also requires `admin:enterprise` and is not supported by fine-grained PATs or GitHub App access tokens.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/code-security/configurations#detach-configurations-from-repositories" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -65,7 +65,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.CodeSecurity.Configurations.Detach
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Detach code security configuration(s) from a set of repositories.Repositories will retain their settings but will no longer be associated with the configuration.The authenticated user must be an administrator or security manager for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
+        /// Detach code security configuration(s) from a set of repositories.Repositories will retain their settings but will no longer be associated with the configuration.The authenticated user must be an administrator or security manager for the organization to use this endpoint.Repositories with active enterprise-enforced attachments are skipped unless the authenticated user can manage the enterprise&apos;s code security settings; the rest are detached. Inactive enterprise-enforced attachments, such as failed attachments, are detached. The request still returns `204` if every repository is skipped.OAuth app tokens and classic PATs require the `write:org` scope. Managing enterprise-enforced configurations also requires `admin:enterprise` and is not supported by fine-grained PATs or GitHub App access tokens.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
