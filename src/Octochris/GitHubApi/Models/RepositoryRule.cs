@@ -8,7 +8,7 @@ using System;
 namespace GitHub.Api.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::GitHub.Api.Models.RepositoryRuleBranchNamePattern"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleCodeScanning"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleCommitAuthorEmailPattern"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleCommitMessagePattern"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleCommitterEmailPattern"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleCopilotCodeReview"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleCreation"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleDeletion"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleFileExtensionRestriction"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleFilePathRestriction"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleLicenseComplianceScanning"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleMaxFilePathLength"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleMaxFileSize"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleMergeQueue"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleNonFastForward"/>, <see cref="global::GitHub.Api.Models.RepositoryRulePullRequest"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleRequiredDeployments"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleRequiredLinearHistory"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleRequiredSignatures"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleRequiredStatusChecks"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleTagNamePattern"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleUpdate"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleWorkflows"/>
+    /// Composed type wrapper for classes <see cref="global::GitHub.Api.Models.RepositoryRuleBranchNamePattern"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleCodeCoverage"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleCodeQuality"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleCodeScanning"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleCommitAuthorEmailPattern"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleCommitMessagePattern"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleCommitterEmailPattern"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleCopilotCodeReview"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleCreation"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleDeletion"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleFileExtensionRestriction"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleFilePathRestriction"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleLicenseComplianceScanning"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleMaxFilePathLength"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleMaxFileSize"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleMergeQueue"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleNonFastForward"/>, <see cref="global::GitHub.Api.Models.RepositoryRulePullRequest"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleRequiredDeployments"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleRequiredLinearHistory"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleRequiredSignatures"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleRequiredStatusChecks"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleTagNamePattern"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleUpdate"/>, <see cref="global::GitHub.Api.Models.RepositoryRuleWorkflows"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RepositoryRule : IComposedTypeWrapper, IParsable
@@ -20,6 +20,22 @@ namespace GitHub.Api.Models
 #nullable restore
 #else
         public global::GitHub.Api.Models.RepositoryRuleBranchNamePattern RepositoryRuleBranchNamePattern { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::GitHub.Api.Models.RepositoryRuleCodeCoverage"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Models.RepositoryRuleCodeCoverage? RepositoryRuleCodeCoverage { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Models.RepositoryRuleCodeCoverage RepositoryRuleCodeCoverage { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::GitHub.Api.Models.RepositoryRuleCodeQuality"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Models.RepositoryRuleCodeQuality? RepositoryRuleCodeQuality { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Models.RepositoryRuleCodeQuality RepositoryRuleCodeQuality { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::GitHub.Api.Models.RepositoryRuleCodeScanning"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -211,6 +227,14 @@ namespace GitHub.Api.Models
             {
                 result.RepositoryRuleBranchNamePattern = new global::GitHub.Api.Models.RepositoryRuleBranchNamePattern();
             }
+            else if("repository-rule-code-coverage".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleCodeCoverage = new global::GitHub.Api.Models.RepositoryRuleCodeCoverage();
+            }
+            else if("repository-rule-code-quality".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleCodeQuality = new global::GitHub.Api.Models.RepositoryRuleCodeQuality();
+            }
             else if("repository-rule-code-scanning".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RepositoryRuleCodeScanning = new global::GitHub.Api.Models.RepositoryRuleCodeScanning();
@@ -310,6 +334,14 @@ namespace GitHub.Api.Models
             if(RepositoryRuleBranchNamePattern != null)
             {
                 return RepositoryRuleBranchNamePattern.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleCodeCoverage != null)
+            {
+                return RepositoryRuleCodeCoverage.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleCodeQuality != null)
+            {
+                return RepositoryRuleCodeQuality.GetFieldDeserializers();
             }
             else if(RepositoryRuleCodeScanning != null)
             {
@@ -411,6 +443,14 @@ namespace GitHub.Api.Models
             if(RepositoryRuleBranchNamePattern != null)
             {
                 writer.WriteObjectValue<global::GitHub.Api.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleBranchNamePattern);
+            }
+            else if(RepositoryRuleCodeCoverage != null)
+            {
+                writer.WriteObjectValue<global::GitHub.Api.Models.RepositoryRuleCodeCoverage>(null, RepositoryRuleCodeCoverage);
+            }
+            else if(RepositoryRuleCodeQuality != null)
+            {
+                writer.WriteObjectValue<global::GitHub.Api.Models.RepositoryRuleCodeQuality>(null, RepositoryRuleCodeQuality);
             }
             else if(RepositoryRuleCodeScanning != null)
             {

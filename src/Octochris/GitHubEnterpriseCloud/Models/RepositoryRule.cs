@@ -8,7 +8,7 @@ using System;
 namespace GitHub.EnterpriseCloud.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleBranchNamePattern"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCodeScanning"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCommitAuthorEmailPattern"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCommitMessagePattern"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCommitterEmailPattern"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCopilotCodeReview"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCreation"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleDeletion"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleFileExtensionRestriction"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleFilePathRestriction"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleLicenseComplianceScanning"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleMaxFilePathLength"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleMaxFileSize"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleMergeQueue"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleNonFastForward"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRulePullRequest"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleRequiredDeployments"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleRequiredLinearHistory"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleRequiredSignatures"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleRequiredStatusChecks"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleTagNamePattern"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleUpdate"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleWorkflows"/>
+    /// Composed type wrapper for classes <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleBranchNamePattern"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCodeCoverage"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCodeQuality"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCodeScanning"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCommitAuthorEmailPattern"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCommitMessagePattern"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCommitterEmailPattern"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCopilotCodeReview"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCreation"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleDeletion"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleFileExtensionRestriction"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleFilePathRestriction"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleLicenseComplianceScanning"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleMaxFilePathLength"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleMaxFileSize"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleMergeQueue"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleNonFastForward"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRulePullRequest"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleRequiredDeployments"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleRequiredLinearHistory"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleRequiredSignatures"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleRequiredStatusChecks"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleTagNamePattern"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleUpdate"/>, <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleWorkflows"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RepositoryRule : IComposedTypeWrapper, IParsable
@@ -20,6 +20,22 @@ namespace GitHub.EnterpriseCloud.Models
 #nullable restore
 #else
         public global::GitHub.EnterpriseCloud.Models.RepositoryRuleBranchNamePattern RepositoryRuleBranchNamePattern { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCodeCoverage"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.EnterpriseCloud.Models.RepositoryRuleCodeCoverage? RepositoryRuleCodeCoverage { get; set; }
+#nullable restore
+#else
+        public global::GitHub.EnterpriseCloud.Models.RepositoryRuleCodeCoverage RepositoryRuleCodeCoverage { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCodeQuality"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.EnterpriseCloud.Models.RepositoryRuleCodeQuality? RepositoryRuleCodeQuality { get; set; }
+#nullable restore
+#else
+        public global::GitHub.EnterpriseCloud.Models.RepositoryRuleCodeQuality RepositoryRuleCodeQuality { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleCodeScanning"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -211,6 +227,14 @@ namespace GitHub.EnterpriseCloud.Models
             {
                 result.RepositoryRuleBranchNamePattern = new global::GitHub.EnterpriseCloud.Models.RepositoryRuleBranchNamePattern();
             }
+            else if("repository-rule-code-coverage".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleCodeCoverage = new global::GitHub.EnterpriseCloud.Models.RepositoryRuleCodeCoverage();
+            }
+            else if("repository-rule-code-quality".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleCodeQuality = new global::GitHub.EnterpriseCloud.Models.RepositoryRuleCodeQuality();
+            }
             else if("repository-rule-code-scanning".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RepositoryRuleCodeScanning = new global::GitHub.EnterpriseCloud.Models.RepositoryRuleCodeScanning();
@@ -310,6 +334,14 @@ namespace GitHub.EnterpriseCloud.Models
             if(RepositoryRuleBranchNamePattern != null)
             {
                 return RepositoryRuleBranchNamePattern.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleCodeCoverage != null)
+            {
+                return RepositoryRuleCodeCoverage.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleCodeQuality != null)
+            {
+                return RepositoryRuleCodeQuality.GetFieldDeserializers();
             }
             else if(RepositoryRuleCodeScanning != null)
             {
@@ -411,6 +443,14 @@ namespace GitHub.EnterpriseCloud.Models
             if(RepositoryRuleBranchNamePattern != null)
             {
                 writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleBranchNamePattern);
+            }
+            else if(RepositoryRuleCodeCoverage != null)
+            {
+                writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.RepositoryRuleCodeCoverage>(null, RepositoryRuleCodeCoverage);
+            }
+            else if(RepositoryRuleCodeQuality != null)
+            {
+                writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.RepositoryRuleCodeQuality>(null, RepositoryRuleCodeQuality);
             }
             else if(RepositoryRuleCodeScanning != null)
             {
