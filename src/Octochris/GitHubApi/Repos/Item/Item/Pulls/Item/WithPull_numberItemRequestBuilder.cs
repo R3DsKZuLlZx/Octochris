@@ -96,6 +96,7 @@ namespace GitHub.Api.Repos.Item.Item.Pulls.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 404 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 406 status code</exception>
+        /// <exception cref="global::GitHub.Api.Models.ValidationError">When receiving a 422 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 500 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.PullRequest503Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,6 +113,7 @@ namespace GitHub.Api.Repos.Item.Item.Pulls.Item
             {
                 { "404", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "406", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
+                { "422", global::GitHub.Api.Models.ValidationError.CreateFromDiscriminatorValue },
                 { "500", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "503", global::GitHub.Api.Models.PullRequest503Error.CreateFromDiscriminatorValue },
             };
