@@ -56,6 +56,8 @@ namespace GitHub.Api.Repos.Item.Item.Commits
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 400 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 404 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 409 status code</exception>
+        /// <exception cref="global::GitHub.Api.Models.ValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 429 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +74,8 @@ namespace GitHub.Api.Repos.Item.Item.Commits
                 { "400", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "404", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "409", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
+                { "422", global::GitHub.Api.Models.ValidationError.CreateFromDiscriminatorValue },
+                { "429", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "500", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::GitHub.Api.Models.Commit>(requestInfo, global::GitHub.Api.Models.Commit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

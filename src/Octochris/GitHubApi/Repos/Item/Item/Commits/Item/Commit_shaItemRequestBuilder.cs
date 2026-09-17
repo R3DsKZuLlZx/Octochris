@@ -85,6 +85,7 @@ namespace GitHub.Api.Repos.Item.Item.Commits.Item
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 404 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 409 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.ValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 429 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 500 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.Commit503Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,6 +103,7 @@ namespace GitHub.Api.Repos.Item.Item.Commits.Item
                 { "404", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "409", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "422", global::GitHub.Api.Models.ValidationError.CreateFromDiscriminatorValue },
+                { "429", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "500", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "503", global::GitHub.Api.Models.Commit503Error.CreateFromDiscriminatorValue },
             };
