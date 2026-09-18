@@ -16,6 +16,10 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Collaborators
         #pragma warning disable CS1591
         Triage,
         #pragma warning restore CS1591
+        [EnumMember(Value = "triage_plus")]
+        #pragma warning disable CS1591
+        Triage_plus,
+        #pragma warning restore CS1591
         [EnumMember(Value = "push")]
         #pragma warning disable CS1591
         Push,
