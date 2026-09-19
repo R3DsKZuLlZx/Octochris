@@ -16,6 +16,8 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.InteractionLimits.Pulls.CreationCap
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the pull request creation cap is enabled</summary>
         public bool? Enabled { get; set; }
+        /// <summary>Whether draft pull requests count toward the pull request creation cap</summary>
+        public bool? IncludeDrafts { get; set; }
         /// <summary>The maximum number of open pull requests a user can have at one time</summary>
         public int? MaxOpenPullRequests { get; set; }
         /// <summary>
@@ -44,6 +46,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.InteractionLimits.Pulls.CreationCap
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "include_drafts", n => { IncludeDrafts = n.GetBoolValue(); } },
                 { "max_open_pull_requests", n => { MaxOpenPullRequests = n.GetIntValue(); } },
             };
         }
@@ -55,6 +58,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.InteractionLimits.Pulls.CreationCap
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteBoolValue("include_drafts", IncludeDrafts);
             writer.WriteIntValue("max_open_pull_requests", MaxOpenPullRequests);
             writer.WriteAdditionalData(AdditionalData);
         }
