@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Dependabot.RepositoryAccess.DefaultLe
         {
         }
         /// <summary>
-        /// Sets the default level of repository access Dependabot will have while performing an update.  Available values are:- &apos;public&apos; - Dependabot will only have access to public repositories, unless access is explicitly granted to non-public repositories.- &apos;internal&apos; - Dependabot will only have access to public and internal repositories, unless access is explicitly granted to private repositories.Unauthorized users will not see the existence of this endpoint.This operation supports both server-to-server and user-to-server access.
+        /// Sets the default level of repository access Dependabot will have while performing an update.  Available values are:- &apos;public&apos; - Dependabot will only have access to public repositories, unless access is explicitly granted to non-public repositories.- &apos;internal&apos; - Dependabot will only have access to public and internal repositories, unless access is explicitly granted to private repositories.Unauthorized users will not see the existence of this endpoint.This operation supports both server-to-server and user-to-server access.OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/dependabot/repository-access#set-the-default-repository-access-level-for-dependabot" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -61,7 +61,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Dependabot.RepositoryAccess.DefaultLe
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sets the default level of repository access Dependabot will have while performing an update.  Available values are:- &apos;public&apos; - Dependabot will only have access to public repositories, unless access is explicitly granted to non-public repositories.- &apos;internal&apos; - Dependabot will only have access to public and internal repositories, unless access is explicitly granted to private repositories.Unauthorized users will not see the existence of this endpoint.This operation supports both server-to-server and user-to-server access.
+        /// Sets the default level of repository access Dependabot will have while performing an update.  Available values are:- &apos;public&apos; - Dependabot will only have access to public repositories, unless access is explicitly granted to non-public repositories.- &apos;internal&apos; - Dependabot will only have access to public and internal repositories, unless access is explicitly granted to private repositories.Unauthorized users will not see the existence of this endpoint.This operation supports both server-to-server and user-to-server access.OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

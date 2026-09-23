@@ -66,7 +66,7 @@ namespace GitHub.Api.Orgs.Item.Dependabot.RepositoryAccess
             return await RequestAdapter.SendAsync<global::GitHub.Api.Models.DependabotRepositoryAccessDetails>(requestInfo, global::GitHub.Api.Models.DependabotRepositoryAccessDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates repositories according to the list of repositories that organization admins have given Dependabot access to when they&apos;ve updated dependencies.&gt; [!NOTE]&gt;    This operation supports both server-to-server and user-to-server access.Unauthorized users will not see the existence of this endpoint.**Example request body:**```json{  &quot;repository_ids_to_add&quot;: [123, 456],  &quot;repository_ids_to_remove&quot;: [789]}```
+        /// Updates repositories according to the list of repositories that organization admins have given Dependabot access to when they&apos;ve updated dependencies.&gt; [!NOTE]&gt;    This operation supports both server-to-server and user-to-server access.Unauthorized users will not see the existence of this endpoint.OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.**Example request body:**```json{  &quot;repository_ids_to_add&quot;: [123, 456],  &quot;repository_ids_to_remove&quot;: [789]}```
         /// API method documentation <see href="https://docs.github.com/rest/dependabot/repository-access#updates-dependabots-repository-access-list-for-an-organization" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -112,7 +112,7 @@ namespace GitHub.Api.Orgs.Item.Dependabot.RepositoryAccess
             return requestInfo;
         }
         /// <summary>
-        /// Updates repositories according to the list of repositories that organization admins have given Dependabot access to when they&apos;ve updated dependencies.&gt; [!NOTE]&gt;    This operation supports both server-to-server and user-to-server access.Unauthorized users will not see the existence of this endpoint.**Example request body:**```json{  &quot;repository_ids_to_add&quot;: [123, 456],  &quot;repository_ids_to_remove&quot;: [789]}```
+        /// Updates repositories according to the list of repositories that organization admins have given Dependabot access to when they&apos;ve updated dependencies.&gt; [!NOTE]&gt;    This operation supports both server-to-server and user-to-server access.Unauthorized users will not see the existence of this endpoint.OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.**Example request body:**```json{  &quot;repository_ids_to_add&quot;: [123, 456],  &quot;repository_ids_to_remove&quot;: [789]}```
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
