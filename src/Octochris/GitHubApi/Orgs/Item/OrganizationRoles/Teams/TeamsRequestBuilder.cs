@@ -16,7 +16,7 @@ namespace GitHub.Api.Orgs.Item.OrganizationRoles.Teams
     public partial class TeamsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.Api.orgs.item.organizationRoles.teams.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The slug of the team name.</param>
         /// <returns>A <see cref="global::GitHub.Api.Orgs.Item.OrganizationRoles.Teams.Item.WithTeam_slugItemRequestBuilder"/></returns>
         public global::GitHub.Api.Orgs.Item.OrganizationRoles.Teams.Item.WithTeam_slugItemRequestBuilder this[string position]
         {
