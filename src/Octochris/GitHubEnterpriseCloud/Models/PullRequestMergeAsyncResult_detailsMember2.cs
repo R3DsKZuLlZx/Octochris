@@ -8,7 +8,7 @@ using System;
 namespace GitHub.EnterpriseCloud.Models
 {
     /// <summary>
-    /// When the pull request cannot be merged
+    /// When the pull request is in a merge queue
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PullRequestMergeAsyncResult_detailsMember2 : IParsable

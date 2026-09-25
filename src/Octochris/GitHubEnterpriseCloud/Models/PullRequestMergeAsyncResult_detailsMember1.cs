@@ -8,7 +8,7 @@ using System;
 namespace GitHub.EnterpriseCloud.Models
 {
     /// <summary>
-    /// When an asynchronous merge request was created or already existed
+    /// When the asynchronous merge request is pending
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PullRequestMergeAsyncResult_detailsMember1 : IParsable

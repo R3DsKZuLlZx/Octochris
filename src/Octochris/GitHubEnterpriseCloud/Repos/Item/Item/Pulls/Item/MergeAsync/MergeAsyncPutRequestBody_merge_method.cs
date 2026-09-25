@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.EnterpriseCloud.Repos.Item.Item.Pulls.Item.MergeAsync
 {
-    /// <summary>The merge method to use.</summary>
+    /// <summary>The merge method to use for a direct merge. Only supported for direct merges.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MergeAsyncPutRequestBody_merge_method
     {

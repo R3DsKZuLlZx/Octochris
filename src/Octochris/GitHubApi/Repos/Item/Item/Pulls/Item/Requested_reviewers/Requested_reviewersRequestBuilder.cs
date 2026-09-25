@@ -87,6 +87,7 @@ namespace GitHub.Api.Repos.Item.Item.Pulls.Item.Requested_reviewers
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.Api.Models.PullRequestSimple503Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::GitHub.Api.Models.PullRequestSimple?> PostAsync(global::GitHub.Api.Repos.Item.Item.Pulls.Item.Requested_reviewers.Requested_reviewersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -101,6 +102,7 @@ namespace GitHub.Api.Repos.Item.Item.Pulls.Item.Requested_reviewers
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
+                { "503", global::GitHub.Api.Models.PullRequestSimple503Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::GitHub.Api.Models.PullRequestSimple>(requestInfo, global::GitHub.Api.Models.PullRequestSimple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

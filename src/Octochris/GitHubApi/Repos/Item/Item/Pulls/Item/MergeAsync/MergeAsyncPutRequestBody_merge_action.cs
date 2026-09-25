@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Api.Repos.Item.Item.Pulls.Item.MergeAsync
 {
-    /// <summary>The action that will be taken to merge the pull request. `direct_merge` merges the pull request directly without using a merge queue; `merge_queue` adds the pull request to a merge queue; `default` selects the most appropriate option.</summary>
+    /// <summary>The action that will be taken to merge the pull request. `direct_merge` merges the pull request directly without using a merge queue; `merge_queue` adds the pull request to a merge queue; `default` uses a merge queue if one is configured for the target branch, or merges directly otherwise. If omitted, defaults to `default`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MergeAsyncPutRequestBody_merge_action
     {

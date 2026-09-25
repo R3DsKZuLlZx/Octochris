@@ -52,7 +52,7 @@ namespace GitHub.Api.Repos.Item.Item.Pulls.Item.Merge
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Merges a pull request into the base branch.This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see &quot;[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)&quot; and &quot;[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).&quot;
+        /// &gt; [!NOTE]&gt; We recommend using the [asynchronous merge API](https://docs.github.com/rest/pulls/pulls#merge-a-pull-request-asynchronously) instead. This endpoint does not support stacked pull requests or merging with a merge queue.Merges a pull request into the base branch.This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications).Creating content too quickly using this endpoint may result in secondary rate limiting.For more information, see &quot;[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)&quot; and &quot;[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).&quot;
         /// API method documentation <see href="https://docs.github.com/rest/pulls/pulls#merge-a-pull-request" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Models.PullRequestMergeResult"/></returns>
@@ -104,7 +104,7 @@ namespace GitHub.Api.Repos.Item.Item.Pulls.Item.Merge
             return requestInfo;
         }
         /// <summary>
-        /// Merges a pull request into the base branch.This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see &quot;[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)&quot; and &quot;[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).&quot;
+        /// &gt; [!NOTE]&gt; We recommend using the [asynchronous merge API](https://docs.github.com/rest/pulls/pulls#merge-a-pull-request-asynchronously) instead. This endpoint does not support stacked pull requests or merging with a merge queue.Merges a pull request into the base branch.This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications).Creating content too quickly using this endpoint may result in secondary rate limiting.For more information, see &quot;[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)&quot; and &quot;[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
