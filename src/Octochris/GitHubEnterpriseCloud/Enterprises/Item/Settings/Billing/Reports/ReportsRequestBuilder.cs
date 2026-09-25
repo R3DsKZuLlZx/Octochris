@@ -60,7 +60,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Reports
         {
         }
         /// <summary>
-        /// Lists all usage report exports for an enterprise. The authenticated user must be an enterprise admin or billing manager, or a custom role holder with fine-grained read access to enterprise billing. An installation access token for a GitHub App installed on the enterprise with write access to enterprise administration, or with read access to enterprise billing, can also list usage report exports.
+        /// Lists all usage report exports for an enterprise. Completed and failed report exports are available for 31 days after completion or failure. This retention period applies only to generated report records. New reports can include eligible usage data from up to 24 months ago, subject to the enterprise&apos;s creation or migration date and the report type&apos;s date-range limits. The authenticated user must be an enterprise admin or billing manager, or a custom role holder with fine-grained read access to enterprise billing. An installation access token for a GitHub App installed on the enterprise with write access to enterprise administration, or with read access to enterprise billing, can also list usage report exports.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/billing/usage-reports#list-usage-report-exports" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.UsageReportExportList"/></returns>
@@ -128,7 +128,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Reports
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.UsageReportExport>(requestInfo, global::GitHub.EnterpriseCloud.Models.UsageReportExport.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists all usage report exports for an enterprise. The authenticated user must be an enterprise admin or billing manager, or a custom role holder with fine-grained read access to enterprise billing. An installation access token for a GitHub App installed on the enterprise with write access to enterprise administration, or with read access to enterprise billing, can also list usage report exports.
+        /// Lists all usage report exports for an enterprise. Completed and failed report exports are available for 31 days after completion or failure. This retention period applies only to generated report records. New reports can include eligible usage data from up to 24 months ago, subject to the enterprise&apos;s creation or migration date and the report type&apos;s date-range limits. The authenticated user must be an enterprise admin or billing manager, or a custom role holder with fine-grained read access to enterprise billing. An installation access token for a GitHub App installed on the enterprise with write access to enterprise administration, or with read access to enterprise billing, can also list usage report exports.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

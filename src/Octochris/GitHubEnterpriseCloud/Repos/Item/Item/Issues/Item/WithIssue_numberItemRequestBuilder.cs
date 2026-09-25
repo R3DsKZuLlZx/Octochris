@@ -10,6 +10,7 @@ using GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Labels;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Lock;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Parent;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Reactions;
+using GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Relates_to;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Sub_issue;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Sub_issues;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Suggestions;
@@ -74,6 +75,11 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Reactions.ReactionsRequestBuilder Reactions
         {
             get => new global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Reactions.ReactionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The relates_to property</summary>
+        public global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Relates_to.Relates_toRequestBuilder Relates_to
+        {
+            get => new global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Relates_to.Relates_toRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sub_issue property</summary>
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Sub_issue.Sub_issueRequestBuilder Sub_issue

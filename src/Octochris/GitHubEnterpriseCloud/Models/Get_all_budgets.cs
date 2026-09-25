@@ -30,7 +30,7 @@ namespace GitHub.EnterpriseCloud.Models
 #else
         public global::GitHub.EnterpriseCloud.Models.Get_all_budgets_effective_budget EffectiveBudget { get; set; }
 #endif
-        /// <summary>Indicates if there are more pages of results available (maps to hasNextPage from billing platform)</summary>
+        /// <summary>Indicates if there are more pages of results available</summary>
         public bool? HasNextPage { get; set; }
         /// <summary>Total number of budgets matching the query</summary>
         public int? TotalCount { get; set; }

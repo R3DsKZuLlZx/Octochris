@@ -8,7 +8,7 @@ using System;
 namespace GitHub.EnterpriseCloud.Models
 {
     /// <summary>
-    /// When the pull request is already merged
+    /// When the asynchronous merge request failed
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PullRequestMergeAsyncResult_detailsMember3 : IParsable
@@ -20,14 +20,6 @@ namespace GitHub.EnterpriseCloud.Models
 #nullable restore
 #else
         public string Message { get; set; }
-#endif
-        /// <summary>The sha property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Sha { get; set; }
-#nullable restore
-#else
-        public string Sha { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +40,6 @@ namespace GitHub.EnterpriseCloud.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -59,7 +50,6 @@ namespace GitHub.EnterpriseCloud.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("message", Message);
-            writer.WriteStringValue("sha", Sha);
         }
     }
 }

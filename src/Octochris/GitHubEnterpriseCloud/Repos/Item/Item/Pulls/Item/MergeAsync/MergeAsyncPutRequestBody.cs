@@ -14,7 +14,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Pulls.Item.MergeAsync
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Extra detail to append to automatic commit message.</summary>
+        /// <summary>Extra detail to append to automatic commit message. Only supported for direct merges.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CommitMessage { get; set; }
@@ -22,7 +22,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Pulls.Item.MergeAsync
 #else
         public string CommitMessage { get; set; }
 #endif
-        /// <summary>Title for the automatic commit message.</summary>
+        /// <summary>Title for the automatic commit message. Only supported for direct merges.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CommitTitle { get; set; }
@@ -30,9 +30,9 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Pulls.Item.MergeAsync
 #else
         public string CommitTitle { get; set; }
 #endif
-        /// <summary>The action that will be taken to merge the pull request. `direct_merge` merges the pull request directly without using a merge queue; `merge_queue` adds the pull request to a merge queue; `default` selects the most appropriate option.</summary>
+        /// <summary>The action that will be taken to merge the pull request. `direct_merge` merges the pull request directly without using a merge queue; `merge_queue` adds the pull request to a merge queue; `default` uses a merge queue if one is configured for the target branch, or merges directly otherwise. If omitted, defaults to `default`.</summary>
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.Pulls.Item.MergeAsync.MergeAsyncPutRequestBody_merge_action? MergeAction { get; set; }
-        /// <summary>The merge method to use.</summary>
+        /// <summary>The merge method to use for a direct merge. Only supported for direct merges.</summary>
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.Pulls.Item.MergeAsync.MergeAsyncPutRequestBody_merge_method? MergeMethod { get; set; }
         /// <summary>SHA that pull request head must match to allow merge. If not provided, the current head of the PR at the time of the request will be used; if the PR is pushed in between the merge being requested and being executed, the merge will be cancelled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

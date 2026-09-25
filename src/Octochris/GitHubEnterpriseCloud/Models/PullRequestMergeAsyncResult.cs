@@ -59,7 +59,7 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_status>("status", Status);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember1"/>, <see cref="global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember2"/>, <see cref="global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember3"/>
+        /// Composed type wrapper for classes <see cref="global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember1"/>, <see cref="global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember2"/>, <see cref="global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember3"/>, <see cref="global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember4"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PullRequestMergeAsyncResult_details : IComposedTypeWrapper, IParsable
@@ -88,6 +88,14 @@ namespace GitHub.EnterpriseCloud.Models
 #else
             public global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember3 PullRequestMergeAsyncResultDetailsMember3 { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember4? PullRequestMergeAsyncResultDetailsMember4 { get; set; }
+#nullable restore
+#else
+            public global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember4 PullRequestMergeAsyncResultDetailsMember4 { get; set; }
+#endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
@@ -96,8 +104,11 @@ namespace GitHub.EnterpriseCloud.Models
             public static global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult.PullRequestMergeAsyncResult_details CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult.PullRequestMergeAsyncResult_details();
+                result.PullRequestMergeAsyncResultDetailsMember1 = new global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember1();
+                result.PullRequestMergeAsyncResultDetailsMember2 = new global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember2();
+                result.PullRequestMergeAsyncResultDetailsMember3 = new global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember3();
+                result.PullRequestMergeAsyncResultDetailsMember4 = new global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember4();
                 return result;
             }
             /// <summary>
@@ -106,17 +117,9 @@ namespace GitHub.EnterpriseCloud.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(PullRequestMergeAsyncResultDetailsMember1 != null)
+                if(PullRequestMergeAsyncResultDetailsMember1 != null || PullRequestMergeAsyncResultDetailsMember2 != null || PullRequestMergeAsyncResultDetailsMember3 != null || PullRequestMergeAsyncResultDetailsMember4 != null)
                 {
-                    return PullRequestMergeAsyncResultDetailsMember1.GetFieldDeserializers();
-                }
-                else if(PullRequestMergeAsyncResultDetailsMember2 != null)
-                {
-                    return PullRequestMergeAsyncResultDetailsMember2.GetFieldDeserializers();
-                }
-                else if(PullRequestMergeAsyncResultDetailsMember3 != null)
-                {
-                    return PullRequestMergeAsyncResultDetailsMember3.GetFieldDeserializers();
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PullRequestMergeAsyncResultDetailsMember1, PullRequestMergeAsyncResultDetailsMember2, PullRequestMergeAsyncResultDetailsMember3, PullRequestMergeAsyncResultDetailsMember4);
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -127,18 +130,7 @@ namespace GitHub.EnterpriseCloud.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(PullRequestMergeAsyncResultDetailsMember1 != null)
-                {
-                    writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember1>(null, PullRequestMergeAsyncResultDetailsMember1);
-                }
-                else if(PullRequestMergeAsyncResultDetailsMember2 != null)
-                {
-                    writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember2>(null, PullRequestMergeAsyncResultDetailsMember2);
-                }
-                else if(PullRequestMergeAsyncResultDetailsMember3 != null)
-                {
-                    writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember3>(null, PullRequestMergeAsyncResultDetailsMember3);
-                }
+                writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.PullRequestMergeAsyncResult_detailsMember1>(null, PullRequestMergeAsyncResultDetailsMember1, PullRequestMergeAsyncResultDetailsMember2, PullRequestMergeAsyncResultDetailsMember3, PullRequestMergeAsyncResultDetailsMember4);
             }
         }
     }
