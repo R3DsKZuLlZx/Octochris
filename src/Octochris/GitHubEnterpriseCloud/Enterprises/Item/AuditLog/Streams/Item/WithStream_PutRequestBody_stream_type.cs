@@ -35,5 +35,9 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.AuditLog.Streams.Item
         #pragma warning disable CS1591
         Datadog,
         #pragma warning restore CS1591
+        [EnumMember(Value = "Microsoft Agent365")]
+        #pragma warning disable CS1591
+        MicrosoftAgent365,
+        #pragma warning restore CS1591
     }
 }

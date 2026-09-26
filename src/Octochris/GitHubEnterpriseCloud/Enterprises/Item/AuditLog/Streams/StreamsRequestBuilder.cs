@@ -80,7 +80,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.AuditLog.Streams
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Creates an audit log streaming configuration for any of the supported streaming endpoints: Azure Blob Storage, Azure Event Hubs, Amazon S3, Splunk, Google Cloud Storage, Datadog.When using this endpoint, you must encrypt the credentials following the same encryption steps as outlined in the guide on encrypting secrets. See &quot;[Encrypting secrets for the REST API](/rest/guides/encrypting-secrets-for-the-rest-api).&quot;
+        /// Creates an audit log streaming configuration for any of the supported streaming endpoints: Azure Blob Storage, Azure Event Hubs, Amazon S3, Splunk, Google Cloud Storage, Datadog.Microsoft Agent365 and Microsoft Purview streams require Microsoft Entra authorization and cannot be created with this endpoint. Configure those destinations from the enterprise audit log streaming settings.When using this endpoint, you must encrypt the credentials following the same encryption steps as outlined in the guide on encrypting secrets. See &quot;[Encrypting secrets for the REST API](/rest/guides/encrypting-secrets-for-the-rest-api).&quot;
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/audit-log#create-an-audit-log-streaming-configuration-for-an-enterprise" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.GetAuditLogStreamConfig"/></returns>
@@ -120,7 +120,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.AuditLog.Streams
             return requestInfo;
         }
         /// <summary>
-        /// Creates an audit log streaming configuration for any of the supported streaming endpoints: Azure Blob Storage, Azure Event Hubs, Amazon S3, Splunk, Google Cloud Storage, Datadog.When using this endpoint, you must encrypt the credentials following the same encryption steps as outlined in the guide on encrypting secrets. See &quot;[Encrypting secrets for the REST API](/rest/guides/encrypting-secrets-for-the-rest-api).&quot;
+        /// Creates an audit log streaming configuration for any of the supported streaming endpoints: Azure Blob Storage, Azure Event Hubs, Amazon S3, Splunk, Google Cloud Storage, Datadog.Microsoft Agent365 and Microsoft Purview streams require Microsoft Entra authorization and cannot be created with this endpoint. Configure those destinations from the enterprise audit log streaming settings.When using this endpoint, you must encrypt the credentials following the same encryption steps as outlined in the guide on encrypting secrets. See &quot;[Encrypting secrets for the REST API](/rest/guides/encrypting-secrets-for-the-rest-api).&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

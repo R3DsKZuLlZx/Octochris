@@ -70,7 +70,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.AuditLog.Streams.Item
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::GitHub.EnterpriseCloud.Models.AmazonS3AccessKeysConfig"/>, <see cref="global::GitHub.EnterpriseCloud.Models.AmazonS3OidcConfig"/>, <see cref="global::GitHub.EnterpriseCloud.Models.AzureBlobConfig"/>, <see cref="global::GitHub.EnterpriseCloud.Models.AzureHubConfig"/>, <see cref="global::GitHub.EnterpriseCloud.Models.DatadogConfig"/>, <see cref="global::GitHub.EnterpriseCloud.Models.GoogleCloudConfig"/>, <see cref="global::GitHub.EnterpriseCloud.Models.HecConfig"/>, <see cref="global::GitHub.EnterpriseCloud.Models.SplunkConfig"/>
+        /// Composed type wrapper for classes <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.AuditLog.Streams.Item.WithStream_PutRequestBody_vendor_specificMember1"/>, <see cref="global::GitHub.EnterpriseCloud.Models.AmazonS3AccessKeysConfig"/>, <see cref="global::GitHub.EnterpriseCloud.Models.AmazonS3OidcConfig"/>, <see cref="global::GitHub.EnterpriseCloud.Models.AzureBlobConfig"/>, <see cref="global::GitHub.EnterpriseCloud.Models.AzureHubConfig"/>, <see cref="global::GitHub.EnterpriseCloud.Models.DatadogConfig"/>, <see cref="global::GitHub.EnterpriseCloud.Models.GoogleCloudConfig"/>, <see cref="global::GitHub.EnterpriseCloud.Models.HecConfig"/>, <see cref="global::GitHub.EnterpriseCloud.Models.SplunkConfig"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithStream_PutRequestBody_vendor_specific : IComposedTypeWrapper, IParsable
@@ -138,6 +138,14 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.AuditLog.Streams.Item
 #nullable restore
 #else
             public global::GitHub.EnterpriseCloud.Models.SplunkConfig SplunkConfig { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.AuditLog.Streams.Item.WithStream_PutRequestBody_vendor_specificMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::GitHub.EnterpriseCloud.Enterprises.Item.AuditLog.Streams.Item.WithStream_PutRequestBody_vendor_specificMember1? WithStreamPutRequestBodyVendorSpecificMember1 { get; set; }
+#nullable restore
+#else
+            public global::GitHub.EnterpriseCloud.Enterprises.Item.AuditLog.Streams.Item.WithStream_PutRequestBody_vendor_specificMember1 WithStreamPutRequestBodyVendorSpecificMember1 { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -221,6 +229,10 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.AuditLog.Streams.Item
                 {
                     return SplunkConfig.GetFieldDeserializers();
                 }
+                else if(WithStreamPutRequestBodyVendorSpecificMember1 != null)
+                {
+                    return WithStreamPutRequestBodyVendorSpecificMember1.GetFieldDeserializers();
+                }
                 return new Dictionary<string, Action<IParseNode>>();
             }
             /// <summary>
@@ -261,6 +273,10 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.AuditLog.Streams.Item
                 else if(SplunkConfig != null)
                 {
                     writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.SplunkConfig>(null, SplunkConfig);
+                }
+                else if(WithStreamPutRequestBodyVendorSpecificMember1 != null)
+                {
+                    writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Enterprises.Item.AuditLog.Streams.Item.WithStream_PutRequestBody_vendor_specificMember1>(null, WithStreamPutRequestBodyVendorSpecificMember1);
                 }
             }
         }
