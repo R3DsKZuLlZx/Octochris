@@ -71,7 +71,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.AuditLog.Streams.Item
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.GetAuditLogStreamConfig>(requestInfo, global::GitHub.EnterpriseCloud.Models.GetAuditLogStreamConfig.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an existing audit log stream configuration for an enterprise.When using this endpoint, you must encrypt the credentials following the same encryption steps as outlined in the guide on encrypting secrets. See &quot;[Encrypting secrets for the REST API](/rest/guides/encrypting-secrets-for-the-rest-api).&quot;
+        /// Updates an existing audit log stream configuration for an enterprise.Microsoft Agent365 streams are configured through Microsoft Entra authorization. For those streams, this endpoint can only pause or resume the stream. Authorization-managed fields cannot be updated; delete and recreate the stream to change its Entra tenant or authorization.When using this endpoint, you must encrypt the credentials following the same encryption steps as outlined in the guide on encrypting secrets. See &quot;[Encrypting secrets for the REST API](/rest/guides/encrypting-secrets-for-the-rest-api).&quot;
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/audit-log#update-an-existing-audit-log-stream-configuration" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.GetAuditLogStreamConfig"/></returns>
@@ -134,7 +134,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.AuditLog.Streams.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates an existing audit log stream configuration for an enterprise.When using this endpoint, you must encrypt the credentials following the same encryption steps as outlined in the guide on encrypting secrets. See &quot;[Encrypting secrets for the REST API](/rest/guides/encrypting-secrets-for-the-rest-api).&quot;
+        /// Updates an existing audit log stream configuration for an enterprise.Microsoft Agent365 streams are configured through Microsoft Entra authorization. For those streams, this endpoint can only pause or resume the stream. Authorization-managed fields cannot be updated; delete and recreate the stream to change its Entra tenant or authorization.When using this endpoint, you must encrypt the credentials following the same encryption steps as outlined in the guide on encrypting secrets. See &quot;[Encrypting secrets for the REST API](/rest/guides/encrypting-secrets-for-the-rest-api).&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

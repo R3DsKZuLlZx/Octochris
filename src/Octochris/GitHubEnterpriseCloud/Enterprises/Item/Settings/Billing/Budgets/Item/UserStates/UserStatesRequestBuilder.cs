@@ -119,10 +119,10 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item.
             /// <summary>Sort order for results. `0` for descending, `1` for ascending.</summary>
             [QueryParameter("sort_order")]
             public global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.Item.UserStates.GetSort_orderQueryParameterType? SortOrderAsGetSortOrderQueryParameterType { get; set; }
-            /// <summary>Filter user states whose threshold percentage is at or above this value.</summary>
+            /// <summary>Filter user states whose threshold percentage is at or above this value. This filter is calculated using each user&apos;s consumption against the universal budget amount, even when the user has a user-scoped budget override.</summary>
             [QueryParameter("threshold_lower_bound")]
             public int? ThresholdLowerBound { get; set; }
-            /// <summary>Filter user states whose threshold percentage is at or below this value.</summary>
+            /// <summary>Filter user states whose threshold percentage is at or below this value. This filter is calculated using each user&apos;s consumption against the universal budget amount, even when the user has a user-scoped budget override.</summary>
             [QueryParameter("threshold_upper_bound")]
             public int? ThresholdUpperBound { get; set; }
             /// <summary>Filter user states to a specific user login.</summary>
