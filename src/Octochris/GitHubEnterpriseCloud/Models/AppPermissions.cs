@@ -83,6 +83,8 @@ namespace GitHub.EnterpriseCloud.Models
         public global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_custom_roles? OrganizationCustomRoles { get; set; }
         /// <summary>The level of permission to grant the access token to view events triggered by an activity in an organization.</summary>
         public global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_events? OrganizationEvents { get; set; }
+        /// <summary>The level of permission to grant the access token for managing external custom properties for repositories in an organization.</summary>
+        public global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_external_properties_for_repos? OrganizationExternalPropertiesForRepos { get; set; }
         /// <summary>The level of permission to grant the access token to manage the post-receive hooks for an organization.</summary>
         public global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_hooks? OrganizationHooks { get; set; }
         /// <summary>The level of permission to grant the access token for organization packages published to GitHub Packages.</summary>
@@ -190,6 +192,7 @@ namespace GitHub.EnterpriseCloud.Models
                 { "organization_custom_properties", n => { OrganizationCustomProperties = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_custom_properties>(); } },
                 { "organization_custom_roles", n => { OrganizationCustomRoles = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_custom_roles>(); } },
                 { "organization_events", n => { OrganizationEvents = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_events>(); } },
+                { "organization_external_properties_for_repos", n => { OrganizationExternalPropertiesForRepos = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_external_properties_for_repos>(); } },
                 { "organization_hooks", n => { OrganizationHooks = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_hooks>(); } },
                 { "organization_packages", n => { OrganizationPackages = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_packages>(); } },
                 { "organization_personal_access_token_requests", n => { OrganizationPersonalAccessTokenRequests = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_personal_access_token_requests>(); } },
@@ -257,6 +260,7 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_custom_properties>("organization_custom_properties", OrganizationCustomProperties);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_custom_roles>("organization_custom_roles", OrganizationCustomRoles);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_events>("organization_events", OrganizationEvents);
+            writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_external_properties_for_repos>("organization_external_properties_for_repos", OrganizationExternalPropertiesForRepos);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_hooks>("organization_hooks", OrganizationHooks);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_packages>("organization_packages", OrganizationPackages);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.AppPermissions_organization_personal_access_token_requests>("organization_personal_access_token_requests", OrganizationPersonalAccessTokenRequests);

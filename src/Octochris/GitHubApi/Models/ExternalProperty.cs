@@ -5,49 +5,40 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace GitHub.EnterpriseCloud.Models
+namespace GitHub.Api.Models
 {
+    /// <summary>
+    /// External custom property defined for a GitHub App installation
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class Users : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ExternalProperty : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether this email address is the primary address.</summary>
-        public bool? Primary { get; set; }
-        /// <summary>The type of email address.</summary>
+        /// <summary>The name of the external property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? PropertyName { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
-#endif
-        /// <summary>The email address.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Value { get; set; }
-#nullable restore
-#else
-        public string Value { get; set; }
+        public string PropertyName { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Models.Users"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Api.Models.ExternalProperty"/> and sets the default values.
         /// </summary>
-        public Users()
+        public ExternalProperty()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.Users"/></returns>
+        /// <returns>A <see cref="global::GitHub.Api.Models.ExternalProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::GitHub.EnterpriseCloud.Models.Users CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::GitHub.Api.Models.ExternalProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::GitHub.EnterpriseCloud.Models.Users();
+            return new global::GitHub.Api.Models.ExternalProperty();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,9 +48,7 @@ namespace GitHub.EnterpriseCloud.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "primary", n => { Primary = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "property_name", n => { PropertyName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,9 +58,7 @@ namespace GitHub.EnterpriseCloud.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("primary", Primary);
-            writer.WriteStringValue("type", Type);
-            writer.WriteStringValue("value", Value);
+            writer.WriteStringValue("property_name", PropertyName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
