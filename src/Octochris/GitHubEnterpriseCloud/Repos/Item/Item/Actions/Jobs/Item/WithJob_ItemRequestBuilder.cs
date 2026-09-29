@@ -3,6 +3,7 @@
 using GitHub.EnterpriseCloud.Models;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Jobs.Item.Logs;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Jobs.Item.Rerun;
+using GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Jobs.Item.Steps;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -28,6 +29,11 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Jobs.Item
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Jobs.Item.Rerun.RerunRequestBuilder Rerun
         {
             get => new global::GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Jobs.Item.Rerun.RerunRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The steps property</summary>
+        public global::GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Jobs.Item.Steps.StepsRequestBuilder Steps
+        {
+            get => new global::GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Jobs.Item.Steps.StepsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Jobs.Item.WithJob_ItemRequestBuilder"/> and sets the default values.
