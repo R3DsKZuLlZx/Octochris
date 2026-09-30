@@ -34,7 +34,7 @@ namespace GitHub.Api.User.Installations.Item.Repositories.Item
         {
         }
         /// <summary>
-        /// Remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`.This endpoint only works for PATs (classic) with the `repo` scope.
+        /// Remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`.To use a PAT (classic) with this endpoint, the `repo` scope is required
         /// API method documentation <see href="https://docs.github.com/rest/apps/installations#remove-a-repository-from-an-app-installation" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace GitHub.Api.User.Installations.Item.Repositories.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a single repository to an installation. The authenticated user must have admin access to the repository.This endpoint only works for PATs (classic) with the `repo` scope.
+        /// Add a single repository to an installation. The authenticated user must have admin access to the repository.
         /// API method documentation <see href="https://docs.github.com/rest/apps/installations#add-a-repository-to-an-app-installation" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +84,7 @@ namespace GitHub.Api.User.Installations.Item.Repositories.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`.This endpoint only works for PATs (classic) with the `repo` scope.
+        /// Remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`.To use a PAT (classic) with this endpoint, the `repo` scope is required
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +103,7 @@ namespace GitHub.Api.User.Installations.Item.Repositories.Item
             return requestInfo;
         }
         /// <summary>
-        /// Add a single repository to an installation. The authenticated user must have admin access to the repository.This endpoint only works for PATs (classic) with the `repo` scope.
+        /// Add a single repository to an installation. The authenticated user must have admin access to the repository.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
