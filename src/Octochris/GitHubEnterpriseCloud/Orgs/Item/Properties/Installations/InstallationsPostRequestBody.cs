@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace GitHub.Api.Orgs.Item.Properties.Installations
+namespace GitHub.EnterpriseCloud.Orgs.Item.Properties.Installations
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
@@ -25,7 +25,7 @@ namespace GitHub.Api.Orgs.Item.Properties.Installations
         /// <summary>The unique identifier of the GitHub App installation to register for managing external custom properties. When authenticating as a GitHub App installation, this defaults to the authenticated installation and can be omitted. It is required for all other callers (users and fine-grained personal access tokens).</summary>
         public int? InstallationId { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::GitHub.Api.Orgs.Item.Properties.Installations.InstallationsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Orgs.Item.Properties.Installations.InstallationsPostRequestBody"/> and sets the default values.
         /// </summary>
         public InstallationsPostRequestBody()
         {
@@ -34,12 +34,12 @@ namespace GitHub.Api.Orgs.Item.Properties.Installations
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::GitHub.Api.Orgs.Item.Properties.Installations.InstallationsPostRequestBody"/></returns>
+        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Orgs.Item.Properties.Installations.InstallationsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::GitHub.Api.Orgs.Item.Properties.Installations.InstallationsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::GitHub.EnterpriseCloud.Orgs.Item.Properties.Installations.InstallationsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::GitHub.Api.Orgs.Item.Properties.Installations.InstallationsPostRequestBody();
+            return new global::GitHub.EnterpriseCloud.Orgs.Item.Properties.Installations.InstallationsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
