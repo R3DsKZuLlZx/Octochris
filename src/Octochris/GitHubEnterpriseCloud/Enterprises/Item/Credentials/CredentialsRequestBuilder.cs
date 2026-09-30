@@ -20,6 +20,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Credentials
     public partial class CredentialsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The exports property</summary>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.Exports.ExportsRequestBuilder Exports
         {
             get => new global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.Exports.ExportsRequestBuilder(PathParameters, RequestAdapter);
@@ -27,6 +28,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Credentials
         /// <summary>Gets an item from the GitHub.EnterpriseCloud.enterprises.item.credentials.item collection</summary>
         /// <param name="position">The opaque inventory_id returned by the list endpoint for this enterprise. Pass it unchanged. Its value can differ for the same credential between responses.</param>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.Item.WithInventory_ItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.Item.WithInventory_ItemRequestBuilder this[string position]
         {
             get
@@ -53,12 +55,13 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Credentials
         {
         }
         /// <summary>
-        /// Lists an enterprise&apos;s credential inventory: both credentials currently authorized to access the enterprise and credentials owned by enterprise members that have no current enterprise authorization. Covers personal access tokens (classic and fine-grained), OAuth App and GitHub App user tokens, SSH keys, GitHub App installations, and federated credentials, assembled on demand from the canonical sources. Results are paginated with an opaque cursor via the `Link` header; there is no total count.You must be an enterprise owner (or hold a role with the &quot;View enterprise credentials&quot; permission) to use this endpoint.OAuth app tokens and personal access tokens (classic) require the `read:enterprise` scope to access this endpoint.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on October 2, 2026. Please migrate to the asynchronous export: use &quot;[Create an enterprise token inventory export](https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/token-inventory#create-an-enterprise-token-inventory-export)&quot;, which accepts the same filters in its request body, to start a CSV export, then &quot;[Get an enterprise token inventory export](https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/token-inventory#get-an-enterprise-token-inventory-export)&quot; to download it. For more information, see the [changelog](https://github.blog/changelog/2026-09-21-github-enterprise-adds-credential-inventory-exports/).Lists an enterprise&apos;s credential inventory: both credentials currently authorized to access the enterprise and credentials owned by enterprise members that have no current enterprise authorization. Covers personal access tokens (classic and fine-grained), OAuth App and GitHub App user tokens, SSH keys, GitHub App installations, and federated credentials, assembled on demand from the canonical sources. Results are paginated with an opaque cursor via the `Link` header; there is no total count.You must be an enterprise owner (or hold a role with the &quot;View enterprise credentials&quot; permission) to use this endpoint.OAuth app tokens and personal access tokens (classic) require the `read:enterprise` scope to access this endpoint.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/token-inventory#list-enterprise-token-inventory" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.EnterpriseCloud.Models.EnterpriseTokenInventoryItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::GitHub.EnterpriseCloud.Models.EnterpriseTokenInventoryItem>?> GetAsync(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.CredentialsRequestBuilder.CredentialsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -73,10 +76,11 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Credentials
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Lists an enterprise&apos;s credential inventory: both credentials currently authorized to access the enterprise and credentials owned by enterprise members that have no current enterprise authorization. Covers personal access tokens (classic and fine-grained), OAuth App and GitHub App user tokens, SSH keys, GitHub App installations, and federated credentials, assembled on demand from the canonical sources. Results are paginated with an opaque cursor via the `Link` header; there is no total count.You must be an enterprise owner (or hold a role with the &quot;View enterprise credentials&quot; permission) to use this endpoint.OAuth app tokens and personal access tokens (classic) require the `read:enterprise` scope to access this endpoint.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on October 2, 2026. Please migrate to the asynchronous export: use &quot;[Create an enterprise token inventory export](https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/token-inventory#create-an-enterprise-token-inventory-export)&quot;, which accepts the same filters in its request body, to start a CSV export, then &quot;[Get an enterprise token inventory export](https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/token-inventory#get-an-enterprise-token-inventory-export)&quot; to download it. For more information, see the [changelog](https://github.blog/changelog/2026-09-21-github-enterprise-adds-credential-inventory-exports/).Lists an enterprise&apos;s credential inventory: both credentials currently authorized to access the enterprise and credentials owned by enterprise members that have no current enterprise authorization. Covers personal access tokens (classic and fine-grained), OAuth App and GitHub App user tokens, SSH keys, GitHub App installations, and federated credentials, assembled on demand from the canonical sources. Results are paginated with an opaque cursor via the `Link` header; there is no total count.You must be an enterprise owner (or hold a role with the &quot;View enterprise credentials&quot; permission) to use this endpoint.OAuth app tokens and personal access tokens (classic) require the `read:enterprise` scope to access this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.CredentialsRequestBuilder.CredentialsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -96,12 +100,13 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Credentials
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.CredentialsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.CredentialsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.CredentialsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists an enterprise&apos;s credential inventory: both credentials currently authorized to access the enterprise and credentials owned by enterprise members that have no current enterprise authorization. Covers personal access tokens (classic and fine-grained), OAuth App and GitHub App user tokens, SSH keys, GitHub App installations, and federated credentials, assembled on demand from the canonical sources. Results are paginated with an opaque cursor via the `Link` header; there is no total count.You must be an enterprise owner (or hold a role with the &quot;View enterprise credentials&quot; permission) to use this endpoint.OAuth app tokens and personal access tokens (classic) require the `read:enterprise` scope to access this endpoint.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on October 2, 2026. Please migrate to the asynchronous export: use &quot;[Create an enterprise token inventory export](https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/token-inventory#create-an-enterprise-token-inventory-export)&quot;, which accepts the same filters in its request body, to start a CSV export, then &quot;[Get an enterprise token inventory export](https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/token-inventory#get-an-enterprise-token-inventory-export)&quot; to download it. For more information, see the [changelog](https://github.blog/changelog/2026-09-21-github-enterprise-adds-credential-inventory-exports/).Lists an enterprise&apos;s credential inventory: both credentials currently authorized to access the enterprise and credentials owned by enterprise members that have no current enterprise authorization. Covers personal access tokens (classic and fine-grained), OAuth App and GitHub App user tokens, SSH keys, GitHub App installations, and federated credentials, assembled on demand from the canonical sources. Results are paginated with an opaque cursor via the `Link` header; there is no total count.You must be an enterprise owner (or hold a role with the &quot;View enterprise credentials&quot; permission) to use this endpoint.OAuth app tokens and personal access tokens (classic) require the `read:enterprise` scope to access this endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CredentialsRequestBuilderGetQueryParameters 

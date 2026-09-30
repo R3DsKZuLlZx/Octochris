@@ -34,12 +34,13 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Credentials.Item
         {
         }
         /// <summary>
-        /// Returns a single credential from the enterprise token inventory. Use the opaque `inventory_id` returned by the list endpoint for the same enterprise.You must be an enterprise owner (or hold a role with the &quot;View enterprise credentials&quot; permission) to use this endpoint.OAuth app tokens and personal access tokens (classic) require the `read:enterprise` scope to access this endpoint.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on October 2, 2026. Please migrate to the asynchronous export: use &quot;[Create an enterprise token inventory export](https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/token-inventory#create-an-enterprise-token-inventory-export)&quot; to start a CSV export, optionally scoped with filters such as `owner` or `application`, then &quot;[Get an enterprise token inventory export](https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/token-inventory#get-an-enterprise-token-inventory-export)&quot; to download it. For more information, see the [changelog](https://github.blog/changelog/2026-09-21-github-enterprise-adds-credential-inventory-exports/).Returns a single credential from the enterprise token inventory. Use the opaque `inventory_id` returned by the list endpoint for the same enterprise.You must be an enterprise owner (or hold a role with the &quot;View enterprise credentials&quot; permission) to use this endpoint.OAuth app tokens and personal access tokens (classic) require the `read:enterprise` scope to access this endpoint.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/token-inventory#get-an-enterprise-token-inventory-item" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.EnterpriseTokenInventoryItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::GitHub.EnterpriseCloud.Models.EnterpriseTokenInventoryItem?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -53,10 +54,11 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Credentials.Item
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.EnterpriseTokenInventoryItem>(requestInfo, global::GitHub.EnterpriseCloud.Models.EnterpriseTokenInventoryItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a single credential from the enterprise token inventory. Use the opaque `inventory_id` returned by the list endpoint for the same enterprise.You must be an enterprise owner (or hold a role with the &quot;View enterprise credentials&quot; permission) to use this endpoint.OAuth app tokens and personal access tokens (classic) require the `read:enterprise` scope to access this endpoint.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed on October 2, 2026. Please migrate to the asynchronous export: use &quot;[Create an enterprise token inventory export](https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/token-inventory#create-an-enterprise-token-inventory-export)&quot; to start a CSV export, optionally scoped with filters such as `owner` or `application`, then &quot;[Get an enterprise token inventory export](https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/token-inventory#get-an-enterprise-token-inventory-export)&quot; to download it. For more information, see the [changelog](https://github.blog/changelog/2026-09-21-github-enterprise-adds-credential-inventory-exports/).Returns a single credential from the enterprise token inventory. Use the opaque `inventory_id` returned by the list endpoint for the same enterprise.You must be an enterprise owner (or hold a role with the &quot;View enterprise credentials&quot; permission) to use this endpoint.OAuth app tokens and personal access tokens (classic) require the `read:enterprise` scope to access this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -76,6 +78,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Credentials.Item
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.Item.WithInventory_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.Item.WithInventory_ItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.Item.WithInventory_ItemRequestBuilder(rawUrl, RequestAdapter);
