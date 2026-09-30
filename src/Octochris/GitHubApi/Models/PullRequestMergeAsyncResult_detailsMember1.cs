@@ -13,6 +13,8 @@ namespace GitHub.Api.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PullRequestMergeAsyncResult_detailsMember1 : IParsable
     {
+        /// <summary>Whether the asynchronous merge request will attempt to bypass repository rules that the authenticated actor is permitted to bypass.</summary>
+        public bool? BypassRules { get; set; }
         /// <summary>SHA that the pull request head must match for the enqueued merge to proceed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,6 +44,13 @@ namespace GitHub.Api.Models
         public string Uuid { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::GitHub.Api.Models.PullRequestMergeAsyncResult_detailsMember1"/> and sets the default values.
+        /// </summary>
+        public PullRequestMergeAsyncResult_detailsMember1()
+        {
+            BypassRules = false;
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Models.PullRequestMergeAsyncResult_detailsMember1"/></returns>
@@ -59,6 +68,7 @@ namespace GitHub.Api.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "bypass_rules", n => { BypassRules = n.GetBoolValue(); } },
                 { "expected_head_sha", n => { ExpectedHeadSha = n.GetStringValue(); } },
                 { "merge_action", n => { MergeAction = n.GetEnumValue<global::GitHub.Api.Models.PullRequestMergeAsyncResult_detailsMember1_merge_action>(); } },
                 { "merge_method", n => { MergeMethod = n.GetEnumValue<global::GitHub.Api.Models.PullRequestMergeAsyncResult_detailsMember1_merge_method>(); } },
@@ -73,6 +83,7 @@ namespace GitHub.Api.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("bypass_rules", BypassRules);
             writer.WriteStringValue("expected_head_sha", ExpectedHeadSha);
             writer.WriteEnumValue<global::GitHub.Api.Models.PullRequestMergeAsyncResult_detailsMember1_merge_action>("merge_action", MergeAction);
             writer.WriteEnumValue<global::GitHub.Api.Models.PullRequestMergeAsyncResult_detailsMember1_merge_method>("merge_method", MergeMethod);
