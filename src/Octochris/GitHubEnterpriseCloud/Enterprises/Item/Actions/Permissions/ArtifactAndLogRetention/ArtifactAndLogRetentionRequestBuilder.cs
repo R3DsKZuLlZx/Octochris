@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Actions.Permissions.ArtifactAn
         {
         }
         /// <summary>
-        /// Gets artifact and log retention settings for an enterprise.
+        /// Gets retention settings for checks, workflow runs, commit statuses, artifacts, and logs for an enterprise.Checks include check suites, check runs, and check annotations. These settings also apply to checks and commit statuses created by third-party integrations, and are not limited to data created by GitHub Actions.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/actions/permissions#get-artifact-and-log-retention-settings-for-an-enterprise" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.ActionsArtifactAndLogRetentionResponse"/></returns>
@@ -58,7 +58,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Actions.Permissions.ArtifactAn
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.ActionsArtifactAndLogRetentionResponse>(requestInfo, global::GitHub.EnterpriseCloud.Models.ActionsArtifactAndLogRetentionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sets artifact and log retention settings for an enterprise.
+        /// Sets retention settings for checks, workflow runs, commit statuses, artifacts, and logs for an enterprise.Checks include check suites, check runs, and check annotations. These settings also apply to checks and commit statuses created by third-party integrations, and are not limited to data created by GitHub Actions.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/actions/permissions#set-artifact-and-log-retention-settings-for-an-enterprise" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Actions.Permissions.ArtifactAn
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets artifact and log retention settings for an enterprise.
+        /// Gets retention settings for checks, workflow runs, commit statuses, artifacts, and logs for an enterprise.Checks include check suites, check runs, and check annotations. These settings also apply to checks and commit statuses created by third-party integrations, and are not limited to data created by GitHub Actions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Actions.Permissions.ArtifactAn
             return requestInfo;
         }
         /// <summary>
-        /// Sets artifact and log retention settings for an enterprise.
+        /// Sets retention settings for checks, workflow runs, commit statuses, artifacts, and logs for an enterprise.Checks include check suites, check runs, and check annotations. These settings also apply to checks and commit statuses created by third-party integrations, and are not limited to data created by GitHub Actions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

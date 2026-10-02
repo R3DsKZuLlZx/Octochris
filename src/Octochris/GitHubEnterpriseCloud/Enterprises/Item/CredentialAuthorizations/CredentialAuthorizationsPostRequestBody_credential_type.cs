@@ -3,11 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations
 {
+    /// <summary>The type of credential to authorize.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public enum CredentialAuthorizationsPostRequestBodyMember2_credential_type
-    #pragma warning restore CS1591
+    public enum CredentialAuthorizationsPostRequestBody_credential_type
     {
+        [EnumMember(Value = "classic_pat")]
+        #pragma warning disable CS1591
+        Classic_pat,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ssh_key")]
         #pragma warning disable CS1591
         Ssh_key,

@@ -125,11 +125,11 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsPostResponse?> PostAsCredentialAuthorizationsPostResponseAsync(global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsPostResponse?> PostAsCredentialAuthorizationsPostResponseAsync(global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsPostResponse> PostAsCredentialAuthorizationsPostResponseAsync(global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsPostResponse> PostAsCredentialAuthorizationsPostResponseAsync(global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -158,11 +158,11 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations
         [Obsolete("This method is obsolete. Use PostAsCredentialAuthorizationsPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsResponse?> PostAsync(global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsResponse?> PostAsync(global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsResponse> PostAsync(global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsResponse> PostAsync(global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -203,11 +203,11 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -225,73 +225,6 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations
         public global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostRequestBodyMember1"/>, <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostRequestBodyMember2"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CredentialAuthorizationsPostRequestBody : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostRequestBodyMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostRequestBodyMember1? CredentialAuthorizationsPostRequestBodyMember1 { get; set; }
-#nullable restore
-#else
-            public global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostRequestBodyMember1 CredentialAuthorizationsPostRequestBodyMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostRequestBodyMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostRequestBodyMember2? CredentialAuthorizationsPostRequestBodyMember2 { get; set; }
-#nullable restore
-#else
-            public global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostRequestBodyMember2 CredentialAuthorizationsPostRequestBodyMember2 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsPostRequestBody"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("credential_type")?.GetStringValue();
-                var result = new global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder.CredentialAuthorizationsPostRequestBody();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(CredentialAuthorizationsPostRequestBodyMember1 != null)
-                {
-                    return CredentialAuthorizationsPostRequestBodyMember1.GetFieldDeserializers();
-                }
-                else if(CredentialAuthorizationsPostRequestBodyMember2 != null)
-                {
-                    return CredentialAuthorizationsPostRequestBodyMember2.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(CredentialAuthorizationsPostRequestBodyMember1 != null)
-                {
-                    writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostRequestBodyMember1>(null, CredentialAuthorizationsPostRequestBodyMember1);
-                }
-                else if(CredentialAuthorizationsPostRequestBodyMember2 != null)
-                {
-                    writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostRequestBodyMember2>(null, CredentialAuthorizationsPostRequestBodyMember2);
-                }
-            }
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostResponseMember1"/>, <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsPostResponseMember2"/>
