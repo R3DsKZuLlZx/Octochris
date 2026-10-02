@@ -14,7 +14,7 @@ namespace GitHub.EnterpriseCloud.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The number of days artifacts and logs are retained</summary>
+        /// <summary>The number of days checks, workflow runs, commit statuses, artifacts, and logs are retained</summary>
         public int? Days { get; set; }
         /// <summary>The maximum number of days that can be configured</summary>
         public int? MaximumAllowedDays { get; set; }

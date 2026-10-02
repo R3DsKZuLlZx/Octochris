@@ -14,7 +14,7 @@ namespace GitHub.Api.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The number of days to retain artifacts and logs</summary>
+        /// <summary>The number of days to retain checks, workflow runs, commit statuses, artifacts, and logs</summary>
         public int? Days { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Api.Models.ActionsArtifactAndLogRetention"/> and sets the default values.

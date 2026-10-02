@@ -34,7 +34,7 @@ namespace GitHub.Api.Orgs.Item.Actions.Permissions.ArtifactAndLogRetention
         {
         }
         /// <summary>
-        /// Gets artifact and log retention settings for an organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the &quot;Actions policies&quot; fine-grained permission to use this endpoint.
+        /// Gets retention settings for checks, workflow runs, commit statuses, artifacts, and logs for an organization.Checks include check suites, check runs, and check annotations. These settings also apply to checks and commit statuses created by third-party integrations, and are not limited to data created by GitHub Actions.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the &quot;Actions policies&quot; fine-grained permission to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/permissions#get-artifact-and-log-retention-settings-for-an-organization" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Models.ActionsArtifactAndLogRetentionResponse"/></returns>
@@ -60,7 +60,7 @@ namespace GitHub.Api.Orgs.Item.Actions.Permissions.ArtifactAndLogRetention
             return await RequestAdapter.SendAsync<global::GitHub.Api.Models.ActionsArtifactAndLogRetentionResponse>(requestInfo, global::GitHub.Api.Models.ActionsArtifactAndLogRetentionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sets artifact and log retention settings for an organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the &quot;Actions policies&quot; fine-grained permission to use this endpoint.
+        /// Sets retention settings for checks, workflow runs, commit statuses, artifacts, and logs for an organization.Checks include check suites, check runs, and check annotations. These settings also apply to checks and commit statuses created by third-party integrations, and are not limited to data created by GitHub Actions.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the &quot;Actions policies&quot; fine-grained permission to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/permissions#set-artifact-and-log-retention-settings-for-an-organization" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace GitHub.Api.Orgs.Item.Actions.Permissions.ArtifactAndLogRetention
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets artifact and log retention settings for an organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the &quot;Actions policies&quot; fine-grained permission to use this endpoint.
+        /// Gets retention settings for checks, workflow runs, commit statuses, artifacts, and logs for an organization.Checks include check suites, check runs, and check annotations. These settings also apply to checks and commit statuses created by third-party integrations, and are not limited to data created by GitHub Actions.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the &quot;Actions policies&quot; fine-grained permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +110,7 @@ namespace GitHub.Api.Orgs.Item.Actions.Permissions.ArtifactAndLogRetention
             return requestInfo;
         }
         /// <summary>
-        /// Sets artifact and log retention settings for an organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the &quot;Actions policies&quot; fine-grained permission to use this endpoint.
+        /// Sets retention settings for checks, workflow runs, commit statuses, artifacts, and logs for an organization.Checks include check suites, check runs, and check annotations. These settings also apply to checks and commit statuses created by third-party integrations, and are not limited to data created by GitHub Actions.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the &quot;Actions policies&quot; fine-grained permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
