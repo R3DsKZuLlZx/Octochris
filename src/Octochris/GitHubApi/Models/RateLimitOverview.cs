@@ -8,7 +8,7 @@ using System;
 namespace GitHub.Api.Models
 {
     /// <summary>
-    /// Rate Limit Overview
+    /// Rate limit status for the applicable requester and resource category. Requestsauthenticated as a user share the user&apos;s rate limit across credentials. Requestswithout authentication use the requesting IP address. API requests routed througheither an API hostname or a web hostname can count against the same applicable limit.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RateLimitOverview : IAdditionalDataHolder, IParsable
