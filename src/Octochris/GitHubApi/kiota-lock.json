@@ -2,7 +2,7 @@
   "descriptionHash": "74160C4C7619216757C9C4F7D1A2F9FAD65F9D203E8B3157FF928E68439DAB5AE654EFE439275E891BE1CAFAA7D1F365E4CCA29233B7CF96274759F326AB7BE6",
   "descriptionLocation": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.35.0",
+  "kiotaVersion": "1.36.0",
   "clientClassName": "GitHubApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "GitHub.Api",

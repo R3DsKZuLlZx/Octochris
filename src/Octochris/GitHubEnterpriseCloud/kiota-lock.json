@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "B0C69A485DFD34575A2AE5BCB293064BA4BFE6A6BA467F0205DD6B9FE352EF2DCFEF65017A0A23B2CC10B91F191FEE92AD46867C868A5F5A0C5C66D262754FB8",
+  "descriptionHash": "B6B971AEA9188B24DE25C38D882CF77204C47FD0206872C69E6703C8932992A3E4AEE8EB65857CAC6562EE601EDE82C430202704466BD183A522264535C3042D",
   "descriptionLocation": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/ghec/ghec.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.35.0",
+  "kiotaVersion": "1.36.0",
   "clientClassName": "GitHubEnterpriseCloudClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "GitHub.EnterpriseCloud",

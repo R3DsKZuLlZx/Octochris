@@ -8,7 +8,7 @@ using System;
 namespace GitHub.EnterpriseCloud.Enterprises.Item.AuditLog.Streams.Item
 {
     /// <summary>
-    /// Empty configuration used when pausing or resuming a Microsoft Agent365 stream.
+    /// Empty configuration used when pausing or resuming a Microsoft Agent 365 stream.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithStream_PutRequestBody_vendor_specificMember1 : IParsable
