@@ -8,7 +8,7 @@ using System;
 namespace GitHub.EnterpriseCloud.Models
 {
     /// <summary>
-    /// Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.
+    /// Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and AI credits.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RepositoryRuleCopilotCodeReview : IAdditionalDataHolder, IParsable
