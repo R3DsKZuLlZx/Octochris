@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.IssueTypes
         {
         }
         /// <summary>
-        /// Lists issue types available for a repository (inherited from its organization owner, with any per-repository overrides applied).OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.Fine-grained access tokens require the &quot;Metadata&quot; repository permission (read).
+        /// Lists enabled issue types inherited from the repository owner.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.Fine-grained access tokens require the &quot;Metadata&quot; repository permission (read).
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/repos/issue-types#list-issue-types-for-a-repository" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.EnterpriseCloud.Models.IssueType&gt;</returns>
@@ -59,7 +59,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.IssueTypes
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Lists issue types available for a repository (inherited from its organization owner, with any per-repository overrides applied).OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.Fine-grained access tokens require the &quot;Metadata&quot; repository permission (read).
+        /// Lists enabled issue types inherited from the repository owner.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.Fine-grained access tokens require the &quot;Metadata&quot; repository permission (read).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
