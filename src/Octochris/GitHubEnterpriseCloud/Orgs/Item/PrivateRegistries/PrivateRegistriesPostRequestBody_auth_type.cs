@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.EnterpriseCloud.Orgs.Item.PrivateRegistries
 {
-    /// <summary>The authentication type for the private registry. Defaults to `token` if not specified. Use `oidc_azure`, `oidc_aws`, `oidc_jfrog`, `oidc_cloudsmith`, or `oidc_gcp` for OIDC authentication.</summary>
+    /// <summary>The authentication type for the private registry. Defaults to `token` if not specified. Use `oidc_azure`, `oidc_aws`, `oidc_jfrog`, `oidc_cloudsmith`, or `oidc_gcp` for OIDC authentication. Use `anonymous` for registries that do not require authentication; `username`, `encrypted_value`, and `key_id` must be omitted.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PrivateRegistriesPostRequestBody_auth_type
     {
@@ -34,6 +34,10 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.PrivateRegistries
         [EnumMember(Value = "oidc_gcp")]
         #pragma warning disable CS1591
         Oidc_gcp,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "anonymous")]
+        #pragma warning disable CS1591
+        Anonymous,
         #pragma warning restore CS1591
     }
 }
