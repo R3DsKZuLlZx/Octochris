@@ -35,5 +35,9 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.PrivateRegistries.Item
         #pragma warning disable CS1591
         Oidc_gcp,
         #pragma warning restore CS1591
+        [EnumMember(Value = "anonymous")]
+        #pragma warning disable CS1591
+        Anonymous,
+        #pragma warning restore CS1591
     }
 }

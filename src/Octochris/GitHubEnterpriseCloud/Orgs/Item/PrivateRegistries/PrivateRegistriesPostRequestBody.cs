@@ -38,7 +38,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.PrivateRegistries
 #else
         public string Audience { get; set; }
 #endif
-        /// <summary>The authentication type for the private registry. Defaults to `token` if not specified. Use `oidc_azure`, `oidc_aws`, `oidc_jfrog`, `oidc_cloudsmith`, or `oidc_gcp` for OIDC authentication.</summary>
+        /// <summary>The authentication type for the private registry. Defaults to `token` if not specified. Use `oidc_azure`, `oidc_aws`, `oidc_jfrog`, `oidc_cloudsmith`, or `oidc_gcp` for OIDC authentication. Use `anonymous` for registries that do not require authentication; `username`, `encrypted_value`, and `key_id` must be omitted.</summary>
         public global::GitHub.EnterpriseCloud.Orgs.Item.PrivateRegistries.PrivateRegistriesPostRequestBody_auth_type? AuthType { get; set; }
         /// <summary>The AWS region. Required when `auth_type` is `oidc_aws`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
