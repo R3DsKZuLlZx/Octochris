@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Actions.Policies.Item
         {
         }
         /// <summary>
-        /// Delete an Actions policy for an enterprise.
+        /// Delete an Actions policy for an enterprise.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/actions/policies#delete-an-enterprise-actions-policy" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Actions.Policies.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a specific Actions policy for an enterprise.
+        /// Get a specific Actions policy for an enterprise.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/actions/policies#get-an-enterprise-actions-policy" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.ActionsPolicy"/></returns>
@@ -85,7 +85,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Actions.Policies.Item
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.ActionsPolicy>(requestInfo, global::GitHub.EnterpriseCloud.Models.ActionsPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an Actions policy for an enterprise.Omitting `workflow_path` preserves the policy&apos;s existing workflow targeting.
+        /// Update an Actions policy for an enterprise.Omitting `workflow_path` preserves the policy&apos;s existing workflow targeting.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/actions/policies#update-an-enterprise-actions-policy" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.ActionsPolicy"/></returns>
@@ -115,7 +115,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Actions.Policies.Item
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.ActionsPolicy>(requestInfo, global::GitHub.EnterpriseCloud.Models.ActionsPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an Actions policy for an enterprise.
+        /// Delete an Actions policy for an enterprise.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +134,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Actions.Policies.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get a specific Actions policy for an enterprise.
+        /// Get a specific Actions policy for an enterprise.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +153,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Actions.Policies.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an Actions policy for an enterprise.Omitting `workflow_path` preserves the policy&apos;s existing workflow targeting.
+        /// Update an Actions policy for an enterprise.Omitting `workflow_path` preserves the policy&apos;s existing workflow targeting.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

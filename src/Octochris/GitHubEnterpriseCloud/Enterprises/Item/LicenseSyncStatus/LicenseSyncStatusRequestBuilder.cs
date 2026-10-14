@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.LicenseSyncStatus
         {
         }
         /// <summary>
-        /// Gets information about the status of a license sync job for an enterprise.The authenticated user must be an enterprise admin to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.
+        /// Gets information about the status of a license sync job for an enterprise.The authenticated user must be an enterprise admin to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/licensing#get-a-license-sync-status" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.GetLicenseSyncStatus"/></returns>
@@ -53,7 +53,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.LicenseSyncStatus
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.GetLicenseSyncStatus>(requestInfo, global::GitHub.EnterpriseCloud.Models.GetLicenseSyncStatus.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets information about the status of a license sync job for an enterprise.The authenticated user must be an enterprise admin to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.
+        /// Gets information about the status of a license sync job for an enterprise.The authenticated user must be an enterprise admin to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

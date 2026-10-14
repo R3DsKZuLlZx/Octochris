@@ -47,7 +47,7 @@ namespace GitHub.Api.Enterprises.Item.Actions.Oidc.Customization.Properties.Repo
         {
         }
         /// <summary>
-        /// Lists the repository custom properties that are included in the OIDC token for repository actions in an enterprise.OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+        /// Lists the repository custom properties that are included in the OIDC token for repository actions in an enterprise.OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/rest/actions/oidc#list-oidc-custom-property-inclusions-for-an-enterprise" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.Api.Models.OidcCustomPropertyInclusion&gt;</returns>
@@ -74,7 +74,7 @@ namespace GitHub.Api.Enterprises.Item.Actions.Oidc.Customization.Properties.Repo
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Adds a repository custom property to be included in the OIDC token for repository actions in an enterprise.OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+        /// Adds a repository custom property to be included in the OIDC token for repository actions in an enterprise.OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/rest/actions/oidc#create-an-oidc-custom-property-inclusion-for-an-enterprise" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Models.OidcCustomPropertyInclusion"/></returns>
@@ -100,7 +100,7 @@ namespace GitHub.Api.Enterprises.Item.Actions.Oidc.Customization.Properties.Repo
             return await RequestAdapter.SendAsync<global::GitHub.Api.Models.OidcCustomPropertyInclusion>(requestInfo, global::GitHub.Api.Models.OidcCustomPropertyInclusion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists the repository custom properties that are included in the OIDC token for repository actions in an enterprise.OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+        /// Lists the repository custom properties that are included in the OIDC token for repository actions in an enterprise.OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -119,7 +119,7 @@ namespace GitHub.Api.Enterprises.Item.Actions.Oidc.Customization.Properties.Repo
             return requestInfo;
         }
         /// <summary>
-        /// Adds a repository custom property to be included in the OIDC token for repository actions in an enterprise.OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+        /// Adds a repository custom property to be included in the OIDC token for repository actions in an enterprise.OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Input for creating an OIDC custom property inclusion</param>

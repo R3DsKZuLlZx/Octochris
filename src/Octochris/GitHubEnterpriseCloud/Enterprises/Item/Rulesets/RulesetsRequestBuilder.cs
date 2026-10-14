@@ -60,7 +60,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Rulesets
         {
         }
         /// <summary>
-        /// Create a repository ruleset for an enterprise.
+        /// Create a repository ruleset for an enterprise.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/rules#create-an-enterprise-repository-ruleset" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleset"/></returns>
@@ -88,7 +88,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Rulesets
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.RepositoryRuleset>(requestInfo, global::GitHub.EnterpriseCloud.Models.RepositoryRuleset.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a repository ruleset for an enterprise.
+        /// Create a repository ruleset for an enterprise.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
