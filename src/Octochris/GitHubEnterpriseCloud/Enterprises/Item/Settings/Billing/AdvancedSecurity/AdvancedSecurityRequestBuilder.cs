@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.AdvancedSecur
         {
         }
         /// <summary>
-        /// Gets the GitHub Advanced Security active committers for an enterprise per repository. The authenticated user must be an enterprise admin or billing manager.Each distinct user login across all repositories is counted as a single Advanced Security seat, so the `total_advanced_security_committers` is not the sum of active_users for each repository.The total number of repositories with committer information is tracked by the `total_count` field.
+        /// Gets the GitHub Advanced Security active committers for an enterprise per repository. The authenticated user must be an enterprise admin or billing manager.Each distinct user login across all repositories is counted as a single Advanced Security seat, so the `total_advanced_security_committers` is not the sum of active_users for each repository.The total number of repositories with committer information is tracked by the `total_count` field.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/licensing#get-github-advanced-security-active-committers-for-an-enterprise" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.AdvancedSecurityActiveCommitters"/></returns>
@@ -53,7 +53,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.AdvancedSecur
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.AdvancedSecurityActiveCommitters>(requestInfo, global::GitHub.EnterpriseCloud.Models.AdvancedSecurityActiveCommitters.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets the GitHub Advanced Security active committers for an enterprise per repository. The authenticated user must be an enterprise admin or billing manager.Each distinct user login across all repositories is counted as a single Advanced Security seat, so the `total_advanced_security_committers` is not the sum of active_users for each repository.The total number of repositories with committer information is tracked by the `total_count` field.
+        /// Gets the GitHub Advanced Security active committers for an enterprise per repository. The authenticated user must be an enterprise admin or billing manager.Each distinct user login across all repositories is counted as a single Advanced Security seat, so the `total_advanced_security_committers` is not the sum of active_users for each repository.The total number of repositories with committer information is tracked by the `total_count` field.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.AdvancedSecur
             return new global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.AdvancedSecurity.AdvancedSecurityRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Gets the GitHub Advanced Security active committers for an enterprise per repository. The authenticated user must be an enterprise admin or billing manager.Each distinct user login across all repositories is counted as a single Advanced Security seat, so the `total_advanced_security_committers` is not the sum of active_users for each repository.The total number of repositories with committer information is tracked by the `total_count` field.
+        /// Gets the GitHub Advanced Security active committers for an enterprise per repository. The authenticated user must be an enterprise admin or billing manager.Each distinct user login across all repositories is counted as a single Advanced Security seat, so the `total_advanced_security_committers` is not the sum of active_users for each repository.The total number of repositories with committer information is tracked by the `total_count` field.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdvancedSecurityRequestBuilderGetQueryParameters 

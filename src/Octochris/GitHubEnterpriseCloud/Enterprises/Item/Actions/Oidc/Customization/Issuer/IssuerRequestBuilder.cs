@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Actions.Oidc.Customization.Iss
         {
         }
         /// <summary>
-        /// Sets the GitHub Actions OpenID Connect (OIDC) custom issuer policy for an enterprise.OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+        /// Sets the GitHub Actions OpenID Connect (OIDC) custom issuer policy for an enterprise.OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/actions/oidc#set-the-github-actions-oidc-custom-issuer-policy-for-an-enterprise" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Actions.Oidc.Customization.Iss
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sets the GitHub Actions OpenID Connect (OIDC) custom issuer policy for an enterprise.OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+        /// Sets the GitHub Actions OpenID Connect (OIDC) custom issuer policy for an enterprise.OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

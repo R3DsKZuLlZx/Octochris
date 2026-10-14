@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Dependabot.RepositoryAccess.De
         {
         }
         /// <summary>
-        /// Sets the default level of repository access Dependabot will have while performing an update across organizations in the enterprise. Available values are:- &apos;public&apos; - Dependabot will only have access to public repositories, unless access is explicitly granted to non-public repositories.- &apos;internal&apos; - Dependabot will only have access to public and internal repositories, unless access is explicitly granted to private repositories.The authenticated user must be an enterprise owner to use this endpoint.
+        /// Sets the default level of repository access Dependabot will have while performing an update across organizations in the enterprise. Available values are:- &apos;public&apos; - Dependabot will only have access to public repositories, unless access is explicitly granted to non-public repositories.- &apos;internal&apos; - Dependabot will only have access to public and internal repositories, unless access is explicitly granted to private repositories.The authenticated user must be an enterprise owner to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/dependabot/repository-access#set-the-default-repository-access-level-for-dependabot-in-an-enterprise" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -61,7 +61,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Dependabot.RepositoryAccess.De
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sets the default level of repository access Dependabot will have while performing an update across organizations in the enterprise. Available values are:- &apos;public&apos; - Dependabot will only have access to public repositories, unless access is explicitly granted to non-public repositories.- &apos;internal&apos; - Dependabot will only have access to public and internal repositories, unless access is explicitly granted to private repositories.The authenticated user must be an enterprise owner to use this endpoint.
+        /// Sets the default level of repository access Dependabot will have while performing an update across organizations in the enterprise. Available values are:- &apos;public&apos; - Dependabot will only have access to public repositories, unless access is explicitly granted to non-public repositories.- &apos;internal&apos; - Dependabot will only have access to public and internal repositories, unless access is explicitly granted to private repositories.The authenticated user must be an enterprise owner to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

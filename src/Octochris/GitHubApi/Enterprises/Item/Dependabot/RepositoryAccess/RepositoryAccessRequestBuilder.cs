@@ -40,7 +40,7 @@ namespace GitHub.Api.Enterprises.Item.Dependabot.RepositoryAccess
         {
         }
         /// <summary>
-        /// Lists repositories that enterprise admins have allowed Dependabot to access when updating dependencies across organizations in the enterprise.The authenticated user must be an enterprise owner to use this endpoint.
+        /// Lists repositories that enterprise admins have allowed Dependabot to access when updating dependencies across organizations in the enterprise.The authenticated user must be an enterprise owner to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/rest/dependabot/repository-access#lists-the-repositories-dependabot-can-access-in-an-enterprise" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Models.DependabotRepositoryAccessDetails"/></returns>
@@ -66,7 +66,7 @@ namespace GitHub.Api.Enterprises.Item.Dependabot.RepositoryAccess
             return await RequestAdapter.SendAsync<global::GitHub.Api.Models.DependabotRepositoryAccessDetails>(requestInfo, global::GitHub.Api.Models.DependabotRepositoryAccessDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates repositories according to the list of repositories that enterprise admins have given Dependabot access to when they&apos;ve updated dependencies across organizations in the enterprise.The authenticated user must be an enterprise owner to use this endpoint.**Example request body:**```json{  &quot;repository_ids_to_add&quot;: [123, 456],  &quot;repository_ids_to_remove&quot;: [789]}```
+        /// Updates repositories according to the list of repositories that enterprise admins have given Dependabot access to when they&apos;ve updated dependencies across organizations in the enterprise.The authenticated user must be an enterprise owner to use this endpoint.**Example request body:**```json{  &quot;repository_ids_to_add&quot;: [123, 456],  &quot;repository_ids_to_remove&quot;: [789]}```&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/rest/dependabot/repository-access#updates-dependabots-repository-access-list-for-an-enterprise" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -93,7 +93,7 @@ namespace GitHub.Api.Enterprises.Item.Dependabot.RepositoryAccess
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists repositories that enterprise admins have allowed Dependabot to access when updating dependencies across organizations in the enterprise.The authenticated user must be an enterprise owner to use this endpoint.
+        /// Lists repositories that enterprise admins have allowed Dependabot to access when updating dependencies across organizations in the enterprise.The authenticated user must be an enterprise owner to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +112,7 @@ namespace GitHub.Api.Enterprises.Item.Dependabot.RepositoryAccess
             return requestInfo;
         }
         /// <summary>
-        /// Updates repositories according to the list of repositories that enterprise admins have given Dependabot access to when they&apos;ve updated dependencies across organizations in the enterprise.The authenticated user must be an enterprise owner to use this endpoint.**Example request body:**```json{  &quot;repository_ids_to_add&quot;: [123, 456],  &quot;repository_ids_to_remove&quot;: [789]}```
+        /// Updates repositories according to the list of repositories that enterprise admins have given Dependabot access to when they&apos;ve updated dependencies across organizations in the enterprise.The authenticated user must be an enterprise owner to use this endpoint.**Example request body:**```json{  &quot;repository_ids_to_add&quot;: [123, 456],  &quot;repository_ids_to_remove&quot;: [789]}```&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -143,7 +143,7 @@ namespace GitHub.Api.Enterprises.Item.Dependabot.RepositoryAccess
             return new global::GitHub.Api.Enterprises.Item.Dependabot.RepositoryAccess.RepositoryAccessRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists repositories that enterprise admins have allowed Dependabot to access when updating dependencies across organizations in the enterprise.The authenticated user must be an enterprise owner to use this endpoint.
+        /// Lists repositories that enterprise admins have allowed Dependabot to access when updating dependencies across organizations in the enterprise.The authenticated user must be an enterprise owner to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RepositoryAccessRequestBuilderGetQueryParameters 

@@ -34,7 +34,7 @@ namespace GitHub.Api.Enterprises.Item.Actions.Cache.StorageLimit
         {
         }
         /// <summary>
-        /// Gets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under thisenterprise may not set a higher cache storage limit.OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+        /// Gets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under thisenterprise may not set a higher cache storage limit.OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/rest/actions/cache#get-github-actions-cache-storage-limit-for-an-enterprise" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Models.ActionsCacheStorageLimitForEnterprise"/></returns>
@@ -60,7 +60,7 @@ namespace GitHub.Api.Enterprises.Item.Actions.Cache.StorageLimit
             return await RequestAdapter.SendAsync<global::GitHub.Api.Models.ActionsCacheStorageLimitForEnterprise>(requestInfo, global::GitHub.Api.Models.ActionsCacheStorageLimitForEnterprise.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under thisenterprise may not set a higher cache storage limit.OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+        /// Sets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under thisenterprise may not set a higher cache storage limit.OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/rest/actions/cache#set-github-actions-cache-storage-limit-for-an-enterprise" />
         /// </summary>
         /// <param name="body">GitHub Actions cache storage policy for an enterprise.</param>
@@ -89,7 +89,7 @@ namespace GitHub.Api.Enterprises.Item.Actions.Cache.StorageLimit
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under thisenterprise may not set a higher cache storage limit.OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+        /// Gets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under thisenterprise may not set a higher cache storage limit.OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +108,7 @@ namespace GitHub.Api.Enterprises.Item.Actions.Cache.StorageLimit
             return requestInfo;
         }
         /// <summary>
-        /// Sets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under thisenterprise may not set a higher cache storage limit.OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+        /// Sets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under thisenterprise may not set a higher cache storage limit.OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">GitHub Actions cache storage policy for an enterprise.</param>

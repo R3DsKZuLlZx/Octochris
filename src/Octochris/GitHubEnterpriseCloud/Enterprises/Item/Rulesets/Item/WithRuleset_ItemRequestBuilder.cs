@@ -40,7 +40,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Rulesets.Item
         {
         }
         /// <summary>
-        /// Delete a ruleset for an enterprise.
+        /// Delete a ruleset for an enterprise.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/rules#delete-an-enterprise-repository-ruleset" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Rulesets.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a repository ruleset for an enterprise.**Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the usermaking the API request has write access to the ruleset.
+        /// Get a repository ruleset for an enterprise.**Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the usermaking the API request has write access to the ruleset.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/rules#get-an-enterprise-repository-ruleset" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleset"/></returns>
@@ -91,7 +91,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Rulesets.Item
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.RepositoryRuleset>(requestInfo, global::GitHub.EnterpriseCloud.Models.RepositoryRuleset.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a ruleset for an enterprise.
+        /// Update a ruleset for an enterprise.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/rules#update-an-enterprise-repository-ruleset" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.RepositoryRuleset"/></returns>
@@ -119,7 +119,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Rulesets.Item
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.RepositoryRuleset>(requestInfo, global::GitHub.EnterpriseCloud.Models.RepositoryRuleset.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a ruleset for an enterprise.
+        /// Delete a ruleset for an enterprise.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -138,7 +138,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Rulesets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get a repository ruleset for an enterprise.**Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the usermaking the API request has write access to the ruleset.
+        /// Get a repository ruleset for an enterprise.**Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the usermaking the API request has write access to the ruleset.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,7 +157,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Rulesets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a ruleset for an enterprise.
+        /// Update a ruleset for an enterprise.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

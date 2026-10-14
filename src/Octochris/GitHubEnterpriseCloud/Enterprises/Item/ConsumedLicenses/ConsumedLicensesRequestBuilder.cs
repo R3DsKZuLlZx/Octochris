@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.ConsumedLicenses
         {
         }
         /// <summary>
-        /// Lists the license consumption information for all users, including those from connected servers, associated with an enterprise.The authenticated user must be an enterprise admin to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.
+        /// Lists the license consumption information for all users, including those from connected servers, associated with an enterprise.The authenticated user must be an enterprise admin to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/licensing#list-enterprise-consumed-licenses" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.GetConsumedLicenses"/></returns>
@@ -53,7 +53,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.ConsumedLicenses
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.GetConsumedLicenses>(requestInfo, global::GitHub.EnterpriseCloud.Models.GetConsumedLicenses.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists the license consumption information for all users, including those from connected servers, associated with an enterprise.The authenticated user must be an enterprise admin to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.
+        /// Lists the license consumption information for all users, including those from connected servers, associated with an enterprise.The authenticated user must be an enterprise admin to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.ConsumedLicenses
             return new global::GitHub.EnterpriseCloud.Enterprises.Item.ConsumedLicenses.ConsumedLicensesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists the license consumption information for all users, including those from connected servers, associated with an enterprise.The authenticated user must be an enterprise admin to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.
+        /// Lists the license consumption information for all users, including those from connected servers, associated with an enterprise.The authenticated user must be an enterprise admin to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.&gt; [!NOTE]&gt; The &quot;Enterprise administration&quot; fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConsumedLicensesRequestBuilderGetQueryParameters 
