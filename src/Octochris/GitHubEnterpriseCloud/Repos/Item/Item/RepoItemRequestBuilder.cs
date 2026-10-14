@@ -50,6 +50,7 @@ using GitHub.EnterpriseCloud.Repos.Item.Item.Labels;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Languages;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Lfs;
 using GitHub.EnterpriseCloud.Repos.Item.Item.License;
+using GitHub.EnterpriseCloud.Repos.Item.Item.LicenseCompliance;
 using GitHub.EnterpriseCloud.Repos.Item.Item.MergeUpstream;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Merges;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Milestones;
@@ -338,6 +339,11 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.License.LicenseRequestBuilder License
         {
             get => new global::GitHub.EnterpriseCloud.Repos.Item.Item.License.LicenseRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The licenseCompliance property</summary>
+        public global::GitHub.EnterpriseCloud.Repos.Item.Item.LicenseCompliance.LicenseComplianceRequestBuilder LicenseCompliance
+        {
+            get => new global::GitHub.EnterpriseCloud.Repos.Item.Item.LicenseCompliance.LicenseComplianceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The merges property</summary>
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.Merges.MergesRequestBuilder Merges
