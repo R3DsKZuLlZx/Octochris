@@ -40,8 +40,10 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.CodeSecurity.Configurations.Item.Repo
         /// <returns>A List&lt;global::GitHub.EnterpriseCloud.Models.CodeSecurityConfigurationRepositories&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 400 status code</exception>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.EnterpriseCloud.Models.ValidationErrorSimple">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfigurationRepositories>?> GetAsync(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Orgs.Item.CodeSecurity.Configurations.Item.Repositories.RepositoriesRequestBuilder.RepositoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,8 +56,10 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.CodeSecurity.Configurations.Item.Repo
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
                 { "403", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
                 { "404", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
+                { "422", global::GitHub.EnterpriseCloud.Models.ValidationErrorSimple.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfigurationRepositories>(requestInfo, global::GitHub.EnterpriseCloud.Models.CodeSecurityConfigurationRepositories.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();

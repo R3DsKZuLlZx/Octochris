@@ -114,6 +114,11 @@ namespace GitHub.Api.Orgs.Item.CodeSecurity.Configurations.Item
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 400 status code</exception>
+        /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 409 status code</exception>
+        /// <exception cref="global::GitHub.Api.Models.ValidationErrorSimple">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::GitHub.Api.Models.CodeSecurityConfiguration?> PatchAsync(global::GitHub.Api.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -125,7 +130,15 @@ namespace GitHub.Api.Orgs.Item.CodeSecurity.Configurations.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::GitHub.Api.Models.CodeSecurityConfiguration>(requestInfo, global::GitHub.Api.Models.CodeSecurityConfiguration.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
+                { "403", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
+                { "404", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
+                { "409", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
+                { "422", global::GitHub.Api.Models.ValidationErrorSimple.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::GitHub.Api.Models.CodeSecurityConfiguration>(requestInfo, global::GitHub.Api.Models.CodeSecurityConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes the desired code security configuration from an organization.Repositories attached to the configuration will retain their settings but will no longer be associated withthe configuration.The authenticated user must be an administrator or security manager for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.

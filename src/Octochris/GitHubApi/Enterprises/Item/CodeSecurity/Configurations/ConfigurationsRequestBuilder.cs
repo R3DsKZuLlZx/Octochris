@@ -103,6 +103,7 @@ namespace GitHub.Api.Enterprises.Item.CodeSecurity.Configurations
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 400 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Api.Models.ValidationErrorSimple">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::GitHub.Api.Models.CodeSecurityConfiguration?> PostAsync(global::GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -119,6 +120,7 @@ namespace GitHub.Api.Enterprises.Item.CodeSecurity.Configurations
                 { "400", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "403", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "404", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
+                { "422", global::GitHub.Api.Models.ValidationErrorSimple.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::GitHub.Api.Models.CodeSecurityConfiguration>(requestInfo, global::GitHub.Api.Models.CodeSecurityConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
