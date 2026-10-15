@@ -43,6 +43,7 @@ namespace GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Defaults
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Api.Models.ValidationErrorSimple">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Defaults.DefaultsPutResponse?> PutAsDefaultsPutResponseAsync(global::GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Defaults.DefaultsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -58,6 +59,7 @@ namespace GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Defaults
             {
                 { "403", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "404", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
+                { "422", global::GitHub.Api.Models.ValidationErrorSimple.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Defaults.DefaultsPutResponse>(requestInfo, global::GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Defaults.DefaultsPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -71,6 +73,7 @@ namespace GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Defaults
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Api.Models.ValidationErrorSimple">When receiving a 422 status code</exception>
         [Obsolete("This method is obsolete. Use PutAsDefaultsPutResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +90,7 @@ namespace GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Defaults
             {
                 { "403", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "404", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
+                { "422", global::GitHub.Api.Models.ValidationErrorSimple.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Defaults.DefaultsResponse>(requestInfo, global::GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Defaults.DefaultsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -44,6 +44,7 @@ namespace GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Attach
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 404 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 409 status code</exception>
+        /// <exception cref="global::GitHub.Api.Models.ValidationErrorSimple">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Attach.AttachPostResponse?> PostAsAttachPostResponseAsync(global::GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Attach.AttachPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -60,6 +61,7 @@ namespace GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Attach
                 { "403", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "404", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "409", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
+                { "422", global::GitHub.Api.Models.ValidationErrorSimple.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Attach.AttachPostResponse>(requestInfo, global::GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Attach.AttachPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -74,6 +76,7 @@ namespace GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Attach
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 404 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 409 status code</exception>
+        /// <exception cref="global::GitHub.Api.Models.ValidationErrorSimple">When receiving a 422 status code</exception>
         [Obsolete("This method is obsolete. Use PostAsAttachPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +94,7 @@ namespace GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Attach
                 { "403", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "404", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "409", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
+                { "422", global::GitHub.Api.Models.ValidationErrorSimple.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Attach.AttachResponse>(requestInfo, global::GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Attach.AttachResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

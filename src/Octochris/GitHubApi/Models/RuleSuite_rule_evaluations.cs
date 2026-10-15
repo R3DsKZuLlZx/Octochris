@@ -24,6 +24,14 @@ namespace GitHub.Api.Models
 #endif
         /// <summary>The enforcement level of this rule source.</summary>
         public global::GitHub.Api.Models.RuleSuite_rule_evaluations_enforcement? Enforcement { get; set; }
+        /// <summary>Additional metadata about the rule evaluation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Models.RuleSuite_rule_evaluations.RuleSuite_rule_evaluations_metadata? Metadata { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Models.RuleSuite_rule_evaluations.RuleSuite_rule_evaluations_metadata Metadata { get; set; }
+#endif
         /// <summary>The result of the evaluation of the individual rule.</summary>
         public global::GitHub.Api.Models.RuleSuite_rule_evaluations_result? Result { get; set; }
         /// <summary>The rule_source property</summary>
@@ -69,6 +77,7 @@ namespace GitHub.Api.Models
             {
                 { "details", n => { Details = n.GetStringValue(); } },
                 { "enforcement", n => { Enforcement = n.GetEnumValue<global::GitHub.Api.Models.RuleSuite_rule_evaluations_enforcement>(); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::GitHub.Api.Models.RuleSuite_rule_evaluations.RuleSuite_rule_evaluations_metadata>(global::GitHub.Api.Models.RuleSuite_rule_evaluations.RuleSuite_rule_evaluations_metadata.CreateFromDiscriminatorValue); } },
                 { "result", n => { Result = n.GetEnumValue<global::GitHub.Api.Models.RuleSuite_rule_evaluations_result>(); } },
                 { "rule_source", n => { RuleSource = n.GetObjectValue<global::GitHub.Api.Models.RuleSuite_rule_evaluations_rule_source>(global::GitHub.Api.Models.RuleSuite_rule_evaluations_rule_source.CreateFromDiscriminatorValue); } },
                 { "rule_type", n => { RuleType = n.GetStringValue(); } },
@@ -83,10 +92,86 @@ namespace GitHub.Api.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("details", Details);
             writer.WriteEnumValue<global::GitHub.Api.Models.RuleSuite_rule_evaluations_enforcement>("enforcement", Enforcement);
+            writer.WriteObjectValue<global::GitHub.Api.Models.RuleSuite_rule_evaluations.RuleSuite_rule_evaluations_metadata>("metadata", Metadata);
             writer.WriteEnumValue<global::GitHub.Api.Models.RuleSuite_rule_evaluations_result>("result", Result);
             writer.WriteObjectValue<global::GitHub.Api.Models.RuleSuite_rule_evaluations_rule_source>("rule_source", RuleSource);
             writer.WriteStringValue("rule_type", RuleType);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::GitHub.Api.Models.RuleSuitePullRequest"/>, <see cref="global::GitHub.Api.Models.RuleSuiteRequiredStatusChecks"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class RuleSuite_rule_evaluations_metadata : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::GitHub.Api.Models.RuleSuitePullRequest"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::GitHub.Api.Models.RuleSuitePullRequest? RuleSuitePullRequest { get; set; }
+#nullable restore
+#else
+            public global::GitHub.Api.Models.RuleSuitePullRequest RuleSuitePullRequest { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::GitHub.Api.Models.RuleSuiteRequiredStatusChecks"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::GitHub.Api.Models.RuleSuiteRequiredStatusChecks? RuleSuiteRequiredStatusChecks { get; set; }
+#nullable restore
+#else
+            public global::GitHub.Api.Models.RuleSuiteRequiredStatusChecks RuleSuiteRequiredStatusChecks { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::GitHub.Api.Models.RuleSuite_rule_evaluations.RuleSuite_rule_evaluations_metadata"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::GitHub.Api.Models.RuleSuite_rule_evaluations.RuleSuite_rule_evaluations_metadata CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("rule_type")?.GetStringValue();
+                var result = new global::GitHub.Api.Models.RuleSuite_rule_evaluations.RuleSuite_rule_evaluations_metadata();
+                if("pull_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.RuleSuitePullRequest = new global::GitHub.Api.Models.RuleSuitePullRequest();
+                }
+                else if("required_status_checks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.RuleSuiteRequiredStatusChecks = new global::GitHub.Api.Models.RuleSuiteRequiredStatusChecks();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(RuleSuitePullRequest != null)
+                {
+                    return RuleSuitePullRequest.GetFieldDeserializers();
+                }
+                else if(RuleSuiteRequiredStatusChecks != null)
+                {
+                    return RuleSuiteRequiredStatusChecks.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(RuleSuitePullRequest != null)
+                {
+                    writer.WriteObjectValue<global::GitHub.Api.Models.RuleSuitePullRequest>(null, RuleSuitePullRequest);
+                }
+                else if(RuleSuiteRequiredStatusChecks != null)
+                {
+                    writer.WriteObjectValue<global::GitHub.Api.Models.RuleSuiteRequiredStatusChecks>(null, RuleSuiteRequiredStatusChecks);
+                }
+            }
         }
     }
 }

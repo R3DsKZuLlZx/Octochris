@@ -40,6 +40,7 @@ namespace GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Repositor
         /// <returns>A List&lt;global::GitHub.Api.Models.CodeSecurityConfigurationRepositories&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 400 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,6 +55,7 @@ namespace GitHub.Api.Enterprises.Item.CodeSecurity.Configurations.Item.Repositor
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "403", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "404", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
             };
