@@ -19,6 +19,7 @@ using GitHub.EnterpriseCloud.Enterprises.Item.EnterpriseRoles;
 using GitHub.EnterpriseCloud.Enterprises.Item.InnersourceVulnerabilities;
 using GitHub.EnterpriseCloud.Enterprises.Item.Installation;
 using GitHub.EnterpriseCloud.Enterprises.Item.Item;
+using GitHub.EnterpriseCloud.Enterprises.Item.LicenseCompliance;
 using GitHub.EnterpriseCloud.Enterprises.Item.LicenseSyncStatus;
 using GitHub.EnterpriseCloud.Enterprises.Item.Members;
 using GitHub.EnterpriseCloud.Enterprises.Item.NetworkConfigurations;
@@ -133,6 +134,11 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Installation.InstallationRequestBuilder Installation
         {
             get => new global::GitHub.EnterpriseCloud.Enterprises.Item.Installation.InstallationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The licenseCompliance property</summary>
+        public global::GitHub.EnterpriseCloud.Enterprises.Item.LicenseCompliance.LicenseComplianceRequestBuilder LicenseCompliance
+        {
+            get => new global::GitHub.EnterpriseCloud.Enterprises.Item.LicenseCompliance.LicenseComplianceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The licenseSyncStatus property</summary>
         public global::GitHub.EnterpriseCloud.Enterprises.Item.LicenseSyncStatus.LicenseSyncStatusRequestBuilder LicenseSyncStatus

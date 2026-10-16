@@ -14,7 +14,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.LicenseCompliance.PackageChecks
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Package URLs to check against the license compliance policy. Duplicate package URLs are checked once.</summary>
+        /// <summary>Up to 40 package URLs to check against the license compliance policy. Duplicate package URLs count toward the limit but are checked once.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Purls { get; set; }
