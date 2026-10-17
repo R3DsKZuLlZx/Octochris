@@ -4,6 +4,7 @@ using GitHub.EnterpriseCloud.Orgs.Item.Copilot.Billing;
 using GitHub.EnterpriseCloud.Orgs.Item.Copilot.CodingAgent;
 using GitHub.EnterpriseCloud.Orgs.Item.Copilot.Content_exclusion;
 using GitHub.EnterpriseCloud.Orgs.Item.Copilot.Metrics;
+using GitHub.EnterpriseCloud.Orgs.Item.Copilot.ModelPolicies;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -37,6 +38,11 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Copilot
         public global::GitHub.EnterpriseCloud.Orgs.Item.Copilot.Metrics.MetricsRequestBuilder Metrics
         {
             get => new global::GitHub.EnterpriseCloud.Orgs.Item.Copilot.Metrics.MetricsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The modelPolicies property</summary>
+        public global::GitHub.EnterpriseCloud.Orgs.Item.Copilot.ModelPolicies.ModelPoliciesRequestBuilder ModelPolicies
+        {
+            get => new global::GitHub.EnterpriseCloud.Orgs.Item.Copilot.ModelPolicies.ModelPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Orgs.Item.Copilot.CopilotRequestBuilder"/> and sets the default values.
