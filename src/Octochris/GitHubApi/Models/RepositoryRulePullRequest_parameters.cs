@@ -36,7 +36,7 @@ namespace GitHub.Api.Models
         public bool? RequireCodeOwnerReview { get; set; }
         /// <summary>The number of approving reviews that are required before a pull request can be merged.</summary>
         public int? RequiredApprovingReviewCount { get; set; }
-        /// <summary>&gt; [!NOTE]&gt; `required_reviewers` is in beta and subject to change.A collection of reviewers and associated file patterns. Each reviewer has a list of file patterns which determine the files that reviewer is required to review.</summary>
+        /// <summary>A collection of reviewers and associated file patterns. Each reviewer has a list of file patterns which determine the files that reviewer is required to review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::GitHub.Api.Models.RepositoryRuleParamsRequiredReviewerConfiguration>? RequiredReviewers { get; set; }
