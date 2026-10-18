@@ -35,6 +35,14 @@ namespace GitHub.EnterpriseCloud.Models
         public global::GitHub.EnterpriseCloud.Models.DependabotAlert_dependency_relationship? Relationship { get; private set; }
         /// <summary>The execution scope of the vulnerable dependency.</summary>
         public global::GitHub.EnterpriseCloud.Models.DependabotAlert_dependency_scope? Scope { get; private set; }
+        /// <summary>The dependency version or version constraint last recorded for the dependency associated with this alert.For dependencies detected from a lockfile, this can be the resolved version.For manifest-only dependencies, it can be the declared version constraint. Returns `null` when unavailable.An empty string can indicate an unconstrained dependency. The stored value is limited to 64 bytes;longer requirements may have been truncated and may no longer form a complete, valid version constraint.When multiple vulnerable versions of a dependency correspond to the same alert, this field contains onerecorded version or constraint and may not represent all vulnerable versions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VersionRequirement { get; private set; }
+#nullable restore
+#else
+        public string VersionRequirement { get; private set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Models.DependabotAlert_dependency"/> and sets the default values.
         /// </summary>
@@ -64,6 +72,7 @@ namespace GitHub.EnterpriseCloud.Models
                 { "package", n => { Package = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.DependabotAlertPackage>(global::GitHub.EnterpriseCloud.Models.DependabotAlertPackage.CreateFromDiscriminatorValue); } },
                 { "relationship", n => { Relationship = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.DependabotAlert_dependency_relationship>(); } },
                 { "scope", n => { Scope = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.DependabotAlert_dependency_scope>(); } },
+                { "version_requirement", n => { VersionRequirement = n.GetStringValue(); } },
             };
         }
         /// <summary>
