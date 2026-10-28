@@ -46,6 +46,8 @@ namespace GitHub.EnterpriseCloud.Models
 #endif
         /// <summary>All conversations on code must be resolved before a pull request can be merged.</summary>
         public bool? RequiredReviewThreadResolution { get; set; }
+        /// <summary>When Copilot opens a pull request without a human collaborator, require one more approving review if a non-zero approval count is required.</summary>
+        public bool? RequireExtraApprovalForUnattributedChanges { get; set; }
         /// <summary>Whether the most recent reviewable push must be approved by someone other than the person who pushed it.</summary>
         public bool? RequireLastPushApproval { get; set; }
         /// <summary>
@@ -77,6 +79,7 @@ namespace GitHub.EnterpriseCloud.Models
                 { "dismiss_stale_reviews_on_push", n => { DismissStaleReviewsOnPush = n.GetBoolValue(); } },
                 { "dismissal_restriction", n => { DismissalRestriction = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.RepositoryRuleParamsDismissalRestriction>(global::GitHub.EnterpriseCloud.Models.RepositoryRuleParamsDismissalRestriction.CreateFromDiscriminatorValue); } },
                 { "require_code_owner_review", n => { RequireCodeOwnerReview = n.GetBoolValue(); } },
+                { "require_extra_approval_for_unattributed_changes", n => { RequireExtraApprovalForUnattributedChanges = n.GetBoolValue(); } },
                 { "require_last_push_approval", n => { RequireLastPushApproval = n.GetBoolValue(); } },
                 { "required_approving_review_count", n => { RequiredApprovingReviewCount = n.GetIntValue(); } },
                 { "required_review_thread_resolution", n => { RequiredReviewThreadResolution = n.GetBoolValue(); } },
@@ -97,6 +100,7 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteIntValue("required_approving_review_count", RequiredApprovingReviewCount);
             writer.WriteCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Models.RepositoryRuleParamsRequiredReviewerConfiguration>("required_reviewers", RequiredReviewers);
             writer.WriteBoolValue("required_review_thread_resolution", RequiredReviewThreadResolution);
+            writer.WriteBoolValue("require_extra_approval_for_unattributed_changes", RequireExtraApprovalForUnattributedChanges);
             writer.WriteBoolValue("require_last_push_approval", RequireLastPushApproval);
             writer.WriteAdditionalData(AdditionalData);
         }

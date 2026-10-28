@@ -42,6 +42,7 @@ namespace GitHub.EnterpriseCloud.Installation.Repositories
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 401 status code</exception>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.EnterpriseCloud.Models.ValidationErrorSimple">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::GitHub.EnterpriseCloud.Installation.Repositories.RepositoriesGetResponse?> GetAsRepositoriesGetResponseAsync(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Installation.Repositories.RepositoriesRequestBuilder.RepositoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -56,6 +57,7 @@ namespace GitHub.EnterpriseCloud.Installation.Repositories
             {
                 { "401", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
                 { "403", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
+                { "422", global::GitHub.EnterpriseCloud.Models.ValidationErrorSimple.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Installation.Repositories.RepositoriesGetResponse>(requestInfo, global::GitHub.EnterpriseCloud.Installation.Repositories.RepositoriesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -68,6 +70,7 @@ namespace GitHub.EnterpriseCloud.Installation.Repositories
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 401 status code</exception>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.EnterpriseCloud.Models.ValidationErrorSimple">When receiving a 422 status code</exception>
         [Obsolete("This method is obsolete. Use GetAsRepositoriesGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,6 +86,7 @@ namespace GitHub.EnterpriseCloud.Installation.Repositories
             {
                 { "401", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
                 { "403", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
+                { "422", global::GitHub.EnterpriseCloud.Models.ValidationErrorSimple.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Installation.Repositories.RepositoriesResponse>(requestInfo, global::GitHub.EnterpriseCloud.Installation.Repositories.RepositoriesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

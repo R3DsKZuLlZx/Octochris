@@ -127,6 +127,14 @@ namespace GitHub.EnterpriseCloud.Models
 #else
         public List<string> Pages { get; set; }
 #endif
+        /// <summary>Public destination IP ranges in CIDR notation for shared GitHub-managed ingress infrastructure.These ranges may serve multiple GitHub services and are not outbound source ranges.Use them alongside the relevant product-specific network requirements.Omitted when no ranges are available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SharedIngress { get; set; }
+#nullable restore
+#else
+        public List<string> SharedIngress { get; set; }
+#endif
         /// <summary>The ssh_key_fingerprints property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -192,6 +200,7 @@ namespace GitHub.EnterpriseCloud.Models
                 { "importer", n => { Importer = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "packages", n => { Packages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "pages", n => { Pages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "shared_ingress", n => { SharedIngress = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ssh_key_fingerprints", n => { SshKeyFingerprints = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.ApiOverview_ssh_key_fingerprints>(global::GitHub.EnterpriseCloud.Models.ApiOverview_ssh_key_fingerprints.CreateFromDiscriminatorValue); } },
                 { "ssh_keys", n => { SshKeys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "verifiable_password_authentication", n => { VerifiablePasswordAuthentication = n.GetBoolValue(); } },
@@ -219,6 +228,7 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteCollectionOfPrimitiveValues<string>("importer", Importer);
             writer.WriteCollectionOfPrimitiveValues<string>("packages", Packages);
             writer.WriteCollectionOfPrimitiveValues<string>("pages", Pages);
+            writer.WriteCollectionOfPrimitiveValues<string>("shared_ingress", SharedIngress);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.ApiOverview_ssh_key_fingerprints>("ssh_key_fingerprints", SshKeyFingerprints);
             writer.WriteCollectionOfPrimitiveValues<string>("ssh_keys", SshKeys);
             writer.WriteBoolValue("verifiable_password_authentication", VerifiablePasswordAuthentication);

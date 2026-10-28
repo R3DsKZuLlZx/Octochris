@@ -22,9 +22,9 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Apps.ModelPolicies
 #else
         public string DisplayName { get; set; }
 #endif
-        /// <summary>Whether the enterprise policy and available apps policy controls allow the apps layer&apos;s policy to be updated.</summary>
+        /// <summary>Whether the enterprise policy and available apps policy controls allow the agent apps policy to be updated.</summary>
         public bool? Editable { get; set; }
-        /// <summary>The separately read enterprise-layer policy for this model, used to determine whether the apps layer can edit its policy.</summary>
+        /// <summary>The separately read enterprise-layer policy for this model, used to determine whether the agent apps policy can be edited.</summary>
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Apps.ModelPolicies.ModelPoliciesPatchResponse_models_enterprise_policy_state? EnterprisePolicyState { get; set; }
         /// <summary>The model_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Apps.ModelPolicies
 #else
         public string ModelName { get; set; }
 #endif
-        /// <summary>When editable, the apps layer&apos;s configured value, or `optional` if the apps layer has not configured this model.When locked, the enterprise&apos;s explicit value or its applied default availability for an eligible model.Returns `disabled` when locked without an explicit enterprise value and the model is excluded from default availability.</summary>
+        /// <summary>When editable, the agent apps policy&apos;s configured value, or `optional` if no agent apps policy has been configured for this model.When locked, the enterprise&apos;s explicit value or its applied default availability for an eligible model.Returns `disabled` when locked without an explicit enterprise value and the model is excluded from default availability.</summary>
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Apps.ModelPolicies.ModelPoliciesPatchResponse_models_policy_state? PolicyState { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Apps.ModelPolicies.ModelPoliciesPatchResponse_models"/> and sets the default values.

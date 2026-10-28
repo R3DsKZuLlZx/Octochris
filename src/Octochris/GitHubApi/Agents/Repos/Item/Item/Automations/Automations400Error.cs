@@ -24,6 +24,14 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 #else
         public string DocumentationUrl { get; set; }
 #endif
+        /// <summary>Stable machine-readable code identifying the specific known failure. Omitted for failures without a classified cause.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ErrorCode { get; set; }
+#nullable restore
+#else
+        public string ErrorCode { get; set; }
+#endif
         /// <summary>List of validation errors (present only for 422 responses)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +39,14 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 #nullable restore
 #else
         public List<global::GitHub.Api.Agents.Repos.Item.Item.Automations.Automations400Error_errors> Errors { get; set; }
+#endif
+        /// <summary>Which resource was rate limited, present when `error_code` is `rate_limit_exceeded` and the resource is known. One of `api`, `sandbox`, or `token_mint`. Clients should tolerate new values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LimitedResource { get; set; }
+#nullable restore
+#else
+        public string LimitedResource { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
@@ -68,7 +84,9 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
+                { "error_code", n => { ErrorCode = n.GetStringValue(); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::GitHub.Api.Agents.Repos.Item.Item.Automations.Automations400Error_errors>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.Automations400Error_errors.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "limited_resource", n => { LimitedResource = n.GetStringValue(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
             };
         }
@@ -80,7 +98,9 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("documentation_url", DocumentationUrl);
+            writer.WriteStringValue("error_code", ErrorCode);
             writer.WriteCollectionOfObjectValues<global::GitHub.Api.Agents.Repos.Item.Item.Automations.Automations400Error_errors>("errors", Errors);
+            writer.WriteStringValue("limited_resource", LimitedResource);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteAdditionalData(AdditionalData);
         }

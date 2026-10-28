@@ -15,17 +15,11 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Custom agents (subagents) this automation is allowed to invoke. Send an empty array to clear all custom agents.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? AllowedCustomAgents { get; set; }
-#nullable restore
-#else
-        public List<string> AllowedCustomAgents { get; set; }
-#endif
+        /// <summary>When true, runs of this automation build on the session history of its previous runs, and runs of the same automation are serialized. Not tracked in revision history. Omit to leave unchanged.</summary>
+        public bool? ContinuousHistory { get; set; }
         /// <summary>Set to true to enable, false to disable. Omit to leave unchanged.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The model to use for sessions triggered by this automation. Omit to leave unchanged. Send an empty string to clear the model and revert to the platform default.</summary>
+        /// <summary>The model to use for sessions triggered by this automation. Omit to leave unchanged. Send an empty string to clear the override and let the platform select the model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model { get; set; }
@@ -41,7 +35,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations.Item
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The prompt template for the automation.</summary>
+        /// <summary>The prompt for the automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Prompt { get; set; }
@@ -49,7 +43,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations.Item
 #else
         public string Prompt { get; set; }
 #endif
-        /// <summary>The reasoning effort to use for sessions triggered by this automation. Omit to leave unchanged. Send an empty string to clear the override. Currently supported values: `none`, `low`, `medium`, `high`, `xhigh`, `max`</summary>
+        /// <summary>The reasoning effort to use for sessions triggered by this automation. Omit to leave unchanged. Send an empty string to clear the override and use the model&apos;s default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.Item.WithAutomation_PatchRequestBody.WithAutomation_PatchRequestBody_reasoning_effort? ReasoningEffort { get; set; }
@@ -57,7 +51,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations.Item
 #else
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.Item.WithAutomation_PatchRequestBody.WithAutomation_PatchRequestBody_reasoning_effort ReasoningEffort { get; set; }
 #endif
-        /// <summary>When true, event-triggered runs require the event actor to have repo write permission, even when the org&apos;s allow_read_access_triggers policy is enabled. Does not apply to interval-scheduled runs, which always run as the automation owner. Omit to leave unchanged.</summary>
+        /// <summary>When true, event-triggered runs require the event actor to have repo write permission, even when the org&apos;s allow_read_access_triggers policy is enabled. When policy validation is enabled, explicitly setting false returns 422 if effective organization or repository policy disallows read-access triggers. The actor requirement does not apply to interval-scheduled runs, which always run as the automation owner. Omit to leave unchanged.</summary>
         public bool? RequireActorWritePermission { get; set; }
         /// <summary>The tools available to the automation. Send an empty array to clear all tools.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,7 +61,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations.Item
 #else
         public List<string> Tools { get; set; }
 #endif
-        /// <summary>Public trigger configuration keyed by stable public trigger identifier. Each trigger has a closed, trigger-specific configuration schema.</summary>
+        /// <summary>Trigger configuration for the automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.Item.WithAutomation_PatchRequestBody_triggers? Triggers { get; set; }
@@ -75,8 +69,6 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations.Item
 #else
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.Item.WithAutomation_PatchRequestBody_triggers Triggers { get; set; }
 #endif
-        /// <summary>Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`. Omit to leave unchanged.</summary>
-        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.Item.WithAutomation_PatchRequestBody_write_scope? WriteScope { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Api.Agents.Repos.Item.Item.Automations.Item.WithAutomation_PatchRequestBody"/> and sets the default values.
         /// </summary>
@@ -102,7 +94,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed_custom_agents", n => { AllowedCustomAgents = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "continuous_history", n => { ContinuousHistory = n.GetBoolValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -111,7 +103,6 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations.Item
                 { "require_actor_write_permission", n => { RequireActorWritePermission = n.GetBoolValue(); } },
                 { "tools", n => { Tools = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "triggers", n => { Triggers = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.Item.WithAutomation_PatchRequestBody_triggers>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.Item.WithAutomation_PatchRequestBody_triggers.CreateFromDiscriminatorValue); } },
-                { "write_scope", n => { WriteScope = n.GetEnumValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.Item.WithAutomation_PatchRequestBody_write_scope>(); } },
             };
         }
         /// <summary>
@@ -121,7 +112,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("allowed_custom_agents", AllowedCustomAgents);
+            writer.WriteBoolValue("continuous_history", ContinuousHistory);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("name", Name);
@@ -130,7 +121,6 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations.Item
             writer.WriteBoolValue("require_actor_write_permission", RequireActorWritePermission);
             writer.WriteCollectionOfPrimitiveValues<string>("tools", Tools);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.Item.WithAutomation_PatchRequestBody_triggers>("triggers", Triggers);
-            writer.WriteEnumValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.Item.WithAutomation_PatchRequestBody_write_scope>("write_scope", WriteScope);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

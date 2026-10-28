@@ -35,7 +35,7 @@ namespace GitHub.Api.Agents.Automations
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The model to use for sessions triggered by this automation. Omit to use the platform default.</summary>
+        /// <summary>The model override for sessions triggered by this automation. Absent when the platform selects the model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model { get; set; }
@@ -51,9 +51,7 @@ namespace GitHub.Api.Agents.Automations
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Who owns the automation. `user` keeps it private to its creator and its runs act as that user. `repository` makes it belong to the repository, visible to anyone with read access to the repository, and its runs act as the Copilot app rather than as a person.</summary>
-        public global::GitHub.Api.Agents.Automations.Automations_owner_type? OwnerType { get; private set; }
-        /// <summary>The reasoning effort to use for sessions triggered by this automation. Omit or leave empty for no override. Currently supported values: `none`, `low`, `medium`, `high`, `xhigh`, `max`</summary>
+        /// <summary>The reasoning effort override for sessions triggered by this automation. Absent when the model&apos;s default is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasoningEffort { get; set; }
@@ -71,7 +69,7 @@ namespace GitHub.Api.Agents.Automations
 #endif
         /// <summary>When true, event-triggered runs require the event actor to have repo write permission, even when the org&apos;s allow_read_access_triggers policy is enabled. Does not apply to interval-scheduled runs, which always run as the automation owner.</summary>
         public bool? RequireActorWritePermission { get; set; }
-        /// <summary>Public trigger configuration keyed by stable public trigger identifier. Each trigger has a closed, trigger-specific configuration schema.</summary>
+        /// <summary>Trigger configuration for the automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::GitHub.Api.Agents.Automations.Automations_triggers? Triggers { get; set; }
@@ -79,10 +77,10 @@ namespace GitHub.Api.Agents.Automations
 #else
         public global::GitHub.Api.Agents.Automations.Automations_triggers Triggers { get; set; }
 #endif
+        /// <summary>The type of automation. `personal` keeps it private to its creator and its runs act as that user. `shared` makes it belong to the repository, visible to anyone with read access to the repository, and its runs act as the Copilot app rather than as a person.</summary>
+        public global::GitHub.Api.Agents.Automations.Automations_type? Type { get; private set; }
         /// <summary>When the automation was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.</summary>
-        public global::GitHub.Api.Agents.Automations.Automations_write_scope? WriteScope { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Api.Agents.Automations.Automations"/> and sets the default values.
         /// </summary>
@@ -90,7 +88,6 @@ namespace GitHub.Api.Agents.Automations
         {
             AdditionalData = new Dictionary<string, object>();
             RequireActorWritePermission = false;
-            WriteScope = global::GitHub.Api.Agents.Automations.Automations_write_scope.Trigger;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -116,13 +113,12 @@ namespace GitHub.Api.Agents.Automations
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "owner_type", n => { OwnerType = n.GetEnumValue<global::GitHub.Api.Agents.Automations.Automations_owner_type>(); } },
                 { "reasoning_effort", n => { ReasoningEffort = n.GetStringValue(); } },
                 { "repository", n => { Repository = n.GetObjectValue<global::GitHub.Api.Agents.Automations.Automations_repository>(global::GitHub.Api.Agents.Automations.Automations_repository.CreateFromDiscriminatorValue); } },
                 { "require_actor_write_permission", n => { RequireActorWritePermission = n.GetBoolValue(); } },
                 { "triggers", n => { Triggers = n.GetObjectValue<global::GitHub.Api.Agents.Automations.Automations_triggers>(global::GitHub.Api.Agents.Automations.Automations_triggers.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::GitHub.Api.Agents.Automations.Automations_type>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "write_scope", n => { WriteScope = n.GetEnumValue<global::GitHub.Api.Agents.Automations.Automations_write_scope>(); } },
             };
         }
         /// <summary>
@@ -143,7 +139,6 @@ namespace GitHub.Api.Agents.Automations
             writer.WriteBoolValue("require_actor_write_permission", RequireActorWritePermission);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Automations.Automations_triggers>("triggers", Triggers);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteEnumValue<global::GitHub.Api.Agents.Automations.Automations_write_scope>("write_scope", WriteScope);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

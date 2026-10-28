@@ -15,14 +15,8 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Custom agents (subagents) this automation is allowed to invoke.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? AllowedCustomAgents { get; set; }
-#nullable restore
-#else
-        public List<string> AllowedCustomAgents { get; set; }
-#endif
+        /// <summary>When true, runs of this automation build on the session history of its previous runs, and runs of the same automation are serialized. Not tracked in revision history.</summary>
+        public bool? ContinuousHistory { get; set; }
         /// <summary>When the automation was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>A GitHub user</summary>
@@ -43,7 +37,7 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The model to use for sessions triggered by this automation. Omit to use the platform default.</summary>
+        /// <summary>The model override for sessions triggered by this automation. Absent when the platform selects the model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model { get; set; }
@@ -59,9 +53,7 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Who owns the automation. `user` keeps it private to its creator and its runs act as that user. `repository` makes it belong to the repository, visible to anyone with read access to the repository, and its runs act as the Copilot app rather than as a person.</summary>
-        public global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_owner_type? OwnerType { get; private set; }
-        /// <summary>The prompt template for the automation.</summary>
+        /// <summary>The prompt for the automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Prompt { get; set; }
@@ -69,7 +61,7 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item
 #else
         public string Prompt { get; set; }
 #endif
-        /// <summary>The reasoning effort to use for sessions triggered by this automation. Omit or leave empty for no override. Currently supported values: `none`, `low`, `medium`, `high`, `xhigh`, `max`</summary>
+        /// <summary>The reasoning effort override for sessions triggered by this automation. Absent when the model&apos;s default is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasoningEffort { get; set; }
@@ -87,7 +79,7 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item
 #else
         public List<string> Tools { get; set; }
 #endif
-        /// <summary>Public trigger configuration keyed by stable public trigger identifier. Each trigger has a closed, trigger-specific configuration schema.</summary>
+        /// <summary>Trigger configuration for the automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_triggers? Triggers { get; set; }
@@ -95,18 +87,18 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item
 #else
         public global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_triggers Triggers { get; set; }
 #endif
+        /// <summary>The type of automation. `personal` keeps it private to its creator and its runs act as that user. `shared` makes it belong to the repository, visible to anyone with read access to the repository, and its runs act as the Copilot app rather than as a person.</summary>
+        public global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_type? Type { get; private set; }
         /// <summary>When the automation was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.</summary>
-        public global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_write_scope? WriteScope { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse"/> and sets the default values.
         /// </summary>
         public WithAutomation_GetResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            ContinuousHistory = false;
             RequireActorWritePermission = false;
-            WriteScope = global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_write_scope.Trigger;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -126,21 +118,20 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed_custom_agents", n => { AllowedCustomAgents = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "continuous_history", n => { ContinuousHistory = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_created_by>(global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_created_by.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "owner_type", n => { OwnerType = n.GetEnumValue<global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_owner_type>(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "reasoning_effort", n => { ReasoningEffort = n.GetStringValue(); } },
                 { "require_actor_write_permission", n => { RequireActorWritePermission = n.GetBoolValue(); } },
                 { "tools", n => { Tools = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "triggers", n => { Triggers = n.GetObjectValue<global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_triggers>(global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_triggers.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_type>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "write_scope", n => { WriteScope = n.GetEnumValue<global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_write_scope>(); } },
             };
         }
         /// <summary>
@@ -150,7 +141,7 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("allowed_custom_agents", AllowedCustomAgents);
+            writer.WriteBoolValue("continuous_history", ContinuousHistory);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_created_by>("created_by", CreatedBy);
             writer.WriteBoolValue("enabled", Enabled);
@@ -163,7 +154,6 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item
             writer.WriteCollectionOfPrimitiveValues<string>("tools", Tools);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_triggers>("triggers", Triggers);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_write_scope>("write_scope", WriteScope);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

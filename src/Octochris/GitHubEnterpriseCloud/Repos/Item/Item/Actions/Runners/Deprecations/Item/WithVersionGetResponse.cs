@@ -14,7 +14,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Runners.Deprecations.It
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date after which this runner version can no longer register. Null if no schedule is set.</summary>
+        /// <summary>The date after which this runner version can no longer register. Only set for runner versions below the minimum version required to register (currently 2.329.0); `null` for versions with no registration end date.</summary>
         public DateTimeOffset? RegistrationDeprecatesAt { get; set; }
         /// <summary>The runner version string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,7 +24,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Runners.Deprecations.It
 #else
         public string RunnerVersion { get; set; }
 #endif
-        /// <summary>The date after which jobs will no longer be dispatched to runners on this version.</summary>
+        /// <summary>The date after which jobs will no longer be dispatched to runners on this version. `null` when no newer runner release exists yet.</summary>
         public DateTimeOffset? RuntimeDeprecatesAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Repos.Item.Item.Actions.Runners.Deprecations.Item.WithVersionGetResponse"/> and sets the default values.

@@ -14,6 +14,14 @@ namespace GitHub.Api.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Files matching these patterns are allowed even when they also match a restricted path.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? IgnoredFilePaths { get; set; }
+#nullable restore
+#else
+        public List<string> IgnoredFilePaths { get; set; }
+#endif
         /// <summary>The file paths that are restricted from being pushed to the commit graph.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +55,7 @@ namespace GitHub.Api.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ignored_file_paths", n => { IgnoredFilePaths = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "restricted_file_paths", n => { RestrictedFilePaths = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -57,6 +66,7 @@ namespace GitHub.Api.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("ignored_file_paths", IgnoredFilePaths);
             writer.WriteCollectionOfPrimitiveValues<string>("restricted_file_paths", RestrictedFilePaths);
             writer.WriteAdditionalData(AdditionalData);
         }
