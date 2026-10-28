@@ -3,6 +3,7 @@
 using GitHub.EnterpriseCloud.Orgs.Item.Copilot.Billing;
 using GitHub.EnterpriseCloud.Orgs.Item.Copilot.CodingAgent;
 using GitHub.EnterpriseCloud.Orgs.Item.Copilot.Content_exclusion;
+using GitHub.EnterpriseCloud.Orgs.Item.Copilot.FeaturePolicies;
 using GitHub.EnterpriseCloud.Orgs.Item.Copilot.Metrics;
 using GitHub.EnterpriseCloud.Orgs.Item.Copilot.ModelPolicies;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -33,6 +34,11 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Copilot
         public global::GitHub.EnterpriseCloud.Orgs.Item.Copilot.Content_exclusion.Content_exclusionRequestBuilder Content_exclusion
         {
             get => new global::GitHub.EnterpriseCloud.Orgs.Item.Copilot.Content_exclusion.Content_exclusionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The featurePolicies property</summary>
+        public global::GitHub.EnterpriseCloud.Orgs.Item.Copilot.FeaturePolicies.FeaturePoliciesRequestBuilder FeaturePolicies
+        {
+            get => new global::GitHub.EnterpriseCloud.Orgs.Item.Copilot.FeaturePolicies.FeaturePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The metrics property</summary>
         public global::GitHub.EnterpriseCloud.Orgs.Item.Copilot.Metrics.MetricsRequestBuilder Metrics

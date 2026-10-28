@@ -25,7 +25,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets
 #endif
         /// <summary>The budget amount in whole dollars. For license-based products, this represents the number of licenses.</summary>
         public int? BudgetAmount { get; set; }
-        /// <summary>The name of the entity to apply the budget to</summary>
+        /// <summary>The entity to apply the budget to. The expected value depends on `budget_scope`.- `organization`: The organization login.- `repository`: The repository in `owner/repo` format.- `cost_center`: The cost center UUID.- `multi_user_cost_center`: The cost center UUID.- `enterprise`, `multi_user_customer`, and `user`: Not used. For `user`, set the `user` field instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BudgetEntityName { get; set; }
@@ -41,7 +41,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets
 #else
         public string BudgetProductSku { get; set; }
 #endif
-        /// <summary>The scope of the budget.- `enterprise`: Apply the budget to the entire enterprise.- `organization`: Apply the budget to a specific organization in the enterprise.- `repository`: Apply the budget to a specific repository.- `cost_center`: Apply the budget to a specific cost center.- `multi_user_customer`: Apply a universal budget to all users in the enterprise.- `multi_user_cost_center`: Apply a universal budget to all users in a cost center.- `user`: Apply the budget to a single user.`user`, `multi_user_customer`, and `multi_user_cost_center` scopes are only supported when `budget_product_sku` is `ai_credits` or `premium_requests`.</summary>
+        /// <summary>The scope of the budget.- `enterprise`: Apply the budget to the entire enterprise.- `organization`: Apply the budget to a specific organization in the enterprise.- `repository`: Apply the budget to a specific repository.- `cost_center`: Apply the budget to a specific cost center.- `multi_user_customer`: Apply a universal budget to all users in the enterprise.- `multi_user_cost_center`: Apply a universal budget to all users in a cost center. The cost center may be empty or contain only users and teams. Organization and repository members are not supported.- `user`: Apply the budget to a single user.`user`, `multi_user_customer`, and `multi_user_cost_center` scopes are only supported when `budget_product_sku` is `ai_credits` or `premium_requests`.</summary>
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets.BudgetsPostRequestBody_budget_scope? BudgetScope { get; set; }
         /// <summary>The type of pricing model used by the budget. Determines how `budget_product_sku` is interpreted.- `BundlePricing`: Covers all AI credit SKUs. Set `budget_product_sku` to `ai_credits`.- `ProductPricing`: Covers all SKUs that belong to a product. Set `budget_product_sku` to a product such as `actions` or `packages`.- `SkuPricing`: Covers a single, specific SKU. Set `budget_product_sku` to a SKU such as `actions_linux`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

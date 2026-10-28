@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.EnterpriseCloud.Enterprises.Item.Settings.Billing.Budgets
 {
-    /// <summary>The scope of the budget.- `enterprise`: Apply the budget to the entire enterprise.- `organization`: Apply the budget to a specific organization in the enterprise.- `repository`: Apply the budget to a specific repository.- `cost_center`: Apply the budget to a specific cost center.- `multi_user_customer`: Apply a universal budget to all users in the enterprise.- `multi_user_cost_center`: Apply a universal budget to all users in a cost center.- `user`: Apply the budget to a single user.`user`, `multi_user_customer`, and `multi_user_cost_center` scopes are only supported when `budget_product_sku` is `ai_credits` or `premium_requests`.</summary>
+    /// <summary>The scope of the budget.- `enterprise`: Apply the budget to the entire enterprise.- `organization`: Apply the budget to a specific organization in the enterprise.- `repository`: Apply the budget to a specific repository.- `cost_center`: Apply the budget to a specific cost center.- `multi_user_customer`: Apply a universal budget to all users in the enterprise.- `multi_user_cost_center`: Apply a universal budget to all users in a cost center. The cost center may be empty or contain only users and teams. Organization and repository members are not supported.- `user`: Apply the budget to a single user.`user`, `multi_user_customer`, and `multi_user_cost_center` scopes are only supported when `budget_product_sku` is `ai_credits` or `premium_requests`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BudgetsPostRequestBody_budget_scope
     {

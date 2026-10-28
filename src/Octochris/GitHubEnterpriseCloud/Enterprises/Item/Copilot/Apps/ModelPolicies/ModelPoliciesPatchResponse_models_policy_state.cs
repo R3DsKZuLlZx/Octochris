@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Apps.ModelPolicies
 {
-    /// <summary>When editable, the apps layer&apos;s configured value, or `optional` if the apps layer has not configured this model.When locked, the enterprise&apos;s explicit value or its applied default availability for an eligible model.Returns `disabled` when locked without an explicit enterprise value and the model is excluded from default availability.</summary>
+    /// <summary>When editable, the agent apps policy&apos;s configured value, or `optional` if no agent apps policy has been configured for this model.When locked, the enterprise&apos;s explicit value or its applied default availability for an eligible model.Returns `disabled` when locked without an explicit enterprise value and the model is excluded from default availability.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ModelPoliciesPatchResponse_models_policy_state
     {

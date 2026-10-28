@@ -15,17 +15,11 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Custom agents (subagents) this automation is allowed to invoke.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? AllowedCustomAgents { get; set; }
-#nullable restore
-#else
-        public List<string> AllowedCustomAgents { get; set; }
-#endif
+        /// <summary>When true, runs of this automation build on the session history of its previous runs, and runs of the same automation are serialized. Not tracked in revision history. Defaults to false.</summary>
+        public bool? ContinuousHistory { get; set; }
         /// <summary>Whether the automation should be created enabled. Defaults to true when omitted.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The model to use for sessions triggered by this automation. Omit to use the platform default.</summary>
+        /// <summary>The model to use for sessions triggered by this automation. Omit or leave empty to let the platform select the model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model { get; set; }
@@ -41,9 +35,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Who owns the automation, fixed at creation. `user` keeps it private to its creator and its runs act as that user. `repository` makes it belong to the repository, visible to anyone with read access to the repository and maintainable by anyone with write access to the repository, and its runs act as the Copilot app rather than as a person. `repository` is rejected when repository ownership is not available for the repository. Supported values: `user`, `repository`. Defaults to `user`.</summary>
-        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_owner_type? OwnerType { get; set; }
-        /// <summary>The prompt template for the automation.</summary>
+        /// <summary>The prompt for the automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Prompt { get; set; }
@@ -51,7 +43,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 #else
         public string Prompt { get; set; }
 #endif
-        /// <summary>The reasoning effort to use for sessions triggered by this automation. Omit or leave empty for no override. Currently supported values: `none`, `low`, `medium`, `high`, `xhigh`, `max`</summary>
+        /// <summary>The reasoning effort to use for sessions triggered by this automation. Omit or leave empty to use the model&apos;s default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody.AutomationsPostRequestBody_reasoning_effort? ReasoningEffort { get; set; }
@@ -59,7 +51,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 #else
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody.AutomationsPostRequestBody_reasoning_effort ReasoningEffort { get; set; }
 #endif
-        /// <summary>When true, event-triggered runs require the event actor to have repo write permission, even when the org&apos;s allow_read_access_triggers policy is enabled. Does not apply to interval-scheduled runs, which always run as the automation owner. Defaults to false.</summary>
+        /// <summary>When true, event-triggered runs require the event actor to have repo write permission, even when the org&apos;s allow_read_access_triggers policy is enabled. When policy validation is enabled, explicitly setting false returns 422 if effective organization or repository policy disallows read-access triggers. If omitted, defaults to false when policy permits read-access triggers, otherwise true. The actor requirement does not apply to interval-scheduled runs, which always run as the automation owner.</summary>
         public bool? RequireActorWritePermission { get; set; }
         /// <summary>The tools available to the automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,7 +61,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 #else
         public List<string> Tools { get; set; }
 #endif
-        /// <summary>Public trigger configuration keyed by stable public trigger identifier. Each trigger has a closed, trigger-specific configuration schema.</summary>
+        /// <summary>Trigger configuration for the automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_triggers? Triggers { get; set; }
@@ -77,8 +69,8 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 #else
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_triggers Triggers { get; set; }
 #endif
-        /// <summary>Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.</summary>
-        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_write_scope? WriteScope { get; set; }
+        /// <summary>The type of automation, fixed at creation. `personal` keeps it private to its creator and its runs act as that user. `shared` makes it belong to the repository, visible to anyone with read access to the repository and maintainable by anyone with write access to the repository, and its runs act as the Copilot app rather than as a person. `shared` is rejected when repository ownership is not available for the repository. Supported values: `personal`, `shared`. Defaults to `personal`.</summary>
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -86,8 +78,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
         {
             AdditionalData = new Dictionary<string, object>();
             Enabled = true;
-            OwnerType = global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_owner_type.User;
-            WriteScope = global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_write_scope.Trigger;
+            Type = global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_type.Personal;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -107,17 +98,16 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed_custom_agents", n => { AllowedCustomAgents = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "continuous_history", n => { ContinuousHistory = n.GetBoolValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "owner_type", n => { OwnerType = n.GetEnumValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_owner_type>(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "reasoning_effort", n => { ReasoningEffort = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody.AutomationsPostRequestBody_reasoning_effort>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody.AutomationsPostRequestBody_reasoning_effort.CreateFromDiscriminatorValue); } },
                 { "require_actor_write_permission", n => { RequireActorWritePermission = n.GetBoolValue(); } },
                 { "tools", n => { Tools = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "triggers", n => { Triggers = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_triggers>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_triggers.CreateFromDiscriminatorValue); } },
-                { "write_scope", n => { WriteScope = n.GetEnumValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_write_scope>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_type>(); } },
             };
         }
         /// <summary>
@@ -127,17 +117,16 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("allowed_custom_agents", AllowedCustomAgents);
+            writer.WriteBoolValue("continuous_history", ContinuousHistory);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_owner_type>("owner_type", OwnerType);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody.AutomationsPostRequestBody_reasoning_effort>("reasoning_effort", ReasoningEffort);
             writer.WriteBoolValue("require_actor_write_permission", RequireActorWritePermission);
             writer.WriteCollectionOfPrimitiveValues<string>("tools", Tools);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_triggers>("triggers", Triggers);
-            writer.WriteEnumValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_write_scope>("write_scope", WriteScope);
+            writer.WriteEnumValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

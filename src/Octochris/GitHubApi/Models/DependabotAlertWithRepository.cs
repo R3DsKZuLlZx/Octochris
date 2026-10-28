@@ -73,6 +73,14 @@ namespace GitHub.Api.Models
 #endif
         /// <summary>The security alert number.</summary>
         public int? Number { get; private set; }
+        /// <summary>The reachability result for the vulnerability that triggered the alert, indicating whether avulnerable function is reachable from the repository&apos;s own code.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Models.DependabotAlertWithRepository_reachability? Reachability { get; private set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Models.DependabotAlertWithRepository_reachability Reachability { get; private set; }
+#endif
         /// <summary>A GitHub repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,6 +147,7 @@ namespace GitHub.Api.Models
                 { "fixed_at", n => { FixedAt = n.GetDateTimeOffsetValue(); } },
                 { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetIntValue(); } },
+                { "reachability", n => { Reachability = n.GetObjectValue<global::GitHub.Api.Models.DependabotAlertWithRepository_reachability>(global::GitHub.Api.Models.DependabotAlertWithRepository_reachability.CreateFromDiscriminatorValue); } },
                 { "repository", n => { Repository = n.GetObjectValue<global::GitHub.Api.Models.SimpleRepository>(global::GitHub.Api.Models.SimpleRepository.CreateFromDiscriminatorValue); } },
                 { "security_advisory", n => { SecurityAdvisory = n.GetObjectValue<global::GitHub.Api.Models.DependabotAlertSecurityAdvisory>(global::GitHub.Api.Models.DependabotAlertSecurityAdvisory.CreateFromDiscriminatorValue); } },
                 { "security_vulnerability", n => { SecurityVulnerability = n.GetObjectValue<global::GitHub.Api.Models.DependabotAlertSecurityVulnerability>(global::GitHub.Api.Models.DependabotAlertSecurityVulnerability.CreateFromDiscriminatorValue); } },

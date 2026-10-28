@@ -3,6 +3,7 @@
 using GitHub.EnterpriseCloud.Enterprises.Item.SecretScanning.Alerts;
 using GitHub.EnterpriseCloud.Enterprises.Item.SecretScanning.CustomPatterns;
 using GitHub.EnterpriseCloud.Enterprises.Item.SecretScanning.PatternConfigurations;
+using GitHub.EnterpriseCloud.Enterprises.Item.SecretScanning.PublicMonitoringAlerts;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -31,6 +32,11 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.SecretScanning
         public global::GitHub.EnterpriseCloud.Enterprises.Item.SecretScanning.PatternConfigurations.PatternConfigurationsRequestBuilder PatternConfigurations
         {
             get => new global::GitHub.EnterpriseCloud.Enterprises.Item.SecretScanning.PatternConfigurations.PatternConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The publicMonitoringAlerts property</summary>
+        public global::GitHub.EnterpriseCloud.Enterprises.Item.SecretScanning.PublicMonitoringAlerts.PublicMonitoringAlertsRequestBuilder PublicMonitoringAlerts
+        {
+            get => new global::GitHub.EnterpriseCloud.Enterprises.Item.SecretScanning.PublicMonitoringAlerts.PublicMonitoringAlertsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.SecretScanning.SecretScanningRequestBuilder"/> and sets the default values.

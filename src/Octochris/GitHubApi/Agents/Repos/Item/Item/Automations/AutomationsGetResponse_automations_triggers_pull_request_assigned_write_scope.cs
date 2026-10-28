@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 {
-    /// <summary>Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation&apos;s `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.</summary>
+    /// <summary>Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation&apos;s `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`. Explicitly setting `repository` on create or edit returns 422 when policy validation is enabled and that policy applies.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AutomationsGetResponse_automations_triggers_pull_request_assigned_write_scope
     {

@@ -8,7 +8,7 @@ using System;
 namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 {
     /// <summary>
-    /// Public trigger configuration keyed by stable public trigger identifier. Each trigger has a closed, trigger-specific configuration schema.
+    /// Trigger configuration for the automation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationsPostResponse_triggers : IParsable
@@ -20,6 +20,30 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 #nullable restore
 #else
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_automation_completed AutomationCompleted { get; set; }
+#endif
+        /// <summary>The automation_failed property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_automation_failed? AutomationFailed { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_automation_failed AutomationFailed { get; set; }
+#endif
+        /// <summary>Runs on the default branch when a security alert of this kind is created in the repository. These are system events without an issue, pull request, or human actor, and cannot be run manually.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_code_scanning_alert? CodeScanningAlert { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_code_scanning_alert CodeScanningAlert { get; set; }
+#endif
+        /// <summary>Runs on the default branch when a security alert of this kind is created in the repository. These are system events without an issue, pull request, or human actor, and cannot be run manually.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_dependabot_alert? DependabotAlert { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_dependabot_alert DependabotAlert { get; set; }
 #endif
         /// <summary>The discussion_comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,6 +85,14 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 #else
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_assigned IssueAssigned { get; set; }
 #endif
+        /// <summary>The issue_closed property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_closed? IssueClosed { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_closed IssueClosed { get; set; }
+#endif
         /// <summary>The issue_comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,6 +117,14 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 #else
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_opened IssueOpened { get; set; }
 #endif
+        /// <summary>The issue_reopened property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_reopened? IssueReopened { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_reopened IssueReopened { get; set; }
+#endif
         /// <summary>The pull_request_assigned property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,6 +133,14 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 #else
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_assigned PullRequestAssigned { get; set; }
 #endif
+        /// <summary>The pull_request_closed property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_closed? PullRequestClosed { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_closed PullRequestClosed { get; set; }
+#endif
         /// <summary>The pull_request_comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +148,14 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 #nullable restore
 #else
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_comment PullRequestComment { get; set; }
+#endif
+        /// <summary>The pull_request_converted_to_draft property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_converted_to_draft? PullRequestConvertedToDraft { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_converted_to_draft PullRequestConvertedToDraft { get; set; }
 #endif
         /// <summary>The pull_request_labeled property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,6 +197,22 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 #else
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_ready_for_review PullRequestReadyForReview { get; set; }
 #endif
+        /// <summary>The pull_request_reopened property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_reopened? PullRequestReopened { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_reopened PullRequestReopened { get; set; }
+#endif
+        /// <summary>The pull_request_review_dismissed property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_dismissed? PullRequestReviewDismissed { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_dismissed PullRequestReviewDismissed { get; set; }
+#endif
         /// <summary>The pull_request_review_requested property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,6 +229,22 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 #else
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_submitted PullRequestReviewSubmitted { get; set; }
 #endif
+        /// <summary>The pull_request_review_thread_resolved property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_thread_resolved? PullRequestReviewThreadResolved { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_thread_resolved PullRequestReviewThreadResolved { get; set; }
+#endif
+        /// <summary>The pull_request_review_thread_unresolved property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_thread_unresolved? PullRequestReviewThreadUnresolved { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_thread_unresolved PullRequestReviewThreadUnresolved { get; set; }
+#endif
         /// <summary>The pull_request_synchronize property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,6 +252,14 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
 #nullable restore
 #else
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_synchronize PullRequestSynchronize { get; set; }
+#endif
+        /// <summary>Runs on the default branch when a security alert of this kind is created in the repository. These are system events without an issue, pull request, or human actor, and cannot be run manually.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_secret_scanning_alert? SecretScanningAlert { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_secret_scanning_alert SecretScanningAlert { get; set; }
 #endif
         /// <summary>The sub_issue_added property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -200,24 +296,36 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "automation_completed", n => { AutomationCompleted = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_automation_completed>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_automation_completed.CreateFromDiscriminatorValue); } },
+                { "automation_failed", n => { AutomationFailed = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_automation_failed>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_automation_failed.CreateFromDiscriminatorValue); } },
+                { "code_scanning_alert", n => { CodeScanningAlert = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_code_scanning_alert>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_code_scanning_alert.CreateFromDiscriminatorValue); } },
+                { "dependabot_alert", n => { DependabotAlert = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_dependabot_alert>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_dependabot_alert.CreateFromDiscriminatorValue); } },
                 { "discussion_comment", n => { DiscussionComment = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_discussion_comment>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_discussion_comment.CreateFromDiscriminatorValue); } },
                 { "discussion_opened", n => { DiscussionOpened = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_discussion_opened>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_discussion_opened.CreateFromDiscriminatorValue); } },
                 { "discussion_updated", n => { DiscussionUpdated = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_discussion_updated>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_discussion_updated.CreateFromDiscriminatorValue); } },
                 { "interval", n => { Interval = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_interval>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_interval.CreateFromDiscriminatorValue); } },
                 { "issue_assigned", n => { IssueAssigned = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_assigned>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_assigned.CreateFromDiscriminatorValue); } },
+                { "issue_closed", n => { IssueClosed = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_closed>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_closed.CreateFromDiscriminatorValue); } },
                 { "issue_comment", n => { IssueComment = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_comment>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_comment.CreateFromDiscriminatorValue); } },
                 { "issue_labeled", n => { IssueLabeled = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_labeled>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_labeled.CreateFromDiscriminatorValue); } },
                 { "issue_opened", n => { IssueOpened = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_opened>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_opened.CreateFromDiscriminatorValue); } },
+                { "issue_reopened", n => { IssueReopened = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_reopened>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_reopened.CreateFromDiscriminatorValue); } },
                 { "pull_request_assigned", n => { PullRequestAssigned = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_assigned>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_assigned.CreateFromDiscriminatorValue); } },
+                { "pull_request_closed", n => { PullRequestClosed = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_closed>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_closed.CreateFromDiscriminatorValue); } },
                 { "pull_request_comment", n => { PullRequestComment = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_comment>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_comment.CreateFromDiscriminatorValue); } },
+                { "pull_request_converted_to_draft", n => { PullRequestConvertedToDraft = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_converted_to_draft>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_converted_to_draft.CreateFromDiscriminatorValue); } },
                 { "pull_request_labeled", n => { PullRequestLabeled = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_labeled>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_labeled.CreateFromDiscriminatorValue); } },
                 { "pull_request_merge_conflict", n => { PullRequestMergeConflict = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_merge_conflict>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_merge_conflict.CreateFromDiscriminatorValue); } },
                 { "pull_request_merged", n => { PullRequestMerged = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_merged>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_merged.CreateFromDiscriminatorValue); } },
                 { "pull_request_opened", n => { PullRequestOpened = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_opened>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_opened.CreateFromDiscriminatorValue); } },
                 { "pull_request_ready_for_review", n => { PullRequestReadyForReview = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_ready_for_review>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_ready_for_review.CreateFromDiscriminatorValue); } },
+                { "pull_request_reopened", n => { PullRequestReopened = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_reopened>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_reopened.CreateFromDiscriminatorValue); } },
+                { "pull_request_review_dismissed", n => { PullRequestReviewDismissed = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_dismissed>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_dismissed.CreateFromDiscriminatorValue); } },
                 { "pull_request_review_requested", n => { PullRequestReviewRequested = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_requested>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_requested.CreateFromDiscriminatorValue); } },
                 { "pull_request_review_submitted", n => { PullRequestReviewSubmitted = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_submitted>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_submitted.CreateFromDiscriminatorValue); } },
+                { "pull_request_review_thread_resolved", n => { PullRequestReviewThreadResolved = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_thread_resolved>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_thread_resolved.CreateFromDiscriminatorValue); } },
+                { "pull_request_review_thread_unresolved", n => { PullRequestReviewThreadUnresolved = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_thread_unresolved>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_thread_unresolved.CreateFromDiscriminatorValue); } },
                 { "pull_request_synchronize", n => { PullRequestSynchronize = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_synchronize>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_synchronize.CreateFromDiscriminatorValue); } },
+                { "secret_scanning_alert", n => { SecretScanningAlert = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_secret_scanning_alert>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_secret_scanning_alert.CreateFromDiscriminatorValue); } },
                 { "sub_issue_added", n => { SubIssueAdded = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_sub_issue_added>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_sub_issue_added.CreateFromDiscriminatorValue); } },
                 { "workflow_run", n => { WorkflowRun = n.GetObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_workflow_run>(global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_workflow_run.CreateFromDiscriminatorValue); } },
             };
@@ -230,24 +338,36 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_automation_completed>("automation_completed", AutomationCompleted);
+            writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_automation_failed>("automation_failed", AutomationFailed);
+            writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_code_scanning_alert>("code_scanning_alert", CodeScanningAlert);
+            writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_dependabot_alert>("dependabot_alert", DependabotAlert);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_discussion_comment>("discussion_comment", DiscussionComment);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_discussion_opened>("discussion_opened", DiscussionOpened);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_discussion_updated>("discussion_updated", DiscussionUpdated);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_interval>("interval", Interval);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_assigned>("issue_assigned", IssueAssigned);
+            writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_closed>("issue_closed", IssueClosed);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_comment>("issue_comment", IssueComment);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_labeled>("issue_labeled", IssueLabeled);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_opened>("issue_opened", IssueOpened);
+            writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_issue_reopened>("issue_reopened", IssueReopened);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_assigned>("pull_request_assigned", PullRequestAssigned);
+            writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_closed>("pull_request_closed", PullRequestClosed);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_comment>("pull_request_comment", PullRequestComment);
+            writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_converted_to_draft>("pull_request_converted_to_draft", PullRequestConvertedToDraft);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_labeled>("pull_request_labeled", PullRequestLabeled);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_merge_conflict>("pull_request_merge_conflict", PullRequestMergeConflict);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_merged>("pull_request_merged", PullRequestMerged);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_opened>("pull_request_opened", PullRequestOpened);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_ready_for_review>("pull_request_ready_for_review", PullRequestReadyForReview);
+            writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_reopened>("pull_request_reopened", PullRequestReopened);
+            writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_dismissed>("pull_request_review_dismissed", PullRequestReviewDismissed);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_requested>("pull_request_review_requested", PullRequestReviewRequested);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_submitted>("pull_request_review_submitted", PullRequestReviewSubmitted);
+            writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_thread_resolved>("pull_request_review_thread_resolved", PullRequestReviewThreadResolved);
+            writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_review_thread_unresolved>("pull_request_review_thread_unresolved", PullRequestReviewThreadUnresolved);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_pull_request_synchronize>("pull_request_synchronize", PullRequestSynchronize);
+            writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_secret_scanning_alert>("secret_scanning_alert", SecretScanningAlert);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_sub_issue_added>("sub_issue_added", SubIssueAdded);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostResponse_triggers_workflow_run>("workflow_run", WorkflowRun);
         }

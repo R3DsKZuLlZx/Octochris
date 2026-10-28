@@ -16,7 +16,7 @@ namespace GitHub.Api.Repos.Item.Item.Actions.Jobs.Item.Steps
     public partial class StepsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.Api.repos.item.item.actions.jobs.item.steps.item collection</summary>
-        /// <param name="position">The zero-based position number of the step in the job.</param>
+        /// <param name="position">The number assigned to the step, as shown in the `number` field of the workflow job&apos;s `steps` array.</param>
         /// <returns>A <see cref="global::GitHub.Api.Repos.Item.Item.Actions.Jobs.Item.Steps.Item.WithStep_numberItemRequestBuilder"/></returns>
         public global::GitHub.Api.Repos.Item.Item.Actions.Jobs.Item.Steps.Item.WithStep_numberItemRequestBuilder this[int position]
         {
@@ -28,7 +28,7 @@ namespace GitHub.Api.Repos.Item.Item.Actions.Jobs.Item.Steps
             }
         }
         /// <summary>Gets an item from the GitHub.Api.repos.item.item.actions.jobs.item.steps.item collection</summary>
-        /// <param name="position">The zero-based position number of the step in the job.</param>
+        /// <param name="position">The number assigned to the step, as shown in the `number` field of the workflow job&apos;s `steps` array.</param>
         /// <returns>A <see cref="global::GitHub.Api.Repos.Item.Item.Actions.Jobs.Item.Steps.Item.WithStep_numberItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::GitHub.Api.Repos.Item.Item.Actions.Jobs.Item.Steps.Item.WithStep_numberItemRequestBuilder this[string position]

@@ -489,7 +489,7 @@ namespace GitHub.EnterpriseCloud.Models
 #else
         public string TeamsUrl { get; set; }
 #endif
-        /// <summary>The temp_clone_token property</summary>
+        /// <summary>When present and non-empty, a temporary credential for read-only Git access to this repository.It expires five minutes after generation and cannot be used to push changes.Treat this value as sensitive and avoid recording it in logs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TempCloneToken { get; set; }

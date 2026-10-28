@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.Item
 {
-    /// <summary>Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation&apos;s `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.</summary>
+    /// <summary>Has no effect: scheduled runs can change any resource in the repository, and an organization or repository policy requiring trigger-scoped writes does not apply to them.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithAutomation_GetResponse_triggers_interval_write_scope
     {

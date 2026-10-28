@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Apps.ModelPolicies
 {
-    /// <summary>The separately read enterprise-layer policy for this model, used to determine whether the apps layer can edit its policy.</summary>
+    /// <summary>The separately read enterprise-layer policy for this model, used to determine whether the agent apps policy can be edited.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ModelPoliciesPatchResponse_models_enterprise_policy_state
     {

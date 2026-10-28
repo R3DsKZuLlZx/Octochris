@@ -12,6 +12,8 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations.Item
     public partial class WithAutomation_GetResponse_triggers_discussion_comment : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>When true, events Copilot creates, including from other automations and Copilot sessions, can start this automation through this trigger. Defaults to false. The Copilot coding agent app cannot turn it on: creating a trigger with true, or changing it from false to true, returns 422.</summary>
+        public bool? AllowCopilotTriggers { get; set; }
         /// <summary>A case-insensitive substring matched against the event body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,7 +38,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations.Item
 #else
         public List<global::GitHub.Api.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_triggers_discussion_comment_comment_types?> CommentTypes { get; set; }
 #endif
-        /// <summary>Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation&apos;s `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.</summary>
+        /// <summary>Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation&apos;s `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`. Explicitly setting `repository` on create or edit returns 422 when policy validation is enabled and that policy applies.</summary>
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_triggers_discussion_comment_write_scope? WriteScope { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +58,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allow_copilot_triggers", n => { AllowCopilotTriggers = n.GetBoolValue(); } },
                 { "body_substring", n => { BodySubstring = n.GetStringValue(); } },
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "comment_types", n => { CommentTypes = n.GetCollectionOfEnumValues<global::GitHub.Api.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_triggers_discussion_comment_comment_types>()?.AsList(); } },
@@ -69,6 +72,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("allow_copilot_triggers", AllowCopilotTriggers);
             writer.WriteStringValue("body_substring", BodySubstring);
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
             writer.WriteCollectionOfEnumValues<global::GitHub.Api.Agents.Repos.Item.Item.Automations.Item.WithAutomation_GetResponse_triggers_discussion_comment_comment_types>("comment_types", CommentTypes);

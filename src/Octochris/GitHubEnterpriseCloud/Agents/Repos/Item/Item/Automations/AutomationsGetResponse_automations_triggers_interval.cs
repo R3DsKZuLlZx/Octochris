@@ -12,6 +12,8 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations
     public partial class AutomationsGetResponse_automations_triggers_interval : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>When true, events Copilot creates, including from other automations and Copilot sessions, can start this automation through this trigger. Defaults to false. The Copilot coding agent app cannot turn it on: creating a trigger with true, or changing it from false to true, returns 422.</summary>
+        public bool? AllowCopilotTriggers { get; set; }
         /// <summary>One or more schedules on which the Automation runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,7 +28,7 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations
         public int? HourUtc { get; set; }
         /// <summary>UTC minute anchor for daily and weekly schedules. Omitted daily and weekly values default to `0`. Must be omitted whenever `cadence` includes `hourly`.</summary>
         public int? MinuteUtc { get; set; }
-        /// <summary>Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation&apos;s `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.</summary>
+        /// <summary>Has no effect: scheduled runs can change any resource in the repository, and an organization or repository policy requiring trigger-scoped writes does not apply to them.</summary>
         public global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.AutomationsGetResponse_automations_triggers_interval_write_scope? WriteScope { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.AutomationsGetResponse_automations_triggers_interval"/> and sets the default values.
@@ -53,6 +55,7 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allow_copilot_triggers", n => { AllowCopilotTriggers = n.GetBoolValue(); } },
                 { "cadence", n => { Cadence = n.GetCollectionOfEnumValues<global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.AutomationsGetResponse_automations_triggers_interval_cadence>()?.AsList(); } },
                 { "day_of_week", n => { DayOfWeek = n.GetIntValue(); } },
                 { "hour_utc", n => { HourUtc = n.GetIntValue(); } },
@@ -67,6 +70,7 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("allow_copilot_triggers", AllowCopilotTriggers);
             writer.WriteCollectionOfEnumValues<global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.AutomationsGetResponse_automations_triggers_interval_cadence>("cadence", Cadence);
             writer.WriteIntValue("day_of_week", DayOfWeek);
             writer.WriteIntValue("hour_utc", HourUtc);

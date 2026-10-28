@@ -43,6 +43,8 @@ namespace GitHub.EnterpriseCloud.Models
         public global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_dependabot_alerts? DependabotAlerts { get; set; }
         /// <summary>The enablement status of Dependabot delegated alert dismissal</summary>
         public global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_dependabot_delegated_alert_dismissal? DependabotDelegatedAlertDismissal { get; set; }
+        /// <summary>The enablement status of reachability analysis for Dependabot. Only returned for organizations and enterprises with access to reachability analysis.</summary>
+        public global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_dependabot_reachability? DependabotReachability { get; set; }
         /// <summary>The enablement status of Dependabot security updates</summary>
         public global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_dependabot_security_updates? DependabotSecurityUpdates { get; set; }
         /// <summary>The enablement status of Dependency Graph</summary>
@@ -105,6 +107,8 @@ namespace GitHub.EnterpriseCloud.Models
         public global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_extended_metadata? SecretScanningExtendedMetadata { get; set; }
         /// <summary>The enablement status of Copilot secret scanning</summary>
         public global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_generic_secrets? SecretScanningGenericSecrets { get; set; }
+        /// <summary>The enablement status of generic secrets push protection</summary>
+        public global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_generic_secrets_push_protection? SecretScanningGenericSecretsPushProtection { get; set; }
         /// <summary>The enablement status of secret scanning non-provider patterns</summary>
         public global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_non_provider_patterns? SecretScanningNonProviderPatterns { get; set; }
         /// <summary>The enablement status of secret scanning push protection</summary>
@@ -156,6 +160,7 @@ namespace GitHub.EnterpriseCloud.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "dependabot_alerts", n => { DependabotAlerts = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_dependabot_alerts>(); } },
                 { "dependabot_delegated_alert_dismissal", n => { DependabotDelegatedAlertDismissal = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_dependabot_delegated_alert_dismissal>(); } },
+                { "dependabot_reachability", n => { DependabotReachability = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_dependabot_reachability>(); } },
                 { "dependabot_security_updates", n => { DependabotSecurityUpdates = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_dependabot_security_updates>(); } },
                 { "dependency_graph", n => { DependencyGraph = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_dependency_graph>(); } },
                 { "dependency_graph_autosubmit_action", n => { DependencyGraphAutosubmitAction = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_dependency_graph_autosubmit_action>(); } },
@@ -172,6 +177,7 @@ namespace GitHub.EnterpriseCloud.Models
                 { "secret_scanning_delegated_bypass_options", n => { SecretScanningDelegatedBypassOptions = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass_options>(global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass_options.CreateFromDiscriminatorValue); } },
                 { "secret_scanning_extended_metadata", n => { SecretScanningExtendedMetadata = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_extended_metadata>(); } },
                 { "secret_scanning_generic_secrets", n => { SecretScanningGenericSecrets = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_generic_secrets>(); } },
+                { "secret_scanning_generic_secrets_push_protection", n => { SecretScanningGenericSecretsPushProtection = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_generic_secrets_push_protection>(); } },
                 { "secret_scanning_non_provider_patterns", n => { SecretScanningNonProviderPatterns = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_non_provider_patterns>(); } },
                 { "secret_scanning_push_protection", n => { SecretScanningPushProtection = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_push_protection>(); } },
                 { "secret_scanning_validity_checks", n => { SecretScanningValidityChecks = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_validity_checks>(); } },
@@ -195,6 +201,7 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_dependabot_alerts>("dependabot_alerts", DependabotAlerts);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_dependabot_delegated_alert_dismissal>("dependabot_delegated_alert_dismissal", DependabotDelegatedAlertDismissal);
+            writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_dependabot_reachability>("dependabot_reachability", DependabotReachability);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_dependabot_security_updates>("dependabot_security_updates", DependabotSecurityUpdates);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_dependency_graph>("dependency_graph", DependencyGraph);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_dependency_graph_autosubmit_action>("dependency_graph_autosubmit_action", DependencyGraphAutosubmitAction);
@@ -211,6 +218,7 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass_options>("secret_scanning_delegated_bypass_options", SecretScanningDelegatedBypassOptions);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_extended_metadata>("secret_scanning_extended_metadata", SecretScanningExtendedMetadata);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_generic_secrets>("secret_scanning_generic_secrets", SecretScanningGenericSecrets);
+            writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_generic_secrets_push_protection>("secret_scanning_generic_secrets_push_protection", SecretScanningGenericSecretsPushProtection);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_non_provider_patterns>("secret_scanning_non_provider_patterns", SecretScanningNonProviderPatterns);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_push_protection>("secret_scanning_push_protection", SecretScanningPushProtection);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeSecurityConfiguration_secret_scanning_validity_checks>("secret_scanning_validity_checks", SecretScanningValidityChecks);

@@ -38,7 +38,7 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item
 #else
         public string Body { get; set; }
 #endif
-        /// <summary>The ID of the issue to mark as the canonical duplicate when `state_reason` is `duplicate`. The issue must exist and be accessible to the authenticated user. Ignored when `state_reason` is not `duplicate`.</summary>
+        /// <summary>The ID of the issue that this issue duplicates, used when marking this issue as a duplicate with `status: Duplicate` or `state_reason: duplicate`. The issue must exist and be accessible to the authenticated user.</summary>
         public int? DuplicateIssueId { get; set; }
         /// <summary>An array of issue field values to set on this issue. Each field value must include the field ID and the value to set. Only users with push access can set field values for issues</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

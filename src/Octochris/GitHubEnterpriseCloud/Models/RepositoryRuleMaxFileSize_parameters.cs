@@ -14,6 +14,14 @@ namespace GitHub.EnterpriseCloud.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Files matching these patterns may exceed the maximum size.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? IgnoredFilePaths { get; set; }
+#nullable restore
+#else
+        public List<string> IgnoredFilePaths { get; set; }
+#endif
         /// <summary>The maximum file size allowed in megabytes. This limit does not apply to Git Large File Storage (Git LFS).</summary>
         public int? MaxFileSize { get; set; }
         /// <summary>
@@ -41,6 +49,7 @@ namespace GitHub.EnterpriseCloud.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ignored_file_paths", n => { IgnoredFilePaths = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "max_file_size", n => { MaxFileSize = n.GetIntValue(); } },
             };
         }
@@ -51,6 +60,7 @@ namespace GitHub.EnterpriseCloud.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("ignored_file_paths", IgnoredFilePaths);
             writer.WriteIntValue("max_file_size", MaxFileSize);
             writer.WriteAdditionalData(AdditionalData);
         }

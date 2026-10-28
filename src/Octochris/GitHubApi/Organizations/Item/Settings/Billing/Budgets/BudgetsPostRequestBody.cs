@@ -25,7 +25,7 @@ namespace GitHub.Api.Organizations.Item.Settings.Billing.Budgets
 #endif
         /// <summary>The budget amount in whole dollars. For license-based products, this represents the number of licenses.</summary>
         public int? BudgetAmount { get; set; }
-        /// <summary>The name of the entity to apply the budget to</summary>
+        /// <summary>The entity to apply the budget to. The expected value depends on `budget_scope`.- `repository`: The repository name, or `owner/repo`.- `organization`, `multi_user_customer`, and `user`: Not used. For `user`, set the `user` field instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BudgetEntityName { get; set; }
