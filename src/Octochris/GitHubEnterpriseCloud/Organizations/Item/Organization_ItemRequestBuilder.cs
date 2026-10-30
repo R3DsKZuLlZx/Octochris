@@ -23,6 +23,7 @@ namespace GitHub.EnterpriseCloud.Organizations.Item
             get => new global::GitHub.EnterpriseCloud.Organizations.Item.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The custom_roles property</summary>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Organizations.Item.Custom_roles.Custom_rolesRequestBuilder Custom_roles
         {
             get => new global::GitHub.EnterpriseCloud.Organizations.Item.Custom_roles.Custom_rolesRequestBuilder(PathParameters, RequestAdapter);

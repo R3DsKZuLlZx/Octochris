@@ -262,6 +262,7 @@ namespace GitHub.Api.Orgs.Item
             get => new global::GitHub.Api.Orgs.Item.SecurityAdvisories.SecurityAdvisoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The securityManagers property</summary>
+        [Obsolete("")]
         public global::GitHub.Api.Orgs.Item.SecurityManagers.SecurityManagersRequestBuilder SecurityManagers
         {
             get => new global::GitHub.Api.Orgs.Item.SecurityManagers.SecurityManagersRequestBuilder(PathParameters, RequestAdapter);

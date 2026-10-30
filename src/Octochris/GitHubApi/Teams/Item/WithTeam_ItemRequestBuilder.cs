@@ -35,7 +35,6 @@ namespace GitHub.Api.Teams.Item
             get => new global::GitHub.Api.Teams.Item.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The memberships property</summary>
-        [Obsolete("")]
         public global::GitHub.Api.Teams.Item.Memberships.MembershipsRequestBuilder Memberships
         {
             get => new global::GitHub.Api.Teams.Item.Memberships.MembershipsRequestBuilder(PathParameters, RequestAdapter);

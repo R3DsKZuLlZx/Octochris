@@ -20,7 +20,6 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Credentials
     public partial class CredentialsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The exports property</summary>
-        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.Exports.ExportsRequestBuilder Exports
         {
             get => new global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.Exports.ExportsRequestBuilder(PathParameters, RequestAdapter);

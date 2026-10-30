@@ -286,6 +286,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item
             get => new global::GitHub.EnterpriseCloud.Repos.Item.Item.ImmutableReleases.ImmutableReleasesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The import property</summary>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.Import.ImportRequestBuilder Import
         {
             get => new global::GitHub.EnterpriseCloud.Repos.Item.Item.Import.ImportRequestBuilder(PathParameters, RequestAdapter);
