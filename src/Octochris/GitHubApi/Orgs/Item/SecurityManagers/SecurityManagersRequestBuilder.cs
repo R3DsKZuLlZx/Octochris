@@ -19,7 +19,6 @@ namespace GitHub.Api.Orgs.Item.SecurityManagers
     public partial class SecurityManagersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The teams property</summary>
-        [Obsolete("")]
         public global::GitHub.Api.Orgs.Item.SecurityManagers.Teams.TeamsRequestBuilder Teams
         {
             get => new global::GitHub.Api.Orgs.Item.SecurityManagers.Teams.TeamsRequestBuilder(PathParameters, RequestAdapter);

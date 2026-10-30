@@ -95,6 +95,7 @@ namespace GitHub.EnterpriseCloud
             get => new global::GitHub.EnterpriseCloud.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The classrooms property</summary>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Classrooms.ClassroomsRequestBuilder Classrooms
         {
             get => new global::GitHub.EnterpriseCloud.Classrooms.ClassroomsRequestBuilder(PathParameters, RequestAdapter);

@@ -150,6 +150,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item
             get => new global::GitHub.EnterpriseCloud.Orgs.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The custom_roles property</summary>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Orgs.Item.Custom_roles.Custom_rolesRequestBuilder Custom_roles
         {
             get => new global::GitHub.EnterpriseCloud.Orgs.Item.Custom_roles.Custom_rolesRequestBuilder(PathParameters, RequestAdapter);
@@ -195,6 +196,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item
             get => new global::GitHub.EnterpriseCloud.Orgs.Item.Failed_invitations.Failed_invitationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The fine_grained_permissions property</summary>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Orgs.Item.Fine_grained_permissions.Fine_grained_permissionsRequestBuilder Fine_grained_permissions
         {
             get => new global::GitHub.EnterpriseCloud.Orgs.Item.Fine_grained_permissions.Fine_grained_permissionsRequestBuilder(PathParameters, RequestAdapter);
@@ -335,6 +337,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item
             get => new global::GitHub.EnterpriseCloud.Orgs.Item.SecurityAdvisories.SecurityAdvisoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The securityManagers property</summary>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Orgs.Item.SecurityManagers.SecurityManagersRequestBuilder SecurityManagers
         {
             get => new global::GitHub.EnterpriseCloud.Orgs.Item.SecurityManagers.SecurityManagersRequestBuilder(PathParameters, RequestAdapter);

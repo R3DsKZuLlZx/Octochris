@@ -16,6 +16,7 @@ namespace GitHub.EnterpriseCloud.Teams.Item.TeamSync
     public partial class TeamSyncRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The groupMappings property</summary>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Teams.Item.TeamSync.GroupMappings.GroupMappingsRequestBuilder GroupMappings
         {
             get => new global::GitHub.EnterpriseCloud.Teams.Item.TeamSync.GroupMappings.GroupMappingsRequestBuilder(PathParameters, RequestAdapter);

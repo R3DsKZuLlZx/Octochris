@@ -36,7 +36,6 @@ namespace GitHub.EnterpriseCloud.Teams.Item
             get => new global::GitHub.EnterpriseCloud.Teams.Item.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The memberships property</summary>
-        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Teams.Item.Memberships.MembershipsRequestBuilder Memberships
         {
             get => new global::GitHub.EnterpriseCloud.Teams.Item.Memberships.MembershipsRequestBuilder(PathParameters, RequestAdapter);
@@ -54,7 +53,6 @@ namespace GitHub.EnterpriseCloud.Teams.Item
             get => new global::GitHub.EnterpriseCloud.Teams.Item.Teams.TeamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The teamSync property</summary>
-        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Teams.Item.TeamSync.TeamSyncRequestBuilder TeamSync
         {
             get => new global::GitHub.EnterpriseCloud.Teams.Item.TeamSync.TeamSyncRequestBuilder(PathParameters, RequestAdapter);

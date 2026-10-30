@@ -20,6 +20,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Codespaces
     public partial class CodespacesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The access property</summary>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Orgs.Item.Codespaces.Access.AccessRequestBuilder Access
         {
             get => new global::GitHub.EnterpriseCloud.Orgs.Item.Codespaces.Access.AccessRequestBuilder(PathParameters, RequestAdapter);

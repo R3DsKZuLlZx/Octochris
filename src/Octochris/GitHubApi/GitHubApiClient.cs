@@ -93,6 +93,7 @@ namespace GitHub.Api
             get => new global::GitHub.Api.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The classrooms property</summary>
+        [Obsolete("")]
         public global::GitHub.Api.Classrooms.ClassroomsRequestBuilder Classrooms
         {
             get => new global::GitHub.Api.Classrooms.ClassroomsRequestBuilder(PathParameters, RequestAdapter);

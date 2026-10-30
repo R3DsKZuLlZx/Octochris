@@ -23,6 +23,7 @@ namespace GitHub.Api.Repos.Item.Item.DependencyGraph
             get => new global::GitHub.Api.Repos.Item.Item.DependencyGraph.Compare.CompareRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sbom property</summary>
+        [Obsolete("")]
         public global::GitHub.Api.Repos.Item.Item.DependencyGraph.Sbom.SbomRequestBuilder Sbom
         {
             get => new global::GitHub.Api.Repos.Item.Item.DependencyGraph.Sbom.SbomRequestBuilder(PathParameters, RequestAdapter);

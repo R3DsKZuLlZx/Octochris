@@ -266,6 +266,7 @@ namespace GitHub.Api.Repos.Item.Item
             get => new global::GitHub.Api.Repos.Item.Item.ImmutableReleases.ImmutableReleasesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The import property</summary>
+        [Obsolete("")]
         public global::GitHub.Api.Repos.Item.Item.Import.ImportRequestBuilder Import
         {
             get => new global::GitHub.Api.Repos.Item.Item.Import.ImportRequestBuilder(PathParameters, RequestAdapter);

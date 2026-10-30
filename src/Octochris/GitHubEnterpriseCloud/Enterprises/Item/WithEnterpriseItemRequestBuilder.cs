@@ -76,6 +76,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item
             get => new global::GitHub.EnterpriseCloud.Enterprises.Item.BypassRequests.BypassRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The code_security_and_analysis property</summary>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Code_security_and_analysis.Code_security_and_analysisRequestBuilder Code_security_and_analysis
         {
             get => new global::GitHub.EnterpriseCloud.Enterprises.Item.Code_security_and_analysis.Code_security_and_analysisRequestBuilder(PathParameters, RequestAdapter);
@@ -106,6 +107,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item
             get => new global::GitHub.EnterpriseCloud.Enterprises.Item.CredentialAuthorizations.CredentialAuthorizationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The credentials property</summary>
+        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.CredentialsRequestBuilder Credentials
         {
             get => new global::GitHub.EnterpriseCloud.Enterprises.Item.Credentials.CredentialsRequestBuilder(PathParameters, RequestAdapter);

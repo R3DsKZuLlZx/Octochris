@@ -20,13 +20,11 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.DependencyGraph.Sbom
     public partial class SbomRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The fetchReport property</summary>
-        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.DependencyGraph.Sbom.FetchReport.FetchReportRequestBuilder FetchReport
         {
             get => new global::GitHub.EnterpriseCloud.Repos.Item.Item.DependencyGraph.Sbom.FetchReport.FetchReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The generateReport property</summary>
-        [Obsolete("")]
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.DependencyGraph.Sbom.GenerateReport.GenerateReportRequestBuilder GenerateReport
         {
             get => new global::GitHub.EnterpriseCloud.Repos.Item.Item.DependencyGraph.Sbom.GenerateReport.GenerateReportRequestBuilder(PathParameters, RequestAdapter);
