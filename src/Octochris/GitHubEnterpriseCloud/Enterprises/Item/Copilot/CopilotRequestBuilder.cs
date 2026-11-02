@@ -5,6 +5,7 @@ using GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Billing;
 using GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Content_exclusion;
 using GitHub.EnterpriseCloud.Enterprises.Item.Copilot.CustomAgents;
 using GitHub.EnterpriseCloud.Enterprises.Item.Copilot.FeaturePolicies;
+using GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Fusion;
 using GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Metrics;
 using GitHub.EnterpriseCloud.Enterprises.Item.Copilot.ModelPolicies;
 using GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Policies;
@@ -47,6 +48,11 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Copilot
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Copilot.FeaturePolicies.FeaturePoliciesRequestBuilder FeaturePolicies
         {
             get => new global::GitHub.EnterpriseCloud.Enterprises.Item.Copilot.FeaturePolicies.FeaturePoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The fusion property</summary>
+        public global::GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Fusion.FusionRequestBuilder Fusion
+        {
+            get => new global::GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Fusion.FusionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The metrics property</summary>
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Copilot.Metrics.MetricsRequestBuilder Metrics
