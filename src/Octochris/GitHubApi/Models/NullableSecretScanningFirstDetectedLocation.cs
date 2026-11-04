@@ -8,11 +8,19 @@ using System;
 namespace GitHub.Api.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::GitHub.Api.Models.SecretScanningLocationCommit"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationDiscussionBody"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationDiscussionComment"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationDiscussionTitle"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationIssueBody"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationIssueComment"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationIssueTitle"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationPullRequestBody"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationPullRequestComment"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationPullRequestReview"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationPullRequestReviewComment"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationPullRequestTitle"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationWikiCommit"/>
+    /// Composed type wrapper for classes <see cref="global::GitHub.Api.Models.SecretScanningLocationActionsLog"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationCommit"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationDiscussionBody"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationDiscussionComment"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationDiscussionTitle"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationIssueBody"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationIssueComment"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationIssueTitle"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationPullRequestBody"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationPullRequestComment"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationPullRequestReview"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationPullRequestReviewComment"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationPullRequestTitle"/>, <see cref="global::GitHub.Api.Models.SecretScanningLocationWikiCommit"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NullableSecretScanningFirstDetectedLocation : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::GitHub.Api.Models.SecretScanningLocationActionsLog"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Models.SecretScanningLocationActionsLog? SecretScanningLocationActionsLog { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Models.SecretScanningLocationActionsLog SecretScanningLocationActionsLog { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::GitHub.Api.Models.SecretScanningLocationCommit"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,60 +133,21 @@ namespace GitHub.Api.Models
         public static global::GitHub.Api.Models.NullableSecretScanningFirstDetectedLocation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::GitHub.Api.Models.NullableSecretScanningFirstDetectedLocation();
-            if("secret-scanning-location-commit".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SecretScanningLocationCommit = new global::GitHub.Api.Models.SecretScanningLocationCommit();
-            }
-            else if("secret-scanning-location-discussion-body".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SecretScanningLocationDiscussionBody = new global::GitHub.Api.Models.SecretScanningLocationDiscussionBody();
-            }
-            else if("secret-scanning-location-discussion-comment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SecretScanningLocationDiscussionComment = new global::GitHub.Api.Models.SecretScanningLocationDiscussionComment();
-            }
-            else if("secret-scanning-location-discussion-title".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SecretScanningLocationDiscussionTitle = new global::GitHub.Api.Models.SecretScanningLocationDiscussionTitle();
-            }
-            else if("secret-scanning-location-issue-body".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SecretScanningLocationIssueBody = new global::GitHub.Api.Models.SecretScanningLocationIssueBody();
-            }
-            else if("secret-scanning-location-issue-comment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SecretScanningLocationIssueComment = new global::GitHub.Api.Models.SecretScanningLocationIssueComment();
-            }
-            else if("secret-scanning-location-issue-title".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SecretScanningLocationIssueTitle = new global::GitHub.Api.Models.SecretScanningLocationIssueTitle();
-            }
-            else if("secret-scanning-location-pull-request-body".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SecretScanningLocationPullRequestBody = new global::GitHub.Api.Models.SecretScanningLocationPullRequestBody();
-            }
-            else if("secret-scanning-location-pull-request-comment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SecretScanningLocationPullRequestComment = new global::GitHub.Api.Models.SecretScanningLocationPullRequestComment();
-            }
-            else if("secret-scanning-location-pull-request-review".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SecretScanningLocationPullRequestReview = new global::GitHub.Api.Models.SecretScanningLocationPullRequestReview();
-            }
-            else if("secret-scanning-location-pull-request-review-comment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SecretScanningLocationPullRequestReviewComment = new global::GitHub.Api.Models.SecretScanningLocationPullRequestReviewComment();
-            }
-            else if("secret-scanning-location-pull-request-title".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SecretScanningLocationPullRequestTitle = new global::GitHub.Api.Models.SecretScanningLocationPullRequestTitle();
-            }
-            else if("secret-scanning-location-wiki-commit".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SecretScanningLocationWikiCommit = new global::GitHub.Api.Models.SecretScanningLocationWikiCommit();
-            }
+            result.SecretScanningLocationActionsLog = new global::GitHub.Api.Models.SecretScanningLocationActionsLog();
+            result.SecretScanningLocationCommit = new global::GitHub.Api.Models.SecretScanningLocationCommit();
+            result.SecretScanningLocationDiscussionBody = new global::GitHub.Api.Models.SecretScanningLocationDiscussionBody();
+            result.SecretScanningLocationDiscussionComment = new global::GitHub.Api.Models.SecretScanningLocationDiscussionComment();
+            result.SecretScanningLocationDiscussionTitle = new global::GitHub.Api.Models.SecretScanningLocationDiscussionTitle();
+            result.SecretScanningLocationIssueBody = new global::GitHub.Api.Models.SecretScanningLocationIssueBody();
+            result.SecretScanningLocationIssueComment = new global::GitHub.Api.Models.SecretScanningLocationIssueComment();
+            result.SecretScanningLocationIssueTitle = new global::GitHub.Api.Models.SecretScanningLocationIssueTitle();
+            result.SecretScanningLocationPullRequestBody = new global::GitHub.Api.Models.SecretScanningLocationPullRequestBody();
+            result.SecretScanningLocationPullRequestComment = new global::GitHub.Api.Models.SecretScanningLocationPullRequestComment();
+            result.SecretScanningLocationPullRequestReview = new global::GitHub.Api.Models.SecretScanningLocationPullRequestReview();
+            result.SecretScanningLocationPullRequestReviewComment = new global::GitHub.Api.Models.SecretScanningLocationPullRequestReviewComment();
+            result.SecretScanningLocationPullRequestTitle = new global::GitHub.Api.Models.SecretScanningLocationPullRequestTitle();
+            result.SecretScanningLocationWikiCommit = new global::GitHub.Api.Models.SecretScanningLocationWikiCommit();
             return result;
         }
         /// <summary>
@@ -187,57 +156,9 @@ namespace GitHub.Api.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(SecretScanningLocationCommit != null)
+            if(SecretScanningLocationActionsLog != null || SecretScanningLocationCommit != null || SecretScanningLocationDiscussionBody != null || SecretScanningLocationDiscussionComment != null || SecretScanningLocationDiscussionTitle != null || SecretScanningLocationIssueBody != null || SecretScanningLocationIssueComment != null || SecretScanningLocationIssueTitle != null || SecretScanningLocationPullRequestBody != null || SecretScanningLocationPullRequestComment != null || SecretScanningLocationPullRequestReview != null || SecretScanningLocationPullRequestReviewComment != null || SecretScanningLocationPullRequestTitle != null || SecretScanningLocationWikiCommit != null)
             {
-                return SecretScanningLocationCommit.GetFieldDeserializers();
-            }
-            else if(SecretScanningLocationDiscussionBody != null)
-            {
-                return SecretScanningLocationDiscussionBody.GetFieldDeserializers();
-            }
-            else if(SecretScanningLocationDiscussionComment != null)
-            {
-                return SecretScanningLocationDiscussionComment.GetFieldDeserializers();
-            }
-            else if(SecretScanningLocationDiscussionTitle != null)
-            {
-                return SecretScanningLocationDiscussionTitle.GetFieldDeserializers();
-            }
-            else if(SecretScanningLocationIssueBody != null)
-            {
-                return SecretScanningLocationIssueBody.GetFieldDeserializers();
-            }
-            else if(SecretScanningLocationIssueComment != null)
-            {
-                return SecretScanningLocationIssueComment.GetFieldDeserializers();
-            }
-            else if(SecretScanningLocationIssueTitle != null)
-            {
-                return SecretScanningLocationIssueTitle.GetFieldDeserializers();
-            }
-            else if(SecretScanningLocationPullRequestBody != null)
-            {
-                return SecretScanningLocationPullRequestBody.GetFieldDeserializers();
-            }
-            else if(SecretScanningLocationPullRequestComment != null)
-            {
-                return SecretScanningLocationPullRequestComment.GetFieldDeserializers();
-            }
-            else if(SecretScanningLocationPullRequestReview != null)
-            {
-                return SecretScanningLocationPullRequestReview.GetFieldDeserializers();
-            }
-            else if(SecretScanningLocationPullRequestReviewComment != null)
-            {
-                return SecretScanningLocationPullRequestReviewComment.GetFieldDeserializers();
-            }
-            else if(SecretScanningLocationPullRequestTitle != null)
-            {
-                return SecretScanningLocationPullRequestTitle.GetFieldDeserializers();
-            }
-            else if(SecretScanningLocationWikiCommit != null)
-            {
-                return SecretScanningLocationWikiCommit.GetFieldDeserializers();
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(SecretScanningLocationActionsLog, SecretScanningLocationCommit, SecretScanningLocationDiscussionBody, SecretScanningLocationDiscussionComment, SecretScanningLocationDiscussionTitle, SecretScanningLocationIssueBody, SecretScanningLocationIssueComment, SecretScanningLocationIssueTitle, SecretScanningLocationPullRequestBody, SecretScanningLocationPullRequestComment, SecretScanningLocationPullRequestReview, SecretScanningLocationPullRequestReviewComment, SecretScanningLocationPullRequestTitle, SecretScanningLocationWikiCommit);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -248,58 +169,7 @@ namespace GitHub.Api.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(SecretScanningLocationCommit != null)
-            {
-                writer.WriteObjectValue<global::GitHub.Api.Models.SecretScanningLocationCommit>(null, SecretScanningLocationCommit);
-            }
-            else if(SecretScanningLocationDiscussionBody != null)
-            {
-                writer.WriteObjectValue<global::GitHub.Api.Models.SecretScanningLocationDiscussionBody>(null, SecretScanningLocationDiscussionBody);
-            }
-            else if(SecretScanningLocationDiscussionComment != null)
-            {
-                writer.WriteObjectValue<global::GitHub.Api.Models.SecretScanningLocationDiscussionComment>(null, SecretScanningLocationDiscussionComment);
-            }
-            else if(SecretScanningLocationDiscussionTitle != null)
-            {
-                writer.WriteObjectValue<global::GitHub.Api.Models.SecretScanningLocationDiscussionTitle>(null, SecretScanningLocationDiscussionTitle);
-            }
-            else if(SecretScanningLocationIssueBody != null)
-            {
-                writer.WriteObjectValue<global::GitHub.Api.Models.SecretScanningLocationIssueBody>(null, SecretScanningLocationIssueBody);
-            }
-            else if(SecretScanningLocationIssueComment != null)
-            {
-                writer.WriteObjectValue<global::GitHub.Api.Models.SecretScanningLocationIssueComment>(null, SecretScanningLocationIssueComment);
-            }
-            else if(SecretScanningLocationIssueTitle != null)
-            {
-                writer.WriteObjectValue<global::GitHub.Api.Models.SecretScanningLocationIssueTitle>(null, SecretScanningLocationIssueTitle);
-            }
-            else if(SecretScanningLocationPullRequestBody != null)
-            {
-                writer.WriteObjectValue<global::GitHub.Api.Models.SecretScanningLocationPullRequestBody>(null, SecretScanningLocationPullRequestBody);
-            }
-            else if(SecretScanningLocationPullRequestComment != null)
-            {
-                writer.WriteObjectValue<global::GitHub.Api.Models.SecretScanningLocationPullRequestComment>(null, SecretScanningLocationPullRequestComment);
-            }
-            else if(SecretScanningLocationPullRequestReview != null)
-            {
-                writer.WriteObjectValue<global::GitHub.Api.Models.SecretScanningLocationPullRequestReview>(null, SecretScanningLocationPullRequestReview);
-            }
-            else if(SecretScanningLocationPullRequestReviewComment != null)
-            {
-                writer.WriteObjectValue<global::GitHub.Api.Models.SecretScanningLocationPullRequestReviewComment>(null, SecretScanningLocationPullRequestReviewComment);
-            }
-            else if(SecretScanningLocationPullRequestTitle != null)
-            {
-                writer.WriteObjectValue<global::GitHub.Api.Models.SecretScanningLocationPullRequestTitle>(null, SecretScanningLocationPullRequestTitle);
-            }
-            else if(SecretScanningLocationWikiCommit != null)
-            {
-                writer.WriteObjectValue<global::GitHub.Api.Models.SecretScanningLocationWikiCommit>(null, SecretScanningLocationWikiCommit);
-            }
+            writer.WriteObjectValue<global::GitHub.Api.Models.SecretScanningLocationActionsLog>(null, SecretScanningLocationActionsLog, SecretScanningLocationCommit, SecretScanningLocationDiscussionBody, SecretScanningLocationDiscussionComment, SecretScanningLocationDiscussionTitle, SecretScanningLocationIssueBody, SecretScanningLocationIssueComment, SecretScanningLocationIssueTitle, SecretScanningLocationPullRequestBody, SecretScanningLocationPullRequestComment, SecretScanningLocationPullRequestReview, SecretScanningLocationPullRequestReviewComment, SecretScanningLocationPullRequestTitle, SecretScanningLocationWikiCommit);
         }
     }
 }

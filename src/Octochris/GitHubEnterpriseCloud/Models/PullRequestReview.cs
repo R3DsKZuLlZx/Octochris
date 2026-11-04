@@ -49,6 +49,14 @@ namespace GitHub.EnterpriseCloud.Models
 #else
         public string CommitId { get; set; }
 #endif
+        /// <summary>The persisted effective effort used to produce this Copilot code review, or null if unavailable. For more information, see [Review effort level](https://docs.github.com/enterprise-cloud@latest/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/code-review#review-effort-level).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CopilotCodeReviewEffort { get; set; }
+#nullable restore
+#else
+        public string CopilotCodeReviewEffort { get; set; }
+#endif
         /// <summary>The html_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,6 +67,8 @@ namespace GitHub.EnterpriseCloud.Models
 #endif
         /// <summary>Unique identifier of the review</summary>
         public long? Id { get; set; }
+        /// <summary>Whether this review was produced by Copilot code review. Bot authorship alone does not establish provenance.</summary>
+        public bool? IsCopilotCodeReview { get; set; }
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,8 +141,10 @@ namespace GitHub.EnterpriseCloud.Models
                 { "body_html", n => { BodyHtml = n.GetStringValue(); } },
                 { "body_text", n => { BodyText = n.GetStringValue(); } },
                 { "commit_id", n => { CommitId = n.GetStringValue(); } },
+                { "copilot_code_review_effort", n => { CopilotCodeReviewEffort = n.GetStringValue(); } },
                 { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetLongValue(); } },
+                { "is_copilot_code_review", n => { IsCopilotCodeReview = n.GetBoolValue(); } },
                 { "_links", n => { Links = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.PullRequestReview_links>(global::GitHub.EnterpriseCloud.Models.PullRequestReview_links.CreateFromDiscriminatorValue); } },
                 { "node_id", n => { NodeId = n.GetStringValue(); } },
                 { "pull_request_url", n => { PullRequestUrl = n.GetStringValue(); } },
@@ -153,8 +165,10 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteStringValue("body_html", BodyHtml);
             writer.WriteStringValue("body_text", BodyText);
             writer.WriteStringValue("commit_id", CommitId);
+            writer.WriteStringValue("copilot_code_review_effort", CopilotCodeReviewEffort);
             writer.WriteStringValue("html_url", HtmlUrl);
             writer.WriteLongValue("id", Id);
+            writer.WriteBoolValue("is_copilot_code_review", IsCopilotCodeReview);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.PullRequestReview_links>("_links", Links);
             writer.WriteStringValue("node_id", NodeId);
             writer.WriteStringValue("pull_request_url", PullRequestUrl);

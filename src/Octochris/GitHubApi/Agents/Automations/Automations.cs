@@ -69,6 +69,14 @@ namespace GitHub.Api.Agents.Automations
 #endif
         /// <summary>When true, event-triggered runs require the event actor to have repo write permission, even when the org&apos;s allow_read_access_triggers policy is enabled. Does not apply to interval-scheduled runs, which always run as the automation owner.</summary>
         public bool? RequireActorWritePermission { get; set; }
+        /// <summary>The tools available to the automation. Omitted when no tools are configured.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Tools { get; set; }
+#nullable restore
+#else
+        public List<string> Tools { get; set; }
+#endif
         /// <summary>Trigger configuration for the automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,6 +124,7 @@ namespace GitHub.Api.Agents.Automations
                 { "reasoning_effort", n => { ReasoningEffort = n.GetStringValue(); } },
                 { "repository", n => { Repository = n.GetObjectValue<global::GitHub.Api.Agents.Automations.Automations_repository>(global::GitHub.Api.Agents.Automations.Automations_repository.CreateFromDiscriminatorValue); } },
                 { "require_actor_write_permission", n => { RequireActorWritePermission = n.GetBoolValue(); } },
+                { "tools", n => { Tools = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "triggers", n => { Triggers = n.GetObjectValue<global::GitHub.Api.Agents.Automations.Automations_triggers>(global::GitHub.Api.Agents.Automations.Automations_triggers.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::GitHub.Api.Agents.Automations.Automations_type>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -137,6 +146,7 @@ namespace GitHub.Api.Agents.Automations
             writer.WriteStringValue("reasoning_effort", ReasoningEffort);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Automations.Automations_repository>("repository", Repository);
             writer.WriteBoolValue("require_actor_write_permission", RequireActorWritePermission);
+            writer.WriteCollectionOfPrimitiveValues<string>("tools", Tools);
             writer.WriteObjectValue<global::GitHub.Api.Agents.Automations.Automations_triggers>("triggers", Triggers);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

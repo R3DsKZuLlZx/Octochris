@@ -15,7 +15,7 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.AvailableToo
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The tool identifier in &lt;server-name&gt;/&lt;tool-name&gt; format, for example sentry/list_issues.</summary>
+        /// <summary>The tool identifier in `&lt;server-name&gt;/&lt;tool-name&gt;` format, for example `sentry/list_issues`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

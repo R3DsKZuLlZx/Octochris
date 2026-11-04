@@ -15,7 +15,7 @@ namespace GitHub.Api.Agents.Repos.Item.Item.Automations
     {
         /// <summary>When true, events Copilot creates, including from other automations and Copilot sessions, can start this automation through this trigger. Defaults to false. The Copilot coding agent app cannot turn it on: creating a trigger with true, or changing it from false to true, returns 422.</summary>
         public bool? AllowCopilotTriggers { get; set; }
-        /// <summary>Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation&apos;s `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`. Explicitly setting `repository` on create or edit returns 422 when policy validation is enabled and that policy applies.</summary>
+        /// <summary>Sets the write scope for this trigger&apos;s runs. Omit to inherit the automation&apos;s effective scope (default `trigger`). Organization or repository policy may restrict the effective scope to `trigger`. Explicitly setting `repository` on create or edit returns 422 when policy validation is enabled and that policy applies.</summary>
         public global::GitHub.Api.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_triggers_code_scanning_alert_write_scope? WriteScope { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
