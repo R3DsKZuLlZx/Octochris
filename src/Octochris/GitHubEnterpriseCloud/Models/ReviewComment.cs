@@ -49,6 +49,14 @@ namespace GitHub.EnterpriseCloud.Models
 #else
         public string CommitId { get; set; }
 #endif
+        /// <summary>Sources reported as contributing to this comment; may be incomplete.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::GitHub.EnterpriseCloud.Models.ReviewComment_copilot_code_review_sources>? CopilotCodeReviewSources { get; set; }
+#nullable restore
+#else
+        public List<global::GitHub.EnterpriseCloud.Models.ReviewComment_copilot_code_review_sources> CopilotCodeReviewSources { get; set; }
+#endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The diff_hunk property</summary>
@@ -71,6 +79,8 @@ namespace GitHub.EnterpriseCloud.Models
         public long? Id { get; set; }
         /// <summary>The in_reply_to_id property</summary>
         public int? InReplyToId { get; set; }
+        /// <summary>Whether this comment was produced by Copilot code review.</summary>
+        public bool? IsCopilotCodeReview { get; set; }
         /// <summary>The line of the blob to which the comment applies. The last line of the range for a multi-line comment</summary>
         public int? Line { get; set; }
         /// <summary>The links property</summary>
@@ -189,11 +199,13 @@ namespace GitHub.EnterpriseCloud.Models
                 { "body_html", n => { BodyHtml = n.GetStringValue(); } },
                 { "body_text", n => { BodyText = n.GetStringValue(); } },
                 { "commit_id", n => { CommitId = n.GetStringValue(); } },
+                { "copilot_code_review_sources", n => { CopilotCodeReviewSources = n.GetCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Models.ReviewComment_copilot_code_review_sources>(global::GitHub.EnterpriseCloud.Models.ReviewComment_copilot_code_review_sources.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "diff_hunk", n => { DiffHunk = n.GetStringValue(); } },
                 { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetLongValue(); } },
                 { "in_reply_to_id", n => { InReplyToId = n.GetIntValue(); } },
+                { "is_copilot_code_review", n => { IsCopilotCodeReview = n.GetBoolValue(); } },
                 { "line", n => { Line = n.GetIntValue(); } },
                 { "_links", n => { Links = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.ReviewComment_links>(global::GitHub.EnterpriseCloud.Models.ReviewComment_links.CreateFromDiscriminatorValue); } },
                 { "node_id", n => { NodeId = n.GetStringValue(); } },
@@ -227,11 +239,13 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteStringValue("body_html", BodyHtml);
             writer.WriteStringValue("body_text", BodyText);
             writer.WriteStringValue("commit_id", CommitId);
+            writer.WriteCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Models.ReviewComment_copilot_code_review_sources>("copilot_code_review_sources", CopilotCodeReviewSources);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("diff_hunk", DiffHunk);
             writer.WriteStringValue("html_url", HtmlUrl);
             writer.WriteLongValue("id", Id);
             writer.WriteIntValue("in_reply_to_id", InReplyToId);
+            writer.WriteBoolValue("is_copilot_code_review", IsCopilotCodeReview);
             writer.WriteIntValue("line", Line);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.ReviewComment_links>("_links", Links);
             writer.WriteStringValue("node_id", NodeId);

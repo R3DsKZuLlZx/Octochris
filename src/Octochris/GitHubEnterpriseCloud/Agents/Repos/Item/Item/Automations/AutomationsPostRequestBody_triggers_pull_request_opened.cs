@@ -30,7 +30,7 @@ namespace GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations
 #else
         public string Query { get; set; }
 #endif
-        /// <summary>Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation&apos;s `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`. Explicitly setting `repository` on create or edit returns 422 when policy validation is enabled and that policy applies.</summary>
+        /// <summary>Sets the write scope for this trigger&apos;s runs. Omit to inherit the automation&apos;s effective scope (default `trigger`). Organization or repository policy may restrict the effective scope to `trigger`. Explicitly setting `repository` on create or edit returns 422 when policy validation is enabled and that policy applies.</summary>
         public global::GitHub.EnterpriseCloud.Agents.Repos.Item.Item.Automations.AutomationsPostRequestBody_triggers_pull_request_opened_write_scope? WriteScope { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

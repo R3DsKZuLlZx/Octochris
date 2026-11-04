@@ -59,5 +59,9 @@ namespace GitHub.Api.Models
         #pragma warning disable CS1591
         Pull_request_review_comment,
         #pragma warning restore CS1591
+        [EnumMember(Value = "actions_log")]
+        #pragma warning disable CS1591
+        Actions_log,
+        #pragma warning restore CS1591
     }
 }
