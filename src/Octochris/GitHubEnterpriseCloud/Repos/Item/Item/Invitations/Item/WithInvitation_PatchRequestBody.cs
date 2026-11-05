@@ -14,7 +14,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Invitations.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.</summary>
+        /// <summary>The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, `moderate`, and `admin`.</summary>
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.Invitations.Item.WithInvitation_PatchRequestBody_permissions? Permissions { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Repos.Item.Item.Invitations.Item.WithInvitation_PatchRequestBody"/> and sets the default values.

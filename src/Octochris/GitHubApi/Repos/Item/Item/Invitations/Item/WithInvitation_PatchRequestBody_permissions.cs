@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Api.Repos.Item.Item.Invitations.Item
 {
-    /// <summary>The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.</summary>
+    /// <summary>The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, `moderate`, and `admin`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithInvitation_PatchRequestBody_permissions
     {
@@ -22,6 +22,10 @@ namespace GitHub.Api.Repos.Item.Item.Invitations.Item
         [EnumMember(Value = "triage")]
         #pragma warning disable CS1591
         Triage,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "moderate")]
+        #pragma warning disable CS1591
+        Moderate,
         #pragma warning restore CS1591
         [EnumMember(Value = "admin")]
         #pragma warning disable CS1591

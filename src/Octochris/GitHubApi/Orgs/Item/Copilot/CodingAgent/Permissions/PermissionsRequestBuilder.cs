@@ -40,7 +40,7 @@ namespace GitHub.Api.Orgs.Item.Copilot.CodingAgent.Permissions
         {
         }
         /// <summary>
-        /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Gets information about which repositories in an organization have been enabledor disabled for the Copilot cloud agent.Organization owners can configure whether Copilot cloud agent is enabled forall repositories, selected repositories, or no repositories owned by organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Gets information about which repositories in an organization have been enabledor disabled for the Copilot cloud agent.Organization owners and members with a custom organization role that includeseither the `View organization Copilot cloud agent settings` or `Manage organizationCopilot cloud agent settings` permission can use this endpoint to view whetherCopilot cloud agent is enabled for all repositories, selected repositories, orno repositories owned by the organization.OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/copilot/copilot-coding-agent-management#get-copilot-cloud-agent-permissions-for-an-organization" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Orgs.Item.Copilot.CodingAgent.Permissions.PermissionsGetResponse"/></returns>
@@ -70,7 +70,7 @@ namespace GitHub.Api.Orgs.Item.Copilot.CodingAgent.Permissions
             return await RequestAdapter.SendAsync<global::GitHub.Api.Orgs.Item.Copilot.CodingAgent.Permissions.PermissionsGetResponse>(requestInfo, global::GitHub.Api.Orgs.Item.Copilot.CodingAgent.Permissions.PermissionsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Gets information about which repositories in an organization have been enabledor disabled for the Copilot cloud agent.Organization owners can configure whether Copilot cloud agent is enabled forall repositories, selected repositories, or no repositories owned by organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Gets information about which repositories in an organization have been enabledor disabled for the Copilot cloud agent.Organization owners and members with a custom organization role that includeseither the `View organization Copilot cloud agent settings` or `Manage organizationCopilot cloud agent settings` permission can use this endpoint to view whetherCopilot cloud agent is enabled for all repositories, selected repositories, orno repositories owned by the organization.OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/copilot/copilot-coding-agent-management#get-copilot-cloud-agent-permissions-for-an-organization" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Orgs.Item.Copilot.CodingAgent.Permissions.PermissionsResponse"/></returns>
@@ -134,7 +134,7 @@ namespace GitHub.Api.Orgs.Item.Copilot.CodingAgent.Permissions
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Gets information about which repositories in an organization have been enabledor disabled for the Copilot cloud agent.Organization owners can configure whether Copilot cloud agent is enabled forall repositories, selected repositories, or no repositories owned by organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Gets information about which repositories in an organization have been enabledor disabled for the Copilot cloud agent.Organization owners and members with a custom organization role that includeseither the `View organization Copilot cloud agent settings` or `Manage organizationCopilot cloud agent settings` permission can use this endpoint to view whetherCopilot cloud agent is enabled for all repositories, selected repositories, orno repositories owned by the organization.OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -22,7 +22,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Notifications
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NotificationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/notifications{?all*,before*,page*,participating*,per_page*,since*}", pathParameters)
+        public NotificationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/notifications{?all*,before*,is_done*,page*,participating*,per_page*,since*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Notifications
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NotificationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/notifications{?all*,before*,page*,participating*,per_page*,since*}", rawUrl)
+        public NotificationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/notifications{?all*,before*,is_done*,page*,participating*,per_page*,since*}", rawUrl)
         {
         }
         /// <summary>
@@ -158,6 +158,9 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Notifications
             /// <summary>Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.</summary>
             [QueryParameter("before")]
             public DateTimeOffset? Before { get; set; }
+            /// <summary>Whether to return only done notifications (`true`) or exclude them (`false`). When omitted, notifications are not filtered by done status. Use `all=true&amp;is_done=true` for done notifications or `all=true&amp;is_done=false` for both read and unread inbox notifications. If `all` is omitted or `false`, `is_done=true` returns no notifications.</summary>
+            [QueryParameter("is_done")]
+            public bool? IsDone { get; set; }
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
