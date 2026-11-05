@@ -23,9 +23,9 @@ namespace GitHub.EnterpriseCloud.Models
         #pragma warning disable CS1591
         Triage,
         #pragma warning restore CS1591
-        [EnumMember(Value = "triage_plus")]
+        [EnumMember(Value = "moderate")]
         #pragma warning disable CS1591
-        Triage_plus,
+        Moderate,
         #pragma warning restore CS1591
         [EnumMember(Value = "maintain")]
         #pragma warning disable CS1591

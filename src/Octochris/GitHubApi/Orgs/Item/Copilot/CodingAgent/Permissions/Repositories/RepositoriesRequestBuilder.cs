@@ -60,7 +60,7 @@ namespace GitHub.Api.Orgs.Item.Copilot.CodingAgent.Permissions.Repositories
         {
         }
         /// <summary>
-        /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Lists the selected repositories that are enabled for Copilot cloud agent in an organization.Organization owners can use this endpoint when the coding agent repository policyis set to `selected` to see which repositories have been enabled.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Lists the selected repositories that are enabled for Copilot cloud agent in an organization.Organization owners and members with a custom organization role that includeseither the `View organization Copilot cloud agent settings` or `Manage organizationCopilot cloud agent settings` permission can use this endpoint when the coding agentrepository policy is set to `selected` to see which repositories have been enabled.OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/copilot/copilot-coding-agent-management#list-repositories-enabled-for-copilot-cloud-agent-in-an-organization" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Orgs.Item.Copilot.CodingAgent.Permissions.Repositories.RepositoriesGetResponse"/></returns>
@@ -92,7 +92,7 @@ namespace GitHub.Api.Orgs.Item.Copilot.CodingAgent.Permissions.Repositories
             return await RequestAdapter.SendAsync<global::GitHub.Api.Orgs.Item.Copilot.CodingAgent.Permissions.Repositories.RepositoriesGetResponse>(requestInfo, global::GitHub.Api.Orgs.Item.Copilot.CodingAgent.Permissions.Repositories.RepositoriesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Lists the selected repositories that are enabled for Copilot cloud agent in an organization.Organization owners can use this endpoint when the coding agent repository policyis set to `selected` to see which repositories have been enabled.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Lists the selected repositories that are enabled for Copilot cloud agent in an organization.Organization owners and members with a custom organization role that includeseither the `View organization Copilot cloud agent settings` or `Manage organizationCopilot cloud agent settings` permission can use this endpoint when the coding agentrepository policy is set to `selected` to see which repositories have been enabled.OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/copilot/copilot-coding-agent-management#list-repositories-enabled-for-copilot-cloud-agent-in-an-organization" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Orgs.Item.Copilot.CodingAgent.Permissions.Repositories.RepositoriesResponse"/></returns>
@@ -160,7 +160,7 @@ namespace GitHub.Api.Orgs.Item.Copilot.CodingAgent.Permissions.Repositories
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Lists the selected repositories that are enabled for Copilot cloud agent in an organization.Organization owners can use this endpoint when the coding agent repository policyis set to `selected` to see which repositories have been enabled.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Lists the selected repositories that are enabled for Copilot cloud agent in an organization.Organization owners and members with a custom organization role that includeseither the `View organization Copilot cloud agent settings` or `Manage organizationCopilot cloud agent settings` permission can use this endpoint when the coding agentrepository policy is set to `selected` to see which repositories have been enabled.OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -210,7 +210,7 @@ namespace GitHub.Api.Orgs.Item.Copilot.CodingAgent.Permissions.Repositories
             return new global::GitHub.Api.Orgs.Item.Copilot.CodingAgent.Permissions.Repositories.RepositoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Lists the selected repositories that are enabled for Copilot cloud agent in an organization.Organization owners can use this endpoint when the coding agent repository policyis set to `selected` to see which repositories have been enabled.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Lists the selected repositories that are enabled for Copilot cloud agent in an organization.Organization owners and members with a custom organization role that includeseither the `View organization Copilot cloud agent settings` or `Manage organizationCopilot cloud agent settings` permission can use this endpoint when the coding agentrepository policy is set to `selected` to see which repositories have been enabled.OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RepositoriesRequestBuilderGetQueryParameters 
