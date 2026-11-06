@@ -161,7 +161,7 @@ namespace GitHub.Api.Orgs.Item.Teams
             /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>Filter team results by their type. For more information, see &quot;[What kind of team should I use?](https://docs.github.com/enterprise-cloud@latest/admin/concepts/enterprise-fundamentals/teams-in-an-enterprise#what-kind-of-team-should-i-use)&quot;</summary>
+            /// <summary>Filter team results by their type. For more information, see &quot;[What kind of team should I use?](https://docs.github.com/admin/concepts/enterprise-fundamentals/teams-in-an-enterprise#what-kind-of-team-should-i-use)&quot;</summary>
             [Obsolete("This property is deprecated, use TeamTypeAsGetTeamTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -172,7 +172,7 @@ namespace GitHub.Api.Orgs.Item.Teams
             [QueryParameter("team_type")]
             public string TeamType { get; set; }
 #endif
-            /// <summary>Filter team results by their type. For more information, see &quot;[What kind of team should I use?](https://docs.github.com/enterprise-cloud@latest/admin/concepts/enterprise-fundamentals/teams-in-an-enterprise#what-kind-of-team-should-i-use)&quot;</summary>
+            /// <summary>Filter team results by their type. For more information, see &quot;[What kind of team should I use?](https://docs.github.com/admin/concepts/enterprise-fundamentals/teams-in-an-enterprise#what-kind-of-team-should-i-use)&quot;</summary>
             [QueryParameter("team_type")]
             public global::GitHub.Api.Orgs.Item.Teams.GetTeam_typeQueryParameterType? TeamTypeAsGetTeamTypeQueryParameterType { get; set; }
         }
