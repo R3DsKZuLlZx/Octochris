@@ -47,6 +47,14 @@ namespace GitHub.EnterpriseCloud.Models
 #else
         public string PropertyName { get; set; }
 #endif
+        /// <summary>A regular expression (RE2 syntax) that values of the property must match.Only present for properties with a `value_type` of `string` that define a regular expression.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Regex { get; set; }
+#nullable restore
+#else
+        public string Regex { get; set; }
+#endif
         /// <summary>Whether the property is required.</summary>
         public bool? Required { get; set; }
         /// <summary>Whether setting properties values is mandatory</summary>
@@ -94,6 +102,7 @@ namespace GitHub.EnterpriseCloud.Models
                 { "default_value", n => { DefaultValue = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.CustomProperty.CustomProperty_default_value>(global::GitHub.EnterpriseCloud.Models.CustomProperty.CustomProperty_default_value.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "property_name", n => { PropertyName = n.GetStringValue(); } },
+                { "regex", n => { Regex = n.GetStringValue(); } },
                 { "require_explicit_values", n => { RequireExplicitValues = n.GetBoolValue(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
                 { "source_type", n => { SourceType = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CustomProperty_source_type>(); } },
@@ -113,6 +122,7 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.CustomProperty.CustomProperty_default_value>("default_value", DefaultValue);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("property_name", PropertyName);
+            writer.WriteStringValue("regex", Regex);
             writer.WriteBoolValue("required", Required);
             writer.WriteBoolValue("require_explicit_values", RequireExplicitValues);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CustomProperty_source_type>("source_type", SourceType);

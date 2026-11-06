@@ -18,10 +18,10 @@ namespace GitHub.Api.Orgs.Item.Properties.Schema
         /// <summary>The array of custom properties to create or update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::GitHub.Api.Models.CustomProperty>? Properties { get; set; }
+        public List<global::GitHub.Api.Models.CustomPropertyBatchItemPayload>? Properties { get; set; }
 #nullable restore
 #else
-        public List<global::GitHub.Api.Models.CustomProperty> Properties { get; set; }
+        public List<global::GitHub.Api.Models.CustomPropertyBatchItemPayload> Properties { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Api.Orgs.Item.Properties.Schema.SchemaPatchRequestBody"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace GitHub.Api.Orgs.Item.Properties.Schema
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::GitHub.Api.Models.CustomProperty>(global::GitHub.Api.Models.CustomProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::GitHub.Api.Models.CustomPropertyBatchItemPayload>(global::GitHub.Api.Models.CustomPropertyBatchItemPayload.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace GitHub.Api.Orgs.Item.Properties.Schema
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::GitHub.Api.Models.CustomProperty>("properties", Properties);
+            writer.WriteCollectionOfObjectValues<global::GitHub.Api.Models.CustomPropertyBatchItemPayload>("properties", Properties);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
