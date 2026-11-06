@@ -39,6 +39,14 @@ namespace GitHub.Api.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>A regular expression (RE2 syntax) that values of the property must match.Only supported for properties with a `value_type` of `string`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Regex { get; set; }
+#nullable restore
+#else
+        public string Regex { get; set; }
+#endif
         /// <summary>Whether the property is required.</summary>
         public bool? Required { get; set; }
         /// <summary>Whether setting properties values is mandatory</summary>
@@ -75,6 +83,7 @@ namespace GitHub.Api.Models
                 { "allowed_values", n => { AllowedValues = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "default_value", n => { DefaultValue = n.GetObjectValue<global::GitHub.Api.Models.CustomPropertySetPayload.CustomPropertySetPayload_default_value>(global::GitHub.Api.Models.CustomPropertySetPayload.CustomPropertySetPayload_default_value.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "regex", n => { Regex = n.GetStringValue(); } },
                 { "require_explicit_values", n => { RequireExplicitValues = n.GetBoolValue(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
                 { "value_type", n => { ValueType = n.GetEnumValue<global::GitHub.Api.Models.CustomPropertySetPayload_value_type>(); } },
@@ -91,6 +100,7 @@ namespace GitHub.Api.Models
             writer.WriteCollectionOfPrimitiveValues<string>("allowed_values", AllowedValues);
             writer.WriteObjectValue<global::GitHub.Api.Models.CustomPropertySetPayload.CustomPropertySetPayload_default_value>("default_value", DefaultValue);
             writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("regex", Regex);
             writer.WriteBoolValue("required", Required);
             writer.WriteBoolValue("require_explicit_values", RequireExplicitValues);
             writer.WriteEnumValue<global::GitHub.Api.Models.CustomPropertySetPayload_values_editable_by>("values_editable_by", ValuesEditableBy);
