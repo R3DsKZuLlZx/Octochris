@@ -4,6 +4,7 @@ using GitHub.Api.Models;
 using GitHub.Api.Repos.Item.Item.Pulls.Item.Codespaces;
 using GitHub.Api.Repos.Item.Item.Pulls.Item.Comments;
 using GitHub.Api.Repos.Item.Item.Pulls.Item.Commits;
+using GitHub.Api.Repos.Item.Item.Pulls.Item.CopilotCodeReview;
 using GitHub.Api.Repos.Item.Item.Pulls.Item.Files;
 using GitHub.Api.Repos.Item.Item.Pulls.Item.Merge;
 using GitHub.Api.Repos.Item.Item.Pulls.Item.MergeAsync;
@@ -40,6 +41,11 @@ namespace GitHub.Api.Repos.Item.Item.Pulls.Item
         public global::GitHub.Api.Repos.Item.Item.Pulls.Item.Commits.CommitsRequestBuilder Commits
         {
             get => new global::GitHub.Api.Repos.Item.Item.Pulls.Item.Commits.CommitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The copilotCodeReview property</summary>
+        public global::GitHub.Api.Repos.Item.Item.Pulls.Item.CopilotCodeReview.CopilotCodeReviewRequestBuilder CopilotCodeReview
+        {
+            get => new global::GitHub.Api.Repos.Item.Item.Pulls.Item.CopilotCodeReview.CopilotCodeReviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The files property</summary>
         public global::GitHub.Api.Repos.Item.Item.Pulls.Item.Files.FilesRequestBuilder Files

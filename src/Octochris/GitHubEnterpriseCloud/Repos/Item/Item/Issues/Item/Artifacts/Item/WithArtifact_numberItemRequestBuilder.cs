@@ -22,7 +22,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithArtifact_numberItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/issues/{issue_number}/artifacts/{artifact_number}", pathParameters)
+        public WithArtifact_numberItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/issues/{issue_number}/artifacts/{artifact_number}{?page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithArtifact_numberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/issues/{issue_number}/artifacts/{artifact_number}", rawUrl)
+        public WithArtifact_numberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/issues/{issue_number}/artifacts/{artifact_number}{?page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
@@ -76,11 +76,11 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.WithArtifact_number503Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberGetResponse?> GetAsWithArtifact_numberGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberGetResponse?> GetAsWithArtifact_numberGetResponseAsync(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberGetResponse> GetAsWithArtifact_numberGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberGetResponse> GetAsWithArtifact_numberGetResponseAsync(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -105,11 +105,11 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item
         [Obsolete("This method is obsolete. Use GetAsWithArtifact_numberGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberResponse?> GetAsync(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberResponse> GetAsync(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -183,11 +183,11 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -306,11 +306,24 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item
         {
         }
         /// <summary>
+        /// Returns an artifact attached to an issue by its per-issue artifact number,along with its version history ordered from newest to oldest.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithArtifact_numberItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
+            [QueryParameter("page")]
+            public int? Page { get; set; }
+            /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
+            [QueryParameter("per_page")]
+            public int? PerPage { get; set; }
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithArtifact_numberItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class WithArtifact_numberItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
