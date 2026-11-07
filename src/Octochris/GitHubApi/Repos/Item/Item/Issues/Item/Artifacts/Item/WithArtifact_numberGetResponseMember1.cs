@@ -23,6 +23,10 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item.Artifacts.Item
 #else
         public global::GitHub.Api.Models.IssueArtifact Artifact { get; set; }
 #endif
+        /// <summary>Whether another page of retained versions is available.</summary>
+        public bool? HasNextPage { get; set; }
+        /// <summary>The number of retained artifact versions.</summary>
+        public int? TotalCount { get; set; }
         /// <summary>The artifact version history, ordered from newest to oldest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +61,8 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item.Artifacts.Item
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "artifact", n => { Artifact = n.GetObjectValue<global::GitHub.Api.Models.IssueArtifact>(global::GitHub.Api.Models.IssueArtifact.CreateFromDiscriminatorValue); } },
+                { "has_next_page", n => { HasNextPage = n.GetBoolValue(); } },
+                { "total_count", n => { TotalCount = n.GetIntValue(); } },
                 { "versions", n => { Versions = n.GetCollectionOfObjectValues<global::GitHub.Api.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberGetResponseMember1_versions>(global::GitHub.Api.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberGetResponseMember1_versions.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -68,6 +74,8 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item.Artifacts.Item
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::GitHub.Api.Models.IssueArtifact>("artifact", Artifact);
+            writer.WriteBoolValue("has_next_page", HasNextPage);
+            writer.WriteIntValue("total_count", TotalCount);
             writer.WriteCollectionOfObjectValues<global::GitHub.Api.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberGetResponseMember1_versions>("versions", Versions);
             writer.WriteAdditionalData(AdditionalData);
         }
