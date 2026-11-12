@@ -58,7 +58,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Actions.RunnerGroups
 #else
         public List<string> SelectedWorkflows { get; set; }
 #endif
-        /// <summary>Visibility of a runner group. You can select all organizations or select individual organization.</summary>
+        /// <summary>Visibility of a runner group. You can select all organizations or select individual organizations.</summary>
         public global::GitHub.EnterpriseCloud.Enterprises.Item.Actions.RunnerGroups.RunnerGroupsPostRequestBody_visibility? Visibility { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Enterprises.Item.Actions.RunnerGroups.RunnerGroupsPostRequestBody"/> and sets the default values.

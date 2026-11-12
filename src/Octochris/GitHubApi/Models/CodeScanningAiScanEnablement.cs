@@ -15,8 +15,10 @@ namespace GitHub.Api.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether AI Scan is enabled for the repository.</summary>
+        /// <summary>Whether AI Scan on pull requests is enabled for the repository.</summary>
         public global::GitHub.Api.Models.CodeScanningAiScanEnablement_pr_scan? PrScan { get; set; }
+        /// <summary>Whether the full repository AI Scan is enabled for the repository.</summary>
+        public global::GitHub.Api.Models.CodeScanningAiScanEnablement_repository_scan? RepositoryScan { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Api.Models.CodeScanningAiScanEnablement"/> and sets the default values.
         /// </summary>
@@ -43,6 +45,7 @@ namespace GitHub.Api.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "pr_scan", n => { PrScan = n.GetEnumValue<global::GitHub.Api.Models.CodeScanningAiScanEnablement_pr_scan>(); } },
+                { "repository_scan", n => { RepositoryScan = n.GetEnumValue<global::GitHub.Api.Models.CodeScanningAiScanEnablement_repository_scan>(); } },
             };
         }
         /// <summary>
@@ -53,6 +56,7 @@ namespace GitHub.Api.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::GitHub.Api.Models.CodeScanningAiScanEnablement_pr_scan>("pr_scan", PrScan);
+            writer.WriteEnumValue<global::GitHub.Api.Models.CodeScanningAiScanEnablement_repository_scan>("repository_scan", RepositoryScan);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

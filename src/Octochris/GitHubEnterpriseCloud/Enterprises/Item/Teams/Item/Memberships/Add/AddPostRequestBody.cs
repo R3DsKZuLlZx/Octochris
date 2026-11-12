@@ -14,7 +14,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Teams.Item.Memberships.Add
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The GitHub user handles to add to the team.</summary>
+        /// <summary>Up to 1,000 GitHub user handles to add to the team per request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Usernames { get; set; }

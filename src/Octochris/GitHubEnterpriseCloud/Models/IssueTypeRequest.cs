@@ -5,17 +5,17 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace GitHub.Api.Models
+namespace GitHub.EnterpriseCloud.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class OrganizationCreateIssueType : IAdditionalDataHolder, IParsable
+    public partial class IssueTypeRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Color for the issue type.</summary>
-        public global::GitHub.Api.Models.OrganizationCreateIssueType_color? Color { get; set; }
+        public global::GitHub.EnterpriseCloud.Models.IssueTypeRequest_color? Color { get; set; }
         /// <summary>Description of the issue type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,7 +24,7 @@ namespace GitHub.Api.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Whether or not the issue type is enabled at the organization level.</summary>
+        /// <summary>Whether or not the issue type is enabled.</summary>
         public bool? IsEnabled { get; set; }
         /// <summary>Name of the issue type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,21 +35,21 @@ namespace GitHub.Api.Models
         public string Name { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::GitHub.Api.Models.OrganizationCreateIssueType"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Models.IssueTypeRequest"/> and sets the default values.
         /// </summary>
-        public OrganizationCreateIssueType()
+        public IssueTypeRequest()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::GitHub.Api.Models.OrganizationCreateIssueType"/></returns>
+        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.IssueTypeRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::GitHub.Api.Models.OrganizationCreateIssueType CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::GitHub.EnterpriseCloud.Models.IssueTypeRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::GitHub.Api.Models.OrganizationCreateIssueType();
+            return new global::GitHub.EnterpriseCloud.Models.IssueTypeRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +59,7 @@ namespace GitHub.Api.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "color", n => { Color = n.GetEnumValue<global::GitHub.Api.Models.OrganizationCreateIssueType_color>(); } },
+                { "color", n => { Color = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.IssueTypeRequest_color>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "is_enabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -72,7 +72,7 @@ namespace GitHub.Api.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::GitHub.Api.Models.OrganizationCreateIssueType_color>("color", Color);
+            writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.IssueTypeRequest_color>("color", Color);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("is_enabled", IsEnabled);
             writer.WriteStringValue("name", Name);

@@ -11,6 +11,8 @@ using GitHub.EnterpriseCloud.User.Following;
 using GitHub.EnterpriseCloud.User.Gpg_keys;
 using GitHub.EnterpriseCloud.User.Installations;
 using GitHub.EnterpriseCloud.User.InteractionLimits;
+using GitHub.EnterpriseCloud.User.IssueFields;
+using GitHub.EnterpriseCloud.User.IssueTypes;
 using GitHub.EnterpriseCloud.User.Issues;
 using GitHub.EnterpriseCloud.User.Item;
 using GitHub.EnterpriseCloud.User.Keys;
@@ -93,10 +95,20 @@ namespace GitHub.EnterpriseCloud.User
         {
             get => new global::GitHub.EnterpriseCloud.User.InteractionLimits.InteractionLimitsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The issueFields property</summary>
+        public global::GitHub.EnterpriseCloud.User.IssueFields.IssueFieldsRequestBuilder IssueFields
+        {
+            get => new global::GitHub.EnterpriseCloud.User.IssueFields.IssueFieldsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The issues property</summary>
         public global::GitHub.EnterpriseCloud.User.Issues.IssuesRequestBuilder Issues
         {
             get => new global::GitHub.EnterpriseCloud.User.Issues.IssuesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The issueTypes property</summary>
+        public global::GitHub.EnterpriseCloud.User.IssueTypes.IssueTypesRequestBuilder IssueTypes
+        {
+            get => new global::GitHub.EnterpriseCloud.User.IssueTypes.IssueTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The keys property</summary>
         public global::GitHub.EnterpriseCloud.User.Keys.KeysRequestBuilder Keys

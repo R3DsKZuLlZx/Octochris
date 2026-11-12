@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.EnterpriseCloud.Models
 {
-    /// <summary>Whether AI Scan is enabled for the repository.</summary>
+    /// <summary>Whether AI Scan on pull requests is enabled for the repository.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CodeScanningAiScanEnablement_pr_scan
     {

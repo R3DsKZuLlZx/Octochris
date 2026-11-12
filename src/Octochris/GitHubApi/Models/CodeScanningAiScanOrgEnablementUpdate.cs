@@ -13,8 +13,10 @@ namespace GitHub.Api.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CodeScanningAiScanOrgEnablementUpdate : IParsable
     {
-        /// <summary>Whether AI Scan is enabled for the organization. Organization respects enterprise policy. Disabled organizations prevent repositories from enabling AI Scan. Enabled organizations enable AI Scan for their repositories, but individual repositories can opt out.</summary>
+        /// <summary>Whether AI Scan on pull requests is enabled for the organization. Organization respects enterprise policy. Disabled organizations prevent repositories from enabling AI Scan. Enabled organizations enable AI Scan for their repositories, but individual repositories can opt out.</summary>
         public global::GitHub.Api.Models.CodeScanningAiScanOrgEnablementUpdate_pr_scan? PrScan { get; set; }
+        /// <summary>Whether the full repository AI Scan is enabled for the organization. Organization respects enterprise policy. Disabled organizations prevent repositories from enabling the full repository AI Scan. Enabled organizations enable it for their repositories, but individual repositories can opt out.</summary>
+        public global::GitHub.Api.Models.CodeScanningAiScanOrgEnablementUpdate_repository_scan? RepositoryScan { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -34,6 +36,7 @@ namespace GitHub.Api.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "pr_scan", n => { PrScan = n.GetEnumValue<global::GitHub.Api.Models.CodeScanningAiScanOrgEnablementUpdate_pr_scan>(); } },
+                { "repository_scan", n => { RepositoryScan = n.GetEnumValue<global::GitHub.Api.Models.CodeScanningAiScanOrgEnablementUpdate_repository_scan>(); } },
             };
         }
         /// <summary>
@@ -44,6 +47,7 @@ namespace GitHub.Api.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::GitHub.Api.Models.CodeScanningAiScanOrgEnablementUpdate_pr_scan>("pr_scan", PrScan);
+            writer.WriteEnumValue<global::GitHub.Api.Models.CodeScanningAiScanOrgEnablementUpdate_repository_scan>("repository_scan", RepositoryScan);
         }
     }
 }

@@ -5,18 +5,16 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace GitHub.Api.Models
+namespace GitHub.EnterpriseCloud.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class OrganizationUpdateIssueType : IAdditionalDataHolder, IParsable
+    public partial class UserUpdateIssueField : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Color for the issue type.</summary>
-        public global::GitHub.Api.Models.OrganizationUpdateIssueType_color? Color { get; set; }
-        /// <summary>Description of the issue type.</summary>
+        /// <summary>Description of the issue field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -24,9 +22,7 @@ namespace GitHub.Api.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Whether or not the issue type is enabled at the organization level.</summary>
-        public bool? IsEnabled { get; set; }
-        /// <summary>Name of the issue type.</summary>
+        /// <summary>Name of the issue field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -34,22 +30,32 @@ namespace GitHub.Api.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Options for select fields. Only applicable when updating single_select or multi_select fields. When provided, this array **replaces** the entire existing set of options rather than adding to or updating individual options. To retain or update an existing option, include it in the array with its `id`. Options sent without an `id` are treated as new options and may cause existing options to be deleted and recreated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::GitHub.EnterpriseCloud.Models.UserUpdateIssueField_options>? Options { get; set; }
+#nullable restore
+#else
+        public List<global::GitHub.EnterpriseCloud.Models.UserUpdateIssueField_options> Options { get; set; }
+#endif
+        /// <summary>The visibility of the issue field. Can be `restricted` (visible only to the owner and to collaborators on the repository the field is read through) or `all` (visible to all users who can see issues).</summary>
+        public global::GitHub.EnterpriseCloud.Models.UserUpdateIssueField_visibility? Visibility { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::GitHub.Api.Models.OrganizationUpdateIssueType"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Models.UserUpdateIssueField"/> and sets the default values.
         /// </summary>
-        public OrganizationUpdateIssueType()
+        public UserUpdateIssueField()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::GitHub.Api.Models.OrganizationUpdateIssueType"/></returns>
+        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.UserUpdateIssueField"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::GitHub.Api.Models.OrganizationUpdateIssueType CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::GitHub.EnterpriseCloud.Models.UserUpdateIssueField CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::GitHub.Api.Models.OrganizationUpdateIssueType();
+            return new global::GitHub.EnterpriseCloud.Models.UserUpdateIssueField();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,10 +65,10 @@ namespace GitHub.Api.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "color", n => { Color = n.GetEnumValue<global::GitHub.Api.Models.OrganizationUpdateIssueType_color>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "is_enabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "options", n => { Options = n.GetCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Models.UserUpdateIssueField_options>(global::GitHub.EnterpriseCloud.Models.UserUpdateIssueField_options.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.UserUpdateIssueField_visibility>(); } },
             };
         }
         /// <summary>
@@ -72,10 +78,10 @@ namespace GitHub.Api.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::GitHub.Api.Models.OrganizationUpdateIssueType_color>("color", Color);
             writer.WriteStringValue("description", Description);
-            writer.WriteBoolValue("is_enabled", IsEnabled);
             writer.WriteStringValue("name", Name);
+            writer.WriteCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Models.UserUpdateIssueField_options>("options", Options);
+            writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.UserUpdateIssueField_visibility>("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,8 +13,10 @@ namespace GitHub.EnterpriseCloud.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CodeScanningAiScanEnablementUpdate : IParsable
     {
-        /// <summary>Whether to enable or disable AI Scan for the repository.</summary>
+        /// <summary>Whether to enable or disable AI Scan on pull requests for the repository.</summary>
         public global::GitHub.EnterpriseCloud.Models.CodeScanningAiScanEnablementUpdate_pr_scan? PrScan { get; set; }
+        /// <summary>Whether to enable or disable the full repository AI Scan for the repository.</summary>
+        public global::GitHub.EnterpriseCloud.Models.CodeScanningAiScanEnablementUpdate_repository_scan? RepositoryScan { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -34,6 +36,7 @@ namespace GitHub.EnterpriseCloud.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "pr_scan", n => { PrScan = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeScanningAiScanEnablementUpdate_pr_scan>(); } },
+                { "repository_scan", n => { RepositoryScan = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeScanningAiScanEnablementUpdate_repository_scan>(); } },
             };
         }
         /// <summary>
@@ -44,6 +47,7 @@ namespace GitHub.EnterpriseCloud.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeScanningAiScanEnablementUpdate_pr_scan>("pr_scan", PrScan);
+            writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeScanningAiScanEnablementUpdate_repository_scan>("repository_scan", RepositoryScan);
         }
     }
 }

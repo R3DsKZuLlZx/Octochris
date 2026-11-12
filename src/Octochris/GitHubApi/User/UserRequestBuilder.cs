@@ -11,6 +11,8 @@ using GitHub.Api.User.Following;
 using GitHub.Api.User.Gpg_keys;
 using GitHub.Api.User.Installations;
 using GitHub.Api.User.InteractionLimits;
+using GitHub.Api.User.IssueFields;
+using GitHub.Api.User.IssueTypes;
 using GitHub.Api.User.Issues;
 using GitHub.Api.User.Item;
 using GitHub.Api.User.Keys;
@@ -93,10 +95,20 @@ namespace GitHub.Api.User
         {
             get => new global::GitHub.Api.User.InteractionLimits.InteractionLimitsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The issueFields property</summary>
+        public global::GitHub.Api.User.IssueFields.IssueFieldsRequestBuilder IssueFields
+        {
+            get => new global::GitHub.Api.User.IssueFields.IssueFieldsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The issues property</summary>
         public global::GitHub.Api.User.Issues.IssuesRequestBuilder Issues
         {
             get => new global::GitHub.Api.User.Issues.IssuesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The issueTypes property</summary>
+        public global::GitHub.Api.User.IssueTypes.IssueTypesRequestBuilder IssueTypes
+        {
+            get => new global::GitHub.Api.User.IssueTypes.IssueTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The keys property</summary>
         public global::GitHub.Api.User.Keys.KeysRequestBuilder Keys

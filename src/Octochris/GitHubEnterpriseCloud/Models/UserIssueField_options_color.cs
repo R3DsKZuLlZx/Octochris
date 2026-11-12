@@ -3,9 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.EnterpriseCloud.Models
 {
-    /// <summary>Color for the issue type.</summary>
+    /// <summary>The color of the option.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum OrganizationUpdateIssueType_color
+    public enum UserIssueField_options_color
     {
         [EnumMember(Value = "gray")]
         #pragma warning disable CS1591

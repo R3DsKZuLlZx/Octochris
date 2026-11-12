@@ -8,7 +8,7 @@ using System;
 namespace GitHub.Api.Models
 {
     /// <summary>
-    /// A custom attribute defined at the organization level for attaching structured data to issues.
+    /// A custom attribute defined by a repository owner for attaching structured data to issues.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IssueField : IAdditionalDataHolder, IParsable
@@ -55,7 +55,7 @@ namespace GitHub.Api.Models
 #endif
         /// <summary>The time the issue field was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The visibility of the issue field. Can be `organization_members_only` (visible only within the organization) or `all` (visible to all users who can see issues).</summary>
+        /// <summary>The visibility of the issue field. Organization-owned fields return `organization_members_only` for restricted visibility (visible to organization members and to collaborators on the repository the field is read through), or `all` (visible to all users who can see issues). For create and update requests, use `restricted` instead of the deprecated `organization_members_only` input. Existing REST API versions continue to return `organization_members_only` for restricted organization-owned fields, even when a request uses `restricted`. Any change to this response spelling will be introduced in a future REST API version.</summary>
         public global::GitHub.Api.Models.IssueField_visibility? Visibility { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Api.Models.IssueField"/> and sets the default values.
