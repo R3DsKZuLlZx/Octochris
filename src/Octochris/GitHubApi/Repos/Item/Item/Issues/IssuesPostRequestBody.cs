@@ -38,7 +38,7 @@ namespace GitHub.Api.Repos.Item.Item.Issues
 #else
         public string Body { get; set; }
 #endif
-        /// <summary>An array of issue field values to set on this issue. Each field value must include the field ID and the value to set. Issue fields are only available for organization-owned repositories with the feature enabled. Field values are silently dropped otherwise.</summary>
+        /// <summary>An array of issue field values to set on this issue. Each field value must include the field ID and the value to set. Issue fields must be enabled for the repository owner. Field values are silently dropped otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::GitHub.Api.Repos.Item.Item.Issues.IssuesPostRequestBody_issue_field_values>? IssueFieldValues { get; set; }

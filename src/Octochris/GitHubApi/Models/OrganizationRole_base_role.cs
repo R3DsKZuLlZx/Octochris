@@ -15,6 +15,10 @@ namespace GitHub.Api.Models
         #pragma warning disable CS1591
         Triage,
         #pragma warning restore CS1591
+        [EnumMember(Value = "moderate")]
+        #pragma warning disable CS1591
+        Moderate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "write")]
         #pragma warning disable CS1591
         Write,

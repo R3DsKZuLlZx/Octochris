@@ -9,14 +9,14 @@ namespace GitHub.EnterpriseCloud.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class OrganizationCreateIssueType : IAdditionalDataHolder, IParsable
+    public partial class UserCreateIssueField_options : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Color for the issue type.</summary>
-        public global::GitHub.EnterpriseCloud.Models.OrganizationCreateIssueType_color? Color { get; set; }
-        /// <summary>Description of the issue type.</summary>
+        /// <summary>Color for the option.</summary>
+        public global::GitHub.EnterpriseCloud.Models.UserCreateIssueField_options_color? Color { get; set; }
+        /// <summary>Description of the option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -24,9 +24,7 @@ namespace GitHub.EnterpriseCloud.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Whether or not the issue type is enabled at the organization level.</summary>
-        public bool? IsEnabled { get; set; }
-        /// <summary>Name of the issue type.</summary>
+        /// <summary>Name of the option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -34,22 +32,24 @@ namespace GitHub.EnterpriseCloud.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Priority of the option for ordering.</summary>
+        public int? Priority { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Models.OrganizationCreateIssueType"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Models.UserCreateIssueField_options"/> and sets the default values.
         /// </summary>
-        public OrganizationCreateIssueType()
+        public UserCreateIssueField_options()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.OrganizationCreateIssueType"/></returns>
+        /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.UserCreateIssueField_options"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::GitHub.EnterpriseCloud.Models.OrganizationCreateIssueType CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::GitHub.EnterpriseCloud.Models.UserCreateIssueField_options CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::GitHub.EnterpriseCloud.Models.OrganizationCreateIssueType();
+            return new global::GitHub.EnterpriseCloud.Models.UserCreateIssueField_options();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,10 +59,10 @@ namespace GitHub.EnterpriseCloud.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "color", n => { Color = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.OrganizationCreateIssueType_color>(); } },
+                { "color", n => { Color = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.UserCreateIssueField_options_color>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "is_enabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "priority", n => { Priority = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -72,10 +72,10 @@ namespace GitHub.EnterpriseCloud.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.OrganizationCreateIssueType_color>("color", Color);
+            writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.UserCreateIssueField_options_color>("color", Color);
             writer.WriteStringValue("description", Description);
-            writer.WriteBoolValue("is_enabled", IsEnabled);
             writer.WriteStringValue("name", Name);
+            writer.WriteIntValue("priority", Priority);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

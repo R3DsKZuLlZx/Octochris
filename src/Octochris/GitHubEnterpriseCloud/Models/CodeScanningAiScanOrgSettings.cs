@@ -17,6 +17,8 @@ namespace GitHub.EnterpriseCloud.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether AI Scan on pull requests is enabled for the organization. The organization setting respects enterprise policy, and repositories inherit it: when disabled, repositories cannot enable AI Scan; when enabled, repositories can still opt out.</summary>
         public global::GitHub.EnterpriseCloud.Models.CodeScanningAiScanOrgSettings_pr_scan? PrScan { get; set; }
+        /// <summary>Whether the full repository AI Scan is enabled for the organization. The organization setting respects enterprise policy, and repositories inherit it: when disabled, repositories cannot enable the full repository AI Scan; when enabled, repositories can still opt out.</summary>
+        public global::GitHub.EnterpriseCloud.Models.CodeScanningAiScanOrgSettings_repository_scan? RepositoryScan { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.EnterpriseCloud.Models.CodeScanningAiScanOrgSettings"/> and sets the default values.
         /// </summary>
@@ -43,6 +45,7 @@ namespace GitHub.EnterpriseCloud.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "pr_scan", n => { PrScan = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeScanningAiScanOrgSettings_pr_scan>(); } },
+                { "repository_scan", n => { RepositoryScan = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.CodeScanningAiScanOrgSettings_repository_scan>(); } },
             };
         }
         /// <summary>
@@ -53,6 +56,7 @@ namespace GitHub.EnterpriseCloud.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeScanningAiScanOrgSettings_pr_scan>("pr_scan", PrScan);
+            writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.CodeScanningAiScanOrgSettings_repository_scan>("repository_scan", RepositoryScan);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

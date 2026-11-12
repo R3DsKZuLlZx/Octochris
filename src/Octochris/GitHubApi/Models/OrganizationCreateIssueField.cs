@@ -40,7 +40,7 @@ namespace GitHub.Api.Models
 #else
         public List<global::GitHub.Api.Models.OrganizationCreateIssueField_options> Options { get; set; }
 #endif
-        /// <summary>The visibility of the issue field. Can be `organization_members_only` (visible only within the organization) or `all` (visible to all users who can see issues). Only used when the visibility settings feature is enabled. Defaults to `organization_members_only`.</summary>
+        /// <summary>The visibility of the issue field. Can be `restricted` (visible to organization members and to collaborators on the repository the field is read through) or `all` (visible to all users who can see issues). `organization_members_only` is deprecated. Use `restricted` instead. Removal will be announced for a future REST API version; existing REST API versions will continue to support this value. Only used when the visibility settings feature is enabled. Defaults to `organization_members_only`.</summary>
         public global::GitHub.Api.Models.OrganizationCreateIssueField_visibility? Visibility { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Api.Models.OrganizationCreateIssueField"/> and sets the default values.

@@ -224,7 +224,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues
             /// <summary>The direction to sort the results by.</summary>
             [QueryParameter("direction")]
             public global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
-            /// <summary>A comma-separated list of issue field filters in `field_slug:value` format.Only issues matching all specified field values are returned.Requires issue fields to be enabled for the repository. Issue fields arenot available for user-owned repositories, and field availability fororganization-owned public repositories depends on the organization&apos;svisibility settings. For example, `priority:Urgent,severity:High` filtersissues where the `priority` field is `Urgent` AND the `severity` field is`High`.</summary>
+            /// <summary>A comma-separated list of issue field filters in `field_slug:value` format.Only issues matching all specified field values are returned.Requires issue fields to be enabled for the repository. Supports bothuser-owned and organization-owned repositories. Field availability dependson the owner&apos;s issue field visibility settings and the caller&apos;s access.For example, `priority:Urgent,severity:High` filtersissues where the `priority` field is `Urgent` AND the `severity` field is`High`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("issue_field_values")]

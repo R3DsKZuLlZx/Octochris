@@ -16,7 +16,7 @@ namespace GitHub.EnterpriseCloud.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The kind of contributing source.</summary>
         public global::GitHub.EnterpriseCloud.Models.PullRequestReviewComment_copilot_code_review_sources_kind? Kind { get; set; }
-        /// <summary>The reported source name, or &quot;custom instructions&quot; for CUSTOM_INSTRUCTIONS.</summary>
+        /// <summary>The reported source name, or &quot;custom instructions&quot; for CUSTOM_INSTRUCTIONS. Copilot Dreaming&apos;s reviewer agent and checks skill are reported as one SKILL source named &quot;Copilot dreaming&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

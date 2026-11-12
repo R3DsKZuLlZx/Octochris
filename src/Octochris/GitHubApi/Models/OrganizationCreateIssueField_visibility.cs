@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Api.Models
 {
-    /// <summary>The visibility of the issue field. Can be `organization_members_only` (visible only within the organization) or `all` (visible to all users who can see issues). Only used when the visibility settings feature is enabled. Defaults to `organization_members_only`.</summary>
+    /// <summary>The visibility of the issue field. Can be `restricted` (visible to organization members and to collaborators on the repository the field is read through) or `all` (visible to all users who can see issues). `organization_members_only` is deprecated. Use `restricted` instead. Removal will be announced for a future REST API version; existing REST API versions will continue to support this value. Only used when the visibility settings feature is enabled. Defaults to `organization_members_only`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OrganizationCreateIssueField_visibility
     {
@@ -14,6 +14,10 @@ namespace GitHub.Api.Models
         [EnumMember(Value = "all")]
         #pragma warning disable CS1591
         All,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "restricted")]
+        #pragma warning disable CS1591
+        Restricted,
         #pragma warning restore CS1591
     }
 }
