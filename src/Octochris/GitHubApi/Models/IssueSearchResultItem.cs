@@ -217,6 +217,14 @@ namespace GitHub.Api.Models
 #else
         public string StateReason { get; set; }
 #endif
+        /// <summary>The status of the issue, or `null` if it has none. Issue statuses are in preview and only available to accounts enrolled in the preview.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Api.Models.IssueSearchResultItem_status? Status { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Api.Models.IssueSearchResultItem_status Status { get; set; }
+#endif
         /// <summary>The sub_issues_summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -332,6 +340,7 @@ namespace GitHub.Api.Models
                 { "score", n => { Score = n.GetDoubleValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "state_reason", n => { StateReason = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetObjectValue<global::GitHub.Api.Models.IssueSearchResultItem_status>(global::GitHub.Api.Models.IssueSearchResultItem_status.CreateFromDiscriminatorValue); } },
                 { "sub_issues_summary", n => { SubIssuesSummary = n.GetObjectValue<global::GitHub.Api.Models.SubIssuesSummary>(global::GitHub.Api.Models.SubIssuesSummary.CreateFromDiscriminatorValue); } },
                 { "text_matches", n => { TextMatches = n.GetCollectionOfObjectValues<global::GitHub.Api.Models.Issues>(global::GitHub.Api.Models.Issues.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "timeline_url", n => { TimelineUrl = n.GetStringValue(); } },
@@ -381,6 +390,7 @@ namespace GitHub.Api.Models
             writer.WriteDoubleValue("score", Score);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("state_reason", StateReason);
+            writer.WriteObjectValue<global::GitHub.Api.Models.IssueSearchResultItem_status>("status", Status);
             writer.WriteObjectValue<global::GitHub.Api.Models.SubIssuesSummary>("sub_issues_summary", SubIssuesSummary);
             writer.WriteCollectionOfObjectValues<global::GitHub.Api.Models.Issues>("text_matches", TextMatches);
             writer.WriteStringValue("timeline_url", TimelineUrl);

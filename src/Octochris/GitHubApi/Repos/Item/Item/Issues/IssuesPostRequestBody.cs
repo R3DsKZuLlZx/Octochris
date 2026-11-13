@@ -64,6 +64,14 @@ namespace GitHub.Api.Repos.Item.Item.Issues
 #endif
         /// <summary>The id of the parent issue to add this issue to as a sub-issue. _NOTE: Only users with triage access to both the parent issue&apos;s repository and this repository can set the parent issue._</summary>
         public int? ParentIssueId { get; set; }
+        /// <summary>The initial status of the issue. Can be `Backlog`, `Todo`, `In progress`, or `In review`. If omitted, the issue starts in `Backlog`. If you do not have permission to set the status, the supplied value is ignored and the issue starts in `Backlog`. Cannot be `null` or an empty string. Ignored when issue statuses aren&apos;t available in the repository. Issue statuses are in preview and only available to accounts enrolled in the preview.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>The title of the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,6 +120,7 @@ namespace GitHub.Api.Repos.Item.Item.Issues
                 { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "milestone", n => { Milestone = n.GetObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.IssuesPostRequestBody.IssuesPostRequestBody_milestone>(global::GitHub.Api.Repos.Item.Item.Issues.IssuesPostRequestBody.IssuesPostRequestBody_milestone.CreateFromDiscriminatorValue); } },
                 { "parent_issue_id", n => { ParentIssueId = n.GetIntValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.IssuesPostRequestBody.IssuesPostRequestBody_title>(global::GitHub.Api.Repos.Item.Item.Issues.IssuesPostRequestBody.IssuesPostRequestBody_title.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -130,6 +139,7 @@ namespace GitHub.Api.Repos.Item.Item.Issues
             writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
             writer.WriteObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.IssuesPostRequestBody.IssuesPostRequestBody_milestone>("milestone", Milestone);
             writer.WriteIntValue("parent_issue_id", ParentIssueId);
+            writer.WriteStringValue("status", Status);
             writer.WriteObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.IssuesPostRequestBody.IssuesPostRequestBody_title>("title", Title);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

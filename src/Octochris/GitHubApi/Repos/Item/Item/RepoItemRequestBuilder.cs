@@ -51,6 +51,7 @@ using GitHub.Api.Repos.Item.Item.Merges;
 using GitHub.Api.Repos.Item.Item.Milestones;
 using GitHub.Api.Repos.Item.Item.Notifications;
 using GitHub.Api.Repos.Item.Item.Pages;
+using GitHub.Api.Repos.Item.Item.PlanningStatuses;
 using GitHub.Api.Repos.Item.Item.PrivateVulnerabilityReporting;
 using GitHub.Api.Repos.Item.Item.Properties;
 using GitHub.Api.Repos.Item.Item.Pulls;
@@ -340,6 +341,11 @@ namespace GitHub.Api.Repos.Item.Item
         public global::GitHub.Api.Repos.Item.Item.Pages.PagesRequestBuilder Pages
         {
             get => new global::GitHub.Api.Repos.Item.Item.Pages.PagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The planningStatuses property</summary>
+        public global::GitHub.Api.Repos.Item.Item.PlanningStatuses.PlanningStatusesRequestBuilder PlanningStatuses
+        {
+            get => new global::GitHub.Api.Repos.Item.Item.PlanningStatuses.PlanningStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The privateVulnerabilityReporting property</summary>
         public global::GitHub.Api.Repos.Item.Item.PrivateVulnerabilityReporting.PrivateVulnerabilityReportingRequestBuilder PrivateVulnerabilityReporting
