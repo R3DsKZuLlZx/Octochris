@@ -56,6 +56,7 @@ using GitHub.EnterpriseCloud.Repos.Item.Item.Merges;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Milestones;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Notifications;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Pages;
+using GitHub.EnterpriseCloud.Repos.Item.Item.PlanningStatuses;
 using GitHub.EnterpriseCloud.Repos.Item.Item.PrivateVulnerabilityReporting;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Properties;
 using GitHub.EnterpriseCloud.Repos.Item.Item.Pulls;
@@ -370,6 +371,11 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.Pages.PagesRequestBuilder Pages
         {
             get => new global::GitHub.EnterpriseCloud.Repos.Item.Item.Pages.PagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The planningStatuses property</summary>
+        public global::GitHub.EnterpriseCloud.Repos.Item.Item.PlanningStatuses.PlanningStatusesRequestBuilder PlanningStatuses
+        {
+            get => new global::GitHub.EnterpriseCloud.Repos.Item.Item.PlanningStatuses.PlanningStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The privateVulnerabilityReporting property</summary>
         public global::GitHub.EnterpriseCloud.Repos.Item.Item.PrivateVulnerabilityReporting.PrivateVulnerabilityReportingRequestBuilder PrivateVulnerabilityReporting

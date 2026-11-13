@@ -68,6 +68,14 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item
         public global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_state? State { get; set; }
         /// <summary>The reason for the state change. Ignored unless `state` is changed.</summary>
         public global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_state_reason? StateReason { get; set; }
+        /// <summary>The status to give the issue. Can be `Backlog`, `Todo`, `In progress`, `In review`, `Done`, `Not planned`, or `Duplicate`. If omitted, the current status is preserved unless `state` or `state_reason` changes. Setting a status also updates `state` and `state_reason` as needed. If provided, `state` and `state_reason` must be consistent with the requested status. Changing the status to `Duplicate` requires `duplicate_issue_id`. Cannot be `null` or an empty string. The status and other applied field changes are saved together. If the status cannot be saved, those field changes are rolled back. Ignored when issue statuses aren&apos;t available in the repository. Issue statuses are in preview and only available to accounts enrolled in the preview.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>The title of the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,6 +126,7 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item
                 { "milestone", n => { Milestone = n.GetObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_milestone>(global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_milestone.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetEnumValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_state>(); } },
                 { "state_reason", n => { StateReason = n.GetEnumValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_state_reason>(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_title>(global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_title.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_type>(global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_type.CreateFromDiscriminatorValue); } },
             };
@@ -138,6 +147,7 @@ namespace GitHub.Api.Repos.Item.Item.Issues.Item
             writer.WriteObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_milestone>("milestone", Milestone);
             writer.WriteEnumValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_state>("state", State);
             writer.WriteEnumValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody_state_reason>("state_reason", StateReason);
+            writer.WriteStringValue("status", Status);
             writer.WriteObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_title>("title", Title);
             writer.WriteObjectValue<global::GitHub.Api.Repos.Item.Item.Issues.Item.WithIssue_numberPatchRequestBody.WithIssue_numberPatchRequestBody_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

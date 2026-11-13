@@ -225,6 +225,14 @@ namespace GitHub.EnterpriseCloud.Models
 #endif
         /// <summary>The reason for the current state</summary>
         public global::GitHub.EnterpriseCloud.Models.Issue_state_reason? StateReason { get; set; }
+        /// <summary>The status of the issue, or `null` if it has none. Issue statuses are in preview and only available to accounts enrolled in the preview.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.EnterpriseCloud.Models.Issue_status? Status { get; set; }
+#nullable restore
+#else
+        public global::GitHub.EnterpriseCloud.Models.Issue_status Status { get; set; }
+#endif
         /// <summary>The sub_issues_summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -333,6 +341,7 @@ namespace GitHub.EnterpriseCloud.Models
                 { "repository_url", n => { RepositoryUrl = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "state_reason", n => { StateReason = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.Issue_state_reason>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.Issue_status>(global::GitHub.EnterpriseCloud.Models.Issue_status.CreateFromDiscriminatorValue); } },
                 { "sub_issues_summary", n => { SubIssuesSummary = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.SubIssuesSummary>(global::GitHub.EnterpriseCloud.Models.SubIssuesSummary.CreateFromDiscriminatorValue); } },
                 { "timeline_url", n => { TimelineUrl = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -382,6 +391,7 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteStringValue("repository_url", RepositoryUrl);
             writer.WriteStringValue("state", State);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.Issue_state_reason>("state_reason", StateReason);
+            writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.Issue_status>("status", Status);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.SubIssuesSummary>("sub_issues_summary", SubIssuesSummary);
             writer.WriteStringValue("timeline_url", TimelineUrl);
             writer.WriteStringValue("title", Title);
