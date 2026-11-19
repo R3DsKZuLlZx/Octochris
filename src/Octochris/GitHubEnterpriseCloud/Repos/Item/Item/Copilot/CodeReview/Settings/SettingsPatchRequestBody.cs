@@ -12,6 +12,8 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Copilot.CodeReview.Settings
     public partial class SettingsPatchRequestBody : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Whether reviews can use public repository search. Can only be set when the public repository search setting is available for the repository.</summary>
+        public bool? CrossRepoContextEnabled { get; set; }
         /// <summary>Whether reviews use the repository&apos;s custom instructions.</summary>
         public bool? CustomInstructionsEnabled { get; set; }
         /// <summary>Whether reviews can use MCP servers.</summary>
@@ -44,6 +46,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Copilot.CodeReview.Settings
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "cross_repo_context_enabled", n => { CrossRepoContextEnabled = n.GetBoolValue(); } },
                 { "custom_instructions_enabled", n => { CustomInstructionsEnabled = n.GetBoolValue(); } },
                 { "mcp_enabled", n => { McpEnabled = n.GetBoolValue(); } },
                 { "review_effort", n => { ReviewEffort = n.GetStringValue(); } },
@@ -57,6 +60,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Copilot.CodeReview.Settings
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("cross_repo_context_enabled", CrossRepoContextEnabled);
             writer.WriteBoolValue("custom_instructions_enabled", CustomInstructionsEnabled);
             writer.WriteBoolValue("mcp_enabled", McpEnabled);
             writer.WriteStringValue("review_effort", ReviewEffort);
