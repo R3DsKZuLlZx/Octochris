@@ -40,7 +40,7 @@ namespace GitHub.Api.Orgs.Item.Settings.ImmutableReleases
         {
         }
         /// <summary>
-        /// Gets the immutable releases policy for repositories in an organization.OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// Gets the immutable releases policy for repositories in an organization.OAuth tokens and personal access tokens (classic) need the `admin:org` or `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/orgs#get-immutable-releases-settings-for-an-organization" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Api.Models.ImmutableReleasesOrganizationSettings"/></returns>
@@ -59,7 +59,7 @@ namespace GitHub.Api.Orgs.Item.Settings.ImmutableReleases
             return await RequestAdapter.SendAsync<global::GitHub.Api.Models.ImmutableReleasesOrganizationSettings>(requestInfo, global::GitHub.Api.Models.ImmutableReleasesOrganizationSettings.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sets the immutable releases policy for repositories in an organization.OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// Sets the immutable releases policy for repositories in an organization.OAuth tokens and personal access tokens (classic) need the `admin:org` or `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/orgs#set-immutable-releases-settings-for-an-organization" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -79,7 +79,7 @@ namespace GitHub.Api.Orgs.Item.Settings.ImmutableReleases
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets the immutable releases policy for repositories in an organization.OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// Gets the immutable releases policy for repositories in an organization.OAuth tokens and personal access tokens (classic) need the `admin:org` or `repo` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +98,7 @@ namespace GitHub.Api.Orgs.Item.Settings.ImmutableReleases
             return requestInfo;
         }
         /// <summary>
-        /// Sets the immutable releases policy for repositories in an organization.OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// Sets the immutable releases policy for repositories in an organization.OAuth tokens and personal access tokens (classic) need the `admin:org` or `repo` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

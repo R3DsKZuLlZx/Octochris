@@ -23,6 +23,8 @@ namespace GitHub.EnterpriseCloud.Models
 #else
         public List<string> AvailableReviewEfforts { get; set; }
 #endif
+        /// <summary>Whether reviews can use public repository search.</summary>
+        public bool? CrossRepoContextEnabled { get; set; }
         /// <summary>Whether reviews use the repository&apos;s custom instructions.</summary>
         public bool? CustomInstructionsEnabled { get; set; }
         /// <summary>Whether reviews can use MCP servers.</summary>
@@ -63,6 +65,7 @@ namespace GitHub.EnterpriseCloud.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "available_review_efforts", n => { AvailableReviewEfforts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "cross_repo_context_enabled", n => { CrossRepoContextEnabled = n.GetBoolValue(); } },
                 { "custom_instructions_enabled", n => { CustomInstructionsEnabled = n.GetBoolValue(); } },
                 { "mcp_enabled", n => { McpEnabled = n.GetBoolValue(); } },
                 { "review_effort", n => { ReviewEffort = n.GetObjectValue<global::GitHub.EnterpriseCloud.Models.RepositoryCopilotCodeReviewSettings_review_effort>(global::GitHub.EnterpriseCloud.Models.RepositoryCopilotCodeReviewSettings_review_effort.CreateFromDiscriminatorValue); } },
@@ -77,6 +80,7 @@ namespace GitHub.EnterpriseCloud.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("available_review_efforts", AvailableReviewEfforts);
+            writer.WriteBoolValue("cross_repo_context_enabled", CrossRepoContextEnabled);
             writer.WriteBoolValue("custom_instructions_enabled", CustomInstructionsEnabled);
             writer.WriteBoolValue("mcp_enabled", McpEnabled);
             writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Models.RepositoryCopilotCodeReviewSettings_review_effort>("review_effort", ReviewEffort);

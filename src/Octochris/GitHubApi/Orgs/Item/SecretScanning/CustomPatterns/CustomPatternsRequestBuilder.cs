@@ -94,18 +94,18 @@ namespace GitHub.Api.Orgs.Item.SecretScanning.CustomPatterns
         /// Lists secret scanning custom patterns for an organization.Personal access tokens (classic) need the `read:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/secret-scanning/custom-patterns#list-organization-custom-patterns" />
         /// </summary>
-        /// <returns>A List&lt;global::GitHub.Api.Models.SecretScanningCustomPattern&gt;</returns>
+        /// <returns>A List&lt;global::GitHub.Api.Models.SecretScanningCustomPatternWithDryRun&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Api.Models.BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::GitHub.Api.Models.SecretScanningCustomPattern>?> GetAsync(Action<RequestConfiguration<global::GitHub.Api.Orgs.Item.SecretScanning.CustomPatterns.CustomPatternsRequestBuilder.CustomPatternsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::GitHub.Api.Models.SecretScanningCustomPatternWithDryRun>?> GetAsync(Action<RequestConfiguration<global::GitHub.Api.Orgs.Item.SecretScanning.CustomPatterns.CustomPatternsRequestBuilder.CustomPatternsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::GitHub.Api.Models.SecretScanningCustomPattern>> GetAsync(Action<RequestConfiguration<global::GitHub.Api.Orgs.Item.SecretScanning.CustomPatterns.CustomPatternsRequestBuilder.CustomPatternsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::GitHub.Api.Models.SecretScanningCustomPatternWithDryRun>> GetAsync(Action<RequestConfiguration<global::GitHub.Api.Orgs.Item.SecretScanning.CustomPatterns.CustomPatternsRequestBuilder.CustomPatternsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -114,7 +114,7 @@ namespace GitHub.Api.Orgs.Item.SecretScanning.CustomPatterns
                 { "403", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
                 { "404", global::GitHub.Api.Models.BasicError.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::GitHub.Api.Models.SecretScanningCustomPattern>(requestInfo, global::GitHub.Api.Models.SecretScanningCustomPattern.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::GitHub.Api.Models.SecretScanningCustomPatternWithDryRun>(requestInfo, global::GitHub.Api.Models.SecretScanningCustomPatternWithDryRun.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>

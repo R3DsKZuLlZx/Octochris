@@ -33,7 +33,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Settings.ImmutableReleases.Repositori
         {
         }
         /// <summary>
-        /// Removes a repository from the list of selected repositories that are enforced for immutable releases in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`.OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// Removes a repository from the list of selected repositories that are enforced for immutable releases in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`.OAuth tokens and personal access tokens (classic) need the `admin:org` or `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/orgs/orgs#disable-a-selected-repository-for-immutable-releases-in-an-organization" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Settings.ImmutableReleases.Repositori
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a repository to the list of selected repositories that are enforced for immutable releases in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`.OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// Adds a repository to the list of selected repositories that are enforced for immutable releases in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`.OAuth tokens and personal access tokens (classic) need the `admin:org` or `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/orgs/orgs#enable-a-selected-repository-for-immutable-releases-in-an-organization" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Settings.ImmutableReleases.Repositori
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes a repository from the list of selected repositories that are enforced for immutable releases in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`.OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// Removes a repository from the list of selected repositories that are enforced for immutable releases in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`.OAuth tokens and personal access tokens (classic) need the `admin:org` or `repo` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace GitHub.EnterpriseCloud.Orgs.Item.Settings.ImmutableReleases.Repositori
             return requestInfo;
         }
         /// <summary>
-        /// Adds a repository to the list of selected repositories that are enforced for immutable releases in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`.OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// Adds a repository to the list of selected repositories that are enforced for immutable releases in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`.OAuth tokens and personal access tokens (classic) need the `admin:org` or `repo` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
