@@ -34,7 +34,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Credentials.Exports.Item
         {
         }
         /// <summary>
-        /// Returns the status of an enterprise token inventory export. Once the export is ready this redirects to a short-lived URL to download the CSV.You must be an enterprise owner (or hold a role with the &quot;View enterprise credentials&quot; permission) to use this endpoint.OAuth app tokens and personal access tokens (classic) require the `read:enterprise` scope to access this endpoint.
+        /// Returns the status of an enterprise token inventory export. Once the export is ready this redirects to a short-lived URL to download the CSV.A completed export can be downloaded for 5 days. After that this endpoint returns `404`, and you need to request a new export.You must be an enterprise owner (or hold a role with the &quot;View enterprise credentials&quot; permission) to use this endpoint.OAuth app tokens and personal access tokens (classic) require the `read:enterprise` scope to access this endpoint.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/enterprise-admin/token-inventory#get-an-enterprise-token-inventory-export" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Models.EnterpriseTokenInventoryExport"/></returns>
@@ -53,7 +53,7 @@ namespace GitHub.EnterpriseCloud.Enterprises.Item.Credentials.Exports.Item
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.EnterpriseTokenInventoryExport>(requestInfo, global::GitHub.EnterpriseCloud.Models.EnterpriseTokenInventoryExport.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the status of an enterprise token inventory export. Once the export is ready this redirects to a short-lived URL to download the CSV.You must be an enterprise owner (or hold a role with the &quot;View enterprise credentials&quot; permission) to use this endpoint.OAuth app tokens and personal access tokens (classic) require the `read:enterprise` scope to access this endpoint.
+        /// Returns the status of an enterprise token inventory export. Once the export is ready this redirects to a short-lived URL to download the CSV.A completed export can be downloaded for 5 days. After that this endpoint returns `404`, and you need to request a new export.You must be an enterprise owner (or hold a role with the &quot;View enterprise credentials&quot; permission) to use this endpoint.OAuth app tokens and personal access tokens (classic) require the `read:enterprise` scope to access this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

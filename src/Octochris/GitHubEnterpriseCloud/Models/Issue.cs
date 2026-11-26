@@ -225,7 +225,7 @@ namespace GitHub.EnterpriseCloud.Models
 #endif
         /// <summary>The reason for the current state</summary>
         public global::GitHub.EnterpriseCloud.Models.Issue_state_reason? StateReason { get; set; }
-        /// <summary>The status of the issue, or `null` if it has none. Issue statuses are in preview and only available to accounts enrolled in the preview.</summary>
+        /// <summary>The status of the issue, or `null` if it has none. Issue statuses are in public preview and subject to change. They&apos;re rolling out gradually, so they might not be available in your repositories yet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::GitHub.EnterpriseCloud.Models.Issue_status? Status { get; set; }

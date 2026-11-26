@@ -71,6 +71,8 @@ namespace GitHub.EnterpriseCloud.Models
 #else
         public string Fingerprint { get; set; }
 #endif
+        /// <summary>When the SSH key was first observed by GitHub. Unlike `created_at`, this value doesn&apos;t change when the same key is removed and added again. Only present when `credential_type` is `ssh_key`; null if the first creation time isn&apos;t known.</summary>
+        public DateTimeOffset? FirstCreatedAt { get; set; }
         /// <summary>Base64-encoded SHA-256 hash of the token, matching `hashed_token` in audit events. Null when not reported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -176,6 +178,7 @@ namespace GitHub.EnterpriseCloud.Models
                 { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "expiry_unknown", n => { ExpiryUnknown = n.GetBoolValue(); } },
                 { "fingerprint", n => { Fingerprint = n.GetStringValue(); } },
+                { "first_created_at", n => { FirstCreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "hashed_token", n => { HashedToken = n.GetStringValue(); } },
                 { "inventory_id", n => { InventoryId = n.GetStringValue(); } },
                 { "item_type", n => { ItemType = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.EnterpriseTokenInventoryItem_item_type>(); } },
@@ -215,6 +218,7 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
             writer.WriteBoolValue("expiry_unknown", ExpiryUnknown);
             writer.WriteStringValue("fingerprint", Fingerprint);
+            writer.WriteDateTimeOffsetValue("first_created_at", FirstCreatedAt);
             writer.WriteStringValue("hashed_token", HashedToken);
             writer.WriteStringValue("inventory_id", InventoryId);
             writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.EnterpriseTokenInventoryItem_item_type>("item_type", ItemType);

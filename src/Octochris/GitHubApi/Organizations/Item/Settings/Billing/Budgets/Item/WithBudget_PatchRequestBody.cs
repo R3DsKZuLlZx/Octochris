@@ -33,7 +33,7 @@ namespace GitHub.Api.Organizations.Item.Settings.Billing.Budgets.Item
 #else
         public global::GitHub.Api.Organizations.Item.Settings.Billing.Budgets.Item.WithBudget_PatchRequestBody.WithBudget_PatchRequestBody_expires_at ExpiresAt { get; set; }
 #endif
-        /// <summary>Whether to prevent additional spending once the budget is exceeded. For budgets with `user` or `multi_user_customer` scope, this must remain `true`.</summary>
+        /// <summary>Whether to prevent additional spending once the budget is exceeded. Set to `false` for an alerting-only budget, including user-level scopes.</summary>
         public bool? PreventFurtherUsage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Api.Organizations.Item.Settings.Billing.Budgets.Item.WithBudget_PatchRequestBody"/> and sets the default values.

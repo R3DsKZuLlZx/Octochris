@@ -75,6 +75,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Dependabot.Alerts.Item
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 409 status code</exception>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.BasicError">When receiving a 410 status code</exception>
         /// <exception cref="global::GitHub.EnterpriseCloud.Models.ValidationErrorSimple">When receiving a 422 status code</exception>
+        /// <exception cref="global::GitHub.EnterpriseCloud.Models.DependabotAlert503Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::GitHub.EnterpriseCloud.Models.DependabotAlert?> PatchAsync(global::GitHub.EnterpriseCloud.Repos.Item.Item.Dependabot.Alerts.Item.WithAlert_numberPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -94,6 +95,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Dependabot.Alerts.Item
                 { "409", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
                 { "410", global::GitHub.EnterpriseCloud.Models.BasicError.CreateFromDiscriminatorValue },
                 { "422", global::GitHub.EnterpriseCloud.Models.ValidationErrorSimple.CreateFromDiscriminatorValue },
+                { "503", global::GitHub.EnterpriseCloud.Models.DependabotAlert503Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Models.DependabotAlert>(requestInfo, global::GitHub.EnterpriseCloud.Models.DependabotAlert.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

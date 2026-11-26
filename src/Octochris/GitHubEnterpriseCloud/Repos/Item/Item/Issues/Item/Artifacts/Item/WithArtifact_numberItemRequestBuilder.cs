@@ -65,7 +65,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns an artifact attached to an issue by its per-issue artifact number,along with its version history ordered from newest to oldest.
+        /// Returns an artifact attached to an issue by its per-issue artifact number,along with its version history ordered from newest to oldest.This endpoint can be used without authentication for public repositories.Unauthenticated requests are subject to the standard unauthenticated rate limit.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/issues/artifacts#get-an-issue-artifact" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberGetResponse"/></returns>
@@ -93,7 +93,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item
             return await RequestAdapter.SendAsync<global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberGetResponse>(requestInfo, global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns an artifact attached to an issue by its per-issue artifact number,along with its version history ordered from newest to oldest.
+        /// Returns an artifact attached to an issue by its per-issue artifact number,along with its version history ordered from newest to oldest.This endpoint can be used without authentication for public repositories.Unauthenticated requests are subject to the standard unauthenticated rate limit.
         /// API method documentation <see href="https://docs.github.com/enterprise-cloud@latest/rest/issues/artifacts#get-an-issue-artifact" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item.WithArtifact_numberItemRequestBuilder.WithArtifact_numberResponse"/></returns>
@@ -177,7 +177,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item
             return requestInfo;
         }
         /// <summary>
-        /// Returns an artifact attached to an issue by its per-issue artifact number,along with its version history ordered from newest to oldest.
+        /// Returns an artifact attached to an issue by its per-issue artifact number,along with its version history ordered from newest to oldest.This endpoint can be used without authentication for public repositories.Unauthenticated requests are subject to the standard unauthenticated rate limit.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -306,7 +306,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Issues.Item.Artifacts.Item
         {
         }
         /// <summary>
-        /// Returns an artifact attached to an issue by its per-issue artifact number,along with its version history ordered from newest to oldest.
+        /// Returns an artifact attached to an issue by its per-issue artifact number,along with its version history ordered from newest to oldest.This endpoint can be used without authentication for public repositories.Unauthenticated requests are subject to the standard unauthenticated rate limit.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithArtifact_numberItemRequestBuilderGetQueryParameters 
