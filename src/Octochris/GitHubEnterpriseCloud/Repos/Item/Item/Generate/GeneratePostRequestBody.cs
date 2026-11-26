@@ -14,6 +14,14 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Generate
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The custom properties for the new repository. The keys are the custom property names, and the values are the corresponding custom property values.During rollout, this parameter is available only for organization-owned repositories when template repository custom properties support has been enabled for the destination organization. Otherwise, providing this parameter returns HTTP 422.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.EnterpriseCloud.Repos.Item.Item.Generate.GeneratePostRequestBody_custom_properties? CustomProperties { get; set; }
+#nullable restore
+#else
+        public global::GitHub.EnterpriseCloud.Repos.Item.Item.Generate.GeneratePostRequestBody_custom_properties CustomProperties { get; set; }
+#endif
         /// <summary>A short description of the new repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,6 +77,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Generate
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "custom_properties", n => { CustomProperties = n.GetObjectValue<global::GitHub.EnterpriseCloud.Repos.Item.Item.Generate.GeneratePostRequestBody_custom_properties>(global::GitHub.EnterpriseCloud.Repos.Item.Item.Generate.GeneratePostRequestBody_custom_properties.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "include_all_branches", n => { IncludeAllBranches = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -83,6 +92,7 @@ namespace GitHub.EnterpriseCloud.Repos.Item.Item.Generate
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::GitHub.EnterpriseCloud.Repos.Item.Item.Generate.GeneratePostRequestBody_custom_properties>("custom_properties", CustomProperties);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("include_all_branches", IncludeAllBranches);
             writer.WriteStringValue("name", Name);

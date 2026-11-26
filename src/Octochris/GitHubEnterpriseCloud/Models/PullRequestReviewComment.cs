@@ -49,6 +49,8 @@ namespace GitHub.EnterpriseCloud.Models
 #else
         public string CommitId { get; set; }
 #endif
+        /// <summary>The Copilot code review severity of this comment, or null if unavailable.</summary>
+        public global::GitHub.EnterpriseCloud.Models.PullRequestReviewComment_copilot_code_review_severity? CopilotCodeReviewSeverity { get; set; }
         /// <summary>Sources reported as contributing to this comment; may be incomplete. Not returned for issue timeline events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -199,6 +201,7 @@ namespace GitHub.EnterpriseCloud.Models
                 { "body_html", n => { BodyHtml = n.GetStringValue(); } },
                 { "body_text", n => { BodyText = n.GetStringValue(); } },
                 { "commit_id", n => { CommitId = n.GetStringValue(); } },
+                { "copilot_code_review_severity", n => { CopilotCodeReviewSeverity = n.GetEnumValue<global::GitHub.EnterpriseCloud.Models.PullRequestReviewComment_copilot_code_review_severity>(); } },
                 { "copilot_code_review_sources", n => { CopilotCodeReviewSources = n.GetCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Models.PullRequestReviewComment_copilot_code_review_sources>(global::GitHub.EnterpriseCloud.Models.PullRequestReviewComment_copilot_code_review_sources.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "diff_hunk", n => { DiffHunk = n.GetStringValue(); } },
@@ -239,6 +242,7 @@ namespace GitHub.EnterpriseCloud.Models
             writer.WriteStringValue("body_html", BodyHtml);
             writer.WriteStringValue("body_text", BodyText);
             writer.WriteStringValue("commit_id", CommitId);
+            writer.WriteEnumValue<global::GitHub.EnterpriseCloud.Models.PullRequestReviewComment_copilot_code_review_severity>("copilot_code_review_severity", CopilotCodeReviewSeverity);
             writer.WriteCollectionOfObjectValues<global::GitHub.EnterpriseCloud.Models.PullRequestReviewComment_copilot_code_review_sources>("copilot_code_review_sources", CopilotCodeReviewSources);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("diff_hunk", DiffHunk);

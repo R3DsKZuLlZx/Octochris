@@ -8,7 +8,7 @@ using System;
 namespace GitHub.Api.Models
 {
     /// <summary>
-    /// The status of the issue, or `null` if it has none. Issue statuses are in preview and only available to accounts enrolled in the preview.
+    /// The status of the issue, or `null` if it has none. Issue statuses are in public preview and subject to change. They&apos;re rolling out gradually, so they might not be available in your repositories yet.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Issue_status : IAdditionalDataHolder, IParsable

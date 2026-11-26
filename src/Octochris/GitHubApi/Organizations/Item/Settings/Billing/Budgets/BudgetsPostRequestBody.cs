@@ -53,7 +53,7 @@ namespace GitHub.Api.Organizations.Item.Settings.Billing.Budgets
 #endif
         /// <summary>The date the budget will expire in `YYYY-MM-DD` format. Only dates in the future are accepted.If not provided, the budget will not expire.Only supported for budgets with `budget_scope` of `user`</summary>
         public Date? ExpiresAt { get; set; }
-        /// <summary>Whether to prevent additional spending once the budget is exceeded. For `user` and `multi_user_customer` scopes, this must be `true`.</summary>
+        /// <summary>Whether to prevent additional spending once the budget is exceeded. Set to `false` for an alerting-only budget, including user-level scopes.</summary>
         public bool? PreventFurtherUsage { get; set; }
         /// <summary>The username of the user for `user` scope budgets. This field is required when `budget_scope` is `user`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

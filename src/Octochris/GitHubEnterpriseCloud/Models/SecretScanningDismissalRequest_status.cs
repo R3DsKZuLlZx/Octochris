@@ -27,5 +27,9 @@ namespace GitHub.EnterpriseCloud.Models
         #pragma warning disable CS1591
         Expired,
         #pragma warning restore CS1591
+        [EnumMember(Value = "deleted")]
+        #pragma warning disable CS1591
+        Deleted,
+        #pragma warning restore CS1591
     }
 }

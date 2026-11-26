@@ -151,6 +151,14 @@ namespace GitHub.Api.Models
 #endif
         /// <summary>The number property</summary>
         public int? Number { get; set; }
+        /// <summary>URL to get the parent issue of this issue, if it is a sub-issue</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ParentIssueUrl { get; set; }
+#nullable restore
+#else
+        public string ParentIssueUrl { get; set; }
+#endif
         /// <summary>GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -217,7 +225,7 @@ namespace GitHub.Api.Models
 #else
         public string StateReason { get; set; }
 #endif
-        /// <summary>The status of the issue, or `null` if it has none. Issue statuses are in preview and only available to accounts enrolled in the preview.</summary>
+        /// <summary>The status of the issue, or `null` if it has none. Issue statuses are in public preview and subject to change. They&apos;re rolling out gradually, so they might not be available in your repositories yet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::GitHub.Api.Models.IssueSearchResultItem_status? Status { get; set; }
@@ -331,6 +339,7 @@ namespace GitHub.Api.Models
                 { "milestone", n => { Milestone = n.GetObjectValue<global::GitHub.Api.Models.NullableMilestone>(global::GitHub.Api.Models.NullableMilestone.CreateFromDiscriminatorValue); } },
                 { "node_id", n => { NodeId = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetIntValue(); } },
+                { "parent_issue_url", n => { ParentIssueUrl = n.GetStringValue(); } },
                 { "performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<global::GitHub.Api.Models.NullableIntegration>(global::GitHub.Api.Models.NullableIntegration.CreateFromDiscriminatorValue); } },
                 { "pinned_comment", n => { PinnedComment = n.GetObjectValue<global::GitHub.Api.Models.NullableIssueComment>(global::GitHub.Api.Models.NullableIssueComment.CreateFromDiscriminatorValue); } },
                 { "pull_request", n => { PullRequest = n.GetObjectValue<global::GitHub.Api.Models.IssueSearchResultItem_pull_request>(global::GitHub.Api.Models.IssueSearchResultItem_pull_request.CreateFromDiscriminatorValue); } },
@@ -381,6 +390,7 @@ namespace GitHub.Api.Models
             writer.WriteObjectValue<global::GitHub.Api.Models.NullableMilestone>("milestone", Milestone);
             writer.WriteStringValue("node_id", NodeId);
             writer.WriteIntValue("number", Number);
+            writer.WriteStringValue("parent_issue_url", ParentIssueUrl);
             writer.WriteObjectValue<global::GitHub.Api.Models.NullableIntegration>("performed_via_github_app", PerformedViaGithubApp);
             writer.WriteObjectValue<global::GitHub.Api.Models.NullableIssueComment>("pinned_comment", PinnedComment);
             writer.WriteObjectValue<global::GitHub.Api.Models.IssueSearchResultItem_pull_request>("pull_request", PullRequest);
