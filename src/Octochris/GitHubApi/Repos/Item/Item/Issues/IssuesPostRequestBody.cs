@@ -64,7 +64,7 @@ namespace GitHub.Api.Repos.Item.Item.Issues
 #endif
         /// <summary>The id of the parent issue to add this issue to as a sub-issue. _NOTE: Only users with triage access to both the parent issue&apos;s repository and this repository can set the parent issue._</summary>
         public int? ParentIssueId { get; set; }
-        /// <summary>The initial status of the issue. Can be `Backlog`, `Todo`, `In progress`, or `In review`. If omitted, the issue starts in `Backlog`. If you do not have permission to set the status, the supplied value is ignored and the issue starts in `Backlog`. Cannot be `null` or an empty string. Ignored when issue statuses aren&apos;t available in the repository. Issue statuses are in public preview and subject to change. They&apos;re rolling out gradually, so they might not be available in your repositories yet.</summary>
+        /// <summary>The initial status of the issue. Can be `Backlog`, `Todo`, `In progress`, or `In review`. If omitted, the issue starts in `Backlog`. If you do not have permission to set the status, the supplied value is ignored and the issue starts in `Backlog`. Cannot be `null` or an empty string. Ignored when issue statuses aren&apos;t available in the repository. Issue statuses are in public preview and subject to change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

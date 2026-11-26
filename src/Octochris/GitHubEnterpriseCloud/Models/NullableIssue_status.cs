@@ -8,7 +8,7 @@ using System;
 namespace GitHub.EnterpriseCloud.Models
 {
     /// <summary>
-    /// The status of the issue, or `null` if it has none. Issue statuses are in public preview and subject to change. They&apos;re rolling out gradually, so they might not be available in your repositories yet.
+    /// The status of the issue, or `null` if it has none. Issue statuses are in public preview and subject to change.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NullableIssue_status : IAdditionalDataHolder, IParsable
